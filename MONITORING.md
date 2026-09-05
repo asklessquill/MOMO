@@ -111,4 +111,6 @@ Public MOMO may hold MOMO's public role, this monitoring philosophy, and public-
 
 Public MOMO must not receive private evidence, operational state, credentials, tenant information, confidential results, private implementation detail, or current state that was not meant for publication.
 
+Human-facing integrated monitoring is represented through a private GitHub Project rather than a custom dashboard application. The public repository keeps the philosophy. The private Project holds the current view.
+
 There is no durable public snapshot store for integrated monitoring yet. If one is needed, Human will decide that storage boundary later.
