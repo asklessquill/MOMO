@@ -2,7 +2,7 @@
   <img src="assets/momo-git-icon.png" width="148" alt="A peach with an eye — MOMO watches">
 </p>
 
-<h1 align="center">Project MOMO</h1>
+<h1 align="center">Project 桃多郎</h1>
 
 <p align="center">
   <img alt="Human-first" src="https://img.shields.io/badge/Human--first-2c211c?style=flat-square">
