@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-09-05 Genesis Snapshot | Project 桃多郎</title>
+  <meta name="description" content="2026-09-05時点のMOMO/KIBI再構成と、SARU・INNU・KIJIを含む桃多郎System全体の現在地。">
+  <meta name="theme-color" content="#1c1613">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .snapshot-hero{padding-top:7rem}.status{display:inline-block;margin-top:1rem;padding:.45rem .8rem;border:1px solid currentColor;border-radius:999px;font-size:.82rem}.flow{display:grid;gap:1rem;margin-top:1.5rem}.card{padding:1.25rem;border:1px solid rgba(28,22,19,.15);border-radius:18px;background:rgba(255,255,255,.36)}.card h3{margin-top:.1rem}.dependency{font-weight:700}.mini-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin-top:1.25rem}.quote{padding:1rem 1.2rem;border-left:4px solid #c86f52;background:rgba(244,199,176,.22);border-radius:0 16px 16px 0}.small{font-size:.9rem;opacity:.78}@media(max-width:720px){.mini-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">本文へ移動</a>
+  <header class="mast">
+    <a class="brand" href="index.html">
+      <img src="assets/momo-git-icon.png" width="56" height="56" alt="Project 桃多郎">
+      <span>Project 桃多郎</span>
+    </a>
+    <nav aria-label="Genesis snapshot">
+      <a href="#change">転換</a>
+      <a href="#astra">Astra</a>
+      <a href="#apps">Applications</a>
+      <a href="#now">現在地</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero snapshot-hero">
+      <p class="kicker">Genesis Snapshot · 2026-09-05</p>
+      <h1>設計思想が固まり始めた日。<br>そして、宿題を忘れないための現在地。</h1>
+      <p class="lead">MOMOの再定義、KIBIのProtocol化、Principlesの再構成、Human Cockpit構想。その結果として見えてきたSARU・INNU・KIJIへの追従課題まで、2026-09-05時点のHuman視点を一枚に残します。</p>
+      <span class="status">Human working snapshot · Canonical文書ではない</span>
+    </section>
+
+    <section id="change">
+      <h2>今日、何が変わったか</h2>
+      <p class="section-lead">「何を作るか」より先に、「誰が何を担うか」が明確になり始めました。</p>
+      <div class="mini-grid">
+        <article class="card">
+          <h3>MOMO</h3>
+          <p>Humanそのものではなく、Human intentとSystem-wide meaningに最も近いSystem表現へ。全体を見るが、全体を支配しない。</p>
+        </article>
+        <article class="card">
+          <h3>KIBI</h3>
+          <p>System全体の思想とApplication接続責任を分離し、独立したApplication同士を安全かつ意味的につなぐProtocolへ。</p>
+        </article>
+        <article class="card">
+          <h3>Principles</h3>
+          <p>Role owns responsibility. Capability may be shared. 学びや能力は共有できても、責任や内部実装は勝手に移さない。</p>
+        </article>
+        <article class="card">
+          <h3>Real World</h3>
+          <p>ArchitectureやAI協働それ自体は目的ではない。Human Purposeを現実世界の変化へ変換するためにSystemは存在する。</p>
+        </article>
+      </div>
+      <p class="quote"><strong>鬼ヶ島とは現実世界である。</strong></p>
+    </section>
+
+    <section id="astra">
+      <h2>Astra Ultraへ渡す3 STEP</h2>
+      <p class="section-lead">3つを一続きにせず、各STEPでPush + STOPする。</p>
+      <div class="flow">
+        <article class="card">
+          <p class="kicker">A1</p>
+          <h3>MOMO–KIBI責任再構成の批准 + MOMO Principles更新</h3>
+          <p>Capability reuse、Continuous Learning、Real-world orientationを統合し、MOMO-ObservatoryとMOMOを「one semantic truth → multiple views」として整理する。</p>
+        </article>
+        <article class="card">
+          <p class="kicker">A2 · A1完了後</p>
+          <h3>KIBI Protocol Architecture</h3>
+          <p>Identity、Role、Responsibility、Capability、Knowledge、Contract、Authority、Result、Evidence、Recoveryなどを、Applicationの独立性を壊さない接続意味論として設計する。</p>
+        </article>
+        <article class="card">
+          <p class="kicker">A3 · A2完了後</p>
+          <h3>MOMO / MOMO-Observatory / Human Cockpit Architecture</h3>
+          <p>Humanが全体をObserve / Understand / Decide / Directできる構造を設計する。ただしMOMOを中央Command Towerにはしない。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="apps">
+      <h2>3 STEPの外側に残るApplication課題</h2>
+      <p class="section-lead">今日の再構成によって、Astraの設計タスクには直接含まれない宿題も見えるようになりました。</p>
+      <div class="flow">
+        <article class="card">
+          <h3>SARU</h3>
+          <p>プロジェクト自体はまだ構想段階。ただしMOMO/KIBIの役割明確化によって、SARUが担うべきProcess設計・依存関係・進行管理・次行動選択の境界を改めて定義できる状態になった。</p>
+          <p class="dependency">A1–A3完了後にRole / Responsibilityを明確化する。</p>
+          <p><a href="https://github.com/asklessquill/Saru/issues/1">SARU follow-up Issue →</a></p>
+        </article>
+        <article class="card">
+          <h3>INNU</h3>
+          <p>まずプロジェクト全体の正本を整備する。その後、既存監査Evidenceを新しいMOMO/KIBI思想へマッピングし、修正設計から実装へ進む。</p>
+          <p class="dependency">Source-of-truth first.</p>
+          <p><a href="https://github.com/asklessquill/Innu/issues/1">INNU follow-up Issue →</a></p>
+        </article>
+        <article class="card">
+          <h3>KIJI</h3>
+          <p>INNUと同様、既存機能の拡張より先にProject-level Canonical stateを揃える。監査結果と思想準拠修正は、その正本を基準に行う。</p>
+          <p class="dependency">Source-of-truth first.</p>
+          <p><a href="https://github.com/asklessquill/Kiji/issues/2">KIJI follow-up Issue →</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>当面のタスク管理</h2>
+      <p class="section-lead">本来この領域は将来のSARUに寄せたい。ただしSARUの責任そのものが未確定なため、現時点ではMOMOに一時的なSystem-level unresolved-work ledgerを置く。</p>
+      <div class="card">
+        <p><strong>MOMOはタスク実行主体にはならない。</strong></p>
+        <p>「Systemとして何が未解決か」を意味として保持し、Applicationごとの実行は各Applicationへ委ねる。SARUが将来タスク/依存関係オーケストレーションを正式責任として持つなら、運用管理をSARU側へ移す。</p>
+        <p><a href="https://github.com/asklessquill/MOMO/issues/1">MOMO Genesis Epic →</a></p>
+      </div>
+    </section>
+
+    <section id="now">
+      <h2>2026-09-05終了時点の現在地</h2>
+      <ul class="deeper">
+        <li>A1のHuman-approved promptはAstra Ultraへ送付直前。</li>
+        <li>A2とA3は順序依存を明示して待機。</li>
+        <li>SARU / INNU / KIJIの追従課題はGitHub Issueへ固定済み。</li>
+        <li>Application migrationはまだ開始しない。</li>
+        <li>設計思想は収束しつつあり、実装準拠はこれから。</li>
+      </ul>
+      <p class="small">このページは2026-09-05のHuman working snapshotです。後続のHuman批准・Canonical文書が現在の意味を上書きした場合も、このページは転換点の履歴として残します。</p>
+      <ul class="deeper">
+        <li><a href="https://github.com/asklessquill/MOMO/blob/main/SYSTEM_SNAPSHOT_2026-09-05.md">Semantic source snapshot</a></li>
+        <li><a href="recomposition.html">KIBI → MOMO 再構成</a></li>
+        <li><a href="index.html">MOMO Hubへ戻る</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>意味を残す。責任を混ぜない。次のActorが会話履歴なしでも現在地へ戻れるようにする。</p>
+    <p class="muted">Human remains final constitutional authority.</p>
+  </footer>
+</body>
+</html>
