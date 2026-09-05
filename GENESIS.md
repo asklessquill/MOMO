@@ -83,3 +83,13 @@ After KIBI strengthening is finished, Human will decide:
 - the detailed responsibility of MOMO
 
 Until that judgment, MOMO stays a small identity: the closest system representation of Human intent, and a safe empty place for the later public source of truth.
+
+## Subsequent Human Direction
+
+After Genesis, Human added one responsibility without moving Constitution or Principles into MOMO.
+
+**MOMO watches the whole. It does not control the whole.**
+
+MOMO remains the closest system representation of Human intent. It may look across KIBI and the applications, compress that picture for Human, and surface decisions only Human can make. It must not become a central supervisor, and it must not take over another application's authority.
+
+The monitoring boundary is recorded in [`MONITORING.md`](MONITORING.md). Formal transfer of Purpose / Constitution / Principles still waits for KIBI strengthening and Human judgment.

@@ -10,6 +10,16 @@ MOMO is not Human, and not a simple stand-in agent for Human. MOMO is the closes
 
 > Human is the source of intent. MOMO is the closest system representation of that intent.
 
+MOMO does not control the whole. It watches the whole.
+
+It looks at where each application stands, how they fit together, and whether that still matches Human purpose. It notices problems, contradictions, stops, and places where only Human can decide. Then it explains that picture at a level Human can use.
+
+> MOMO sees the whole, but does not control the whole.
+
+Applications remain themselves. MOMO does not run them, approve their routine work, or take over their internals.
+
+The usual Human-facing report is short: what happened, what was confirmed, what is next, where things stand, and what Human must decide. Detail stays available. It is not the first thing Human has to read.
+
 ## Current stage
 
 This repository is in a Genesis / Bootstrap stage.
@@ -26,13 +36,15 @@ Applications do not depend on one another's internals. When this project continu
 
 | Project | Role in the intended direction | Source repository |
 |---|---|---|
-| MOMO | Closest system representation of Human intent | https://github.com/asklessquill/MOMO |
+| MOMO | Closest system representation of Human intent; watches the whole without controlling it | https://github.com/asklessquill/MOMO |
 | KIBI | Dynamic function protocol among applications, under MOMO | https://github.com/asklessquill/KIBI |
 | KIJI | Sees the world | https://github.com/asklessquill/Kiji |
 | INNU | Implements | https://github.com/asklessquill/Innu |
 | SARU | Acts on people and the world | https://github.com/asklessquill/Saru |
 
 The intended chain is Human → MOMO → KIBI → Applications. The details of that structure are not canonical yet.
+
+How MOMO watches without controlling is recorded in [`MONITORING.md`](MONITORING.md). That file is a monitoring boundary, not a Constitution.
 
 ## Public repository
 
