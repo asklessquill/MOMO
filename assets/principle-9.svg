@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" role="img" aria-labelledby="title desc">
+  <title id="title">Two directions of recomposition</title>
+  <desc id="desc">Human-facing systems are recomposed into meaning for AI. AI complexity is recomposed into meaning for Human. MOMO stands in the middle.</desc>
+  <rect width="720" height="420" fill="#fff8f1"/>
+  <text x="360" y="36" text-anchor="middle" font-family="Georgia, serif" font-size="18" fill="#2c211c">Do not copy a screen. Recompose the meaning.</text>
+
+  <rect x="40" y="64" width="200" height="70" rx="16" fill="#efe0c8"/>
+  <text x="140" y="94" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#2c211c">Human UI</text>
+  <text x="140" y="116" text-anchor="middle" font-family="Segoe UI, Helvetica, sans-serif" font-size="12" fill="#7a6156">screens · clicks · steps</text>
+
+  <path d="M250 99 H310" stroke="#c9a48c" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="310" y="64" width="220" height="70" rx="16" fill="#e8f0e4"/>
+  <text x="420" y="94" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#2c211c">Meaning for AI</text>
+  <text x="420" y="116" text-anchor="middle" font-family="Segoe UI, Helvetica, sans-serif" font-size="12" fill="#4d5f45">state · relation · delta</text>
+
+  <path d="M540 99 H600" stroke="#c9a48c" stroke-width="2"/>
+  <text x="660" y="104" text-anchor="middle" font-family="Segoe UI, Helvetica, sans-serif" font-size="12" fill="#7a6156">AI reads</text>
+
+  <rect x="210" y="176" width="300" height="72" rx="20" fill="#f4c7b0"/>
+  <text x="360" y="208" text-anchor="middle" font-family="Georgia, serif" font-size="24" fill="#2c211c">MOMO</text>
+  <text x="360" y="232" text-anchor="middle" font-family="Segoe UI, Helvetica, sans-serif" font-size="13" fill="#6a4030">recomposition in both directions</text>
+
+  <text x="60" y="316" font-family="Segoe UI, Helvetica, sans-serif" font-size="12" fill="#7a6156">Human sees</text>
+  <path d="M120 320 H180" stroke="#c9a48c" stroke-width="2"/>
+
+  <rect x="180" y="286" width="200" height="70" rx="16" fill="#e7eef4"/>
+  <text x="280" y="316" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#2c211c">Human-native view</text>
+  <text x="280" y="338" text-anchor="middle" font-family="Segoe UI, Helvetica, sans-serif" font-size="12" fill="#3d5366">story · diagram · decision</text>
+
+  <path d="M390 321 H450" stroke="#c9a48c" stroke-width="2"/>
+
+  <rect x="450" y="286" width="230" height="70" rx="16" fill="#efe6dc"/>
+  <text x="565" y="316" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#2c211c">AI complexity</text>
+  <text x="565" y="338" text-anchor="middle" font-family="Segoe UI, Helvetica, sans-serif" font-size="12" fill="#7a6156">not returned as-is</text>
+
+  <text x="360" y="396" text-anchor="middle" font-family="Georgia, serif" font-size="15" fill="#2c211c">Structure for AI. Meaning for Human.</text>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#c9a48c"/>
+    </marker>
+  </defs>
+</svg>

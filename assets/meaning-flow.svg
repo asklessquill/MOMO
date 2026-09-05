@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 260" role="img" aria-labelledby="title desc">
+  <title id="title">See, build, act  three strengths</title>
+  <desc id="desc">KIJI sees, INNU builds, SARU acts. They are companions, not a forced assembly line.</desc>
+  <rect width="720" height="260" fill="#fff8f1"/>
+
+  <rect x="24" y="36" width="200" height="140" rx="18" fill="#e8f0e4"/>
+  <text x="124" y="88" text-anchor="middle" font-family="Georgia, serif" font-size="28" fill="#2c211c">See</text>
+  <text x="124" y="122" text-anchor="middle" font-family="Georgia, serif" font-size="18" fill="#4d5f45">KIJI</text>
+  <text x="124" y="148" text-anchor="middle" font-family="Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4d5f45">the world</text>
+
+  <rect x="260" y="36" width="200" height="140" rx="18" fill="#f3e6d2"/>
+  <text x="360" y="88" text-anchor="middle" font-family="Georgia, serif" font-size="28" fill="#2c211c">Build</text>
+  <text x="360" y="122" text-anchor="middle" font-family="Georgia, serif" font-size="18" fill="#6a4d32">INNU</text>
+  <text x="360" y="148" text-anchor="middle" font-family="Segoe UI, Helvetica, sans-serif" font-size="13" fill="#6a4d32">what is needed</text>
+
+  <rect x="496" y="36" width="200" height="140" rx="18" fill="#e7eef4"/>
+  <text x="596" y="88" text-anchor="middle" font-family="Georgia, serif" font-size="28" fill="#2c211c">Act</text>
+  <text x="596" y="122" text-anchor="middle" font-family="Georgia, serif" font-size="18" fill="#3d5366">SARU</text>
+  <text x="596" y="148" text-anchor="middle" font-family="Segoe UI, Helvetica, sans-serif" font-size="13" fill="#3d5366">on people and the world</text>
+
+  <text x="360" y="214" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#2c211c">Different strengths. One purpose.</text>
+  <text x="360" y="238" text-anchor="middle" font-family="Segoe UI, Helvetica, sans-serif" font-size="13" fill="#7a6156">Not a factory line. Companions who can join, leave, and remain themselves.</text>
+</svg>

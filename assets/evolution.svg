@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 220" role="img" aria-labelledby="title desc">
+  <title id="title">How this public place grew</title>
+  <desc id="desc">Genesis, identity, monitoring, two observatory views, then this Human-native visualization.</desc>
+  <rect width="720" height="220" fill="#fff8f1"/>
+  <path d="M48 110 H672" stroke="#e6d3c2" stroke-width="3"/>
+
+  <circle cx="72" cy="110" r="8" fill="#f4c7b0"/>
+  <text x="72" y="54" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#2c211c">Genesis</text>
+  <text x="72" y="152" text-anchor="middle" font-family="Segoe UI, Helvetica, sans-serif" font-size="11" fill="#7a6156">a vessel</text>
+
+  <circle cx="216" cy="110" r="8" fill="#f4c7b0"/>
+  <text x="216" y="46" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#2c211c">Identity</text>
+  <text x="216" y="152" text-anchor="middle" font-family="Segoe UI, Helvetica, sans-serif" font-size="11" fill="#7a6156">MOMO ` Human</text>
+  <text x="216" y="168" text-anchor="middle" font-family="Segoe UI, Helvetica, sans-serif" font-size="11" fill="#7a6156">observe, not control</text>
+
+  <circle cx="360" cy="110" r="8" fill="#f4c7b0"/>
+  <text x="360" y="46" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#2c211c">Monitoring</text>
+  <text x="360" y="152" text-anchor="middle" font-family="Segoe UI, Helvetica, sans-serif" font-size="11" fill="#7a6156">a boundary for seeing</text>
+
+  <circle cx="504" cy="110" r="8" fill="#f4c7b0"/>
+  <text x="504" y="46" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#2c211c">Two views</text>
+  <text x="504" y="152" text-anchor="middle" font-family="Segoe UI, Helvetica, sans-serif" font-size="11" fill="#7a6156">Human Project</text>
+  <text x="504" y="168" text-anchor="middle" font-family="Segoe UI, Helvetica, sans-serif" font-size="11" fill="#7a6156">AI repository</text>
+
+  <circle cx="648" cy="110" r="9" fill="#2c211c"/>
+  <text x="648" y="46" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#2c211c">This page</text>
+  <text x="648" y="152" text-anchor="middle" font-family="Segoe UI, Helvetica, sans-serif" font-size="11" fill="#7a6156">GitHub as</text>
+  <text x="648" y="168" text-anchor="middle" font-family="Segoe UI, Helvetica, sans-serif" font-size="11" fill="#7a6156">the medium</text>
+</svg>

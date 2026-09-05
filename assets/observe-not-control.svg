@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" role="img" aria-labelledby="title desc">
+  <title id="title">MOMO sees. MOMO does not control.</title>
+  <desc id="desc">MOMO looks across the whole system. It does not run tasks, own execution, or command applications.</desc>
+  <rect width="720" height="280" fill="#fff8f1"/>
+
+  <rect x="24" y="28" width="328" height="224" rx="22" fill="#f4c7b0"/>
+  <text x="188" y="72" text-anchor="middle" font-family="Georgia, serif" font-size="18" fill="#2c211c">MOMO does</text>
+  <text x="188" y="118" text-anchor="middle" font-family="Georgia, serif" font-size="22" fill="#2c211c">see the whole</text>
+  <text x="188" y="154" text-anchor="middle" font-family="Segoe UI, Helvetica, sans-serif" font-size="15" fill="#6a4030">keep Human purpose visible</text>
+  <text x="188" y="182" text-anchor="middle" font-family="Segoe UI, Helvetica, sans-serif" font-size="15" fill="#6a4030">compress complexity into meaning</text>
+  <text x="188" y="210" text-anchor="middle" font-family="Segoe UI, Helvetica, sans-serif" font-size="15" fill="#6a4030">surface decisions only Human can make</text>
+
+  <rect x="368" y="28" width="328" height="224" rx="22" fill="#efe6dc"/>
+  <text x="532" y="72" text-anchor="middle" font-family="Georgia, serif" font-size="18" fill="#7a6156">MOMO does not</text>
+  <text x="532" y="118" text-anchor="middle" font-family="Georgia, serif" font-size="22" fill="#2c211c">control applications</text>
+  <text x="532" y="154" text-anchor="middle" font-family="Segoe UI, Helvetica, sans-serif" font-size="15" fill="#7a6156">run tasks</text>
+  <text x="532" y="182" text-anchor="middle" font-family="Segoe UI, Helvetica, sans-serif" font-size="15" fill="#7a6156">own execution</text>
+  <text x="532" y="210" text-anchor="middle" font-family="Segoe UI, Helvetica, sans-serif" font-size="15" fill="#7a6156">become a supervisor</text>
+</svg>
