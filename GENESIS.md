@@ -1,3 +1,5 @@
+**Historical bootstrap record.** The later [Human decision](HUMAN_RATIFICATION_2026-09-05.md) and [current source/view relationship](SOURCE_AND_VIEWS.md) govern current meaning. Earlier descriptions below are preserved in their original context; MOMO-Observatory is now MOMO's semantic source and this repository its authorized Human-facing projection.
+
 # MOMO Genesis
 
 This file records why the MOMO repository was created, and what is deliberately not decided yet.

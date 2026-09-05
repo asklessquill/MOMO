@@ -1,8 +1,8 @@
 # Principle 9, shown rather than copied
 
-This page is a Human-facing picture of a thought that already exists in current KIBI.
+This page preserves a Human-facing illustration of the thought that grew as KIBI v0.3 Article 9. Its current System-wide home is MOMO MP-06, alongside MP-05's receiver-level meaning; see the [current Principle projection](../PRINCIPLES.md).
 
-It is **not** a new Constitution. It does not ratify, move, or rewrite Canonical Principles. Formal transfer still waits for Human.
+The [Human-approved responsibility transition](../HUMAN_RATIFICATION_2026-09-05.md) is now recorded. This illustration is explanatory methodology, with its historical numbering retained for provenance. It has no independent constitutional authority.
 
 The thought has two sides.
 

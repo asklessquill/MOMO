@@ -10,6 +10,10 @@
   }
 
   const JA = {
+    'Companions stay themselves. Human approved the responsibility transition: MOMO holds System-wide meaning; KIBI owns connection. This picture of roles is not a command hierarchy or fixed pipeline.':'仲間はそれぞれ独立したままです。Human承認により、MOMOはSystem-wideな意味、KIBIは接続を担います。この役割図は指揮系統や固定pipelineではありません。',
+    'This thought grew in KIBI Article 9. Its current home is MOMO MP-06, alongside MP-05 receiver-level meaning. The illustration is a Human-facing view, not an independent Constitution.':'この思想はKIBI第9条で育ちました。現在はMOMO MP-06と、受け手に合う意味を扱うMP-05へ継承されています。この図はHuman向けの表現であり、独立した憲法ではありません。',
+    'MOMO Purpose and seven Principles':'MOMOのPurposeと7原則','One semantic truth, multiple views':'ひとつの正本、複数のView',
+    'Human-facing projection of authorized public philosophy. MOMO-Observatory holds MOMO semantic truth. Human remains final constitutional authority. No private operational state or credentials are published here.':'承認された公開思想をHuman向けに表現しています。MOMOのsemantic truthはMOMO-Observatoryが保持し、最終批准者はHumanです。非公開の運用状態やcredentialは公開しません。',
     'Skip to content':'本文へスキップ','Journey':'旅','Companions':'仲間','Principles':'原理原則','Evolution':'進化','Recomposition':'再構成','World':'世界',
     'Human intent enters here':'Humanの意志はここから入る','MOMO sees the whole,':'MOMOは全体を見る。','but does not control the whole.':'しかし、全体は支配しない。',
     'Human is the source. MOMO is the closest system representation of that intent.':'Humanが意志の源泉であり、MOMOはその意志に最も近いSystem側の表現です。',
@@ -41,7 +45,7 @@
     'Principle 9, made visible':'第9原則を、見える形に','Both ways':'両方向','Toward AI':'AIへ','Toward Human':'Humanへ','Human-facing tools':'Human向けツール','AI-native meaning':'AI-nativeな意味','Human-native view':'Human-nativeな見え方','AI complexity':'AI内部の複雑さ',
     'Same height of conversation':'同じ抽象度で会話する','AI may expand complexity internally. Human should receive meaning at Human scale.':'AIは内部でいくら複雑になってもよい。しかしHumanにはHumanの大きさで意味を返します。','Internal complexity':'内部の複雑さ','compresses':'圧縮する','Human meaning':'Humanにとっての意味','What happened':'何をした','What is confirmed':'何が確認できた','What is next':'次に何をする','Where things stand':'現在地','What only Human may decide':'Humanが判断すること',
     'Git remembers':'Gitは覚えている','This public history is how 桃多郎 became a face. Nothing here is invented after the fact.':'このPublic historyは、桃多郎が今の形になるまでの実際の歩みです。後から作った物語ではありません。','Monitoring boundary':'観測の境界','Two views':'二つのView','GitHub as the medium':'GitHubそのものを媒体に','Named 桃多郎':'桃多郎という名前','Companion Journey':'仲間との旅',
-    'If you want the words':'言葉で読みたいなら','KIBI → MOMO recomposition':'KIBI → MOMO 再構成','Git remembers how the system became what it is. GitHub is part of how MOMO speaks to Human.':'GitはSystemがどう今の姿になったかを覚えています。GitHubそのものが、MOMOがHumanへ語る方法の一部です。','Public philosophy only. No live operational status, private evidence, or credentials on this page. Current KIBI remains canonical until Human decides otherwise.':'ここにあるのはPublicな思想だけです。運用中の状態・Private evidence・credentialは公開しません。Humanが判断するまでは、現在のKIBIがCanonicalです。'
+    'If you want the words':'言葉で読みたいなら','KIBI → MOMO recomposition':'KIBI → MOMO 再構成','Git remembers how the system became what it is. GitHub is part of how MOMO speaks to Human.':'GitはSystemがどう今の姿になったかを覚えています。GitHubそのものが、MOMOがHumanへ語る方法の一部です。'
   };
 
   const original = new WeakMap();

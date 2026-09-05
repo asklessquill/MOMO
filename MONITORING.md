@@ -2,7 +2,7 @@
 
 This file records how MOMO watches the whole without controlling it.
 
-It is not a Constitution. It does not add or ratify Principles. Formal Purpose / Constitution transfer still waits for KIBI strengthening and Human judgment.
+This remains lower-level monitoring guidance under the [Human-approved MOMO Principles](PRINCIPLES.md) and [source/view governance](SOURCE_AND_VIEWS.md). The [responsibility transition is recorded](HUMAN_RATIFICATION_2026-09-05.md); this guidance does not independently ratify or change Principles.
 
 > MOMO sees the whole, but does not control the whole.
 
@@ -34,7 +34,7 @@ What MOMO needs to know is the kind of thing another application can share witho
 
 | Place | What the outward view is for |
 |---|---|
-| KIBI | Whether connection, contract, authority, and boundary still hold, and whether the split with MOMO is still unfinished |
+| KIBI | Whether connection, contract, authority and boundary hold under KIBI's own semantic Protocol responsibility, with observed adoption and remaining limits distinguished |
 | KIJI | What is being seen in the world, what was found, what result exists, and whether that result can be handed on |
 | INNU | What is being built, what is finished, what is accepted, and what is incomplete or stopped |
 | SARU | What is meant to act on people and the world, what can run, what actually happened, and whether authority, cost, or Human boundary is at risk |
@@ -111,15 +111,15 @@ Public MOMO may hold MOMO's public role, this monitoring philosophy, and public-
 
 Public MOMO must not receive private evidence, operational state, credentials, tenant information, confidential results, private implementation detail, or current state that was not meant for publication.
 
-Human-facing integrated monitoring is represented through a private GitHub Project rather than a custom dashboard application.
+The existing private GitHub Project is one Human-facing monitoring view. Its retained observations are not made current by this document transition. A full Cockpit design and synchronization implementation are separate Tasks.
 
-The same observation has two views:
+The current ownership relation is one semantic truth with multiple views:
 
-- Human View: private GitHub Project `MOMO Observatory`
-- AI View: private repository `asklessquill/MOMO-Observatory`
+- Actor / AI-readable semantic source for MOMO System meaning: private repository `asklessquill/MOMO-Observatory`.
+- Human-facing projection of the same meaning: this MOMO repository and its Pages; the private GitHub Project is an additional authorized view.
 
-Both are projections of the current source repositories. Neither is a new source of authority. Neither controls applications.
+MOMO-Observatory holds MOMO Purpose, Principles, explicit Human Direction and integrated semantic interpretation. Application outward facts remain sourced observations with provenance; their originals and internals remain with their owners. Human remains the final source of Purpose and constitutional authority. Neither the semantic source nor any view controls Applications.
 
-The public repository keeps the philosophy. Current private state stays out of this repository.
+This public repository presents the authorized public-safe philosophy/governance projection with source revision and provenance; it does not keep a competing constitutional truth. Current private state stays out of this repository.
 
-There is no durable public snapshot store for integrated monitoring yet. If one is needed, Human will decide that storage boundary later.
+Historical public explanations remain labeled historical. No private operational snapshot store, observation refresh or automatic view synchronization is implemented by this Task.

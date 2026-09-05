@@ -1,3 +1,5 @@
+**Historical candidate — superseded by the Human-approved consolidation.** Read [current Purpose and seven Principles](PRINCIPLES.md) and the [Human decision](HUMAN_RATIFICATION_2026-09-05.md). The ten-part text below is retained as provenance; its original pending-ratification status describes that earlier stage, not current authority.
+
 # MOMO Principles — candidate transfer from KIBI
 
 Status: **NON-CANONICAL / HUMAN-RATIFICATION REQUIRED**  

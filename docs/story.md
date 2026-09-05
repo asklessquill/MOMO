@@ -1,3 +1,5 @@
+**Historical story of the public face.** The subsequent [Human-approved transition](../HUMAN_RATIFICATION_2026-09-05.md) establishes the current [source/view relationship](../SOURCE_AND_VIEWS.md). The story below preserves the earlier stage.
+
 # Why this public place looks like this
 
 MOMO did not start as a landing page.
