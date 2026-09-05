@@ -10,6 +10,8 @@ Then Human said: the Human view of the whole lives in a private GitHub Project. 
 
 Then Human said: GitHub itself should be the Human-facing medium. Not a separate website.
 
+Then the public face moved from this README onto [GitHub Pages](https://asklessquill.github.io/MOMO/). The repository still holds the words. The page holds the first look.
+
 <p align="center">
   <img src="../assets/evolution.png" width="720" alt="How this public place grew">
 </p>

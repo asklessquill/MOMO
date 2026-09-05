@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="t">
+  <title id="t">MOMO</title>
+  <ellipse cx="32" cy="34" rx="18" ry="16" fill="#e89b7a"/>
+  <path d="M32 20c0 8 3 12 8 14" fill="none" stroke="#c7785c" stroke-width="1.4"/>
+  <ellipse cx="32" cy="34" rx="7" ry="5.5" fill="#fff8f1"/>
+  <circle cx="32" cy="34" r="2.4" fill="#2c211c"/>
+  <path d="M28 16c3-5 8-5 8 1-4 0-6 2-8 5-1-3-2-5 0-6z" fill="#7f8f6d"/>
+  <ellipse cx="32" cy="34" rx="22" ry="8" fill="none" stroke="#7f8f6d" stroke-width="1.6"/>
+</svg>

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project 桃多郎</title>
+  <meta name="description" content="MOMO sees the whole, but does not control the whole. Human is the source of intent. MOMO is the closest system representation of that intent.">
+  <meta name="theme-color" content="#1c1613">
+  <meta property="og:title" content="Project 桃多郎">
+  <meta property="og:description" content="MOMO sees the whole, but does not control the whole.">
+  <meta property="og:image" content="https://asklessquill.github.io/MOMO/assets/momo-git-icon.png">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="mast">
+    <a class="brand" href="#top">
+      <img src="assets/momo-git-icon.png" width="56" height="56" alt="A peach with an eye — MOMO watches">
+      <span>Project 桃多郎</span>
+    </a>
+    <nav aria-label="Sections">
+      <a href="#map">Map</a>
+      <a href="#roles">Roles</a>
+      <a href="#observe">Observe</a>
+      <a href="#principle">Principle 9</a>
+      <a href="#cost">Meaning</a>
+      <a href="#story">Story</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <p class="kicker">Human intent enters here</p>
+      <h1>MOMO sees the whole,<br>but does not control the whole.</h1>
+      <p class="ja" lang="ja">全部を見る。でも全部は動かさない。</p>
+      <p class="lead"><strong>MOMO ≠ Human.</strong> Human is the source. MOMO is the closest system representation of that intent.</p>
+    </section>
+
+    <section class="map-section" id="map" aria-labelledby="map-title">
+      <h2 id="map-title">The map</h2>
+      <p class="section-lead">Before the sentences, the shape. Choose a role. The picture still stands if you never click.</p>
+
+      <fieldset class="map-fieldset">
+        <legend class="visually-hidden">Choose a role</legend>
+
+        <input class="role-input" type="radio" name="role" id="r-human" value="human">
+        <input class="role-input" type="radio" name="role" id="r-momo" value="momo" checked>
+        <input class="role-input" type="radio" name="role" id="r-kibi" value="kibi">
+        <input class="role-input" type="radio" name="role" id="r-kiji" value="kiji">
+        <input class="role-input" type="radio" name="role" id="r-innu" value="innu">
+        <input class="role-input" type="radio" name="role" id="r-saru" value="saru">
+        <input class="role-input" type="radio" name="role" id="r-world" value="world">
+
+        <div class="map" aria-hidden="false">
+          <p class="map-note">Human is outside the system</p>
+
+          <label class="node node-human" for="r-human">
+            <span class="name">Human</span>
+            <span class="hint">source of intent</span>
+          </label>
+          <div class="flow flow-intent" aria-hidden="true"><span>intent</span></div>
+
+          <label class="node node-momo" for="r-momo">
+            <img src="assets/mark-momo.svg" width="36" height="36" alt="">
+            <span class="name">MOMO</span>
+            <span class="hint">purpose / meaning</span>
+          </label>
+          <div class="flow" aria-hidden="true"></div>
+
+          <label class="node node-kibi" for="r-kibi">
+            <img src="assets/mark-kibi.svg" width="32" height="32" alt="">
+            <span class="name">KIBI</span>
+            <span class="hint">connection layer</span>
+          </label>
+          <div class="flow flow-split" aria-hidden="true"></div>
+
+          <div class="apps">
+            <label class="node node-kiji" for="r-kiji">
+              <img src="assets/mark-kiji.svg" width="36" height="36" alt="">
+              <span class="name">KIJI</span>
+              <span class="verb">See</span>
+            </label>
+            <label class="node node-innu" for="r-innu">
+              <img src="assets/mark-innu.svg" width="36" height="36" alt="">
+              <span class="name">INNU</span>
+              <span class="verb">Build</span>
+            </label>
+            <label class="node node-saru" for="r-saru">
+              <img src="assets/mark-saru.svg" width="36" height="36" alt="">
+              <span class="name">SARU</span>
+              <span class="verb">Act</span>
+            </label>
+          </div>
+          <div class="flow flow-join" aria-hidden="true"></div>
+
+          <label class="node node-world" for="r-world">
+            <img src="assets/mark-world.svg" width="32" height="32" alt="">
+            <span class="name">Human society</span>
+            <span class="hint">the world</span>
+          </label>
+        </div>
+
+        <div class="map-meaning" aria-live="polite">
+          <article class="meaning" id="m-human">
+            <h3>Human</h3>
+            <p>Human stands outside the system. Intent begins here. Decisions that change purpose remain here.</p>
+          </article>
+          <article class="meaning" id="m-momo">
+            <h3>MOMO</h3>
+            <p>Keeps Human intent visible and watches the whole. Closest system-side representation of that intent — not Human, and not a commander.</p>
+          </article>
+          <article class="meaning" id="m-kibi">
+            <h3>KIBI</h3>
+            <p>Lets applications connect without becoming one giant system. Connects. Does not supervise. Formal split from Constitution is not finished.</p>
+          </article>
+          <article class="meaning" id="m-kiji">
+            <h3>KIJI</h3>
+            <p>Sees the world. Finds what matters outside, and can hand that finding on. Remains itself.</p>
+          </article>
+          <article class="meaning" id="m-innu">
+            <h3>INNU</h3>
+            <p>Builds. Turns need into something real. Remains itself.</p>
+          </article>
+          <article class="meaning" id="m-saru">
+            <h3>SARU</h3>
+            <p>Acts on people and the world. Remains itself.</p>
+          </article>
+          <article class="meaning" id="m-world">
+            <h3>Human society</h3>
+            <p>Where seeing, building, and acting meet people. The system faces the world. It does not replace it.</p>
+          </article>
+        </div>
+      </fieldset>
+
+      <p class="footnote">Companions stay themselves. This is a picture of roles, not a factory line. Formal KIBI split is not finished. Current KIBI remains the Human-ratified constitutional text.</p>
+    </section>
+
+    <section id="roles" aria-labelledby="roles-title">
+      <h2 id="roles-title">Meet the system</h2>
+      <p class="section-lead">Different strengths. One purpose. Applications may join, leave, or be replaced. They are not a fixed pipeline.</p>
+
+      <ul class="role-grid">
+        <li class="card card-momo">
+          <img src="assets/mark-momo.svg" width="48" height="48" alt="">
+          <h3>MOMO</h3>
+          <p>Keeps Human intent visible and watches the whole.</p>
+        </li>
+        <li class="card card-kibi">
+          <img src="assets/mark-kibi.svg" width="48" height="48" alt="">
+          <h3>KIBI</h3>
+          <p>Makes applications connect without becoming one giant system.</p>
+        </li>
+        <li class="card card-kiji">
+          <img src="assets/mark-kiji.svg" width="48" height="48" alt="">
+          <h3>KIJI</h3>
+          <p>Sees the world.</p>
+        </li>
+        <li class="card card-innu">
+          <img src="assets/mark-innu.svg" width="48" height="48" alt="">
+          <h3>INNU</h3>
+          <p>Builds.</p>
+        </li>
+        <li class="card card-saru">
+          <img src="assets/mark-saru.svg" width="48" height="48" alt="">
+          <h3>SARU</h3>
+          <p>Acts on people and the world.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="observe" aria-labelledby="observe-title">
+      <h2 id="observe-title">Observe, not control</h2>
+      <p class="section-lead">MOMO is an observatory. Applications act. Human decides.</p>
+
+      <div class="observe-grid">
+        <article class="does">
+          <h3>MOMO does</h3>
+          <p class="big">see the whole</p>
+          <ul>
+            <li>keep Human purpose visible</li>
+            <li>compress complexity into meaning</li>
+            <li>surface decisions only Human can make</li>
+          </ul>
+        </article>
+        <article class="does-not">
+          <h3>MOMO does not</h3>
+          <p class="big">control applications</p>
+          <ul>
+            <li>run their tasks</li>
+            <li>own their execution</li>
+            <li>become a supervisor</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="principle" aria-labelledby="principle-title">
+      <h2 id="principle-title">Principle 9, made visible</h2>
+      <p class="section-lead">A thought already present in current KIBI. Shown here. Not newly ratified. Not a Constitution.</p>
+
+      <fieldset class="view-fieldset">
+        <legend class="visually-hidden">Which direction of recomposition</legend>
+        <input class="view-input" type="radio" name="view" id="v-both" checked>
+        <input class="view-input" type="radio" name="view" id="v-ai">
+        <input class="view-input" type="radio" name="view" id="v-human">
+
+        <div class="view-switch">
+          <label for="v-both">Both ways</label>
+          <label for="v-ai">Toward AI</label>
+          <label for="v-human">Toward Human</label>
+        </div>
+
+        <ol class="recompose">
+          <li class="step step-ui">Human-facing tools<span>screens · clicks · steps</span></li>
+          <li class="step step-ai">AI-native meaning<span>state · relation · delta</span></li>
+          <li class="step step-momo">MOMO<span>recomposition in both directions</span></li>
+          <li class="step step-human">Human-native view<span>story · diagram · decision</span></li>
+          <li class="step step-kept">AI complexity<span>not returned as-is</span></li>
+        </ol>
+
+        <div class="view-copy">
+          <article class="view-panel" id="p-both">
+            <p>Do not make AI click Human screens. Do not pour AI insides back onto Human. Recompose the meaning, both ways.</p>
+          </article>
+          <article class="view-panel" id="p-ai">
+            <p>Private AI work reads structure: objects, relations, state, evidence. That view is not this page. This page does not publish current private state.</p>
+          </article>
+          <article class="view-panel" id="p-human">
+            <p>This page is the Human-facing motion. GitHub itself is the medium — a picture, a short story, a decision. Not a task graph.</p>
+          </article>
+        </div>
+      </fieldset>
+    </section>
+
+    <section id="cost" aria-labelledby="cost-title">
+      <h2 id="cost-title">Same height of conversation</h2>
+      <p class="section-lead">AI may think in repository-scale complexity. Human should not have to.</p>
+
+      <div class="cost">
+        <div class="cost-col">
+          <h3>Internal complexity</h3>
+          <div class="bars" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <p class="muted">branches, evidence, contracts, internals</p>
+        </div>
+        <p class="cost-through"><span>MOMO</span> compresses</p>
+        <div class="cost-col cost-human">
+          <h3>Human meaning</h3>
+          <p class="dotline" aria-hidden="true">─────●─────</p>
+          <ol>
+            <li>What happened</li>
+            <li>What is confirmed</li>
+            <li>What is next</li>
+            <li>Where things stand</li>
+            <li>What only Human may decide</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section id="story" aria-labelledby="story-title">
+      <h2 id="story-title">How this public place grew</h2>
+      <p class="section-lead">From the public Git history. Nothing here is invented after the fact.</p>
+
+      <ol class="timeline">
+        <li>
+          <h3>Genesis</h3>
+          <p>An empty public vessel, so Purpose and Constitution could later leave KIBI without confusion. The split was not done then. It is not done now.</p>
+        </li>
+        <li>
+          <h3>Identity</h3>
+          <p>Human said MOMO is not Human. MOMO watches the whole, and does not control it.</p>
+        </li>
+        <li>
+          <h3>Monitoring boundary</h3>
+          <p>Seeing was named as a responsibility, with a hard edge: observe, do not run the applications.</p>
+        </li>
+        <li>
+          <h3>Two views</h3>
+          <p>A private GitHub Project for Human. A private repository for AI. Current state stays there. Philosophy stays public.</p>
+        </li>
+        <li>
+          <h3>GitHub as the medium</h3>
+          <p>The public README became a face, not a dump. Then this page. Hosting, history, and meaning remain on GitHub.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="deeper" aria-labelledby="deeper-title">
+      <h2 id="deeper-title">If you want the words</h2>
+      <ul class="deeper">
+        <li><a href="https://github.com/asklessquill/MOMO">Public repository</a></li>
+        <li><a href="https://github.com/asklessquill/MOMO/blob/main/GENESIS.md">Genesis</a></li>
+        <li><a href="https://github.com/asklessquill/MOMO/blob/main/MONITORING.md">Monitoring boundary</a></li>
+        <li><a href="https://github.com/asklessquill/MOMO/blob/main/docs/principle-9.md">Principle 9</a></li>
+        <li><a href="https://github.com/asklessquill/MOMO/blob/main/docs/story.md">Story</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>GitHub is not only where MOMO is stored. It is part of how MOMO speaks to Human.</p>
+    <p class="muted">Public philosophy only. No live operational status, private evidence, or credentials on this page. Current KIBI remains canonical until Human decides otherwise.</p>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

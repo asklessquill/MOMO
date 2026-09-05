@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="t">
+  <title id="t">KIJI</title>
+  <path d="M14 38c8-14 20-18 34-12 2 8-2 16-12 20-8 3-16 2-22-8z" fill="#5f7d52"/>
+  <path d="M44 24l10-4-6 8" fill="#c7785c"/>
+  <path d="M22 28c6-8 14-10 20-4" fill="none" stroke="#3f5536" stroke-width="1.4"/>
+  <circle cx="28" cy="30" r="1.6" fill="#fff8f1"/>
+</svg>

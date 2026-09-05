@@ -34,6 +34,6 @@ AI complexity (kept back)
   <img src="../assets/principle-9.png" width="720" alt="Two directions of recomposition">
 </p>
 
-This public repository is the second side, done on GitHub itself.
+This public repository is the second side, done on GitHub itself. The first look is the [GitHub Pages interface](https://asklessquill.github.io/MOMO/).
 
 Private work stays private. This page shows the idea, not an operational status.

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="t">
+  <title id="t">KIBI</title>
+  <path d="M32 8v48" stroke="#8a6a4a" stroke-width="2.2" stroke-linecap="round"/>
+  <circle cx="32" cy="20" r="7.5" fill="#e89b7a"/>
+  <circle cx="32" cy="34" r="7.5" fill="#efe0c8"/>
+  <circle cx="32" cy="48" r="7.5" fill="#7f8f6d"/>
+</svg>
