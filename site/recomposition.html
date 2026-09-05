@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>KIBI → MOMO Recomposition | Project 桃多郎</title>
-  <meta name="description" content="Why KIBI redefined its purpose, handed System-wide philosophy to MOMO, and re-derived its own protocol principles.">
+  <title>KIBI → MOMO 再構成 | Project 桃多郎</title>
+  <meta name="description" content="KIBIがPurposeを再定義し、System-wideな思想をMOMOへ託し、自身のProtocol原則を再導出した流れを説明します。">
   <meta name="theme-color" content="#1c1613">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
@@ -29,6 +29,15 @@
     .sequence b { opacity:.45; }
     .decision { border:1px solid rgba(28,22,19,.18); border-radius:22px; padding:1.5rem; background:rgba(239,224,200,.34); }
     .decision h3 { margin-top:0; }
+    .lang-switch { display:flex; gap:.2rem; align-items:center; margin-left:.45rem; padding:.2rem; border:1px solid rgba(28,22,19,.16); border-radius:999px; background:rgba(255,255,255,.35); }
+    .lang-switch button { appearance:none; border:0; background:transparent; color:inherit; font:inherit; font-size:.78rem; padding:.38rem .62rem; border-radius:999px; cursor:pointer; }
+    .lang-switch button[aria-pressed="true"] { background:rgba(244,199,176,.72); font-weight:700; }
+    html[lang="ja"] .lang-en { display:none !important; }
+    html[lang="en"] .lang-ja { display:none !important; }
+    @media (max-width:900px) {
+      .mast { flex-wrap:wrap; }
+      .lang-switch { order:3; margin-left:auto; }
+    }
     @media (max-width:720px) {
       .story-step { grid-template-columns:1fr; }
       .story-step .num { width:44px; height:44px; }
@@ -39,7 +48,7 @@
   </style>
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
+  <a class="skip" href="#main"><span class="lang-ja">本文へ移動</span><span class="lang-en">Skip to content</span></a>
 
   <header class="mast">
     <a class="brand" href="index.html">
@@ -47,71 +56,146 @@
       <span>Project 桃多郎</span>
     </a>
     <nav aria-label="Recomposition page">
-      <a href="#why">Why</a>
-      <a href="#handoff">Handoff</a>
+      <a href="#why"><span class="lang-ja">流れ</span><span class="lang-en">Why</span></a>
+      <a href="#handoff"><span class="lang-ja">継承</span><span class="lang-en">Handoff</span></a>
       <a href="#kibi">KIBI</a>
-      <a href="#now">Now</a>
+      <a href="#now"><span class="lang-ja">現在地</span><span class="lang-en">Now</span></a>
     </nav>
+    <div class="lang-switch" role="group" aria-label="Language / 言語">
+      <button type="button" data-lang="ja" aria-pressed="true">日本語</button>
+      <button type="button" data-lang="en" aria-pressed="false">English</button>
+    </div>
   </header>
 
   <main id="main">
     <section class="hero recomp-hero" id="top">
       <p class="kicker">KIBI → MOMO recomposition</p>
-      <h1>This was not a split.<br>It was a clarification of purpose.</h1>
-      <p class="ja" lang="ja">分離が目的だったのではない。KIBIが「何のために存在するか」を明確にした。</p>
-      <p class="lead">Once KIBI understood its own purpose, the System-wide philosophy it had been carrying finally had a natural home: MOMO.</p>
-      <span class="status-pill">Proposal complete · Human ratification pending</span>
+      <h1 class="lang-ja">これは「分離」ではない。<br>Purposeを明確にした結果である。</h1>
+      <h1 class="lang-en">This was not a split.<br>It was a clarification of purpose.</h1>
+      <p class="lead lang-ja">KIBIが「何のために存在するか」を理解したことで、KIBIが育ててきたSystem-wideな思想にも、自然な居場所が見つかった。それがMOMOです。</p>
+      <p class="lead lang-en">Once KIBI understood its own purpose, the System-wide philosophy it had been carrying finally had a natural home: MOMO.</p>
+      <span class="status-pill lang-ja">提案完成 · Human批准待ち</span>
+      <span class="status-pill lang-en">Proposal complete · Human ratification pending</span>
     </section>
 
     <section id="why" aria-labelledby="why-title">
-      <h2 id="why-title">What actually happened</h2>
-      <p class="section-lead">The order matters. KIBI did not lose its identity. It found it.</p>
+      <h2 id="why-title" class="lang-ja">何が起きたのか</h2>
+      <h2 class="lang-en">What actually happened</h2>
+      <p class="section-lead lang-ja">順序が重要です。KIBIはIdentityを失ったのではなく、自分が何者なのかを見つけました。</p>
+      <p class="section-lead lang-en">The order matters. KIBI did not lose its identity. It found it.</p>
 
       <div class="story-flow">
-        <article class="story-step"><div class="num">1</div><div><h3>KIBI asked what it exists to do</h3><p>Not “what files should move?” Not “how do we separate MOMO?” The first question was the Purpose of KIBI itself.</p></div></article>
-        <article class="story-step"><div class="num">2</div><div><h3>KIBI defined its Purpose</h3><p>Enable different autonomous Applications to connect and cooperate safely and meaningfully without losing their independence.</p></div></article>
-        <article class="story-step"><div class="num">3</div><div><h3>A mismatch became visible</h3><p>KIBI had been carrying two kinds of things: System-wide philosophy and connection-protocol rules. Both had grown there, but they did not belong at the same level forever.</p></div></article>
-        <article class="story-step"><div class="num">4</div><div><h3>The philosophy was handed to MOMO</h3><p>Human sovereignty, federated autonomy, semantic compression, AI-native recomposition, complementarity and other System-wide ideas became MOMO Principle candidates.</p></div></article>
-        <article class="story-step"><div class="num">5</div><div><h3>KIBI re-derived its own Principles</h3><p>With its Purpose clear, KIBI rebuilt its Principles from first principles — then derived Protocol methodology from them.</p></div></article>
+        <article class="story-step">
+          <div class="num">1</div>
+          <div>
+            <h3 class="lang-ja">まず、KIBI自身のPurposeを問った</h3>
+            <h3 class="lang-en">KIBI asked what it exists to do</h3>
+            <p class="lang-ja">「何のファイルをMOMOへ移すか」「どう分離するか」から始めなかった。最初の問いは、KIBIは何のために存在するのか、でした。</p>
+            <p class="lang-en">Not “what files should move?” Not “how do we separate MOMO?” The first question was the Purpose of KIBI itself.</p>
+          </div>
+        </article>
+        <article class="story-step">
+          <div class="num">2</div>
+          <div>
+            <h3 class="lang-ja">KIBIのPurposeを定義した</h3>
+            <h3 class="lang-en">KIBI defined its Purpose</h3>
+            <p class="lang-ja">異なる自律Applicationが、それぞれの独立性を失わず、安全かつ意味的に接続・協働できる状態を成立させること。</p>
+            <p class="lang-en">Enable different autonomous Applications to connect and cooperate safely and meaningfully without losing their independence.</p>
+          </div>
+        </article>
+        <article class="story-step">
+          <div class="num">3</div>
+          <div>
+            <h3 class="lang-ja">そこで、二種類の思想が同居していたことが見えた</h3>
+            <h3 class="lang-en">A mismatch became visible</h3>
+            <p class="lang-ja">KIBIには、桃多郎System全体の思想と、Application同士を接続するProtocolの思想が一緒に育っていました。どちらも大切ですが、永遠に同じ抽象度に置く必要はありません。</p>
+            <p class="lang-en">KIBI had been carrying two kinds of things: System-wide philosophy and connection-protocol rules. Both had grown there, but they did not belong at the same level forever.</p>
+          </div>
+        </article>
+        <article class="story-step">
+          <div class="num">4</div>
+          <div>
+            <h3 class="lang-ja">System-wideな思想をMOMOへ託した</h3>
+            <h3 class="lang-en">The philosophy was handed to MOMO</h3>
+            <p class="lang-ja">Human主権、Federated Autonomy、Semantic Compression、AI-Native System Recomposition、Kibidango Complementarityなどは、MOMO Principlesの候補になりました。</p>
+            <p class="lang-en">Human sovereignty, federated autonomy, semantic compression, AI-native recomposition, complementarity and other System-wide ideas became MOMO Principle candidates.</p>
+          </div>
+        </article>
+        <article class="story-step">
+          <div class="num">5</div>
+          <div>
+            <h3 class="lang-ja">その後で、KIBI自身のPrinciplesをPurposeから導き直した</h3>
+            <h3 class="lang-en">KIBI re-derived its own Principles</h3>
+            <p class="lang-ja">既存11原則を機械的に削ったのではありません。KIBI Purposeを起点に、KIBI固有の原則を再導出し、さらにそこからProtocol方法論を導きました。</p>
+            <p class="lang-en">With its Purpose clear, KIBI rebuilt its Principles from first principles — then derived Protocol methodology from them.</p>
+          </div>
+        </article>
       </div>
     </section>
 
     <section id="handoff" aria-labelledby="handoff-title">
-      <h2 id="handoff-title">The handoff</h2>
-      <p class="section-lead">The ideas are not being discarded. Their ownership and abstraction are changing.</p>
+      <h2 id="handoff-title" class="lang-ja">思想の継承</h2>
+      <h2 class="lang-en">The handoff</h2>
+      <p class="section-lead lang-ja">思想を捨てたのではありません。育った場所の履歴を残したまま、将来の責任主体と抽象度を変えます。</p>
+      <p class="section-lead lang-en">The ideas are not being discarded. Their ownership and abstraction are changing.</p>
 
       <div class="handoff">
         <article class="handoff-card">
-          <p class="kicker">Grew inside KIBI</p>
-          <h3>System-wide philosophy</h3>
-          <p>Human sovereignty. Federated autonomy. Replaceability. Complexity containment. Semantic compression. AI-native recomposition. Durable operation. Complementarity. Real-world orientation.</p>
+          <p class="kicker lang-ja">KIBIで育った</p>
+          <p class="kicker lang-en">Grew inside KIBI</p>
+          <h3 class="lang-ja">桃多郎System全体の思想</h3>
+          <h3 class="lang-en">System-wide philosophy</h3>
+          <p class="lang-ja">Human主権。Federated Autonomy。Replaceability。Complexity Containment。Semantic Compression。AI-Native Recomposition。Durability。Complementarity。Real-World Orientation。</p>
+          <p class="lang-en">Human sovereignty. Federated autonomy. Replaceability. Complexity containment. Semantic compression. AI-native recomposition. Durable operation. Complementarity. Real-world orientation.</p>
         </article>
         <div class="handoff-arrow" aria-hidden="true">→</div>
         <article class="handoff-card">
-          <p class="kicker">Future home</p>
+          <p class="kicker lang-ja">将来の居場所</p>
+          <p class="kicker lang-en">Future home</p>
           <h3>MOMO Principles</h3>
-          <p>MOMO preserves and explains Human-ratified System-wide philosophy. MOMO is not Human and does not become a Supervisor.</p>
+          <p class="lang-ja">MOMOはHumanに批准されたSystem-wideな思想を保持し、観測し、HumanやApplicationsへ伝える。MOMOはHumanではなく、Supervisorにもなりません。</p>
+          <p class="lang-en">MOMO preserves and explains Human-ratified System-wide philosophy. MOMO is not Human and does not become a Supervisor.</p>
         </article>
       </div>
 
-      <p class="kibi-line">The ideas grew in KIBI. Their future System-wide home is MOMO.</p>
+      <p class="kibi-line lang-ja">思想はKIBIで育った。その将来のSystem-wideな居場所はMOMO。</p>
+      <p class="kibi-line lang-en">The ideas grew in KIBI. Their future System-wide home is MOMO.</p>
     </section>
 
     <section id="kibi" aria-labelledby="kibi-title">
-      <h2 id="kibi-title">KIBI after the clarification</h2>
-      <p class="section-lead">KIBI does not become smaller. It becomes sharper.</p>
+      <h2 id="kibi-title" class="lang-ja">Purposeを明確にした後のKIBI</h2>
+      <h2 class="lang-en">KIBI after the clarification</h2>
+      <p class="section-lead lang-ja">KIBIは小さくなるのではありません。KIBIであることが、より鮮明になります。</p>
+      <p class="section-lead lang-en">KIBI does not become smaller. It becomes sharper.</p>
 
       <div class="purpose-box">
         <p><strong>KIBI Purpose</strong></p>
-        <p lang="ja">異なる自律Applicationが、それぞれの独立性を失わず、安全かつ意味的に接続・協働できる状態を成立させること。</p>
+        <p class="lang-ja">異なる自律Applicationが、それぞれの独立性を失わず、安全かつ意味的に接続・協働できる状態を成立させること。</p>
+        <p class="lang-en">Enable different autonomous Applications to connect and cooperate safely and meaningfully without losing their independence.</p>
         <p><strong>KIBI is the Protocol that makes connection possible.</strong></p>
       </div>
 
       <div class="principle-grid">
-        <article class="principle-card"><strong>KP-01 · Preserve independent participation</strong><p>A connection must not take ownership of an Application's internals or independence.</p></article>
-        <article class="principle-card"><strong>KP-02 · Establish explicit shared meaning</strong><p>Participants need an explicit agreement about meaning, obligations and compatibility.</p></article>
-        <article class="principle-card"><strong>KP-03 · Act only under applicable current authority</strong><p>Past permission, identity or successful connection is never enough by itself to authorize a current effect.</p></article>
-        <article class="principle-card"><strong>KP-04 · Preserve truthful, recoverable boundary state</strong><p>A fresh Actor must be able to recover what is agreed, observed, unresolved and still permitted.</p></article>
+        <article class="principle-card">
+          <strong>KP-01 · Preserve independent participation</strong>
+          <p class="lang-ja">接続しても、各Applicationの責任・内部・独立性を奪わない。</p>
+          <p class="lang-en">A connection must not take ownership of an Application's internals or independence.</p>
+        </article>
+        <article class="principle-card">
+          <strong>KP-02 · Establish explicit shared meaning</strong>
+          <p class="lang-ja">誰と何を、どんな意味・責任・互換性で交換するのかをBoundaryで明示する。</p>
+          <p class="lang-en">Participants need an explicit agreement about meaning, obligations and compatibility.</p>
+        </article>
+        <article class="principle-card">
+          <strong>KP-03 · Act only under applicable current authority</strong>
+          <p class="lang-ja">過去の許可や接続実績ではなく、その時点で適用可能なAuthorityの範囲だけで作用する。</p>
+          <p class="lang-en">Past permission, identity or successful connection is never enough by itself to authorize a current effect.</p>
+        </article>
+        <article class="principle-card">
+          <strong>KP-04 · Preserve truthful, recoverable boundary state</strong>
+          <p class="lang-ja">新しいActorでも、会話履歴なしに「何が合意済みで、何が未解決で、今何が許可されているか」を回復できる。</p>
+          <p class="lang-en">A fresh Actor must be able to recover what is agreed, observed, unresolved and still permitted.</p>
+        </article>
       </div>
 
       <div class="sequence" aria-label="KIBI derivation order">
@@ -120,27 +204,58 @@
     </section>
 
     <section id="now" aria-labelledby="now-title">
-      <h2 id="now-title">Where things stand now</h2>
-      <p class="section-lead">The design work is complete. The constitutional decision is not.</p>
+      <h2 id="now-title" class="lang-ja">現在地</h2>
+      <h2 class="lang-en">Where things stand now</h2>
+      <p class="section-lead lang-ja">設計作業は完了しています。ただし、憲法上の決定はまだHumanが行っていません。</p>
+      <p class="section-lead lang-en">The design work is complete. The constitutional decision is not.</p>
 
       <div class="decision">
-        <h3>Human decision pending</h3>
-        <p>The proposed MOMO Principles and the four KIBI Principles have been independently reviewed and accepted as a reviewable proposal. They are <strong>not yet Canonical</strong>.</p>
-        <p>Current Human-ratified KIBI v0.3 remains the constitutional baseline until Human explicitly approves, amends, or rejects the recomposition.</p>
-        <p><strong>No Application migration, Protocol implementation, or new supervisory authority follows automatically.</strong></p>
+        <h3 class="lang-ja">Humanの判断待ち</h3>
+        <h3 class="lang-en">Human decision pending</h3>
+        <p class="lang-ja">MOMO Principles候補と4つのKIBI Principles候補は独立レビューを通過し、「批准可能な提案」として完成しています。しかし、<strong>まだCanonicalではありません。</strong></p>
+        <p class="lang-en">The proposed MOMO Principles and the four KIBI Principles have been independently reviewed and accepted as a reviewable proposal. They are <strong>not yet Canonical</strong>.</p>
+        <p class="lang-ja">Humanが明示的に承認・修正・却下するまでは、現在のHuman-ratified KIBI v0.3が憲法上の正本です。</p>
+        <p class="lang-en">Current Human-ratified KIBI v0.3 remains the constitutional baseline until Human explicitly approves, amends, or rejects the recomposition.</p>
+        <p class="lang-ja"><strong>Application移行、Protocol実装、MOMOへの新しい監督権限などは自動的には発生しません。</strong></p>
+        <p class="lang-en"><strong>No Application migration, Protocol implementation, or new supervisory authority follows automatically.</strong></p>
       </div>
 
       <ul class="deeper">
-        <li><a href="https://github.com/asklessquill/MOMO/blob/main/MOMO_PRINCIPLES_CANDIDATE.md">MOMO Principles candidate</a></li>
-        <li><a href="https://github.com/asklessquill/KIBI/blob/main/proposals/kibi-human-ratification-package.md">KIBI Human Ratification Package</a></li>
-        <li><a href="index.html">Back to MOMO Hub</a></li>
+        <li><a href="https://github.com/asklessquill/MOMO/blob/main/MOMO_PRINCIPLES_CANDIDATE.md"><span class="lang-ja">MOMO Principles候補</span><span class="lang-en">MOMO Principles candidate</span></a></li>
+        <li><a href="https://github.com/asklessquill/KIBI/blob/main/proposals/kibi-human-ratification-package.md"><span class="lang-ja">KIBI Human Ratification Package</span><span class="lang-en">KIBI Human Ratification Package</span></a></li>
+        <li><a href="index.html"><span class="lang-ja">MOMO Hubへ戻る</span><span class="lang-en">Back to MOMO Hub</span></a></li>
       </ul>
     </section>
   </main>
 
   <footer>
-    <p>Purpose clarified the boundary. The boundary clarified the architecture.</p>
-    <p class="muted">Public explanation only. Human remains final constitutional authority.</p>
+    <p class="lang-ja">PurposeがBoundaryを明確にし、BoundaryがArchitectureを明確にした。</p>
+    <p class="lang-en">Purpose clarified the boundary. The boundary clarified the architecture.</p>
+    <p class="muted lang-ja">Public向け説明のみ。最終的な憲法上のAuthorityはHumanにあります。</p>
+    <p class="muted lang-en">Public explanation only. Human remains final constitutional authority.</p>
   </footer>
+
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const buttons = [...document.querySelectorAll('[data-lang]')];
+      const params = new URLSearchParams(window.location.search);
+      const requested = params.get('lang');
+      const saved = localStorage.getItem('momo-language');
+      const initial = requested === 'en' || requested === 'ja' ? requested : (saved === 'en' ? 'en' : 'ja');
+
+      const apply = (lang, persist = true) => {
+        root.lang = lang;
+        buttons.forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.lang === lang)));
+        document.title = lang === 'ja'
+          ? 'KIBI → MOMO 再構成 | Project 桃多郎'
+          : 'KIBI → MOMO Recomposition | Project 桃多郎';
+        if (persist) localStorage.setItem('momo-language', lang);
+      };
+
+      buttons.forEach((button) => button.addEventListener('click', () => apply(button.dataset.lang)));
+      apply(initial, requested !== 'en' && requested !== 'ja');
+    })();
+  </script>
 </body>
 </html>
