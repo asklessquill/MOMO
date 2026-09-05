@@ -1,4 +1,11 @@
 (() => {
+  if (!document.querySelector('script[src="i18n.js"]')) {
+    const i18n = document.createElement("script");
+    i18n.src = "i18n.js";
+    i18n.async = false;
+    document.head.append(i18n);
+  }
+
   const mastNav = document.querySelector(".mast nav");
   if (mastNav && !mastNav.querySelector('a[href="recomposition.html"]')) {
     const link = document.createElement("a");
