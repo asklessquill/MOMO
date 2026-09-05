@@ -44,4 +44,4 @@ Full KIBI Protocol objects/contracts, a capability or knowledge service, full MO
 
 No KIJI/INNU/SARU repository is modified. No private outward-state snapshot, operational evidence or payload is copied to public MOMO. The public Pages receive semantic text/status corrections in their existing layout, not a new Cockpit architecture. The private GitHub Project is not updated or claimed synchronized.
 
-The whole A1 / Step① Task completes only after exact-target review and publication of all three repositories are verified in the final receipt. **Push + STOP.** A2 KIBI Protocol architecture and A3 MOMO/Cockpit architecture are separate Human Tasks; neither starts automatically.
+The [A1 closeout receipt](A1_CLOSEOUT_2026-09-06.md) records the recovered final independent PASS, Program Control acceptance, verified three-repository semantic publication and final remote-ref evidence. **A1 / Step① = COMPLETE; STOP.** A2 KIBI Protocol architecture and A3 MOMO/MOMO-Observatory architecture are separate Human Tasks; neither starts automatically.
