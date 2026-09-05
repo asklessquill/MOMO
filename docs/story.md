@@ -10,7 +10,9 @@ Then Human said: the Human view of the whole lives in a private GitHub Project. 
 
 Then Human said: GitHub itself should be the Human-facing medium. Not a separate website.
 
-![How this public place grew](../assets/evolution.svg)
+<p align="center">
+  <img src="../assets/evolution.png" width="720" alt="How this public place grew">
+</p>
 
 The older records remain:
 

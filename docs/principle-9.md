@@ -30,7 +30,9 @@ Human-native view
 AI complexity (kept back)
 ```
 
-![Two directions of recomposition](../assets/principle-9.svg)
+<p align="center">
+  <img src="../assets/principle-9.png" width="720" alt="Two directions of recomposition">
+</p>
 
 This public repository is the second side, done on GitHub itself.
 

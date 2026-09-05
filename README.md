@@ -29,7 +29,9 @@
 
 Before the sentences, the shape:
 
-![Human above MOMO, MOMO above KIBI, then KIJI INNU and SARU beside one another, then human society](assets/system-map.svg)
+<p align="center">
+  <img src="assets/system-map.png" width="720" alt="Human above MOMO, MOMO above KIBI, then KIJI INNU and SARU beside one another, then human society">
+</p>
 
 ```mermaid
 flowchart TB
@@ -47,7 +49,9 @@ This is the intended direction, not a finished architecture. Current KIBI still 
 
 ## What MOMO does
 
-![MOMO sees the whole and does not control applications](assets/observe-not-control.svg)
+<p align="center">
+  <img src="assets/observe-not-control.png" width="720" alt="MOMO sees the whole and does not control applications">
+</p>
 
 MOMO is not a command tower. It is an observatory.
 
@@ -55,7 +59,9 @@ Applications remain themselves. MOMO does not run their work, approve their rout
 
 ## The companions
 
-![See, build, act — KIJI, INNU, SARU](assets/meaning-flow.svg)
+<p align="center">
+  <img src="assets/meaning-flow.png" width="720" alt="See, build, act — KIJI, INNU, SARU">
+</p>
 
 | | | |
 |---|---|---|
@@ -87,7 +93,9 @@ A Human-facing system should not be imitated as a screen.
 
 An AI’s insides should not be poured back onto Human.
 
-![Two directions of recomposition](assets/principle-9.svg)
+<p align="center">
+  <img src="assets/principle-9.png" width="720" alt="Two directions of recomposition">
+</p>
 
 This repository is that second motion, done on GitHub itself.
 
@@ -95,7 +103,9 @@ This repository is that second motion, done on GitHub itself.
 
 ## How this public place grew
 
-![Genesis, identity, monitoring, two views, this page](assets/evolution.svg)
+<p align="center">
+  <img src="assets/evolution.png" width="720" alt="Genesis, identity, monitoring, two views, this page">
+</p>
 
 [The story.](docs/story.md)
 
