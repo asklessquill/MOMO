@@ -10,6 +10,7 @@
   }
 
   const JA = {
+    'An empty public vessel, so Purpose and Constitution could later leave KIBI without confusion. At the Genesis checkpoint, the responsibility transition had not yet occurred.':'PurposeとConstitutionを後にKIBIから混乱なく移せるよう、公開の器を用意しました。Genesisのcheckpoint時点では、責任の移管はまだ行われていませんでした。',
     'Companions stay themselves. Human approved the responsibility transition: MOMO holds System-wide meaning; KIBI owns connection. This picture of roles is not a command hierarchy or fixed pipeline.':'仲間はそれぞれ独立したままです。Human承認により、MOMOはSystem-wideな意味、KIBIは接続を担います。この役割図は指揮系統や固定pipelineではありません。',
     'This thought grew in KIBI Article 9. Its current home is MOMO MP-06, alongside MP-05 receiver-level meaning. The illustration is a Human-facing view, not an independent Constitution.':'この思想はKIBI第9条で育ちました。現在はMOMO MP-06と、受け手に合う意味を扱うMP-05へ継承されています。この図はHuman向けの表現であり、独立した憲法ではありません。',
     'MOMO Purpose and seven Principles':'MOMOのPurposeと7原則','One semantic truth, multiple views':'ひとつの正本、複数のView',
