@@ -1,4 +1,22 @@
 (() => {
+  const mastNav = document.querySelector(".mast nav");
+  if (mastNav && !mastNav.querySelector('a[href="recomposition.html"]')) {
+    const link = document.createElement("a");
+    link.href = "recomposition.html";
+    link.textContent = "Recomposition";
+    mastNav.append(link);
+  }
+
+  const deeper = document.querySelector("#deeper .deeper");
+  if (deeper && !deeper.querySelector('a[href="recomposition.html"]')) {
+    const li = document.createElement("li");
+    const link = document.createElement("a");
+    link.href = "recomposition.html";
+    link.textContent = "KIBI → MOMO recomposition";
+    li.append(link);
+    deeper.prepend(li);
+  }
+
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   const seen = (el) => {
