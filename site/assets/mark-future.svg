@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="t">
+  <title id="t">A future companion</title>
+  <circle cx="32" cy="32" r="16" fill="none" stroke="#c9a48c" stroke-width="2" stroke-dasharray="4 4"/>
+  <path d="M32 22v20M22 32h20" stroke="#e89b7a" stroke-width="2.2" stroke-linecap="round"/>
+</svg>

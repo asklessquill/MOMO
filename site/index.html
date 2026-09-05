@@ -21,26 +21,52 @@
       <span>Project 桃多郎</span>
     </a>
     <nav aria-label="Sections">
-      <a href="#map">Map</a>
-      <a href="#roles">Roles</a>
-      <a href="#observe">Observe</a>
-      <a href="#principle">Principle 9</a>
-      <a href="#cost">Meaning</a>
-      <a href="#story">Story</a>
+      <a href="#map">Journey</a>
+      <a href="#companions">Companions</a>
+      <a href="#kibidango">KIBI</a>
+      <a href="#principle">Principles</a>
+      <a href="#evolution">Evolution</a>
     </nav>
   </header>
 
+  <nav class="journey-rail" aria-label="The journey">
+    <a href="#top" data-stage="human">Human</a>
+    <a href="#map" data-stage="momo">MOMO</a>
+    <a href="#kibidango" data-stage="kibi">KIBI</a>
+    <a href="#companions" data-stage="companions">Companions</a>
+    <a href="#map-world" data-stage="world">World</a>
+  </nav>
+
   <main id="main">
-    <section class="hero" id="top">
+    <section class="hero" id="top" data-stage="human">
       <p class="kicker">Human intent enters here</p>
       <h1>MOMO sees the whole,<br>but does not control the whole.</h1>
       <p class="ja" lang="ja">全部を見る。でも全部は動かさない。</p>
       <p class="lead"><strong>MOMO ≠ Human.</strong> Human is the source. MOMO is the closest system representation of that intent.</p>
     </section>
 
-    <section class="map-section" id="map" aria-labelledby="map-title">
-      <h2 id="map-title">The map</h2>
-      <p class="section-lead">Before the sentences, the shape. Choose a role. The picture still stands if you never click.</p>
+    <section id="momo-three" aria-labelledby="momo-three-title" data-stage="momo">
+      <h2 id="momo-three-title">Three ways MOMO serves</h2>
+      <p class="section-lead">One Human intent, recomposed for three different readers.</p>
+      <ul class="role-grid">
+        <li class="card card-momo">
+          <h3>Show</h3>
+          <p>Make 桃多郎 understandable and memorable to guests through GitHub itself.</p>
+        </li>
+        <li class="card card-kibi">
+          <h3>Observe</h3>
+          <p>Let Human see where the whole system stands, then refresh the observation when needed.</p>
+        </li>
+        <li class="card card-kiji">
+          <h3>Transmit</h3>
+          <p>Carry Human purpose, principles, and boundaries to KIBI and every present or future companion.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="map-section" id="map" aria-labelledby="map-title" data-stage="momo">
+      <h2 id="map-title">The journey</h2>
+      <p class="section-lead">Human → MOMO → KIBI → companions → the world. Choose a place. The picture still stands if you never click.</p>
 
       <fieldset class="map-fieldset">
         <legend class="visually-hidden">Choose a role</legend>
@@ -51,9 +77,10 @@
         <input class="role-input" type="radio" name="role" id="r-kiji" value="kiji">
         <input class="role-input" type="radio" name="role" id="r-innu" value="innu">
         <input class="role-input" type="radio" name="role" id="r-saru" value="saru">
+        <input class="role-input" type="radio" name="role" id="r-future" value="future">
         <input class="role-input" type="radio" name="role" id="r-world" value="world">
 
-        <div class="map" aria-hidden="false">
+        <div class="map">
           <p class="map-note">Human is outside the system</p>
 
           <label class="node node-human" for="r-human">
@@ -72,11 +99,11 @@
           <label class="node node-kibi" for="r-kibi">
             <img src="assets/mark-kibi.svg" width="32" height="32" alt="">
             <span class="name">KIBI</span>
-            <span class="hint">connection layer</span>
+            <span class="hint">connects, does not command</span>
           </label>
-          <div class="flow flow-split" aria-hidden="true"></div>
+          <div class="flow flow-split flow-split-four" aria-hidden="true"></div>
 
-          <div class="apps">
+          <div class="apps apps-four">
             <label class="node node-kiji" for="r-kiji">
               <img src="assets/mark-kiji.svg" width="36" height="36" alt="">
               <span class="name">KIJI</span>
@@ -92,10 +119,15 @@
               <span class="name">SARU</span>
               <span class="verb">Act</span>
             </label>
+            <label class="node node-future" for="r-future">
+              <img src="assets/mark-future.svg" width="36" height="36" alt="">
+              <span class="name">?</span>
+              <span class="verb">+</span>
+            </label>
           </div>
-          <div class="flow flow-join" aria-hidden="true"></div>
+          <div class="flow flow-join flow-join-four" aria-hidden="true"></div>
 
-          <label class="node node-world" for="r-world">
+          <label class="node node-world" id="map-world" for="r-world">
             <img src="assets/mark-world.svg" width="32" height="32" alt="">
             <span class="name">Human society</span>
             <span class="hint">the world</span>
@@ -113,11 +145,11 @@
           </article>
           <article class="meaning" id="m-kibi">
             <h3>KIBI</h3>
-            <p>Lets applications connect without becoming one giant system. Connects. Does not supervise. Formal split from Constitution is not finished.</p>
+            <p>Lets companions journey together without becoming one giant system. Connects. Does not supervise.</p>
           </article>
           <article class="meaning" id="m-kiji">
             <h3>KIJI</h3>
-            <p>Sees the world. Finds what matters outside, and can hand that finding on. Remains itself.</p>
+            <p>Sees the world. Finds what matters outside. Remains itself.</p>
           </article>
           <article class="meaning" id="m-innu">
             <h3>INNU</h3>
@@ -126,6 +158,10 @@
           <article class="meaning" id="m-saru">
             <h3>SARU</h3>
             <p>Acts on people and the world. Remains itself.</p>
+          </article>
+          <article class="meaning" id="m-future">
+            <h3>A later companion</h3>
+            <p>The story is not limited to three. Companions may join, leave, or be replaced. The purpose remains.</p>
           </article>
           <article class="meaning" id="m-world">
             <h3>Human society</h3>
@@ -137,40 +173,136 @@
       <p class="footnote">Companions stay themselves. This is a picture of roles, not a factory line. Formal KIBI split is not finished. Current KIBI remains the Human-ratified constitutional text.</p>
     </section>
 
-    <section id="roles" aria-labelledby="roles-title">
-      <h2 id="roles-title">Meet the system</h2>
-      <p class="section-lead">Different strengths. One purpose. Applications may join, leave, or be replaced. They are not a fixed pipeline.</p>
+    <section id="why-companions" aria-labelledby="why-companions-title" data-stage="companions">
+      <h2 id="why-companions-title">Why companions?</h2>
+      <p class="section-lead">Strength is not concentrated in one hero. It is composed from different strengths that remain different.</p>
 
-      <ul class="role-grid">
-        <li class="card card-momo">
-          <img src="assets/mark-momo.svg" width="48" height="48" alt="">
-          <h3>MOMO</h3>
-          <p>Keeps Human intent visible and watches the whole.</p>
-        </li>
-        <li class="card card-kibi">
-          <img src="assets/mark-kibi.svg" width="48" height="48" alt="">
-          <h3>KIBI</h3>
-          <p>Makes applications connect without becoming one giant system.</p>
-        </li>
-        <li class="card card-kiji">
-          <img src="assets/mark-kiji.svg" width="48" height="48" alt="">
-          <h3>KIJI</h3>
-          <p>Sees the world.</p>
-        </li>
-        <li class="card card-innu">
-          <img src="assets/mark-innu.svg" width="48" height="48" alt="">
-          <h3>INNU</h3>
-          <p>Builds.</p>
-        </li>
-        <li class="card card-saru">
-          <img src="assets/mark-saru.svg" width="48" height="48" alt="">
-          <h3>SARU</h3>
-          <p>Acts on people and the world.</p>
-        </li>
-      </ul>
+      <blockquote class="story-quote">
+        <p>Momotaro does not bring three companions because he is strong. He becomes strong because each companion brings a different strength.</p>
+        <footer>One purpose. Different abilities. No requirement to become one thing.</footer>
+      </blockquote>
     </section>
 
-    <section id="observe" aria-labelledby="observe-title">
+    <section id="companions" aria-labelledby="companions-title" data-stage="companions">
+      <h2 id="companions-title">Companion explorer</h2>
+      <p class="section-lead">See. Build. Act. And room for whoever the journey needs next.</p>
+
+      <fieldset class="explore-fieldset">
+        <legend class="visually-hidden">Choose a companion</legend>
+        <input class="explore-input" type="radio" name="companion" id="c-kiji" checked>
+        <input class="explore-input" type="radio" name="companion" id="c-innu">
+        <input class="explore-input" type="radio" name="companion" id="c-saru">
+        <input class="explore-input" type="radio" name="companion" id="c-future">
+
+        <div class="future-grid" role="presentation">
+          <label class="future-role strength-kiji" for="c-kiji">
+            <img src="assets/mark-kiji.svg" width="44" height="44" alt="">
+            <strong>KIJI</strong><span>See</span>
+          </label>
+          <label class="future-role strength-innu" for="c-innu">
+            <img src="assets/mark-innu.svg" width="44" height="44" alt="">
+            <strong>INNU</strong><span>Build</span>
+          </label>
+          <label class="future-role strength-saru" for="c-saru">
+            <img src="assets/mark-saru.svg" width="44" height="44" alt="">
+            <strong>SARU</strong><span>Act</span>
+          </label>
+          <label class="future-role future-new" for="c-future">
+            <img src="assets/mark-future.svg" width="44" height="44" alt="">
+            <strong>?</strong><span>+</span>
+          </label>
+        </div>
+
+        <div class="explore-meaning" aria-live="polite">
+          <article class="explore-card" id="x-kiji">
+            <h3>KIJI — See</h3>
+            <dl>
+              <dt>Strength</dt><dd>Observes the world and finds meaningful change.</dd>
+              <dt>Boundary</dt><dd>Does not build or act in another companion’s place.</dd>
+              <dt>Contribution</dt><dd>What was seen can be handed on.</dd>
+              <dt>Relation</dt><dd>MOMO watches the finding. KIBI can connect it. KIJI remains itself.</dd>
+            </dl>
+          </article>
+          <article class="explore-card" id="x-innu">
+            <h3>INNU — Build</h3>
+            <dl>
+              <dt>Strength</dt><dd>Turns need into something real.</dd>
+              <dt>Boundary</dt><dd>Keeps execution responsibility local.</dd>
+              <dt>Contribution</dt><dd>Creates systems and artifacts without becoming the whole.</dd>
+              <dt>Relation</dt><dd>MOMO does not rearrange INNU’s work. KIBI connects. INNU remains itself.</dd>
+            </dl>
+          </article>
+          <article class="explore-card" id="x-saru">
+            <h3>SARU — Act</h3>
+            <dl>
+              <dt>Strength</dt><dd>Acts on people and the world.</dd>
+              <dt>Boundary</dt><dd>Faces Human society. Does not become the system.</dd>
+              <dt>Contribution</dt><dd>Creates relationships and outcomes.</dd>
+              <dt>Relation</dt><dd>MOMO does not pick SARU’s actions one by one. SARU remains itself.</dd>
+            </dl>
+          </article>
+          <article class="explore-card" id="x-future">
+            <h3>Not only three</h3>
+            <dl>
+              <dt>Strength</dt><dd>Unknown yet. The journey will name it.</dd>
+              <dt>Boundary</dt><dd>Must remain itself. Must not become a fourth worker under a boss.</dd>
+              <dt>Contribution</dt><dd>A role 桃多郎 may need later.</dd>
+              <dt>Relation</dt><dd>Companions may join, leave, or be replaced. The purpose remains.</dd>
+            </dl>
+          </article>
+        </div>
+      </fieldset>
+    </section>
+
+    <section id="kibidango" aria-labelledby="kibidango-title" data-stage="kibi">
+      <h2 id="kibidango-title">KIBI — the kibidango</h2>
+      <p class="section-lead">Different strengths do not need to become one system. KIBI connects without erasing identity.</p>
+
+      <svg class="kibi-split" viewBox="0 0 360 160" role="img" aria-labelledby="kibi-split-title kibi-split-desc">
+        <title id="kibi-split-title">KIBI lets paths branch without joining the companions into one</title>
+        <desc id="kibi-split-desc">MOMO above, KIBI in the middle, then four open paths for KIJI, INNU, SARU, and a later companion.</desc>
+        <path class="split-line" d="M180 18 V52"/>
+        <path class="split-line split-branch" d="M180 68 C180 92 48 108 48 128"/>
+        <path class="split-line split-branch" d="M180 68 C180 92 128 108 128 128"/>
+        <path class="split-line split-branch" d="M180 68 C180 92 232 108 232 128"/>
+        <path class="split-line split-branch" d="M180 68 C180 92 312 108 312 128"/>
+        <rect x="138" y="8" width="84" height="22" rx="11" fill="#f4c7b0"/>
+        <text x="180" y="23" text-anchor="middle">MOMO</text>
+        <rect x="132" y="52" width="96" height="22" rx="11" fill="#efe0c8"/>
+        <text x="180" y="67" text-anchor="middle">KIBI</text>
+        <text x="48" y="148" text-anchor="middle">KIJI</text>
+        <text x="128" y="148" text-anchor="middle">INNU</text>
+        <text x="232" y="148" text-anchor="middle">SARU</text>
+        <text x="312" y="148" text-anchor="middle">?</text>
+      </svg>
+
+      <div class="kibi-journey">
+        <article class="kibi-stage">
+          <h3>Different strengths</h3>
+          <p>Each application keeps its own role and way of working.</p>
+        </article>
+        <div class="kibi-arrow" aria-hidden="true">→</div>
+        <article class="kibi-stage kibi-stage-center">
+          <h3>KIBI connects</h3>
+          <p>Shared meaning and boundaries make a journey possible.</p>
+        </article>
+        <div class="kibi-arrow" aria-hidden="true">→</div>
+        <article class="kibi-stage">
+          <h3>Still themselves</h3>
+          <p>They coordinate without collapsing into one giant application.</p>
+        </article>
+      </div>
+
+      <p class="kibi-line">KIBI does not make the companions one. It lets them journey together while remaining themselves.</p>
+    </section>
+
+    <section id="future-companions" aria-labelledby="future-companions-title" data-stage="companions">
+      <h2 id="future-companions-title">The story is not limited to three</h2>
+      <p class="section-lead">桃「多」郎: many, not a closed set. Companions may join, leave, evolve, or be replaced as the journey changes.</p>
+      <p class="future-rule">Companions may change. Human purpose remains the reason for the journey.</p>
+    </section>
+
+    <section id="observe" aria-labelledby="observe-title" data-stage="momo">
       <h2 id="observe-title">Observe, not control</h2>
       <p class="section-lead">MOMO is an observatory. Applications act. Human decides.</p>
 
@@ -225,10 +357,10 @@
             <p>Do not make AI click Human screens. Do not pour AI insides back onto Human. Recompose the meaning, both ways.</p>
           </article>
           <article class="view-panel" id="p-ai">
-            <p>Private AI work reads structure: objects, relations, state, evidence. That view is not this page. This page does not publish current private state.</p>
+            <p>Private AI work reads structure. That view is not this page. This page does not publish current private state.</p>
           </article>
           <article class="view-panel" id="p-human">
-            <p>This page is the Human-facing motion. GitHub itself is the medium — a picture, a short story, a decision. Not a task graph.</p>
+            <p>This page is the Human-facing motion. GitHub itself is the medium — a picture, a short story, a decision.</p>
           </article>
         </div>
       </fieldset>
@@ -236,7 +368,7 @@
 
     <section id="cost" aria-labelledby="cost-title">
       <h2 id="cost-title">Same height of conversation</h2>
-      <p class="section-lead">AI may think in repository-scale complexity. Human should not have to.</p>
+      <p class="section-lead">AI may expand complexity internally. Human should receive meaning at Human scale.</p>
 
       <div class="cost">
         <div class="cost-col">
@@ -246,7 +378,7 @@
             <span></span><span></span><span></span><span></span><span></span>
             <span></span><span></span><span></span><span></span><span></span>
           </div>
-          <p class="muted">branches, evidence, contracts, internals</p>
+          <p class="muted">See · Build · Act · Connect · Observe · Decide</p>
         </div>
         <p class="cost-through"><span>MOMO</span> compresses</p>
         <div class="cost-col cost-human">
@@ -263,30 +395,50 @@
       </div>
     </section>
 
-    <section id="story" aria-labelledby="story-title">
-      <h2 id="story-title">How this public place grew</h2>
-      <p class="section-lead">From the public Git history. Nothing here is invented after the fact.</p>
+    <section id="evolution" aria-labelledby="evolution-title">
+      <h2 id="evolution-title">Git remembers</h2>
+      <p class="section-lead">This public history is how 桃多郎 became a face. Nothing here is invented after the fact.</p>
 
-      <ol class="timeline">
+      <ol class="timeline" id="living-git">
         <li>
           <h3>Genesis</h3>
           <p>An empty public vessel, so Purpose and Constitution could later leave KIBI without confusion. The split was not done then. It is not done now.</p>
+          <p class="commit"><a href="https://github.com/asklessquill/MOMO/commit/7c5ef03d275e7696bf90be32739c5a07bb8a929c">7c5ef03</a></p>
         </li>
         <li>
           <h3>Identity</h3>
           <p>Human said MOMO is not Human. MOMO watches the whole, and does not control it.</p>
+          <p class="commit"><a href="https://github.com/asklessquill/MOMO/blob/main/GENESIS.md">GENESIS.md</a> — recorded after the vessel opened</p>
         </li>
         <li>
           <h3>Monitoring boundary</h3>
           <p>Seeing was named as a responsibility, with a hard edge: observe, do not run the applications.</p>
+          <p class="commit"><a href="https://github.com/asklessquill/MOMO/commit/0401c5fc029247810b7e794b50afe2267e0c04f5">0401c5f</a></p>
         </li>
         <li>
           <h3>Two views</h3>
           <p>A private GitHub Project for Human. A private repository for AI. Current state stays there. Philosophy stays public.</p>
+          <p class="commit"><a href="https://github.com/asklessquill/MOMO/commit/d7c3876ef57d322bb5b9b9a3bdcd930b57879aab">d7c3876</a></p>
         </li>
         <li>
           <h3>GitHub as the medium</h3>
-          <p>The public README became a face, not a dump. Then this page. Hosting, history, and meaning remain on GitHub.</p>
+          <p>The public README became a face, not a dump. Then this page.</p>
+          <p class="commit"><a href="https://github.com/asklessquill/MOMO/commit/536782a1200e834aa6685ca4312db80a0acaccd0">536782a</a></p>
+        </li>
+        <li>
+          <h3>Named 桃多郎</h3>
+          <p>Human named the public face. Many companions, one purpose.</p>
+          <p class="commit"><a href="https://github.com/asklessquill/MOMO/commit/cfba5a497f6e1d7a368474c101621febfad92078">cfba5a4</a></p>
+        </li>
+        <li>
+          <h3>Public Pages</h3>
+          <p>GitHub Pages became the Human-native interface.</p>
+          <p class="commit"><a href="https://github.com/asklessquill/MOMO/commit/8253d7d6fcc6b8ea1427035f919dfa2a68633c45">8253d7d</a></p>
+        </li>
+        <li>
+          <h3>Companion Journey</h3>
+          <p>Why companions, the kibidango, and a story that is not limited to three.</p>
+          <p class="commit"><a href="https://github.com/asklessquill/MOMO/commit/ef52c4e0ec6e65a55f9e777f852bbdd411eda44e">ef52c4e</a></p>
         </li>
       </ol>
     </section>
@@ -295,6 +447,7 @@
       <h2 id="deeper-title">If you want the words</h2>
       <ul class="deeper">
         <li><a href="https://github.com/asklessquill/MOMO">Public repository</a></li>
+        <li><a href="https://github.com/asklessquill/MOMO/commits/main">Public history</a></li>
         <li><a href="https://github.com/asklessquill/MOMO/blob/main/GENESIS.md">Genesis</a></li>
         <li><a href="https://github.com/asklessquill/MOMO/blob/main/MONITORING.md">Monitoring boundary</a></li>
         <li><a href="https://github.com/asklessquill/MOMO/blob/main/docs/principle-9.md">Principle 9</a></li>
@@ -304,7 +457,7 @@
   </main>
 
   <footer>
-    <p>GitHub is not only where MOMO is stored. It is part of how MOMO speaks to Human.</p>
+    <p>Git remembers how the system became what it is. GitHub is part of how MOMO speaks to Human.</p>
     <p class="muted">Public philosophy only. No live operational status, private evidence, or credentials on this page. Current KIBI remains canonical until Human decides otherwise.</p>
   </footer>
 

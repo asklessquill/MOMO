@@ -1,0 +1,62 @@
+{
+  "source": "https://github.com/asklessquill/MOMO",
+  "note": "Public commits only. Git remembers how this public place became what it is.",
+  "milestones": [
+    {
+      "id": "genesis",
+      "title": "Genesis",
+      "sha": "7c5ef03d275e7696bf90be32739c5a07bb8a929c",
+      "short": "7c5ef03",
+      "meaning": "An empty public vessel, so Purpose and Constitution could later leave KIBI without confusion. The split was not done then. It is not done now."
+    },
+    {
+      "id": "identity",
+      "title": "Identity",
+      "source": "GENESIS.md",
+      "meaning": "Human said MOMO is not Human. MOMO watches the whole, and does not control it."
+    },
+    {
+      "id": "monitoring",
+      "title": "Monitoring boundary",
+      "sha": "0401c5fc029247810b7e794b50afe2267e0c04f5",
+      "short": "0401c5f",
+      "meaning": "Seeing was named as a responsibility, with a hard edge: observe, do not run the applications."
+    },
+    {
+      "id": "two-views",
+      "title": "Two views",
+      "sha": "d7c3876ef57d322bb5b9b9a3bdcd930b57879aab",
+      "short": "d7c3876",
+      "also": ["9f70f07"],
+      "meaning": "A private GitHub Project for Human. A private repository for AI. Current state stays there. Philosophy stays public."
+    },
+    {
+      "id": "github-medium",
+      "title": "GitHub as the medium",
+      "sha": "536782a1200e834aa6685ca4312db80a0acaccd0",
+      "short": "536782a",
+      "meaning": "The public README became a face, not a dump. Hosting, history, and meaning remain on GitHub."
+    },
+    {
+      "id": "named",
+      "title": "Named 桃多郎",
+      "sha": "cfba5a497f6e1d7a368474c101621febfad92078",
+      "short": "cfba5a4",
+      "meaning": "Human named the public face 桃多郎. Many companions, one purpose."
+    },
+    {
+      "id": "pages",
+      "title": "Public Pages",
+      "sha": "8253d7d6fcc6b8ea1427035f919dfa2a68633c45",
+      "short": "8253d7d",
+      "meaning": "GitHub Pages became the Human-native interface. The repository stayed the door."
+    },
+    {
+      "id": "companion-journey",
+      "title": "Companion Journey",
+      "sha": "ef52c4e0ec6e65a55f9e777f852bbdd411eda44e",
+      "short": "ef52c4e",
+      "meaning": "Why companions, the kibidango, and a story that is not limited to three."
+    }
+  ]
+}
