@@ -13,5 +13,6 @@
 - [Current meaning](CURRENT.md) and [Human ratification scope](HUMAN_RATIFICATION_2026-09-05.md)
 - [MOMO Purpose and seven Principles](PRINCIPLES.md)
 - [MOMO-Observatory → MOMO: one semantic truth, multiple views](SOURCE_AND_VIEWS.md)
+- [MOMO Genesis](GENESIS.md) and [Project design history](HISTORY.md)
 
 MOMO-Observatory holds the Actor-readable semantic source. This public repository presents its authorized Human-facing views, with source revision and provenance. Application facts remain with their owning sources; private state is not published here.
