@@ -13,6 +13,12 @@
     link.textContent = "Recomposition";
     mastNav.append(link);
   }
+  if (mastNav && !mastNav.querySelector('a[href="oh-dango-news.html"]')) {
+    const link = document.createElement("a");
+    link.href = "oh-dango-news.html";
+    link.textContent = "Oh Dango News";
+    mastNav.append(link);
+  }
 
   const deeper = document.querySelector("#deeper .deeper");
   if (deeper && !deeper.querySelector('a[href="recomposition.html"]')) {
@@ -20,6 +26,14 @@
     const link = document.createElement("a");
     link.href = "recomposition.html";
     link.textContent = "KIBI → MOMO recomposition";
+    li.append(link);
+    deeper.prepend(li);
+  }
+  if (deeper && !deeper.querySelector('a[href="oh-dango-news.html"]')) {
+    const li = document.createElement("li");
+    const link = document.createElement("a");
+    link.href = "oh-dango-news.html";
+    link.textContent = "Oh Dango News — model routing updates";
     li.append(link);
     deeper.prepend(li);
   }
