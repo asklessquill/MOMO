@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Oh Dango News — Project 桃多郎</title>
+  <meta name="description" content="Dango model-routing knowledgeから、Humanが知る価値のある更新だけをMOMOが投影します。">
+  <meta name="theme-color" content="#1c1613">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .dango-page { max-width: 1040px; margin: 0 auto; padding: 7rem 1.25rem 5rem; }
+    .dango-hero { padding: 2.8rem 0 2rem; }
+    .dango-hero h1 { margin-bottom: .6rem; }
+    .dango-hero .lead { max-width: 760px; }
+    .dango-status { display: flex; gap: .7rem; flex-wrap: wrap; align-items: center; margin: 1.4rem 0 0; }
+    .dango-pill { display: inline-flex; align-items: center; border: 1px solid rgba(113, 87, 67, .25); border-radius: 999px; padding: .38rem .7rem; font-size: .82rem; background: rgba(255,255,255,.48); }
+    .dango-rule { margin: 1.5rem 0 2.2rem; padding: 1rem 1.1rem; border-left: 3px solid #c9956d; background: rgba(255,255,255,.38); }
+    .news-list { display: grid; gap: 1rem; }
+    .news-item { border: 1px solid rgba(113, 87, 67, .2); border-radius: 18px; padding: 1.25rem 1.3rem; background: rgba(255,255,255,.52); box-shadow: 0 10px 32px rgba(68, 45, 32, .06); }
+    .news-meta { display: flex; gap: .55rem; flex-wrap: wrap; align-items: center; margin-bottom: .65rem; font-size: .82rem; }
+    .news-meta strong { color: #6a4632; }
+    .news-item h2 { font-size: clamp(1.12rem, 2.5vw, 1.45rem); margin: 0 0 .65rem; }
+    .news-item p { margin: .55rem 0; }
+    .news-detail { display: grid; gap: .45rem; margin-top: .9rem; padding-top: .85rem; border-top: 1px solid rgba(113, 87, 67, .15); font-size: .92rem; }
+    .news-detail strong { color: #6a4632; }
+    .news-source { margin-top: .9rem; }
+    .news-source a { font-weight: 650; }
+    .dango-empty { padding: 2rem 0; color: #6d625b; }
+    .dango-back { display: inline-block; margin-top: 2.4rem; }
+    @media (max-width: 700px) { .dango-page { padding-top: 5.8rem; } }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="mast">
+    <a class="brand" href="index.html">
+      <img src="assets/momo-git-icon.png" width="56" height="56" alt="A peach with an eye — MOMO watches">
+      <span>Project 桃多郎</span>
+    </a>
+    <nav aria-label="Sections">
+      <a href="index.html">Home</a>
+      <a href="recomposition.html">Recomposition</a>
+      <a href="oh-dango-news.html" aria-current="page">Oh Dango News</a>
+    </nav>
+  </header>
+
+  <main id="main" class="dango-page">
+    <section class="dango-hero">
+      <p class="kicker">MOMO public projection</p>
+      <h1>Oh Dango News</h1>
+      <p class="ja">モデル選びで「これは知っておいた方がいい」を、Dangoから人間サイズに。</p>
+      <p class="lead">Dangoはprivateなmodel-routing knowledge baseです。このページはその正本を複製せず、Humanが判断に使えるmaterialな更新だけをMOMOが公開投影します。</p>
+      <div class="dango-status">
+        <span class="dango-pill" id="updated">Loading latest snapshot…</span>
+        <span class="dango-pill">Dango = source · MOMO = public view</span>
+      </div>
+    </section>
+
+    <p class="dango-rule" id="rule">Routing-changing、canonical knowledge、prompting policyなど、人間に知らせる価値がある更新だけを掲載します。低信頼のinbox evidenceは、それだけでは公開ニュースにしません。</p>
+
+    <section aria-labelledby="latest-title">
+      <h2 id="latest-title">Latest</h2>
+      <div class="news-list" id="news" aria-live="polite">
+        <p class="dango-empty">Dango snapshotを読み込んでいます。</p>
+      </div>
+    </section>
+
+    <a class="dango-back" href="index.html">← Project 桃多郎へ戻る</a>
+  </main>
+
+  <footer>
+    <p>One semantic truth → multiple views. Dango keeps routing evidence durable; MOMO makes material change visible to Human.</p>
+    <p class="muted">No private Dango repository content, credentials, or non-public operational state is fetched by this public page. Only an explicitly published snapshot is shown.</p>
+  </footer>
+
+  <script>
+    (() => {
+      const news = document.querySelector('#news');
+      const updated = document.querySelector('#updated');
+      const rule = document.querySelector('#rule');
+      const addText = (parent, label, value) => {
+        if (!value) return;
+        const p = document.createElement('p');
+        const strong = document.createElement('strong');
+        strong.textContent = `${label}: `;
+        p.append(strong, document.createTextNode(value));
+        parent.append(p);
+      };
+
+      fetch('data/oh-dango-news.json', { cache: 'no-store' })
+        .then((res) => {
+          if (!res.ok) throw new Error('snapshot unavailable');
+          return res.json();
+        })
+        .then((data) => {
+          if (data.updated_at) {
+            const when = new Date(data.updated_at);
+            updated.textContent = `Updated ${when.toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' })} JST`;
+          }
+          if (data.publication_rule) rule.textContent = data.publication_rule;
+          const items = Array.isArray(data.items) ? data.items : [];
+          if (!items.length) {
+            news.innerHTML = '<p class="dango-empty">現在、公開対象のmaterial updateはありません。</p>';
+            return;
+          }
+          news.replaceChildren(...items.map((item) => {
+            const article = document.createElement('article');
+            article.className = 'news-item';
+
+            const meta = document.createElement('div');
+            meta.className = 'news-meta';
+            const date = document.createElement('strong');
+            date.textContent = item.date || '';
+            const kind = document.createElement('span');
+            kind.className = 'dango-pill';
+            kind.textContent = item.kind || 'Update';
+            const signal = document.createElement('span');
+            signal.className = 'dango-pill';
+            signal.textContent = item.signal || 'Material';
+            meta.append(date, kind, signal);
+
+            const title = document.createElement('h2');
+            title.textContent = item.title || 'Dango update';
+            const summary = document.createElement('p');
+            summary.textContent = item.summary || '';
+
+            const detail = document.createElement('div');
+            detail.className = 'news-detail';
+            addText(detail, 'Evidence', item.strength);
+            addText(detail, 'Astra vs Sol', item.astra_vs_sol);
+            addText(detail, 'Routing implication', item.implication);
+
+            article.append(meta, title, summary, detail);
+            if (item.source_url) {
+              const source = document.createElement('p');
+              source.className = 'news-source';
+              const a = document.createElement('a');
+              a.href = item.source_url;
+              a.target = '_blank';
+              a.rel = 'noreferrer';
+              a.textContent = 'Public source ↗';
+              source.append(a);
+              article.append(source);
+            }
+            return article;
+          }));
+        })
+        .catch(() => {
+          updated.textContent = 'Snapshot unavailable';
+          news.innerHTML = '<p class="dango-empty">公開snapshotを取得できませんでした。MOMOの次回更新時に再確認してください。</p>';
+        });
+    })();
+  </script>
+</body>
+</html>
