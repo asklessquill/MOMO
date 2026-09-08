@@ -1,0 +1,64 @@
+{
+  "title": "Oh Dango News",
+  "subtitle": "Dangoのmodel-routing knowledgeから、Humanが知る価値のある更新だけをMOMOが投影します。",
+  "updated_at": "2026-09-09T07:54:00+09:00",
+  "source": "asklessquill/Dango (private durable knowledge base)",
+  "publication_rule": "Material / routing-changing / canonical prompting developments only. Low-confidence inbox-only evidence stays private until it becomes worth surfacing.",
+  "items": [
+    {
+      "date": "2026-09-09",
+      "kind": "Prompting / Harness",
+      "signal": "Material",
+      "title": "Toolが見えていても、Toolの意味がモデルに届いているとは限らない",
+      "summary": "Codex code-modeでは、大きく深いMCP schemaが圧縮され、nested operation semanticsがunknownへ落ちる経路を確認。問題発生時はAstraのreasoning tierを上げる前に、model-visible tool contractを確認する。",
+      "strength": "MODERATE-HIGH for Codex 0.153.4 harness mechanism",
+      "astra_vs_sol": "モデル固有の優劣Evidenceではない。同じ壊れたcontractを受け取ればSolも影響を受け得る。",
+      "implication": "Exposed tool name ≠ usable model-visible tool contract.",
+      "source_url": "https://github.com/openai/codex/issues/43902"
+    },
+    {
+      "date": "2026-09-09",
+      "kind": "Routing / Economics",
+      "signal": "Canonical knowledge",
+      "title": "安いモデルではなく、成功した仕事1件あたりの経済性を見る",
+      "summary": "OpenAI公開Terminal-Bench Scienceでは、hard scientific/stateful terminal workでAstraがSolを大きく上回り、示された構成では推定task costでも優位。terminalというsurfaceだけでSolへ寄せない。",
+      "strength": "HIGH official matched benchmark; MODERATE for routing generalization",
+      "astra_vs_sol": "Terminal-Bench Science 0.1: Astra 61.1%のlower-cost設定 vs Sol best 22.4%。OpenAI推定ではAstra側が約27%低コスト。",
+      "implication": "Nominal model price ≠ expected completed-task cost.",
+      "source_url": "https://openai.com/index/gpt-6-astra/"
+    },
+    {
+      "date": "2026-09-09",
+      "kind": "Quota / Provenance",
+      "signal": "Canonical prompting",
+      "title": "使用率%には、どのreset windowの数字かというprovenanceが必要",
+      "summary": "OpenAIがCodexのbanked reset / global reset semanticsを明文化。resetは5時間枠とweekly枠を更新し、weekly reset dateも変え得るため、reset境界を跨いだusage deltaを一本のcounterとして比較しない。",
+      "strength": "HIGH official product semantics",
+      "astra_vs_sol": "性能差ではない。Astra/Solのallowance比較双方に同じprovenance要件を課す。",
+      "implication": "Allowance meter is authority for the current window; reset events are part of its provenance.",
+      "source_url": "https://help.openai.com/en/articles/20001498"
+    },
+    {
+      "date": "2026-09-08",
+      "kind": "Surface health / Fallback",
+      "signal": "Canonical knowledge",
+      "title": "Astraのalignmentが強くても、載せたsurfaceのapproval境界まで強いとは限らない",
+      "summary": "同一Codex環境でbenign local workをAstra→Solへ切り替えるとopaque approval loopが消え、Astraへ戻すと再発したfirsthand A/B報告を取得。surfaceがunhealthyならbounded Sol fallbackを許容する。",
+      "strength": "MODERATE-HIGH for current Codex surface behavior; LOW for model-intrinsic causality",
+      "astra_vs_sol": "同一environmentでの実務的なA/B差。Solが本質的にsaferという意味ではない。",
+      "implication": "Model-level alignment advantage ≠ realized guardian/approval surface quality.",
+      "source_url": "https://github.com/openai/codex/issues/43814"
+    },
+    {
+      "date": "2026-09-08",
+      "kind": "Human authority / Re-entry",
+      "signal": "Canonical prompting",
+      "title": "Humanに聞いた、だけではHuman authorityを確保したEvidenceにならない",
+      "summary": "Codex Desktopでasync clarification cardがtask completion時に消え、後からHumanが回答できない3/3再現報告。Human-required stateはrequestedとvisible/answerableとreceived/boundを分けて扱う。",
+      "strength": "MODERATE-HIGH for reported surface failure; LOW for model attribution",
+      "astra_vs_sol": "matched Sol controlなし。Astra cognitionではなくsurface lifecycleのEvidenceとして扱う。",
+      "implication": "Human re-entry must be durable, not merely requested.",
+      "source_url": "https://github.com/openai/codex/issues/43803"
+    }
+  ]
+}
