@@ -1,10 +1,21 @@
 {
   "title": "Oh Dango News",
   "subtitle": "Dangoのmodel-routing knowledgeから、Humanが知る価値のある更新だけをMOMOが投影します。",
-  "updated_at": "2026-09-09T07:54:00+09:00",
+  "updated_at": "2026-09-10T06:41:07+09:00",
   "source": "asklessquill/Dango (private durable knowledge base)",
   "publication_rule": "Material / routing-changing / canonical prompting developments only. Low-confidence inbox-only evidence stays private until it becomes worth surfacing.",
   "items": [
+    {
+      "date": "2026-09-10",
+      "kind": "Quota / Runtime",
+      "signal": "Official incident",
+      "title": "使用率が突然落ちても、その全部がAstraの消費とは限らない",
+      "summary": "OpenAIがCodexの『unexpected usage limit resets』を公式に認め、同日mitigation後にresolved。短時間で残量が大きく飛んだ区間は、model/tierの消費実績として学習させる前にservice statusとreset windowを確認する。",
+      "strength": "HIGH for incident occurrence/resolution; LOW for model/tier-specific causality",
+      "astra_vs_sol": "Astra XHighの急落報告が多数あるが、公式incidentはmodel/tierを特定していない。Astra固有の恒常的なquota multiplierとは扱わない。",
+      "implication": "Allowance meter is the current budget signal, but an incident-contaminated delta is not clean consumption attribution.",
+      "source_url": "https://status.openai.com/incidents/01M23KG62KKK448RN434CQ64Z8"
+    },
     {
       "date": "2026-09-09",
       "kind": "Prompting / Harness",
