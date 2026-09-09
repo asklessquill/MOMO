@@ -1,10 +1,21 @@
 {
   "title": "Oh Dango News",
   "subtitle": "Dangoのmodel-routing knowledgeから、Humanが知る価値のある更新だけをMOMOが投影します。",
-  "updated_at": "2026-09-10T06:41:07+09:00",
+  "updated_at": "2026-09-10T07:43:18+09:00",
   "source": "asklessquill/Dango (private durable knowledge base)",
   "publication_rule": "Material / routing-changing / canonical prompting developments only. Low-confidence inbox-only evidence stays private until it becomes worth surfacing.",
   "items": [
+    {
+      "date": "2026-09-10",
+      "kind": "Budget / Surface",
+      "signal": "Official product semantics",
+      "title": "CodexとWorkは、別々の財布とは限らない",
+      "summary": "OpenAIはPlus/Proの対応agentic機能について、Codex・ChatGPT Work・ChatGPT for Excelなどが同じusage allowance / purchased-credit poolを共有し得ると明記。並列実行では、開始時に残高があっても他の処理で枯渇し、完了時に残高がマイナスになる場合もある。",
+      "strength": "HIGH official product semantics",
+      "astra_vs_sol": "モデル性能差のEvidenceではない。Astra/Solを含む実行surface間で、budgetを独立と仮定しないためのcross-surface routing rule。",
+      "implication": "並列実行ではmodel/tierだけでなく共有予算も見る。Auto top-upは便利機能ではなく、Humanのspend boundaryとして扱う。",
+      "source_url": "https://help.openai.com/en/articles/12642688-using-credits-for-flexible-usage-in-chatgpt-pluspro"
+    },
     {
       "date": "2026-09-10",
       "kind": "Quota / Runtime",
