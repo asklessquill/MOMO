@@ -2,11 +2,11 @@
   "schema_version": "0.1",
   "projection": "MOMO Human-facing public snapshot",
   "authority_note": "This file is a public-safe projection, not a canonical source of Application state. Owner repositories and applicable Human authority remain authoritative.",
-  "observed_at": "2026-09-09T20:25:00+09:00",
+  "observed_at": "2026-09-09T20:29:00+09:00",
   "system": {
     "status": "ACTIVE",
     "headline": "思想中心から、Interface / Infrastructure / Operationsを現実化する段階へ。",
-    "summary": "Portability v0の設計・復旧シミュレーションと移行棚卸しは完了。実移行はまだ行わず、現在環境を単一の稼働元として維持する。次はHumanが毎回『今どこ？』を復元しなくてよいOperational Visibilityを作る。",
+    "summary": "Current State Cockpit v0を公開し、Humanが『今どこ？』をMOMOから復元できる最小Interfaceができた。Portabilityは移行方法だけdurableに保持し、実cutoverはまだ行わない。次はfreshnessを低コストで維持しつつ、Infrastructure / Operationsを現実化する。",
     "human_decision_count": 1,
     "active_watch_count": 1
   },
@@ -14,8 +14,9 @@
     {
       "status": "ACTIVE",
       "title": "MOMO Current State Cockpit v0",
-      "meaning": "HumanがMOMOを開くだけでSystem全体の現在地を把握できる最小Interfaceを構築中。",
-      "source_label": "MOMO public projection"
+      "meaning": "HumanがMOMOを開くだけでSystem全体の現在地、最近の変化、Human判断待ち、次候補を60秒以内で把握できる最小Interfaceが稼働。",
+      "source_label": "MOMO public projection",
+      "revision": "7f4015f6fdcc1bf2a1a28caeb718be1ef0b6fca7"
     },
     {
       "status": "WATCH",
@@ -36,10 +37,10 @@
       "name": "MOMO",
       "role": "System-wide meaning / Human-facing projection",
       "status": "ACTIVE",
-      "current": "Public Human Interfaceを拡張中。Applicationを制御せず、現在地をHuman-sized meaningとして投影する。",
-      "source_label": "MOMO main",
-      "revision": "5f4f356219e7c3a2825d1dbcd94ffe62029f739f",
-      "observed_at": "2026-09-09T20:25:00+09:00",
+      "current": "Current State Cockpit v0を公開。Applicationを制御せず、owner stateをHuman-sized meaningとして投影する。",
+      "source_label": "MOMO Pages implementation",
+      "revision": "7f4015f6fdcc1bf2a1a28caeb718be1ef0b6fca7",
+      "observed_at": "2026-09-09T20:29:00+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     },
     {
@@ -125,6 +126,14 @@
     }
   ],
   "recent": [
+    {
+      "date": "2026-09-09",
+      "status": "COMPLETE",
+      "title": "MOMO Current State Cockpit v0 deployed",
+      "meaning": "HomeからCurrent Stateへ直接入り、System / Application status、material timeline、Human decision、next optionsをpublic-safe snapshotとして確認できるようになった。",
+      "source_label": "MOMO Pages",
+      "revision": "7f4015f6fdcc1bf2a1a28caeb718be1ef0b6fca7"
+    },
     {
       "date": "2026-09-09",
       "status": "COMPLETE",
