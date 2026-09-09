@@ -1,63 +1,63 @@
 {
   "schema_version": "0.1",
   "projection": "MOMO Human-facing public snapshot",
-  "authority_note": "This file is a public-safe projection, not a canonical source of Application state. Owner repositories and applicable Human authority remain authoritative.",
+  "authority_note": "このページは『いまどうなってる？』を見るための案内板です。各プロジェクトの正本はそれぞれのGitにあり、ここに表示しただけで状態や権限は変わりません。",
   "observed_at": "2026-09-09T20:29:00+09:00",
   "system": {
     "status": "ACTIVE",
-    "headline": "思想中心から、Interface / Infrastructure / Operationsを現実化する段階へ。",
-    "summary": "Current State Cockpit v0を公開し、Humanが『今どこ？』をMOMOから復元できる最小Interfaceができた。Portabilityは移行方法だけdurableに保持し、実cutoverはまだ行わない。次はfreshnessを低コストで維持しつつ、Infrastructure / Operationsを現実化する。",
+    "headline": "思想を整える段階から、実際に使い続ける段階へ。",
+    "summary": "いまの桃多郎は、考え方や役割の整理から一歩進み、『今どこにいるかをすぐ分かる』『環境を替えても戻れる』『日常的に動かせる』状態づくりに入っています。引っ越しはまだ始めず、必要な時に一気に移れる手順だけ残しています。",
     "human_decision_count": 1,
     "active_watch_count": 1
   },
   "now": [
     {
       "status": "ACTIVE",
-      "title": "MOMO Current State Cockpit v0",
-      "meaning": "HumanがMOMOを開くだけでSystem全体の現在地、最近の変化、Human判断待ち、次候補を60秒以内で把握できる最小Interfaceが稼働。",
-      "source_label": "MOMO public projection",
+      "title": "桃多郎の現在地ページ",
+      "meaning": "MOMOを開けば、いま何が動き、何が止まり、最近何が変わったかを短時間で見られるようになりました。",
+      "source_label": "MOMO Current State Cockpit v0",
       "revision": "7f4015f6fdcc1bf2a1a28caeb718be1ef0b6fca7"
     },
     {
       "status": "WATCH",
-      "title": "INNU Routing Intelligence Loop",
-      "meaning": "毎時、将来のINNUがmodel / tier / surface / capability / runtimeを選ぶための再利用可能な証拠をDangoへ蓄積。materialな変化だけHumanへ投影。",
-      "source_label": "Connected scheduler observed 2026-09-09"
+      "title": "AIモデル選びの学習",
+      "meaning": "毎時、どのAI・強度・道具・実行環境を選ぶとうまくいくかをDangoへ蓄積しています。大事な変化だけHumanに見せます。",
+      "source_label": "INNU Routing Intelligence Loop"
     },
     {
       "status": "HOLD",
-      "title": "Portability v0",
-      "meaning": "移行方法はdurableに整理済み。二重管理を避けるため、実データの独立複製・cutoverは移行時期まで開始しない。",
-      "source_label": "MOMO-Observatory portability receipt",
+      "title": "引っ越し準備",
+      "meaning": "移行手順は整理済みです。今は二重管理を増やさず、実際の引っ越し時期が来るまでこのまま止めておきます。",
+      "source_label": "Portability v0",
       "revision": "36a2b057120e981bdf9f67212184df07d38d0c53"
     }
   ],
   "components": [
     {
       "name": "MOMO",
-      "role": "System-wide meaning / Human-facing projection",
+      "role": "全体の意味をまとめ、人に見せる",
       "status": "ACTIVE",
-      "current": "Current State Cockpit v0を公開。Applicationを制御せず、owner stateをHuman-sized meaningとして投影する。",
-      "source_label": "MOMO Pages implementation",
+      "current": "『今どこ？』をすぐ見られる現在地ページが公開されました。各仲間を動かすのではなく、全体をHumanに分かる形で見せています。",
+      "source_label": "MOMO Pages",
       "revision": "7f4015f6fdcc1bf2a1a28caeb718be1ef0b6fca7",
       "observed_at": "2026-09-09T20:29:00+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     },
     {
       "name": "MOMO-Observatory",
-      "role": "Private System-wide semantic state / evidence",
+      "role": "裏側で全体の記録と根拠を持つ",
       "status": "HOLD",
-      "current": "ArchitectureはCOMPLETE / STOP。Portability v0はPARTIALの計画checkpointまで完了し、実移行は意図的に保留。",
-      "source_label": "Observatory main",
+      "current": "全体設計は完了。引っ越しの調査と復旧練習も済みました。実移行は必要になるまで始めません。",
+      "source_label": "MOMO-Observatory main",
       "revision": "36a2b057120e981bdf9f67212184df07d38d0c53",
       "observed_at": "2026-09-09T20:25:00+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     },
     {
       "name": "KIBI",
-      "role": "Semantic connection Protocol",
+      "role": "仲間同士を安全につなぐ",
       "status": "COMPLETE",
-      "current": "Protocol Architecture designは独立PASS / 0 findingsでACCEPT、COMPLETE / STOP。実装・Application migrationは未承認。",
+      "current": "接続の考え方とルール設計はレビューを通過して、ひと区切り完了しています。実際の接続実装はまだ始めていません。",
       "source_label": "KIBI main",
       "revision": "233b5260226c41b4ae5fcb123543b39045004ef3",
       "observed_at": "2026-09-09T20:25:00+09:00",
@@ -65,40 +65,40 @@
     },
     {
       "name": "KIJI",
-      "role": "See / Know / Observe / Interpret",
+      "role": "世界を見て、変化を知る",
       "status": "HOLD",
-      "current": "Immediate Insight Loop v0はLab implementation candidateとして固定。新しいmilestoneやProduction昇格は開始していない。",
-      "source_label": "KIJI continuation lineage",
+      "current": "新しい情報から『何が変わったか』を見つける仕組みの試作まで完了。次の検証を始めるまではこの状態を保ちます。",
+      "source_label": "KIJI Immediate Insight Loop v0",
       "revision": "d68afd33fac9cb8d01c88dd30ac19c035da5c95c",
       "observed_at": "2026-09-09T20:25:00+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     },
     {
       "name": "INNU",
-      "role": "Build / Realize / Complete",
+      "role": "必要なものを作り切る",
       "status": "HOLD",
-      "current": "Labではreliability / fencing / recovery境界の検証履歴を保持。canonical S13 promotionはHuman authority boundaryのまま。",
-      "source_label": "INNU continuation lineage",
+      "current": "壊れ方や復旧、同時実行時の安全性をかなり検証済みです。本番側へ反映する判断はまだしていません。",
+      "source_label": "INNU Lab",
       "revision": "8ef86cfe36c843b90aeb95ece16f43824ff59fe3",
       "observed_at": "2026-09-09T20:25:00+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     },
     {
       "name": "SARU",
-      "role": "Human World Activation / Act",
+      "role": "作ったものを現実世界で活かす",
       "status": "WAITING_HUMAN",
-      "current": "Cycle-2 Phase 1はHUMAN_GATE / STOP。正当な既存interaction、望むstate change、許可するcontact boundaryの指定待ち。外部Actionは0。",
-      "source_label": "SARU main",
+      "current": "次に現実で何を変えたいか、その対象がまだ決まっていません。再開する時だけHumanが1件選べば続けられます。今すぐ決める必要はありません。",
+      "source_label": "SARU Cycle-2 Phase 1",
       "revision": "0a36f0f12a7875cac77adbc252420e8c490f86bc",
       "observed_at": "2026-09-09T20:25:00+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     },
     {
       "name": "FROG / KAERU",
-      "role": "Reality Mentor",
+      "role": "考えすぎる前に、小さく現実で試す",
       "status": "COMPLETE",
-      "current": "Human relayを残さず判断を残すautonomous return loopをRealityで実証。n8nはreplaceable transport / triggerとして位置付け。",
-      "source_label": "FROG main",
+      "current": "Humanが毎回作業を運ばなくても、GitHubからAIへ仕事を渡し、結果をGitへ返す経路を実際に動かして証明しました。",
+      "source_label": "FROG autonomous return loop",
       "source_url": "https://github.com/asklessquill/FROG/blob/2014a9c7629e2ee8874ff18e5542a0a424bc9ef7/HANDOFF.md",
       "revision": "2014a9c7629e2ee8874ff18e5542a0a424bc9ef7",
       "observed_at": "2026-09-09T20:25:00+09:00",
@@ -106,19 +106,19 @@
     },
     {
       "name": "SandFrog",
-      "role": "Disposable experimental substrate",
+      "role": "壊してもよい実験場",
       "status": "BLOCKED",
-      "current": "EXP026-Bはsend-free preflightでfail-closed。専用Mac ChatGPT profileのauthenticationが利用不能で、Human-authorized restorationまで新Leapは開始しない。",
-      "source_label": "SandFrog main",
+      "current": "Mac側のChatGPTログインが切れているため、その経路を使う次の実験だけ止まっています。認証を戻すまでは安全に何もしません。",
+      "source_label": "SandFrog EXP026-B",
       "revision": "f7d10ecebd487556bc73d6e77bececc4e409c9c5",
       "observed_at": "2026-09-09T20:25:00+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     },
     {
       "name": "Dango",
-      "role": "Model-routing evidence / knowledge",
+      "role": "AIモデル選びの経験を貯める",
       "status": "WATCH",
-      "current": "INNU Routing Intelligence Loopのdurable destination。Evidence → Knowledge → Routing / Prompting → Episode / Evaluationの学習線を継続。",
+      "current": "実際の作業結果から『どのAIを、どの強さで、どんな仕事に使うとよいか』を継続して学んでいます。",
       "source_label": "Dango main",
       "revision": "26465e2a3d857cd174a2f20b8386eae986a682db",
       "observed_at": "2026-09-09T20:25:00+09:00",
@@ -129,58 +129,60 @@
     {
       "date": "2026-09-09",
       "status": "COMPLETE",
-      "title": "MOMO Current State Cockpit v0 deployed",
-      "meaning": "HomeからCurrent Stateへ直接入り、System / Application status、material timeline、Human decision、next optionsをpublic-safe snapshotとして確認できるようになった。",
-      "source_label": "MOMO Pages",
+      "title": "MOMOから『今どこ？』が見えるようになった",
+      "meaning": "全体の状態、仲間ごとの現在地、最近の変化、Human判断待ち、次の候補を1ページで確認できるようになりました。",
+      "source_label": "MOMO Current State Cockpit v0",
       "revision": "7f4015f6fdcc1bf2a1a28caeb718be1ef0b6fca7"
     },
     {
       "date": "2026-09-09",
       "status": "COMPLETE",
-      "title": "Portability v0 assessment / recovery rehearsal",
-      "meaning": "9 repositoriesを旧GitHub認証なしのbundleから復元し、固定SHA・履歴整合性を確認。offline test 558件PASS。別端末・fresh AI・新accountでの復旧は未実証。",
+      "title": "別環境へ戻せるかを復旧練習した",
+      "meaning": "9リポジトリを旧GitHub認証なしで復元し、履歴の一致とオフラインテスト558件PASSを確認しました。別端末・新アカウントでの本番復旧はまだです。",
+      "source_label": "Portability v0 recovery rehearsal",
       "revision": "c32b9413b4f567d4aa2b2a294e8edb11bc22814e"
     },
     {
       "date": "2026-09-09",
       "status": "COMPLETE",
-      "title": "Migration Phase 1 inventory",
-      "meaning": "12 Git stores / 38 worktreesとGit外stateを棚卸しし、manifest / checksum / copy planを作成。Project behaviorは変更せずSTOP。実コピーは移行時まで保留。",
+      "title": "引っ越す時に持っていくものを洗い出した",
+      "meaning": "Gitだけでなく、ローカルデータや未保存状態も含めて棚卸しし、移行時のコピー手順まで用意しました。今は実コピーしません。",
+      "source_label": "Migration Phase 1 inventory",
       "revision": "36a2b057120e981bdf9f67212184df07d38d0c53"
     },
     {
       "date": "2026-09-09",
       "status": "WATCH",
-      "title": "Dango routing intelligence harvest",
-      "meaning": "移行・preservation実行からもmodel / execution routingに再利用できるepisode evidenceを回収する線が動作。",
-      "revision": "26465e2a3d857cd174a2f20b8386eae986a682db"
+      "title": "AIモデル選びの経験が自動で貯まり始めた",
+      "meaning": "実作業から得たモデル選び・実行環境選びの経験を、将来INNUが使える形でDangoへ残しています。",
+      "source_label": "Dango routing intelligence"
     },
     {
       "date": "2026-09-07",
       "status": "HOLD",
-      "title": "KIJI Immediate Insight Loop v0 frozen",
-      "meaning": "短期のmeaningful change / freshness / contradiction / route feedbackを扱うLab implementation candidateを固定。次工程は別Task。",
+      "title": "KIJIの『最近何が変わった？』試作を固定",
+      "meaning": "短期の変化や矛盾、鮮度を扱う試作はできました。次の実地検証までは触らず保ちます。",
       "revision": "d68afd33fac9cb8d01c88dd30ac19c035da5c95c"
     },
     {
       "date": "2026-09-07",
       "status": "WAITING_HUMAN",
-      "title": "SARU Cycle-2 Phase 1",
-      "meaning": "Human World Activationを進める前に、具体的interaction / desired state change / contact boundaryが不足していることをfail-closedで固定。",
+      "title": "SARUは『現実で何を変える？』の指定待ち",
+      "meaning": "実際に人や仕事へ働きかける前に、対象と望む変化をHumanが決めるところで安全に止まっています。",
       "revision": "0a36f0f12a7875cac77adbc252420e8c490f86bc"
     },
     {
       "date": "2026-09-06",
       "status": "COMPLETE",
-      "title": "KIBI Protocol Architecture accepted",
-      "meaning": "独立review PASS / 0 findings。Architecture/designのみACCEPTしてSTOP。",
+      "title": "KIBIの接続ルール設計が完了",
+      "meaning": "独立レビューで問題なし。設計だけを受け入れて、実装は始めず止めています。",
       "revision": "233b5260226c41b4ae5fcb123543b39045004ef3"
     },
     {
       "date": "2026-09-06",
       "status": "COMPLETE",
-      "title": "FROG autonomous return loop proven",
-      "meaning": "Human judgmentを残しながらroutine Human relayを消すGitHub → n8n → Actor → cold AI → verified return経路をRealityで実証。",
+      "title": "Humanが運ばなくてもAI作業が往復できた",
+      "meaning": "GitHubから仕事を渡し、AIが実行し、結果をGitへ戻す経路をFROGで実証しました。",
       "revision": "2014a9c7629e2ee8874ff18e5542a0a424bc9ef7"
     }
   ],
@@ -188,25 +190,25 @@
     {
       "status": "WAITING_HUMAN",
       "area": "SARU",
-      "decision": "Cycle-2を再開する場合、1件の正当な既存interaction、望むstate change、許可するcontact boundaryを指定する。",
+      "decision": "SARUを再開するときに、『誰・何に対して』『どう変わってほしいか』『どこまで働きかけてよいか』を1件だけ決める。",
       "required_now": false
     }
   ],
   "next_options": [
     {
       "priority": 1,
-      "title": "Cockpit freshness automation",
-      "meaning": "各owner sourceを定期的に読み、public-safe snapshotだけを更新する最小refresh path。MOMOを新しい正本にはしない。"
+      "title": "現在地を自動で新しく保つ",
+      "meaning": "各Gitの変化を定期的に読み、何か変わった時だけこのページを更新する。変化がなければ何もしない。"
     },
     {
       "priority": 2,
-      "title": "Infrastructure baseline",
-      "meaning": "Git / runtime / machine / credential category / connector / schedulerを『今必要なもの』として整理し、移行作業とは分離して運用可能な土台を定義する。"
+      "title": "桃多郎を動かす土台を決める",
+      "meaning": "Git、端末、AI、認証、スケジュールなど、普段動かすために本当に必要なものだけを整理する。"
     },
     {
       "priority": 3,
-      "title": "Operations loop",
-      "meaning": "start / stop / resume / watch / failure / recovery / Human escalationを日常運用として小さく実証する。"
+      "title": "毎日の運用を小さく回す",
+      "meaning": "始める、止める、再開する、見守る、失敗から戻す、Humanへ聞く、を実際の運用として試す。"
     }
   ]
 }
