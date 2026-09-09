@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Current State — Project 桃多郎</title>
-  <meta name="description" content="World SE / 桃多郎 ProjectのHuman-facing current state cockpit。今どこにいて、何が動き、何が止まり、次に何ができるかを短時間で把握します。">
+  <meta name="description" content="World SE / 桃多郎 Projectの現在地。今なにが動き、なにが止まり、次にどこへ進めそうかを短時間で把握します。">
   <meta name="theme-color" content="#1c1613">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
@@ -18,6 +18,8 @@
     .metric { border: 1px solid rgba(113,87,67,.2); border-radius: 18px; padding: 1rem 1.05rem; background: rgba(255,255,255,.55); }
     .metric strong { display: block; font-size: clamp(1.25rem, 3vw, 2rem); margin-top: .25rem; }
     .metric small { color: #6d625b; }
+    .status-help { display: flex; gap: .5rem 1rem; flex-wrap: wrap; align-items: center; margin: .2rem 0 2.2rem; color: #6d625b; font-size: .82rem; }
+    .status-help span { display: inline-flex; gap: .38rem; align-items: center; }
     .section { margin-top: 2.6rem; }
     .section-head { display: flex; align-items: end; justify-content: space-between; gap: 1rem; margin-bottom: .85rem; }
     .section-head p { margin: 0; color: #6d625b; font-size: .9rem; }
@@ -56,7 +58,7 @@
   </style>
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
+  <a class="skip" href="#main">本文へ</a>
   <header class="mast">
     <a class="brand" href="index.html">
       <img src="assets/momo-git-icon.png" width="56" height="56" alt="A peach with an eye — MOMO watches">
@@ -71,41 +73,51 @@
 
   <main id="main" class="cockpit">
     <section class="cockpit-hero">
-      <p class="kicker">Human Interface / Operational Visibility</p>
+      <p class="kicker">MOMO / CURRENT</p>
       <h1>今、どこにいる？</h1>
       <p class="ja">桃多郎の現在地を、60秒以内で。</p>
-      <p class="lead" id="headline">Current state snapshotを読み込んでいます。</p>
-      <p class="snapshot-note" id="authority">MOMOは各Applicationの正本を置き換えません。このページはHuman-facing projectionです。</p>
+      <p class="lead" id="headline">現在地を読み込んでいます。</p>
+      <p class="snapshot-note" id="authority">このページは『いまどうなってる？』を見るための案内板です。</p>
     </section>
 
-    <div class="topline" aria-label="Current system metrics">
-      <div class="metric"><small>System</small><strong id="system-status">—</strong><span id="system-summary">Loading…</span></div>
-      <div class="metric"><small>Active watches</small><strong id="watch-count">—</strong><span>background intelligence lanes</span></div>
-      <div class="metric"><small>Human decisions</small><strong id="decision-count">—</strong><span>visible, not buried</span></div>
+    <div class="topline" aria-label="桃多郎の現在地">
+      <div class="metric"><small>全体</small><strong id="system-status">—</strong><span id="system-summary">読み込み中…</span></div>
+      <div class="metric"><small>定期ウォッチ</small><strong id="watch-count">—</strong><span>裏で見続けているもの</span></div>
+      <div class="metric"><small>あなたの判断待ち</small><strong id="decision-count">—</strong><span>必要な時だけHumanへ</span></div>
+    </div>
+
+    <div class="status-help" aria-label="ステータスの意味">
+      <span><b>ACTIVE</b> 動いている</span>
+      <span><b>WATCH</b> 定期的に見ている</span>
+      <span><b>COMPLETE</b> ひと区切り完了</span>
+      <span><b>HOLD</b> いまは止めてある。必要なら再開</span>
+      <span><b>WAITING_HUMAN</b> あなたの判断待ち</span>
+      <span><b>BLOCKED</b> 外部条件がそろうまで進めない</span>
+      <span><b>UNKNOWN</b> 今は判断できない</span>
     </div>
 
     <section class="section" aria-labelledby="now-title">
-      <div class="section-head"><div><p class="kicker">NOW</p><h2 id="now-title">いま動いているもの</h2></div><p id="updated">Loading freshness…</p></div>
+      <div class="section-head"><div><p class="kicker">NOW</p><h2 id="now-title">いま何が動いてる？</h2></div><p id="updated">確認時刻を読み込み中…</p></div>
       <div class="status-grid" id="now-grid"></div>
     </section>
 
     <section class="section" aria-labelledby="components-title">
-      <div class="section-head"><div><p class="kicker">SYSTEM</p><h2 id="components-title">各Application / Componentの現在地</h2></div><p>owner sourceを観測したpublic-safe snapshot</p></div>
+      <div class="section-head"><div><p class="kicker">SYSTEM</p><h2 id="components-title">みんな今どうしてる？</h2></div><p>詳しい根拠は各Gitに残しています</p></div>
       <div class="status-grid" id="components"></div>
     </section>
 
     <section class="section" aria-labelledby="recent-title">
-      <div class="section-head"><div><p class="kicker">RECENT</p><h2 id="recent-title">最近、何が変わった？</h2></div><p>material changeだけ</p></div>
+      <div class="section-head"><div><p class="kicker">RECENT</p><h2 id="recent-title">最近、何が変わった？</h2></div><p>大きな変化だけ</p></div>
       <ol class="timeline" id="recent"></ol>
     </section>
 
     <section class="section" aria-labelledby="decision-title">
-      <div class="section-head"><div><p class="kicker">HUMAN</p><h2 id="decision-title">Human判断待ち</h2></div><p>技術parameterではなくHuman-only decision</p></div>
+      <div class="section-head"><div><p class="kicker">HUMAN</p><h2 id="decision-title">あなたの判断が必要なこと</h2></div><p>今すぐ必要かも一緒に表示</p></div>
       <div id="decisions"></div>
     </section>
 
     <section class="section" aria-labelledby="next-title">
-      <div class="section-head"><div><p class="kicker">NEXT</p><h2 id="next-title">次に始められる大項目</h2></div><p>開始権限ではなく候補</p></div>
+      <div class="section-head"><div><p class="kicker">NEXT</p><h2 id="next-title">次にどこへ進めそう？</h2></div><p>候補。勝手には始めません</p></div>
       <div class="next-list" id="next-options"></div>
     </section>
 
@@ -113,8 +125,8 @@
   </main>
 
   <footer>
-    <p>One semantic truth → multiple views.</p>
-    <p class="muted">Current State is a bounded Human projection. A status shown here never creates new authority for an Application.</p>
+    <p>ひとつの正本から、見る人に合った形へ。</p>
+    <p class="muted">ここは案内板です。表示されたステータスが、各プロジェクトの権限や状態を勝手に変えることはありません。</p>
   </footer>
 
   <script>
@@ -128,7 +140,7 @@
       const source = (item) => {
         const p = document.createElement('p');
         p.className = 'source';
-        const label = item.source_label || 'source';
+        const label = item.source_label || '根拠';
         p.append(document.createTextNode(label));
         if (item.revision) {
           const short = item.revision.slice(0, 10);
@@ -151,7 +163,7 @@
         article.className = 'status-card';
         article.append(badge(item.status));
         const h = document.createElement('h3');
-        h.textContent = item.name || item.title || 'Untitled';
+        h.textContent = item.name || item.title || '名称未設定';
         article.append(h);
         if (showRole && item.role) {
           const role = document.createElement('p');
@@ -168,7 +180,7 @@
       fetch('data/current-state.json', { cache: 'no-store' })
         .then((res) => { if (!res.ok) throw new Error('snapshot unavailable'); return res.json(); })
         .then((data) => {
-          document.querySelector('#headline').textContent = data.system?.headline || 'Current state';
+          document.querySelector('#headline').textContent = data.system?.headline || '現在地';
           document.querySelector('#authority').textContent = data.authority_note || '';
           document.querySelector('#system-status').textContent = data.system?.status || 'UNKNOWN';
           document.querySelector('#system-summary').textContent = data.system?.summary || '';
@@ -176,7 +188,7 @@
           document.querySelector('#decision-count').textContent = String(data.system?.human_decision_count ?? '—');
           if (data.observed_at) {
             const d = new Date(data.observed_at);
-            document.querySelector('#updated').textContent = `Observed ${d.toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' })} JST`;
+            document.querySelector('#updated').textContent = `${d.toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' })} JST 時点`;
           }
 
           const now = document.querySelector('#now-grid');
@@ -202,15 +214,15 @@
           const decisions = document.querySelector('#decisions');
           const decisionItems = data.human_decisions || [];
           if (!decisionItems.length) {
-            decisions.innerHTML = '<p class="muted">現在、明示されたHuman-only decisionはありません。</p>';
+            decisions.innerHTML = '<p class="muted">いま、あなたが決めないと進まないことはありません。</p>';
           } else {
             decisions.replaceChildren(...decisionItems.map((item) => {
               const div = document.createElement('div'); div.className = 'decision';
               div.append(badge(item.status));
-              const h = document.createElement('h3'); h.textContent = item.area || 'Decision';
+              const h = document.createElement('h3'); h.textContent = item.area || '判断';
               const p = document.createElement('p'); p.textContent = item.decision || '';
               const note = document.createElement('p'); note.className = 'muted';
-              note.textContent = item.required_now ? '今すぐ判断が必要' : '再開時だけ必要。今すぐの判断は不要。';
+              note.textContent = item.required_now ? '今ここで判断が必要です。' : '再開するときだけ決めれば大丈夫です。今すぐの判断は不要です。';
               div.append(h, p, note); return div;
             }));
           }
@@ -225,9 +237,9 @@
           }));
         })
         .catch((err) => {
-          document.querySelector('#headline').textContent = 'Current snapshotを取得できませんでした。';
-          document.querySelector('#system-summary').textContent = '古い状態を現在状態として推測表示しません。';
-          document.querySelector('#updated').textContent = 'Freshness: UNKNOWN';
+          document.querySelector('#headline').textContent = '現在地を取得できませんでした。';
+          document.querySelector('#system-summary').textContent = '古い情報を「今の状態」として推測表示しません。';
+          document.querySelector('#updated').textContent = '確認時刻: UNKNOWN';
           console.error(err);
         });
     })();
