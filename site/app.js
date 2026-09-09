@@ -31,7 +31,7 @@
     const li = document.createElement("li");
     const link = document.createElement("a");
     link.href = "cockpit.html";
-    link.textContent = "Current State — 今どこ？";
+    link.textContent = "今どこ？ — Current State";
     li.append(link);
     deeper.prepend(li);
   }
@@ -63,7 +63,7 @@
     const section = document.createElement("section");
     section.id = "current-overview";
     section.className = "current-overview";
-    section.setAttribute("aria-label", "Current System state");
+    section.setAttribute("aria-label", "桃多郎の現在地");
     const inner = document.createElement("div");
     inner.className = "current-overview-inner";
     const body = document.createElement("div");
@@ -74,17 +74,17 @@
     badge.textContent = "CURRENT";
     const meta = document.createElement("span");
     meta.className = "current-meta";
-    meta.textContent = "freshness loading…";
+    meta.textContent = "確認時刻を読み込み中…";
     label.append(badge, meta);
     const title = document.createElement("h2");
     title.textContent = "今、どこにいる？";
     const summary = document.createElement("p");
-    summary.textContent = "System current stateを読み込んでいます。";
+    summary.textContent = "桃多郎の現在地を読み込んでいます。";
     body.append(label, title, summary);
     const open = document.createElement("a");
     open.className = "current-open";
     open.href = "cockpit.html";
-    open.textContent = "Current State →";
+    open.textContent = "現在地を見る →";
     inner.append(body, open);
     section.append(inner);
     hero.insertAdjacentElement("afterend", section);
@@ -95,16 +95,16 @@
         if (!data) return;
         badge.textContent = data.system?.status || "UNKNOWN";
         title.textContent = data.system?.headline || "今、どこにいる？";
-        summary.textContent = data.system?.summary || "Current state snapshot";
+        summary.textContent = data.system?.summary || "桃多郎の現在地";
         if (data.observed_at) {
           const when = new Date(data.observed_at);
-          meta.textContent = `Observed ${when.toLocaleString("ja-JP", { timeZone: "Asia/Tokyo" })} JST · Watch ${data.system?.active_watch_count ?? "—"} · Human decision ${data.system?.human_decision_count ?? "—"}`;
+          meta.textContent = `${when.toLocaleString("ja-JP", { timeZone: "Asia/Tokyo" })} JST 時点 · ウォッチ ${data.system?.active_watch_count ?? "—"} · 判断待ち ${data.system?.human_decision_count ?? "—"}`;
         }
       })
       .catch(() => {
         badge.textContent = "UNKNOWN";
-        meta.textContent = "freshness unavailable";
-        summary.textContent = "古い状態を現在状態として推測表示しません。";
+        meta.textContent = "確認時刻不明";
+        summary.textContent = "古い情報を『今の状態』として推測表示しません。";
       });
   }
 
