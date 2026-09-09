@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Current State — Project 桃多郎</title>
+  <meta name="description" content="World SE / 桃多郎 ProjectのHuman-facing current state cockpit。今どこにいて、何が動き、何が止まり、次に何ができるかを短時間で把握します。">
+  <meta name="theme-color" content="#1c1613">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .cockpit { max-width: 1120px; margin: 0 auto; padding: 6.7rem 1.25rem 5rem; }
+    .cockpit-hero { padding: 2rem 0 1.2rem; }
+    .cockpit-hero h1 { margin-bottom: .5rem; }
+    .cockpit-hero .lead { max-width: 850px; }
+    .snapshot-note { margin: 1.1rem 0 0; padding: .85rem 1rem; border-left: 3px solid #c9956d; background: rgba(255,255,255,.38); font-size: .92rem; }
+    .topline { display: grid; grid-template-columns: 1.55fr .8fr .8fr; gap: .8rem; margin: 1.4rem 0 2rem; }
+    .metric { border: 1px solid rgba(113,87,67,.2); border-radius: 18px; padding: 1rem 1.05rem; background: rgba(255,255,255,.55); }
+    .metric strong { display: block; font-size: clamp(1.25rem, 3vw, 2rem); margin-top: .25rem; }
+    .metric small { color: #6d625b; }
+    .section { margin-top: 2.6rem; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 1rem; margin-bottom: .85rem; }
+    .section-head p { margin: 0; color: #6d625b; font-size: .9rem; }
+    .status-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .9rem; }
+    .status-card { border: 1px solid rgba(113,87,67,.2); border-radius: 18px; padding: 1rem 1.05rem; background: rgba(255,255,255,.52); box-shadow: 0 10px 30px rgba(68,45,32,.05); }
+    .status-card h3 { margin: .45rem 0 .4rem; font-size: 1.08rem; }
+    .status-card p { margin: .4rem 0; }
+    .role { color: #6d625b; font-size: .84rem; }
+    .badge { display: inline-flex; align-items: center; border-radius: 999px; padding: .28rem .58rem; font-size: .74rem; font-weight: 750; letter-spacing: .035em; border: 1px solid rgba(113,87,67,.2); background: rgba(255,255,255,.65); }
+    .badge-ACTIVE, .badge-WATCH { background: rgba(221,239,220,.72); }
+    .badge-COMPLETE { background: rgba(226,235,244,.72); }
+    .badge-HOLD { background: rgba(242,235,220,.78); }
+    .badge-WAITING_HUMAN { background: rgba(250,226,190,.8); }
+    .badge-BLOCKED { background: rgba(244,215,211,.78); }
+    .source { margin-top: .75rem; padding-top: .65rem; border-top: 1px solid rgba(113,87,67,.13); color: #6d625b; font-size: .78rem; overflow-wrap: anywhere; }
+    .source code { font-size: .76rem; }
+    .timeline { list-style: none; padding: 0; margin: 0; display: grid; gap: .75rem; }
+    .timeline li { display: grid; grid-template-columns: 7rem 1fr; gap: 1rem; border-left: 2px solid rgba(113,87,67,.18); padding: .15rem 0 .7rem 1rem; }
+    .timeline time { font-size: .84rem; color: #6d625b; }
+    .timeline h3 { margin: .25rem 0 .3rem; font-size: 1rem; }
+    .timeline p { margin: .2rem 0; }
+    .decision { border: 1px solid rgba(180,124,64,.3); border-radius: 18px; background: rgba(250,236,208,.58); padding: 1rem 1.1rem; }
+    .decision p { margin: .35rem 0; }
+    .next-list { display: grid; gap: .75rem; counter-reset: next; }
+    .next-item { display: grid; grid-template-columns: 2.1rem 1fr; gap: .75rem; align-items: start; border: 1px solid rgba(113,87,67,.18); border-radius: 16px; padding: .9rem 1rem; background: rgba(255,255,255,.45); }
+    .next-item::before { counter-increment: next; content: counter(next); display: grid; place-items: center; width: 2rem; height: 2rem; border-radius: 50%; background: rgba(201,149,109,.16); font-weight: 800; }
+    .next-item h3 { margin: .1rem 0 .25rem; font-size: 1rem; }
+    .next-item p { margin: 0; }
+    .muted { color: #6d625b; }
+    .back { display: inline-block; margin-top: 2.3rem; }
+    @media (max-width: 820px) {
+      .topline, .status-grid { grid-template-columns: 1fr; }
+      .timeline li { grid-template-columns: 1fr; gap: .25rem; }
+      .cockpit { padding-top: 5.7rem; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="mast">
+    <a class="brand" href="index.html">
+      <img src="assets/momo-git-icon.png" width="56" height="56" alt="A peach with an eye — MOMO watches">
+      <span>Project 桃多郎</span>
+    </a>
+    <nav aria-label="Sections">
+      <a href="index.html">Home</a>
+      <a href="cockpit.html" aria-current="page">Current</a>
+      <a href="oh-dango-news.html">Oh Dango News</a>
+    </nav>
+  </header>
+
+  <main id="main" class="cockpit">
+    <section class="cockpit-hero">
+      <p class="kicker">Human Interface / Operational Visibility</p>
+      <h1>今、どこにいる？</h1>
+      <p class="ja">桃多郎の現在地を、60秒以内で。</p>
+      <p class="lead" id="headline">Current state snapshotを読み込んでいます。</p>
+      <p class="snapshot-note" id="authority">MOMOは各Applicationの正本を置き換えません。このページはHuman-facing projectionです。</p>
+    </section>
+
+    <div class="topline" aria-label="Current system metrics">
+      <div class="metric"><small>System</small><strong id="system-status">—</strong><span id="system-summary">Loading…</span></div>
+      <div class="metric"><small>Active watches</small><strong id="watch-count">—</strong><span>background intelligence lanes</span></div>
+      <div class="metric"><small>Human decisions</small><strong id="decision-count">—</strong><span>visible, not buried</span></div>
+    </div>
+
+    <section class="section" aria-labelledby="now-title">
+      <div class="section-head"><div><p class="kicker">NOW</p><h2 id="now-title">いま動いているもの</h2></div><p id="updated">Loading freshness…</p></div>
+      <div class="status-grid" id="now-grid"></div>
+    </section>
+
+    <section class="section" aria-labelledby="components-title">
+      <div class="section-head"><div><p class="kicker">SYSTEM</p><h2 id="components-title">各Application / Componentの現在地</h2></div><p>owner sourceを観測したpublic-safe snapshot</p></div>
+      <div class="status-grid" id="components"></div>
+    </section>
+
+    <section class="section" aria-labelledby="recent-title">
+      <div class="section-head"><div><p class="kicker">RECENT</p><h2 id="recent-title">最近、何が変わった？</h2></div><p>material changeだけ</p></div>
+      <ol class="timeline" id="recent"></ol>
+    </section>
+
+    <section class="section" aria-labelledby="decision-title">
+      <div class="section-head"><div><p class="kicker">HUMAN</p><h2 id="decision-title">Human判断待ち</h2></div><p>技術parameterではなくHuman-only decision</p></div>
+      <div id="decisions"></div>
+    </section>
+
+    <section class="section" aria-labelledby="next-title">
+      <div class="section-head"><div><p class="kicker">NEXT</p><h2 id="next-title">次に始められる大項目</h2></div><p>開始権限ではなく候補</p></div>
+      <div class="next-list" id="next-options"></div>
+    </section>
+
+    <a class="back" href="index.html">← Project 桃多郎へ戻る</a>
+  </main>
+
+  <footer>
+    <p>One semantic truth → multiple views.</p>
+    <p class="muted">Current State is a bounded Human projection. A status shown here never creates new authority for an Application.</p>
+  </footer>
+
+  <script>
+    (() => {
+      const badge = (status) => {
+        const span = document.createElement('span');
+        span.className = `badge badge-${status || 'UNKNOWN'}`;
+        span.textContent = status || 'UNKNOWN';
+        return span;
+      };
+      const source = (item) => {
+        const p = document.createElement('p');
+        p.className = 'source';
+        const label = item.source_label || 'source';
+        p.append(document.createTextNode(label));
+        if (item.revision) {
+          const short = item.revision.slice(0, 10);
+          p.append(document.createTextNode(' · '));
+          if (item.source_url) {
+            const a = document.createElement('a');
+            a.href = item.source_url;
+            a.textContent = short;
+            p.append(a);
+          } else {
+            const code = document.createElement('code');
+            code.textContent = short;
+            p.append(code);
+          }
+        }
+        return p;
+      };
+      const card = (item, showRole = false) => {
+        const article = document.createElement('article');
+        article.className = 'status-card';
+        article.append(badge(item.status));
+        const h = document.createElement('h3');
+        h.textContent = item.name || item.title || 'Untitled';
+        article.append(h);
+        if (showRole && item.role) {
+          const role = document.createElement('p');
+          role.className = 'role';
+          role.textContent = item.role;
+          article.append(role);
+        }
+        const body = document.createElement('p');
+        body.textContent = item.current || item.meaning || '';
+        article.append(body, source(item));
+        return article;
+      };
+
+      fetch('data/current-state.json', { cache: 'no-store' })
+        .then((res) => { if (!res.ok) throw new Error('snapshot unavailable'); return res.json(); })
+        .then((data) => {
+          document.querySelector('#headline').textContent = data.system?.headline || 'Current state';
+          document.querySelector('#authority').textContent = data.authority_note || '';
+          document.querySelector('#system-status').textContent = data.system?.status || 'UNKNOWN';
+          document.querySelector('#system-summary').textContent = data.system?.summary || '';
+          document.querySelector('#watch-count').textContent = String(data.system?.active_watch_count ?? '—');
+          document.querySelector('#decision-count').textContent = String(data.system?.human_decision_count ?? '—');
+          if (data.observed_at) {
+            const d = new Date(data.observed_at);
+            document.querySelector('#updated').textContent = `Observed ${d.toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' })} JST`;
+          }
+
+          const now = document.querySelector('#now-grid');
+          now.replaceChildren(...(data.now || []).map((item) => card(item)));
+
+          const components = document.querySelector('#components');
+          components.replaceChildren(...(data.components || []).map((item) => card(item, true)));
+
+          const recent = document.querySelector('#recent');
+          recent.replaceChildren(...(data.recent || []).map((item) => {
+            const li = document.createElement('li');
+            const time = document.createElement('time');
+            time.textContent = item.date || '';
+            const body = document.createElement('div');
+            body.append(badge(item.status));
+            const h = document.createElement('h3'); h.textContent = item.title || '';
+            const p = document.createElement('p'); p.textContent = item.meaning || '';
+            body.append(h, p, source(item));
+            li.append(time, body);
+            return li;
+          }));
+
+          const decisions = document.querySelector('#decisions');
+          const decisionItems = data.human_decisions || [];
+          if (!decisionItems.length) {
+            decisions.innerHTML = '<p class="muted">現在、明示されたHuman-only decisionはありません。</p>';
+          } else {
+            decisions.replaceChildren(...decisionItems.map((item) => {
+              const div = document.createElement('div'); div.className = 'decision';
+              div.append(badge(item.status));
+              const h = document.createElement('h3'); h.textContent = item.area || 'Decision';
+              const p = document.createElement('p'); p.textContent = item.decision || '';
+              const note = document.createElement('p'); note.className = 'muted';
+              note.textContent = item.required_now ? '今すぐ判断が必要' : '再開時だけ必要。今すぐの判断は不要。';
+              div.append(h, p, note); return div;
+            }));
+          }
+
+          const next = document.querySelector('#next-options');
+          next.replaceChildren(...(data.next_options || []).sort((a,b) => a.priority - b.priority).map((item) => {
+            const div = document.createElement('div'); div.className = 'next-item';
+            const body = document.createElement('div');
+            const h = document.createElement('h3'); h.textContent = item.title || '';
+            const p = document.createElement('p'); p.textContent = item.meaning || '';
+            body.append(h,p); div.append(body); return div;
+          }));
+        })
+        .catch((err) => {
+          document.querySelector('#headline').textContent = 'Current snapshotを取得できませんでした。';
+          document.querySelector('#system-summary').textContent = '古い状態を現在状態として推測表示しません。';
+          document.querySelector('#updated').textContent = 'Freshness: UNKNOWN';
+          console.error(err);
+        });
+    })();
+  </script>
+</body>
+</html>
