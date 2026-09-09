@@ -7,6 +7,12 @@
   }
 
   const mastNav = document.querySelector(".mast nav");
+  if (mastNav && !mastNav.querySelector('a[href="cockpit.html"]')) {
+    const link = document.createElement("a");
+    link.href = "cockpit.html";
+    link.textContent = "Current";
+    mastNav.prepend(link);
+  }
   if (mastNav && !mastNav.querySelector('a[href="recomposition.html"]')) {
     const link = document.createElement("a");
     link.href = "recomposition.html";
@@ -21,6 +27,14 @@
   }
 
   const deeper = document.querySelector("#deeper .deeper");
+  if (deeper && !deeper.querySelector('a[href="cockpit.html"]')) {
+    const li = document.createElement("li");
+    const link = document.createElement("a");
+    link.href = "cockpit.html";
+    link.textContent = "Current State — 今どこ？";
+    li.append(link);
+    deeper.prepend(li);
+  }
   if (deeper && !deeper.querySelector('a[href="recomposition.html"]')) {
     const li = document.createElement("li");
     const link = document.createElement("a");
@@ -36,6 +50,62 @@
     link.textContent = "Oh Dango News — model routing updates";
     li.append(link);
     deeper.prepend(li);
+  }
+
+  const hero = document.querySelector(".hero");
+  if (hero && !document.querySelector("#current-overview")) {
+    const style = document.createElement("style");
+    style.textContent = `
+      .current-overview{max-width:1100px;margin:-.5rem auto 2.2rem;padding:0 1.25rem}.current-overview-inner{display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:center;border:1px solid rgba(113,87,67,.2);border-radius:20px;padding:1rem 1.15rem;background:rgba(255,255,255,.56);box-shadow:0 10px 32px rgba(68,45,32,.05)}.current-overview .current-label{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap;font-size:.78rem;font-weight:750;letter-spacing:.03em}.current-overview .current-badge{border:1px solid rgba(113,87,67,.2);border-radius:999px;padding:.24rem .5rem;background:rgba(221,239,220,.75)}.current-overview h2{font-size:clamp(1.08rem,2.5vw,1.38rem);margin:.35rem 0}.current-overview p{margin:.25rem 0}.current-overview .current-meta{color:#6d625b;font-size:.82rem}.current-overview a.current-open{white-space:nowrap;font-weight:750}@media(max-width:700px){.current-overview-inner{grid-template-columns:1fr}.current-overview a.current-open{margin-top:.2rem}}
+    `;
+    document.head.append(style);
+
+    const section = document.createElement("section");
+    section.id = "current-overview";
+    section.className = "current-overview";
+    section.setAttribute("aria-label", "Current System state");
+    const inner = document.createElement("div");
+    inner.className = "current-overview-inner";
+    const body = document.createElement("div");
+    const label = document.createElement("div");
+    label.className = "current-label";
+    const badge = document.createElement("span");
+    badge.className = "current-badge";
+    badge.textContent = "CURRENT";
+    const meta = document.createElement("span");
+    meta.className = "current-meta";
+    meta.textContent = "freshness loading…";
+    label.append(badge, meta);
+    const title = document.createElement("h2");
+    title.textContent = "今、どこにいる？";
+    const summary = document.createElement("p");
+    summary.textContent = "System current stateを読み込んでいます。";
+    body.append(label, title, summary);
+    const open = document.createElement("a");
+    open.className = "current-open";
+    open.href = "cockpit.html";
+    open.textContent = "Current State →";
+    inner.append(body, open);
+    section.append(inner);
+    hero.insertAdjacentElement("afterend", section);
+
+    fetch("data/current-state.json", { cache: "no-store" })
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => {
+        if (!data) return;
+        badge.textContent = data.system?.status || "UNKNOWN";
+        title.textContent = data.system?.headline || "今、どこにいる？";
+        summary.textContent = data.system?.summary || "Current state snapshot";
+        if (data.observed_at) {
+          const when = new Date(data.observed_at);
+          meta.textContent = `Observed ${when.toLocaleString("ja-JP", { timeZone: "Asia/Tokyo" })} JST · Watch ${data.system?.active_watch_count ?? "—"} · Human decision ${data.system?.human_decision_count ?? "—"}`;
+        }
+      })
+      .catch(() => {
+        badge.textContent = "UNKNOWN";
+        meta.textContent = "freshness unavailable";
+        summary.textContent = "古い状態を現在状態として推測表示しません。";
+      });
   }
 
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
