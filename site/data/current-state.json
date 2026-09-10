@@ -2,26 +2,32 @@
   "schema_version": "0.1",
   "projection": "MOMO Human-facing public snapshot",
   "authority_note": "このページは『いまどうなってる？』を見るための案内板です。各プロジェクトの正本はそれぞれのGitにあり、ここに表示しただけで状態や権限は変わりません。",
-  "observed_at": "2026-09-09T20:29:00+09:00",
+  "observed_at": "2026-09-10T09:05:30+09:00",
   "system": {
     "status": "ACTIVE",
     "headline": "思想を整える段階から、実際に使い続ける段階へ。",
-    "summary": "いまの桃多郎は、考え方や役割の整理から一歩進み、『今どこにいるかをすぐ分かる』『環境を替えても戻れる』『日常的に動かせる』状態づくりに入っています。引っ越しはまだ始めず、必要な時に一気に移れる手順だけ残しています。",
+    "summary": "桃多郎の現在地は自動で見回るようになり、KIBIも『接続の考え方』から一歩進んで、実際の運用へ持ち込むための最小プロフィール設計まで完了しました。引っ越しはまだ始めず、KIJI・INNUは次の検証待ち、SARUは再開時のHuman判断待ちです。",
     "human_decision_count": 1,
-    "active_watch_count": 1
+    "active_watch_count": 2
   },
   "now": [
     {
       "status": "ACTIVE",
       "title": "桃多郎の現在地ページ",
-      "meaning": "MOMOを開けば、いま何が動き、何が止まり、最近何が変わったかを短時間で見られるようになりました。",
+      "meaning": "MOMOを開けば、いま何が動き、何が止まり、最近何が変わったかを短時間で見られます。",
       "source_label": "MOMO Current State Cockpit v0",
-      "revision": "7f4015f6fdcc1bf2a1a28caeb718be1ef0b6fca7"
+      "revision": "e852deeb7dcb7c047b79d2ac2df9b3b7a87eeb89"
+    },
+    {
+      "status": "WATCH",
+      "title": "現在地の自動見回り",
+      "meaning": "各Gitの変化を定期的に確認し、意味のある変化があった時だけこのページを更新します。変化がなければ何もしません。",
+      "source_label": "MOMO Current State Watch"
     },
     {
       "status": "WATCH",
       "title": "AIモデル選びの学習",
-      "meaning": "毎時、どのAI・強度・道具・実行環境を選ぶとうまくいくかをDangoへ蓄積しています。大事な変化だけHumanに見せます。",
+      "meaning": "どのAI・強度・道具・実行環境を選ぶとうまくいくかをDangoへ蓄積しています。大事な変化だけHumanに見せます。",
       "source_label": "INNU Routing Intelligence Loop"
     },
     {
@@ -37,10 +43,10 @@
       "name": "MOMO",
       "role": "全体の意味をまとめ、人に見せる",
       "status": "ACTIVE",
-      "current": "『今どこ？』をすぐ見られる現在地ページが公開されました。各仲間を動かすのではなく、全体をHumanに分かる形で見せています。",
+      "current": "『今どこ？』をすぐ見られる現在地ページと、AIモデル選びの重要ニュースをHuman向けに公開しています。",
       "source_label": "MOMO Pages",
-      "revision": "7f4015f6fdcc1bf2a1a28caeb718be1ef0b6fca7",
-      "observed_at": "2026-09-09T20:29:00+09:00",
+      "revision": "e852deeb7dcb7c047b79d2ac2df9b3b7a87eeb89",
+      "observed_at": "2026-09-10T09:05:30+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     },
     {
@@ -50,17 +56,18 @@
       "current": "全体設計は完了。引っ越しの調査と復旧練習も済みました。実移行は必要になるまで始めません。",
       "source_label": "MOMO-Observatory main",
       "revision": "36a2b057120e981bdf9f67212184df07d38d0c53",
-      "observed_at": "2026-09-09T20:25:00+09:00",
+      "observed_at": "2026-09-10T09:05:30+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     },
     {
       "name": "KIBI",
       "role": "仲間同士を安全につなぐ",
       "status": "COMPLETE",
-      "current": "接続の考え方とルール設計はレビューを通過して、ひと区切り完了しています。実際の接続実装はまだ始めていません。",
-      "source_label": "KIBI main",
-      "revision": "233b5260226c41b4ae5fcb123543b39045004ef3",
-      "observed_at": "2026-09-09T20:25:00+09:00",
+      "current": "接続ルールの設計に加えて、『実際に使うなら最低限どう振る舞うか』という運用プロフィールまで設計完了しました。まだ実装や各Applicationへの導入は始めていません。",
+      "source_label": "KIBI Operationalization Phase 1",
+      "source_url": "https://github.com/asklessquill/KIBI/commit/19d36fa97a661e15a5cc97eb031134f66bd5311c",
+      "revision": "19d36fa97a661e15a5cc97eb031134f66bd5311c",
+      "observed_at": "2026-09-10T09:05:30+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     },
     {
@@ -70,7 +77,7 @@
       "current": "新しい情報から『何が変わったか』を見つける仕組みの試作まで完了。次の検証を始めるまではこの状態を保ちます。",
       "source_label": "KIJI Immediate Insight Loop v0",
       "revision": "d68afd33fac9cb8d01c88dd30ac19c035da5c95c",
-      "observed_at": "2026-09-09T20:25:00+09:00",
+      "observed_at": "2026-09-10T09:05:30+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     },
     {
@@ -80,52 +87,78 @@
       "current": "壊れ方や復旧、同時実行時の安全性をかなり検証済みです。本番側へ反映する判断はまだしていません。",
       "source_label": "INNU Lab",
       "revision": "8ef86cfe36c843b90aeb95ece16f43824ff59fe3",
-      "observed_at": "2026-09-09T20:25:00+09:00",
+      "observed_at": "2026-09-10T09:05:30+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     },
     {
       "name": "SARU",
       "role": "作ったものを現実世界で活かす",
       "status": "WAITING_HUMAN",
-      "current": "次に現実で何を変えたいか、その対象がまだ決まっていません。再開する時だけHumanが1件選べば続けられます。今すぐ決める必要はありません。",
-      "source_label": "SARU Cycle-2 Phase 1",
-      "revision": "0a36f0f12a7875cac77adbc252420e8c490f86bc",
-      "observed_at": "2026-09-09T20:25:00+09:00",
+      "current": "次に現実で何を変えたいか、その対象がまだ決まっていません。再開する時だけHumanが1件選べば続けられます。今すぐ決める必要はありません。現在の正本はmainに一本化されました。",
+      "source_label": "SARU main / Cycle-2 Phase 1",
+      "source_url": "https://github.com/asklessquill/Saru/commit/57fc3a4105658d03b4d538d1db55b937e2a9a21a",
+      "revision": "57fc3a4105658d03b4d538d1db55b937e2a9a21a",
+      "observed_at": "2026-09-10T09:05:30+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     },
     {
       "name": "FROG / KAERU",
       "role": "考えすぎる前に、小さく現実で試す",
       "status": "COMPLETE",
-      "current": "Humanが毎回作業を運ばなくても、GitHubからAIへ仕事を渡し、結果をGitへ返す経路を実際に動かして証明しました。",
-      "source_label": "FROG autonomous return loop",
-      "source_url": "https://github.com/asklessquill/FROG/blob/2014a9c7629e2ee8874ff18e5542a0a424bc9ef7/HANDOFF.md",
-      "revision": "2014a9c7629e2ee8874ff18e5542a0a424bc9ef7",
-      "observed_at": "2026-09-09T20:25:00+09:00",
+      "current": "Humanが毎回作業を運ばなくても、GitHubからAIへ仕事を渡し、結果をGitへ返す経路を実際に動かして証明済みです。Reality Mentorとしての現在の正本もmainに整理されました。",
+      "source_label": "FROG main",
+      "source_url": "https://github.com/asklessquill/FROG/commit/121f25d4a700f17b9e6c9a160517f3a6c90d5b42",
+      "revision": "121f25d4a700f17b9e6c9a160517f3a6c90d5b42",
+      "observed_at": "2026-09-10T09:05:30+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     },
     {
       "name": "SandFrog",
       "role": "壊してもよい実験場",
       "status": "BLOCKED",
-      "current": "Mac側のChatGPTログインが切れているため、その経路を使う次の実験だけ止まっています。認証を戻すまでは安全に何もしません。",
-      "source_label": "SandFrog EXP026-B",
-      "revision": "f7d10ecebd487556bc73d6e77bececc4e409c9c5",
-      "observed_at": "2026-09-09T20:25:00+09:00",
+      "current": "Mac側のChatGPTログインが切れているため、その経路を使う次の実験だけ止まっています。実験記録は最新のEXP026-Bまでmainに整理されましたが、新しい実験の許可にはなりません。",
+      "source_label": "SandFrog main / EXP026-B",
+      "source_url": "https://github.com/asklessquill/SandFrog/commit/ea7f25f5abf8886a2d9a9f7d5e6f5cd237ccf232",
+      "revision": "ea7f25f5abf8886a2d9a9f7d5e6f5cd237ccf232",
+      "observed_at": "2026-09-10T09:05:30+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     },
     {
       "name": "Dango",
       "role": "AIモデル選びの経験を貯める",
       "status": "WATCH",
-      "current": "実際の作業結果から『どのAIを、どの強さで、どんな仕事に使うとよいか』を継続して学んでいます。",
+      "current": "実際の作業結果からAIの選び方を継続して学んでいます。直近では『画面上の残量』と『実際に仕事を開始できるか』は別々に記録すべき、という実測Evidenceを追加しました。",
       "source_label": "Dango main",
-      "revision": "26465e2a3d857cd174a2f20b8386eae986a682db",
-      "observed_at": "2026-09-09T20:25:00+09:00",
+      "source_url": "https://github.com/asklessquill/Dango/commit/aa00770dded214acf0051f22c47aaa5ad25044a2",
+      "revision": "aa00770dded214acf0051f22c47aaa5ad25044a2",
+      "observed_at": "2026-09-10T09:05:30+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     }
   ],
   "recent": [
+    {
+      "date": "2026-09-10",
+      "status": "COMPLETE",
+      "title": "KIBIを『実際に使うならどうする？』まで具体化した",
+      "meaning": "接続ルールだけでなく、実際の運用で必要になる最小の振る舞い・失敗時の扱い・復旧の考え方まで設計しました。これは設計の完了で、実装開始ではありません。",
+      "source_label": "KIBI Operationalization Phase 1",
+      "revision": "19d36fa97a661e15a5cc97eb031134f66bd5311c"
+    },
+    {
+      "date": "2026-09-10",
+      "status": "WATCH",
+      "title": "桃多郎の現在地を自動で見回り始めた",
+      "meaning": "各Gitを定期的に確認し、意味のある変化があった時だけMOMOの現在地ページを更新する運用が始まりました。",
+      "source_label": "MOMO Current State Watch"
+    },
+    {
+      "date": "2026-09-10",
+      "status": "WATCH",
+      "title": "AIの残量表示だけを信用しない学びを追加",
+      "meaning": "Dangoでは、残量が見えていても実行が通らない場合があるEvidenceを追加しました。残量表示と実際の実行可否を別々に観測する方針です。",
+      "source_label": "Dango routing intelligence",
+      "revision": "aa00770dded214acf0051f22c47aaa5ad25044a2"
+    },
     {
       "date": "2026-09-09",
       "status": "COMPLETE",
@@ -151,13 +184,6 @@
       "revision": "36a2b057120e981bdf9f67212184df07d38d0c53"
     },
     {
-      "date": "2026-09-09",
-      "status": "WATCH",
-      "title": "AIモデル選びの経験が自動で貯まり始めた",
-      "meaning": "実作業から得たモデル選び・実行環境選びの経験を、将来INNUが使える形でDangoへ残しています。",
-      "source_label": "Dango routing intelligence"
-    },
-    {
       "date": "2026-09-07",
       "status": "HOLD",
       "title": "KIJIの『最近何が変わった？』試作を固定",
@@ -169,21 +195,14 @@
       "status": "WAITING_HUMAN",
       "title": "SARUは『現実で何を変える？』の指定待ち",
       "meaning": "実際に人や仕事へ働きかける前に、対象と望む変化をHumanが決めるところで安全に止まっています。",
-      "revision": "0a36f0f12a7875cac77adbc252420e8c490f86bc"
-    },
-    {
-      "date": "2026-09-06",
-      "status": "COMPLETE",
-      "title": "KIBIの接続ルール設計が完了",
-      "meaning": "独立レビューで問題なし。設計だけを受け入れて、実装は始めず止めています。",
-      "revision": "233b5260226c41b4ae5fcb123543b39045004ef3"
+      "revision": "57fc3a4105658d03b4d538d1db55b937e2a9a21a"
     },
     {
       "date": "2026-09-06",
       "status": "COMPLETE",
       "title": "Humanが運ばなくてもAI作業が往復できた",
       "meaning": "GitHubから仕事を渡し、AIが実行し、結果をGitへ戻す経路をFROGで実証しました。",
-      "revision": "2014a9c7629e2ee8874ff18e5542a0a424bc9ef7"
+      "revision": "121f25d4a700f17b9e6c9a160517f3a6c90d5b42"
     }
   ],
   "human_decisions": [
@@ -197,8 +216,8 @@
   "next_options": [
     {
       "priority": 1,
-      "title": "現在地を自動で新しく保つ",
-      "meaning": "各Gitの変化を定期的に読み、何か変わった時だけこのページを更新する。変化がなければ何もしない。"
+      "title": "KIBIを実際に検証できる形へ進める",
+      "meaning": "今回できた運用プロフィールを、機械で確認できる形や小さな適合テストへ進める候補。開始には新しいTaskが必要です。"
     },
     {
       "priority": 2,
