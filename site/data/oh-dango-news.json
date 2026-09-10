@@ -1,10 +1,21 @@
 {
   "title": "Oh Dango News",
   "subtitle": "Dangoのmodel-routing knowledgeから、Humanが知る価値のある更新だけをMOMOが投影します。",
-  "updated_at": "2026-09-10T09:12:13+09:00",
+  "updated_at": "2026-09-10T10:41:15+09:00",
   "source": "asklessquill/Dango (private durable knowledge base)",
   "publication_rule": "Material / routing-changing / canonical prompting developments only. Low-confidence inbox-only evidence stays private until it becomes worth surfacing.",
   "items": [
+    {
+      "date": "2026-09-10",
+      "kind": "Quota / Scheduling",
+      "signal": "Official product semantics",
+      "title": "リセットを買うと、次の週次リセット日も動く",
+      "summary": "OpenAIの現行Work/Codexガイドでは、対象アカウントのinstant resetは5時間枠と週次枠をその場で更新し、週次allowanceを前倒しする。新しい週次期間はreset後の最初のWork/Codex requestから始まり、次の自動weekly resetはその7日後。つまりresetは単なる『今だけ回復』ではなく、今後の実行予算カレンダーを動かす操作。",
+      "strength": "HIGH official product semantics",
+      "astra_vs_sol": "モデル性能差ではない。Astra/Solを含む重いWork/Codex実行をいつ走らせるかというbudget timingのrouting rule。",
+      "implication": "大きなtaskの前にresetを反射的に使わない。自然resetを待つ、安いrouteへ寄せる、resetを高価値taskまで保存する、購入resetで週次期間を前倒しする、を別々の選択肢として扱う。購入にはHumanのspend authorityが必要。",
+      "source_url": "https://help.openai.com/en/articles/20001516-managing-usage-with-gpt-6-astra-in-work-and-codex"
+    },
     {
       "date": "2026-09-10",
       "kind": "Routing / Economics",
