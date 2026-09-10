@@ -1,10 +1,21 @@
 {
   "title": "Oh Dango News",
   "subtitle": "Dangoのmodel-routing knowledgeから、Humanが知る価値のある更新だけをMOMOが投影します。",
-  "updated_at": "2026-09-10T12:00:00+09:00",
+  "updated_at": "2026-09-10T13:31:00+09:00",
   "source": "asklessquill/Dango (private durable knowledge base)",
   "publication_rule": "Material / routing-changing / canonical prompting developments only. Low-confidence inbox-only evidence stays private until it becomes worth surfacing.",
   "items": [
+    {
+      "date": "2026-09-10",
+      "kind": "Model Identity",
+      "signal": "Canonical correction",
+      "title": "GPT-5.6は『Tera』ではなく『Terra』が現在の正式名",
+      "summary": "OpenAIの現行launch記事・Help Center・モデル一覧・個別モデルページはいずれも、GPT-5.6の低コスト側モデルをTerraと表記。OpenAI APIの実行IDも gpt-5.6-terra。Dango内に残っていたcanonicalなTera表記をTerraへ訂正した。",
+      "strength": "HIGH first-party naming and executable model ID",
+      "astra_vs_sol": "モデル性能比較ではない。Sol / Terra / Lunaというmodel identityを正しく分離するためのcanonical correction。",
+      "implication": "今後INNUやHumanが現在モデルを指定する時はTerraを使う。過去ログ中のTeraは履歴として残してよいが、現在の実行model IDとしては使わない。",
+      "source_url": "https://developers.openai.com/api/docs/models/gpt-5.6-terra"
+    },
     {
       "date": "2026-09-10",
       "kind": "Provider / Execution",
