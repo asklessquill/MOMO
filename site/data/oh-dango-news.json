@@ -1,10 +1,21 @@
 {
   "title": "Oh Dango News",
   "subtitle": "Dangoのmodel-routing knowledgeから、Humanが知る価値のある更新だけをMOMOが投影します。",
-  "updated_at": "2026-09-10T15:05:00+09:00",
+  "updated_at": "2026-09-11T01:23:00+09:00",
   "source": "asklessquill/Dango (private durable knowledge base)",
   "publication_rule": "Material / routing-changing / canonical prompting developments only. Low-confidence inbox-only evidence stays private until it becomes worth surfacing.",
   "items": [
+    {
+      "date": "2026-09-11",
+      "kind": "Builder / Surface Routing",
+      "signal": "Canonical scoped routing",
+      "title": "Cursorは品質だけを理由に外さない。Codexとは役割を分ける",
+      "summary": "INNUの隔離再構成repoを使った複数のbounded backend/reliability比較では、Cursor Autoがhidden historical Codex referenceと同じsemantic solution classへ収束し、報告されたfull suiteを通過した。別のbounded autonomous explorationでも複数の有意なreliability defectを独立発見した。一方で検証の弱い仮説や広すぎる抽象化もあり、普遍的なCursor > Codex比較には昇格しない。",
+      "strength": "MEDIUM-HIGH to HIGH within tested TypeScript/Node/SQLite reliability scope; universal ranking unsupported",
+      "astra_vs_sol": "Astra/Solの直接比較ではない。coding execution surfaceをmodel/tierとは別軸で選ぶためのproject-empirical routing update。",
+      "implication": "tested scopeではroutineなbounded Builder throughputをCursor Autoへ寄せ、Codexは難しいconcurrency/security/recovery reasoning、検証が怪しい時の深掘り、独立second opinionへ温存する。Cursorを外すためだけにCodex capacityを増やさず、実際の枯渇とoutcome telemetryを見て増強を判断する。",
+      "source_url": "https://github.com/asklessquill/Innu"
+    },
     {
       "date": "2026-09-10",
       "kind": "Capability / Surface",
