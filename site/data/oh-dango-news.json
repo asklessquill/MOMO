@@ -1,10 +1,21 @@
 {
   "title": "Oh Dango News",
   "subtitle": "Dangoのmodel-routing knowledgeから、Humanが知る価値のある更新だけをMOMOが投影します。",
-  "updated_at": "2026-09-10T10:41:15+09:00",
+  "updated_at": "2026-09-10T12:00:00+09:00",
   "source": "asklessquill/Dango (private durable knowledge base)",
   "publication_rule": "Material / routing-changing / canonical prompting developments only. Low-confidence inbox-only evidence stays private until it becomes worth surfacing.",
   "items": [
+    {
+      "date": "2026-09-10",
+      "kind": "Provider / Execution",
+      "signal": "Official product capability",
+      "title": "同じSolでも、どこを通して動かすかで別ルートになる",
+      "summary": "OpenAIはCodex CLI・desktop・VS Codeで、OpenAIモデルをAmazon Bedrock経由で使う構成を公式化。Bedrock credentialsとAWS IAM/SSO等を使い、OpenAI-hosted APIをrequest pathに含めない。一方でCodexのcloud review/security/web agentsやcloud plugin storeなどは現状この構成では使えない。",
+      "strength": "HIGH official product semantics; provider A/B performance is still unknown",
+      "astra_vs_sol": "モデル性能差のEvidenceではない。providerはmodel/tierとは別のrouting軸で、現在のBedrock対応モデルにはGPT-5.6 Sol/Terra/Luna等が含まれる。",
+      "implication": "INNUは『Solを使う』だけでなく、OpenAI-hosted系かBedrockか、identity/governance/region/必要なcloud capabilityまで分けて選ぶ。モデル名が同じでもroute equivalenceとはみなさない。",
+      "source_url": "https://help.openai.com/en/articles/20001253-configure-codex-with-amazon-bedrock"
+    },
     {
       "date": "2026-09-10",
       "kind": "Quota / Scheduling",
