@@ -1,10 +1,21 @@
 {
   "title": "Oh Dango News",
   "subtitle": "Dangoのmodel-routing knowledgeから、Humanが知る価値のある更新だけをMOMOが投影します。",
-  "updated_at": "2026-09-10T13:31:00+09:00",
+  "updated_at": "2026-09-10T15:05:00+09:00",
   "source": "asklessquill/Dango (private durable knowledge base)",
   "publication_rule": "Material / routing-changing / canonical prompting developments only. Low-confidence inbox-only evidence stays private until it becomes worth surfacing.",
   "items": [
+    {
+      "date": "2026-09-10",
+      "kind": "Capability / Surface",
+      "signal": "Canonical routing",
+      "title": "Pluginが見えていても、そのまま使えるとは限らない",
+      "summary": "OpenAIの現行仕様ではPluginはskills / apps / templatesを束ねるが、実行可否はplan・workspace・role・region・surface、required app、provider認証、元データ権限、action controlなどで別々に決まる。さらにMCPを宣言したimported pluginは、MCP serverがremote HTTPSでもDesktop onlyになり得る。",
+      "strength": "HIGH official product semantics; per-plugin reliability remains unknown",
+      "astra_vs_sol": "モデル性能差ではない。Capability route / surface / permissionをmodel / tierとは独立して選ぶためのrouting rule。",
+      "implication": "INNUはPlugin / Skill / MCPをReuseする前に、存在→導入→App→認証→元データ権限→Action→Surface→Desktop-only制約→freshnessを分けてpreflightする。『見えるが使えない』状態をgeneric tool failureとして一括しない。",
+      "source_url": "https://help.openai.com/en/articles/20001256"
+    },
     {
       "date": "2026-09-10",
       "kind": "Model Identity",
