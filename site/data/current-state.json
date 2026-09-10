@@ -2,11 +2,11 @@
   "schema_version": "0.1",
   "projection": "MOMO Human-facing public snapshot",
   "authority_note": "このページは『いまどうなってる？』を見るための案内板です。各プロジェクトの正本はそれぞれのGitにあり、ここに表示しただけで状態や権限は変わりません。",
-  "observed_at": "2026-09-10T09:05:30+09:00",
+  "observed_at": "2026-09-11T08:31:29+09:00",
   "system": {
     "status": "ACTIVE",
-    "headline": "思想を整える段階から、実際に使い続ける段階へ。",
-    "summary": "桃多郎の現在地は自動で見回るようになり、KIBIも『接続の考え方』から一歩進んで、実際の運用へ持ち込むための最小プロフィール設計まで完了しました。引っ越しはまだ始めず、KIJI・INNUは次の検証待ち、SARUは再開時のHuman判断待ちです。",
+    "headline": "『作る』だけでなく、『続けやすくする』ところまで進んできた。",
+    "summary": "KIJIとINNUは現在の実装と権限をmainへ整理でき、再開時に長い説明を貼り直さなくてよい共通の復帰方法も候補として整理されました。Dangoでは長時間のCursor作業に向くAI候補の新しい比較知識を追加。KIBI・SARU・FROG・SandFrogの状態自体は変わっていません。",
     "human_decision_count": 1,
     "active_watch_count": 2
   },
@@ -16,7 +16,7 @@
       "title": "桃多郎の現在地ページ",
       "meaning": "MOMOを開けば、いま何が動き、何が止まり、最近何が変わったかを短時間で見られます。",
       "source_label": "MOMO Current State Cockpit v0",
-      "revision": "e852deeb7dcb7c047b79d2ac2df9b3b7a87eeb89"
+      "revision": "fbe37b9c1aac0addbbc05b1d53904889877d2dc9"
     },
     {
       "status": "WATCH",
@@ -27,8 +27,9 @@
     {
       "status": "WATCH",
       "title": "AIモデル選びの学習",
-      "meaning": "どのAI・強度・道具・実行環境を選ぶとうまくいくかをDangoへ蓄積しています。大事な変化だけHumanに見せます。",
-      "source_label": "INNU Routing Intelligence Loop"
+      "meaning": "どのAI・強度・道具・実行環境を選ぶとうまくいくかをDangoへ蓄積しています。直近では、長時間のCursor作業でどの候補を比較すべきかという新しい材料が増えました。",
+      "source_label": "INNU Routing Intelligence Loop",
+      "revision": "a73374f9ff63fa98a5862f7952836483830cda9d"
     },
     {
       "status": "HOLD",
@@ -43,20 +44,22 @@
       "name": "MOMO",
       "role": "全体の意味をまとめ、人に見せる",
       "status": "ACTIVE",
-      "current": "『今どこ？』をすぐ見られる現在地ページと、AIモデル選びの重要ニュースをHuman向けに公開しています。",
-      "source_label": "MOMO Pages",
-      "revision": "e852deeb7dcb7c047b79d2ac2df9b3b7a87eeb89",
-      "observed_at": "2026-09-10T09:05:30+09:00",
+      "current": "『今どこ？』をすぐ見られる現在地ページと、AIモデル選びの重要ニュースをHuman向けに公開しています。直近ではCursorを日常のBuilder候補から外さない、という実測ベースの見方も公開しました。",
+      "source_label": "MOMO main",
+      "source_url": "https://github.com/asklessquill/MOMO/commit/fbe37b9c1aac0addbbc05b1d53904889877d2dc9",
+      "revision": "fbe37b9c1aac0addbbc05b1d53904889877d2dc9",
+      "observed_at": "2026-09-11T08:31:29+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     },
     {
       "name": "MOMO-Observatory",
       "role": "裏側で全体の記録と根拠を持つ",
       "status": "HOLD",
-      "current": "全体設計は完了。引っ越しの調査と復旧練習も済みました。実移行は必要になるまで始めません。",
+      "current": "全体設計と引っ越し準備は完了済みです。加えて、作業中断後に『再開』だけで安全に元の仕事へ戻るための共通ブートストラップ案を記録しました。まだ候補設計で、各Projectへ導入したわけではありません。",
       "source_label": "MOMO-Observatory main",
-      "revision": "36a2b057120e981bdf9f67212184df07d38d0c53",
-      "observed_at": "2026-09-10T09:05:30+09:00",
+      "source_url": "https://github.com/asklessquill/MOMO-Observatory/commit/280a31428dff27ea0ac88f36529421de6cafe707",
+      "revision": "280a31428dff27ea0ac88f36529421de6cafe707",
+      "observed_at": "2026-09-11T08:31:29+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     },
     {
@@ -67,75 +70,109 @@
       "source_label": "KIBI Operationalization Phase 1",
       "source_url": "https://github.com/asklessquill/KIBI/commit/19d36fa97a661e15a5cc97eb031134f66bd5311c",
       "revision": "19d36fa97a661e15a5cc97eb031134f66bd5311c",
-      "observed_at": "2026-09-10T09:05:30+09:00",
+      "observed_at": "2026-09-11T08:31:29+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     },
     {
       "name": "KIJI",
       "role": "世界を見て、変化を知る",
       "status": "HOLD",
-      "current": "新しい情報から『何が変わったか』を見つける仕組みの試作まで完了。次の検証を始めるまではこの状態を保ちます。",
-      "source_label": "KIJI Immediate Insight Loop v0",
-      "revision": "d68afd33fac9cb8d01c88dd30ac19c035da5c95c",
-      "observed_at": "2026-09-10T09:05:30+09:00",
+      "current": "『何が変わったか』を見つけるImmediate Insight v0を、現在のKIJI実装としてmainへ整理しました。以前のTFOや長期作業branchは履歴扱いです。次の検証を始めるまではこの状態を保ちます。",
+      "source_label": "KIJI main",
+      "source_url": "https://github.com/asklessquill/Kiji/commit/bb66d24ff72c7ca3bed35a0f933c34a4ba55f19f",
+      "revision": "bb66d24ff72c7ca3bed35a0f933c34a4ba55f19f",
+      "observed_at": "2026-09-11T08:31:29+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     },
     {
       "name": "INNU",
       "role": "必要なものを作り切る",
       "status": "HOLD",
-      "current": "壊れ方や復旧、同時実行時の安全性をかなり検証済みです。本番側へ反映する判断はまだしていません。",
-      "source_label": "INNU Lab",
-      "revision": "8ef86cfe36c843b90aeb95ece16f43824ff59fe3",
-      "observed_at": "2026-09-10T09:05:30+09:00",
+      "current": "壊れ方・復旧・同時実行時の安全性まで含む現在の実装をmainへ一本化しました。古いOwataは履歴で、今後はINNU mainが現状の参照先です。モデル選びの実測経験もここへ足しています。",
+      "source_label": "INNU main",
+      "source_url": "https://github.com/asklessquill/Innu/commit/732733d8954158bd72d5836ebe2d7b32bcc28c92",
+      "revision": "732733d8954158bd72d5836ebe2d7b32bcc28c92",
+      "observed_at": "2026-09-11T08:31:29+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     },
     {
       "name": "SARU",
       "role": "作ったものを現実世界で活かす",
       "status": "WAITING_HUMAN",
-      "current": "次に現実で何を変えたいか、その対象がまだ決まっていません。再開する時だけHumanが1件選べば続けられます。今すぐ決める必要はありません。現在の正本はmainに一本化されました。",
+      "current": "次に現実で何を変えたいか、その対象がまだ決まっていません。再開する時だけHumanが1件選べば続けられます。今すぐ決める必要はありません。",
       "source_label": "SARU main / Cycle-2 Phase 1",
       "source_url": "https://github.com/asklessquill/Saru/commit/57fc3a4105658d03b4d538d1db55b937e2a9a21a",
       "revision": "57fc3a4105658d03b4d538d1db55b937e2a9a21a",
-      "observed_at": "2026-09-10T09:05:30+09:00",
+      "observed_at": "2026-09-11T08:31:29+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     },
     {
       "name": "FROG / KAERU",
       "role": "考えすぎる前に、小さく現実で試す",
       "status": "COMPLETE",
-      "current": "Humanが毎回作業を運ばなくても、GitHubからAIへ仕事を渡し、結果をGitへ返す経路を実際に動かして証明済みです。Reality Mentorとしての現在の正本もmainに整理されました。",
+      "current": "Humanが毎回作業を運ばなくても、GitHubからAIへ仕事を渡し、結果をGitへ返す経路を実際に動かして証明済みです。",
       "source_label": "FROG main",
       "source_url": "https://github.com/asklessquill/FROG/commit/121f25d4a700f17b9e6c9a160517f3a6c90d5b42",
       "revision": "121f25d4a700f17b9e6c9a160517f3a6c90d5b42",
-      "observed_at": "2026-09-10T09:05:30+09:00",
+      "observed_at": "2026-09-11T08:31:29+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     },
     {
       "name": "SandFrog",
       "role": "壊してもよい実験場",
       "status": "BLOCKED",
-      "current": "Mac側のChatGPTログインが切れているため、その経路を使う次の実験だけ止まっています。実験記録は最新のEXP026-Bまでmainに整理されましたが、新しい実験の許可にはなりません。",
+      "current": "Mac側のChatGPTログインが切れているため、その経路を使う次の実験だけ止まっています。新しいLeapはまだ始めません。",
       "source_label": "SandFrog main / EXP026-B",
       "source_url": "https://github.com/asklessquill/SandFrog/commit/ea7f25f5abf8886a2d9a9f7d5e6f5cd237ccf232",
       "revision": "ea7f25f5abf8886a2d9a9f7d5e6f5cd237ccf232",
-      "observed_at": "2026-09-10T09:05:30+09:00",
+      "observed_at": "2026-09-11T08:31:29+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     },
     {
       "name": "Dango",
       "role": "AIモデル選びの経験を貯める",
       "status": "WATCH",
-      "current": "実際の作業結果からAIの選び方を継続して学んでいます。直近では『画面上の残量』と『実際に仕事を開始できるか』は別々に記録すべき、という実測Evidenceを追加しました。",
-      "source_label": "Dango main",
-      "source_url": "https://github.com/asklessquill/Dango/commit/aa00770dded214acf0051f22c47aaa5ad25044a2",
-      "revision": "aa00770dded214acf0051f22c47aaa5ad25044a2",
-      "observed_at": "2026-09-10T09:05:30+09:00",
+      "current": "実際の作業結果と外部EvidenceからAIの選び方を継続して学んでいます。直近ではCursorBench 4.0を取り込み、長時間のCursor作業ではSol Max・Grok 4.6 ExtraHigh・Terra Maxなどを近い品質帯の候補として扱い、実案件でA/B確認してから選ぶ方針を追加しました。",
+      "source_label": "Dango main / CursorBench 4.0 scoped knowledge",
+      "source_url": "https://github.com/asklessquill/Dango/commit/a73374f9ff63fa98a5862f7952836483830cda9d",
+      "revision": "a73374f9ff63fa98a5862f7952836483830cda9d",
+      "observed_at": "2026-09-11T08:31:29+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     }
   ],
   "recent": [
+    {
+      "date": "2026-09-11",
+      "status": "WATCH",
+      "title": "長時間のCursor作業で比べるべきAI候補が増えた",
+      "meaning": "CursorBench 4.0をDangoへ取り込みました。近いスコアのモデルを順位だけで決めず、コスト・手数・実案件の結果まで見て選ぶ材料として使います。",
+      "source_label": "Dango CursorBench 4.0 knowledge",
+      "revision": "a73374f9ff63fa98a5862f7952836483830cda9d"
+    },
+    {
+      "date": "2026-09-11",
+      "status": "WATCH",
+      "title": "Cursorを日常のBuilder候補から外さない方針を公開した",
+      "meaning": "実測では、限定されたBuilder作業でCursor Autoが十分な品質へ届く例がありました。Codexは難しい復旧・安全性判断や独立チェックへ温存する、という使い分けをMOMO Newsへ反映しました。",
+      "source_label": "MOMO Oh Dango News",
+      "revision": "fbe37b9c1aac0addbbc05b1d53904889877d2dc9"
+    },
+    {
+      "date": "2026-09-10",
+      "status": "COMPLETE",
+      "title": "KIJIとINNUの『今の本体』をmainへ整理した",
+      "meaning": "長く使っていた作業branchや前身repoを履歴へ下げ、現在のKIJI・INNUをmainだけ見れば復元できる形へ整理しました。",
+      "source_label": "KIJI / INNU current authority",
+      "revision": "bb66d24ff72c7ca3bed35a0f933c34a4ba55f19f"
+    },
+    {
+      "date": "2026-09-10",
+      "status": "HOLD",
+      "title": "『再開』だけで元の仕事へ安全に戻る案を記録した",
+      "meaning": "長い引継ぎ文を毎回貼らず、Gitの現在地と元のTaskを読んで残作業だけ続ける共通ブートストラップ案をObservatoryへ保存しました。まだ設計候補です。",
+      "source_label": "MOMO-Observatory resume/bootstrap note",
+      "revision": "280a31428dff27ea0ac88f36529421de6cafe707"
+    },
     {
       "date": "2026-09-10",
       "status": "COMPLETE",
@@ -148,16 +185,8 @@
       "date": "2026-09-10",
       "status": "WATCH",
       "title": "桃多郎の現在地を自動で見回り始めた",
-      "meaning": "各Gitを定期的に確認し、意味のある変化があった時だけMOMOの現在地ページを更新する運用が始まりました。",
+      "meaning": "各Gitを定期的に確認し、意味のある変化があった時だけMOMOの現在地ページを更新する運用が動いています。",
       "source_label": "MOMO Current State Watch"
-    },
-    {
-      "date": "2026-09-10",
-      "status": "WATCH",
-      "title": "AIの残量表示だけを信用しない学びを追加",
-      "meaning": "Dangoでは、残量が見えていても実行が通らない場合があるEvidenceを追加しました。残量表示と実際の実行可否を別々に観測する方針です。",
-      "source_label": "Dango routing intelligence",
-      "revision": "aa00770dded214acf0051f22c47aaa5ad25044a2"
     },
     {
       "date": "2026-09-09",
@@ -170,64 +199,35 @@
     {
       "date": "2026-09-09",
       "status": "COMPLETE",
-      "title": "別環境へ戻せるかを復旧練習した",
-      "meaning": "9リポジトリを旧GitHub認証なしで復元し、履歴の一致とオフラインテスト558件PASSを確認しました。別端末・新アカウントでの本番復旧はまだです。",
-      "source_label": "Portability v0 recovery rehearsal",
-      "revision": "c32b9413b4f567d4aa2b2a294e8edb11bc22814e"
-    },
-    {
-      "date": "2026-09-09",
-      "status": "COMPLETE",
       "title": "引っ越す時に持っていくものを洗い出した",
       "meaning": "Gitだけでなく、ローカルデータや未保存状態も含めて棚卸しし、移行時のコピー手順まで用意しました。今は実コピーしません。",
       "source_label": "Migration Phase 1 inventory",
       "revision": "36a2b057120e981bdf9f67212184df07d38d0c53"
-    },
-    {
-      "date": "2026-09-07",
-      "status": "HOLD",
-      "title": "KIJIの『最近何が変わった？』試作を固定",
-      "meaning": "短期の変化や矛盾、鮮度を扱う試作はできました。次の実地検証までは触らず保ちます。",
-      "revision": "d68afd33fac9cb8d01c88dd30ac19c035da5c95c"
-    },
-    {
-      "date": "2026-09-07",
-      "status": "WAITING_HUMAN",
-      "title": "SARUは『現実で何を変える？』の指定待ち",
-      "meaning": "実際に人や仕事へ働きかける前に、対象と望む変化をHumanが決めるところで安全に止まっています。",
-      "revision": "57fc3a4105658d03b4d538d1db55b937e2a9a21a"
-    },
-    {
-      "date": "2026-09-06",
-      "status": "COMPLETE",
-      "title": "Humanが運ばなくてもAI作業が往復できた",
-      "meaning": "GitHubから仕事を渡し、AIが実行し、結果をGitへ戻す経路をFROGで実証しました。",
-      "revision": "121f25d4a700f17b9e6c9a160517f3a6c90d5b42"
     }
   ],
   "human_decisions": [
     {
       "status": "WAITING_HUMAN",
       "area": "SARU",
-      "decision": "SARUを再開するときに、『誰・何に対して』『どう変わってほしいか』『どこまで働きかけてよいか』を1件だけ決める。",
+      "decision": "SARUを再開する時に、現実で変えたいことを1件だけ選ぶ。今すぐ決める必要はありません。",
       "required_now": false
     }
   ],
   "next_options": [
     {
       "priority": 1,
-      "title": "KIBIを実際に検証できる形へ進める",
-      "meaning": "今回できた運用プロフィールを、機械で確認できる形や小さな適合テストへ進める候補。開始には新しいTaskが必要です。"
+      "title": "『再開』を本当に短くする",
+      "meaning": "Observatoryにある共通ブートストラップ案を、小さな実証で確かめる。新しいルールを増やすのではなく、Gitから元の仕事へ安全に戻れるかを見る。"
     },
     {
       "priority": 2,
-      "title": "桃多郎を動かす土台を決める",
-      "meaning": "Git、端末、AI、認証、スケジュールなど、普段動かすために本当に必要なものだけを整理する。"
+      "title": "KIBIを1つだけ実際につないでみる",
+      "meaning": "設計済みの最小運用プロフィールを、限定された1経路で試す候補。実装開始には別の明示的なTaskが必要です。"
     },
     {
       "priority": 3,
-      "title": "毎日の運用を小さく回す",
-      "meaning": "始める、止める、再開する、見守る、失敗から戻す、Humanへ聞く、を実際の運用として試す。"
+      "title": "日常運用の型を小さく試す",
+      "meaning": "開始・停止・再開・見回り・失敗・復旧を、Humanの手数が少ない形で1本だけ実証する。"
     }
   ]
 }
