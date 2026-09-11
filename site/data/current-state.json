@@ -2,11 +2,11 @@
   "schema_version": "0.1",
   "projection": "MOMO Human-facing public snapshot",
   "authority_note": "このページは『いまどうなってる？』を見るための案内板です。各プロジェクトの正本はそれぞれのGitにあり、ここに表示しただけで状態や権限は変わりません。",
-  "observed_at": "2026-09-11T08:31:29+09:00",
+  "observed_at": "2026-09-11T09:32:00+09:00",
   "system": {
     "status": "ACTIVE",
     "headline": "『作る』だけでなく、『続けやすくする』ところまで進んできた。",
-    "summary": "KIJIとINNUは現在の実装と権限をmainへ整理でき、再開時に長い説明を貼り直さなくてよい共通の復帰方法も候補として整理されました。Dangoでは長時間のCursor作業に向くAI候補の新しい比較知識を追加。KIBI・SARU・FROG・SandFrogの状態自体は変わっていません。",
+    "summary": "各Projectの現在地そのものに大きな変化はありません。Dangoでは、難しいけれど範囲の決まったBuilder/Explorer仕事にCursor Grok 4.6 ExtraHighを使う新しい実測知識が加わり、Cursor Auto・Grok XHigh・Codexを仕事の重さで使い分ける方針が具体化しました。",
     "human_decision_count": 1,
     "active_watch_count": 2
   },
@@ -16,7 +16,7 @@
       "title": "桃多郎の現在地ページ",
       "meaning": "MOMOを開けば、いま何が動き、何が止まり、最近何が変わったかを短時間で見られます。",
       "source_label": "MOMO Current State Cockpit v0",
-      "revision": "fbe37b9c1aac0addbbc05b1d53904889877d2dc9"
+      "revision": "4fa6ad6b1d87a38f165e575104c9f1f2866cacc6"
     },
     {
       "status": "WATCH",
@@ -27,9 +27,9 @@
     {
       "status": "WATCH",
       "title": "AIモデル選びの学習",
-      "meaning": "どのAI・強度・道具・実行環境を選ぶとうまくいくかをDangoへ蓄積しています。直近では、長時間のCursor作業でどの候補を比較すべきかという新しい材料が増えました。",
+      "meaning": "どのAI・強度・道具・実行環境を選ぶとうまくいくかをDangoへ蓄積しています。直近では、難しいけれど範囲の決まった仕事でGrok 4.6 ExtraHighをCodexの前に試せる材料が増えました。",
       "source_label": "INNU Routing Intelligence Loop",
-      "revision": "a73374f9ff63fa98a5862f7952836483830cda9d"
+      "revision": "9980fc8cd1f1546ec323e26982d1c88ad1ef8b58"
     },
     {
       "status": "HOLD",
@@ -44,11 +44,11 @@
       "name": "MOMO",
       "role": "全体の意味をまとめ、人に見せる",
       "status": "ACTIVE",
-      "current": "『今どこ？』をすぐ見られる現在地ページと、AIモデル選びの重要ニュースをHuman向けに公開しています。直近ではCursorを日常のBuilder候補から外さない、という実測ベースの見方も公開しました。",
+      "current": "『今どこ？』をすぐ見られる現在地ページと、AIモデル選びの重要ニュースをHuman向けに公開しています。",
       "source_label": "MOMO main",
-      "source_url": "https://github.com/asklessquill/MOMO/commit/fbe37b9c1aac0addbbc05b1d53904889877d2dc9",
-      "revision": "fbe37b9c1aac0addbbc05b1d53904889877d2dc9",
-      "observed_at": "2026-09-11T08:31:29+09:00",
+      "source_url": "https://github.com/asklessquill/MOMO/commit/4fa6ad6b1d87a38f165e575104c9f1f2866cacc6",
+      "revision": "4fa6ad6b1d87a38f165e575104c9f1f2866cacc6",
+      "observed_at": "2026-09-11T09:32:00+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     },
     {
@@ -59,7 +59,7 @@
       "source_label": "MOMO-Observatory main",
       "source_url": "https://github.com/asklessquill/MOMO-Observatory/commit/280a31428dff27ea0ac88f36529421de6cafe707",
       "revision": "280a31428dff27ea0ac88f36529421de6cafe707",
-      "observed_at": "2026-09-11T08:31:29+09:00",
+      "observed_at": "2026-09-11T09:32:00+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     },
     {
@@ -70,7 +70,7 @@
       "source_label": "KIBI Operationalization Phase 1",
       "source_url": "https://github.com/asklessquill/KIBI/commit/19d36fa97a661e15a5cc97eb031134f66bd5311c",
       "revision": "19d36fa97a661e15a5cc97eb031134f66bd5311c",
-      "observed_at": "2026-09-11T08:31:29+09:00",
+      "observed_at": "2026-09-11T09:32:00+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     },
     {
@@ -81,7 +81,7 @@
       "source_label": "KIJI main",
       "source_url": "https://github.com/asklessquill/Kiji/commit/bb66d24ff72c7ca3bed35a0f933c34a4ba55f19f",
       "revision": "bb66d24ff72c7ca3bed35a0f933c34a4ba55f19f",
-      "observed_at": "2026-09-11T08:31:29+09:00",
+      "observed_at": "2026-09-11T09:32:00+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     },
     {
@@ -92,7 +92,7 @@
       "source_label": "INNU main",
       "source_url": "https://github.com/asklessquill/Innu/commit/732733d8954158bd72d5836ebe2d7b32bcc28c92",
       "revision": "732733d8954158bd72d5836ebe2d7b32bcc28c92",
-      "observed_at": "2026-09-11T08:31:29+09:00",
+      "observed_at": "2026-09-11T09:32:00+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     },
     {
@@ -103,7 +103,7 @@
       "source_label": "SARU main / Cycle-2 Phase 1",
       "source_url": "https://github.com/asklessquill/Saru/commit/57fc3a4105658d03b4d538d1db55b937e2a9a21a",
       "revision": "57fc3a4105658d03b4d538d1db55b937e2a9a21a",
-      "observed_at": "2026-09-11T08:31:29+09:00",
+      "observed_at": "2026-09-11T09:32:00+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     },
     {
@@ -114,7 +114,7 @@
       "source_label": "FROG main",
       "source_url": "https://github.com/asklessquill/FROG/commit/121f25d4a700f17b9e6c9a160517f3a6c90d5b42",
       "revision": "121f25d4a700f17b9e6c9a160517f3a6c90d5b42",
-      "observed_at": "2026-09-11T08:31:29+09:00",
+      "observed_at": "2026-09-11T09:32:00+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     },
     {
@@ -125,22 +125,30 @@
       "source_label": "SandFrog main / EXP026-B",
       "source_url": "https://github.com/asklessquill/SandFrog/commit/ea7f25f5abf8886a2d9a9f7d5e6f5cd237ccf232",
       "revision": "ea7f25f5abf8886a2d9a9f7d5e6f5cd237ccf232",
-      "observed_at": "2026-09-11T08:31:29+09:00",
+      "observed_at": "2026-09-11T09:32:00+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     },
     {
       "name": "Dango",
       "role": "AIモデル選びの経験を貯める",
       "status": "WATCH",
-      "current": "実際の作業結果と外部EvidenceからAIの選び方を継続して学んでいます。直近ではCursorBench 4.0を取り込み、長時間のCursor作業ではSol Max・Grok 4.6 ExtraHigh・Terra Maxなどを近い品質帯の候補として扱い、実案件でA/B確認してから選ぶ方針を追加しました。",
-      "source_label": "Dango main / CursorBench 4.0 scoped knowledge",
-      "source_url": "https://github.com/asklessquill/Dango/commit/a73374f9ff63fa98a5862f7952836483830cda9d",
-      "revision": "a73374f9ff63fa98a5862f7952836483830cda9d",
-      "observed_at": "2026-09-11T08:31:29+09:00",
+      "current": "実際の作業結果と外部EvidenceからAIの選び方を継続して学んでいます。新しく、難しいけれど範囲の決まった実装・原因調査・複数repoの復旧などではCursor Grok 4.6 ExtraHighを有力候補として試し、まだ難しい判断や独立レビューはCodexへ回す使い分けが加わりました。",
+      "source_label": "Dango main / Grok 4.6 ExtraHigh scoped routing knowledge",
+      "source_url": "https://github.com/asklessquill/Dango/commit/9980fc8cd1f1546ec323e26982d1c88ad1ef8b58",
+      "revision": "9980fc8cd1f1546ec323e26982d1c88ad1ef8b58",
+      "observed_at": "2026-09-11T09:32:00+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     }
   ],
   "recent": [
+    {
+      "date": "2026-09-11",
+      "status": "WATCH",
+      "title": "難しいBuilder仕事でもGrok 4.6 ExtraHighを先に試せる材料が増えた",
+      "meaning": "World SE内の実測で、限定された難しい実装・復旧・原因調査ではGrok 4.6 ExtraHighが有力候補になりました。日常作業はCursor Auto、難しいBuilder/ExplorerはGrok XHigh、まだ残る深い判断や独立レビューはCodex、という3段階の使い分けです。",
+      "source_label": "Dango Grok 4.6 ExtraHigh routing knowledge",
+      "revision": "9980fc8cd1f1546ec323e26982d1c88ad1ef8b58"
+    },
     {
       "date": "2026-09-11",
       "status": "WATCH",
@@ -195,14 +203,6 @@
       "meaning": "全体の状態、仲間ごとの現在地、最近の変化、Human判断待ち、次の候補を1ページで確認できるようになりました。",
       "source_label": "MOMO Current State Cockpit v0",
       "revision": "7f4015f6fdcc1bf2a1a28caeb718be1ef0b6fca7"
-    },
-    {
-      "date": "2026-09-09",
-      "status": "COMPLETE",
-      "title": "引っ越す時に持っていくものを洗い出した",
-      "meaning": "Gitだけでなく、ローカルデータや未保存状態も含めて棚卸しし、移行時のコピー手順まで用意しました。今は実コピーしません。",
-      "source_label": "Migration Phase 1 inventory",
-      "revision": "36a2b057120e981bdf9f67212184df07d38d0c53"
     }
   ],
   "human_decisions": [
