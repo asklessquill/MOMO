@@ -1,10 +1,27 @@
 {
   "title": "Oh Dango News",
   "subtitle": "Dangoのmodel-routing knowledgeから、Humanが知る価値のある更新だけをMOMOが投影します。",
-  "updated_at": "2026-09-11T18:22:00+09:00",
+  "updated_at": "2026-09-11T19:05:00+09:00",
   "source": "asklessquill/Dango (private durable knowledge base)",
   "publication_rule": "Material / routing-changing / canonical prompting developments only. Low-confidence inbox-only evidence stays private until it becomes worth surfacing.",
   "items": [
+    {
+      "date": "2026-09-11",
+      "human_kind": "ツール活用",
+      "human_title": "M365のAgentは、MCP側に増えたツールを再配布なしで追いかけられる",
+      "human_change": "Microsoft 365 Copilotの宣言型Agentでは、MCP pluginが既定でruntimeにMCP serverの現在のtool一覧を読み取れます。つまりMCP側にtoolを追加・変更するたびにAgent packageへ手作業で転記して再配布する必要を減らせます。一方、toolを固定しておきたい時はpinned構成も選べます。",
+      "human_action": "SARU/INNUがM365から外部Capabilityを使う時は、『変化を自動追従したいならdynamic MCP』『使わせるtoolを厳密に固定したいならpinned MCP』『接続先がAPI keyしか受けないならAPI plugin』という分岐を先に使います。認証方式が合わない状態をAIの失敗として扱わず、接続surfaceを変えます。",
+      "human_example": "たとえば桃多郎向けのCapability HubがMCP serverとして検索・価格取得・Git操作などのtoolを順次増やすなら、M365 Agent側はdynamic discoveryで新toolを追従できます。逆に本番の経費処理Agentなら、意図せず新しい書込みtoolまで見えることを避けるため、許可したtoolだけをpinする方が安全です。",
+      "human_limit": "MCP pluginではAPI-key認証は現在サポートされず、Entra SSO・OAuth・DCR・匿名などが対象です。tenant側のCopilot accessやcustom app upload等の許可も必要です。またMicrosoftは、1 pluginで10を超えるfunctions/toolsを含めると応答品質が落ちる可能性を案内しています。これは絶対上限ではなく、実運用では実測が必要です。",
+      "kind": "Capability / Microsoft 365 MCP Routing",
+      "signal": "Canonical candidate routing",
+      "title": "Choose dynamic versus pinned M365 MCP tools by freshness, governance and auth compatibility",
+      "summary": "Microsoft 365 Copilot declarative-agent MCP plugins dynamically discover server tools at runtime by default, can pin a curated tool set, and have authentication semantics distinct from API plugins and agent connectors.",
+      "strength": "HIGH official Microsoft product semantics; project-level Saru reliability and cost remain unmeasured",
+      "astra_vs_sol": "モデル性能差ではない。M365 capability surface、tool discovery、authentication、governanceのrouting判断。",
+      "implication": "INNU/SARUはcapability freshnessが必要ならdynamic MCP、deterministic exposureならpinned MCP、API-key-only serviceならAPI plugin等を選び、auth/policy blockをmodel failureとして学習しない。",
+      "source_url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-plugins"
+    },
     {
       "date": "2026-09-11",
       "human_kind": "自動化",
