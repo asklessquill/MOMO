@@ -1,10 +1,27 @@
 {
   "title": "Oh Dango News",
   "subtitle": "Dangoのmodel-routing knowledgeから、Humanが知る価値のある更新だけをMOMOが投影します。",
-  "updated_at": "2026-09-11T19:05:00+09:00",
+  "updated_at": "2026-09-11T20:23:00+09:00",
   "source": "asklessquill/Dango (private durable knowledge base)",
   "publication_rule": "Material / routing-changing / canonical prompting developments only. Low-confidence inbox-only evidence stays private until it becomes worth surfacing.",
   "items": [
+    {
+      "date": "2026-09-11",
+      "human_kind": "作業環境",
+      "human_title": "Mac Studioを買うなら、いまはM5世代を基準に考える",
+      "human_change": "AppleはM5 Max/M5 Ultra搭載Mac Studioを正式発表し、日本では9月22日に販売開始します。M5 Ultraは最大512GBのユニファイドメモリと1.2TB/sのメモリ帯域を持ち、巨大なローカルLLMを1台で動かす選択肢が現実的に広がりました。さらにThunderbolt 5/RDMAで複数台を束ねる分散推論も公式にサポートされます。",
+      "human_action": "Mac StudioをINNUの常設実行機やローカルAI機として検討する場合、旧世代の購入を前提にせず、M5 Max/M5 Ultraを新しい比較基準にします。まず1台で『クラウドよりローカルに置く意味がある仕事』を実測し、メモリや推論速度が本当にボトルネックになった時だけ上位構成や複数台化を検討します。",
+      "human_example": "たとえば、秘密データを外へ出したくない長時間処理、毎日繰り返すローカルLLM、Mac上のcoding agentやブラウザ自動化を常時動かす用途なら、M5 Mac Studioで実測します。逆にAstra/Solのようなmanaged modelの品質が必要な仕事まで『Macを買えば置き換えられる』とは考えません。",
+      "human_limit": "M5 Mac Studioの販売開始は9月22日で、512GB構成は10月後半予定です。日本価格はM5 Maxが419,800円から、M5 Ultraが949,800円から。AppleのAI速度はメーカー実測であり、桃多郎ProjectではまだM5実機のLLM品質、coding-agent速度、消費電力、SSD負荷、並列性能、総コストを測っていません。旧世代が大幅値引きされる場合や今すぐ必要な場合は、待つこと自体を万能ルールにはしません。",
+      "kind": "Execution Environment / Local AI Hardware",
+      "signal": "Canonical candidate routing",
+      "title": "Use M5 Mac Studio as the new baseline for local AI execution decisions",
+      "summary": "Apple announced M5 Max/M5 Ultra Mac Studio with up to 512GB unified memory, 1.2TB/s memory bandwidth and Thunderbolt 5/RDMA distributed inference; Japan retail availability begins 2026-09-22, with 512GB configurations later in October.",
+      "strength": "HIGH official Apple product/availability evidence; route economics remain MEDIUM until World SE empirical measurements exist",
+      "astra_vs_sol": "モデル性能比較ではない。ローカル実行環境をAstra/Sol等のmanaged model routeとは別軸で選ぶための更新。",
+      "implication": "非緊急のMac Studio購入はM5世代をbaselineにし、privacy・反復実行・大容量memoryが価値になるworkloadでlocal routeを比較する。複数台clusterは単体実測でbottleneckを確認してから。",
+      "source_url": "https://www.apple.com/jp/newsroom/2026/08/apple-introduces-new-mac-studio-with-m5-max-and-m5-ultra/"
+    },
     {
       "date": "2026-09-11",
       "human_kind": "ツール活用",
