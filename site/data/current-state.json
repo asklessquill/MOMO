@@ -2,11 +2,11 @@
   "schema_version": "0.1",
   "projection": "MOMO Human-facing public snapshot",
   "authority_note": "このページは『いまどうなってる？』を見るための案内板です。各プロジェクトの正本はそれぞれのGitにあり、ここに表示しただけで状態や権限は変わりません。",
-  "observed_at": "2026-09-11T21:29:59+09:00",
+  "observed_at": "2026-09-11T23:29:15+09:00",
   "system": {
     "status": "ACTIVE",
-    "headline": "Codexのbanked resetは、期限つきの切り札として扱う。",
-    "summary": "各Projectの現在地そのものに大きな変化はありません。Dangoでは、Codexのbanked resetを購入creditや恒久的な上限拡張ではなく、期限つきの実行タイミング選択として扱うルールを追加しました。使う前に期限と現在の利用枠を確認し、更新できる枠がない時は無駄に消費しません。利用できるかどうかや期限はaccountごとに異なるため、他の環境から推測しません。",
+    "headline": "足りない能力は、作る前に既存のMCP候補を探す。",
+    "summary": "各Projectの現在地そのものに大きな変化はありません。Dangoでは、外部Capabilityが必要になった時にすぐ新規開発へ進まず、まず公式MCP Registryから既存候補を探すルールを追加しました。ただし、Registryに載っていることは安全性・適合性・導入許可・実行権限を意味しません。候補を見つけた後に、用途・権限・安全性・費用・実行環境を別々に確認します。",
     "human_decision_count": 1,
     "active_watch_count": 2
   },
@@ -27,9 +27,9 @@
     {
       "status": "WATCH",
       "title": "AIモデルと道具選びの学習",
-      "meaning": "どのAI・強度・道具・実行環境を選ぶとうまくいくかをDangoへ蓄積しています。直近では、Codexのbanked resetを期限つきの選択肢として扱い、必要な枠が更新されない時は温存するルールが加わりました。",
+      "meaning": "どのAI・強度・道具・実行環境を選ぶとうまくいくかをDangoへ蓄積しています。直近では、外部Capabilityが必要な時に、作る前に公式MCP Registryから既存候補を探し、その後に安全性・権限・費用などを別々に確認するルールが加わりました。",
       "source_label": "INNU Routing Intelligence Loop",
-      "revision": "8fb159f2bd04c19b13ea185866052e82f089230b"
+      "revision": "566e5fd64e623120fc2865675c1193c9953cc3c5"
     },
     {
       "status": "HOLD",
@@ -132,15 +132,23 @@
       "name": "Dango",
       "role": "AIモデルと道具選びの経験を貯める",
       "status": "WATCH",
-      "current": "実際の作業結果と外部EvidenceからAIと実行環境の選び方を継続して学んでいます。直近では、Codexのbanked resetを期限つきの実行タイミング選択として扱い、使う前に期限と現在の利用枠を確認し、更新できる枠がない時は温存するルールを加えました。利用可否や期限はaccountごとに確認します。",
-      "source_label": "Dango main / Codex banked reset routing",
-      "source_url": "https://github.com/asklessquill/Dango/commit/8fb159f2bd04c19b13ea185866052e82f089230b",
-      "revision": "8fb159f2bd04c19b13ea185866052e82f089230b",
-      "observed_at": "2026-09-11T21:29:59+09:00",
+      "current": "実際の作業結果と外部EvidenceからAIと実行環境の選び方を継続して学んでいます。直近では、外部Capabilityが必要な時に、まず公式MCP Registryで既存候補を探し、その後に用途・安全性・権限・費用・実行環境を別々に確認するルールを加えました。Registryに載っているだけでは導入や実行を許可しません。",
+      "source_label": "Dango main / MCP capability discovery routing",
+      "source_url": "https://github.com/asklessquill/Dango/commit/566e5fd64e623120fc2865675c1193c9953cc3c5",
+      "revision": "566e5fd64e623120fc2865675c1193c9953cc3c5",
+      "observed_at": "2026-09-11T23:29:15+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     }
   ],
   "recent": [
+    {
+      "date": "2026-09-11",
+      "status": "WATCH",
+      "title": "足りないCapabilityは、作る前にMCP Registryで候補を探す",
+      "meaning": "外部Capabilityが必要になった時は、すぐ新規開発へ進まず、まず公式MCP Registryから既存候補を探します。ただし、掲載されていることは安全・適合・導入許可・実行権限を意味しません。候補を見つけた後に、用途・権限・安全性・費用・実行環境を別々に確認します。privateなCapabilityは別のprivate catalogで扱います。",
+      "source_label": "Dango MCP capability discovery routing",
+      "revision": "566e5fd64e623120fc2865675c1193c9953cc3c5"
+    },
     {
       "date": "2026-09-11",
       "status": "WATCH",
@@ -163,7 +171,7 @@
       "title": "M365の道具がよく変わるなら、MCPで動的に見つける候補が増えた",
       "meaning": "Microsoft 365で外部Capabilityを使う時、道具の増減が多く鮮度が重要ならMCPの動的発見を候補にします。決まった道具だけを安全に使いたい時は固定し、認証方式が合わない時はAPI pluginなど別の経路へ切り替えます。まだ桃多郎内での実運用比較はありません。",
       "source_label": "Dango M365 MCP capability routing",
-      "revision": "70e8f556a27183edfefe3276e045f20647419749"
+      "revision": "70e8f556a27183edfefe9f9e9cd4d513612912f"
     },
     {
       "date": "2026-09-11",
