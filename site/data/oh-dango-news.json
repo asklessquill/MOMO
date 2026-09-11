@@ -1,10 +1,27 @@
 {
   "title": "Oh Dango News",
   "subtitle": "Dangoのmodel-routing knowledgeから、Humanが知る価値のある更新だけをMOMOが投影します。",
-  "updated_at": "2026-09-11T14:07:00+09:00",
+  "updated_at": "2026-09-11T18:22:00+09:00",
   "source": "asklessquill/Dango (private durable knowledge base)",
   "publication_rule": "Material / routing-changing / canonical prompting developments only. Low-confidence inbox-only evidence stays private until it becomes worth surfacing.",
   "items": [
+    {
+      "date": "2026-09-11",
+      "human_kind": "自動化",
+      "human_title": "自前のAI司令塔を作る前に、Codexの仕組みそのものをAPIで借りられるようになった",
+      "human_change": "OpenAIがAgents APIを公開ベータで提供開始しました。長時間作業のcontext整理、必要なtoolの探索、複数toolの実行、subagentへの分担、sandbox実行など、これまで自作しがちだったagent基盤をCodex系のmanaged harnessとしてAPIから使えます。",
+      "human_action": "INNUが新しい自律実行基盤を必要とした時は、最初から独自orchestratorを作るのではなく、まずAgents APIで足りるかを小さく試します。モデル、harness、実行先は別々に選べるので、OpenAIのsandboxだけでなく自前infraや対応sandbox providerも候補にできます。",
+      "human_example": "たとえば『複数repoを調べ、Web/MCPも使い、3つのsubagentへ調査を分担し、長時間かけて結果をGitへ残す』仕組みを作る場合、context compactionやsubagent制御をゼロから実装する前にAgents APIで実験できます。うまくいけばINNUは独自配管ではなく、桃多郎固有の判断・能力・Evidence設計へ実装時間を使えます。",
+      "human_limit": "まだpublic betaです。桃多郎Projectでの実測品質、長時間復旧、実際の料金、latency、subagentの実用上限、既存SandFrog/Cursor/Codex経路との優劣は未検証です。KIBIの意味的ProtocolやHuman authorityまで置き換えるものではなく、あくまで実行harnessのBorrow/Reuse候補です。",
+      "kind": "Capability / Managed Agent Harness",
+      "signal": "Canonical candidate routing",
+      "title": "Evaluate OpenAI Agents API before building bespoke agent orchestration",
+      "summary": "OpenAIはCodexを支えるmanaged harnessをAgents APIとしてpublic beta提供。long-session compaction、tool search/programmatic calling、MCP、parallel subagents、managed/own/partner environmentsをAPIから利用できる。",
+      "strength": "HIGH official product semantics; project-level comparative outcome remains unmeasured",
+      "astra_vs_sol": "モデル性能差ではない。公式例はGPT-6 Astraだが、今回のrouting変更はmodelではなくharness/capability acquisitionの判断。",
+      "implication": "INNUはagent orchestration plumbingをBuildする前にAgents APIをBorrow/Reuse候補としてbounded比較し、semantic success・cost・latency・recovery・scope discipline・authority behaviorの実測で昇格判断する。",
+      "source_url": "https://openai.com/index/introducing-the-agents-api/"
+    },
     {
       "date": "2026-09-11",
       "human_kind": "自動化",
