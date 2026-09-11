@@ -2,11 +2,11 @@
   "schema_version": "0.1",
   "projection": "MOMO Human-facing public snapshot",
   "authority_note": "このページは『いまどうなってる？』を見るための案内板です。各プロジェクトの正本はそれぞれのGitにあり、ここに表示しただけで状態や権限は変わりません。",
-  "observed_at": "2026-09-11T16:32:16+09:00",
+  "observed_at": "2026-09-11T18:28:23+09:00",
   "system": {
     "status": "ACTIVE",
-    "headline": "AIを『どのモデルで動かすか』だけでなく、『どのマシンで動かすか』も選べるようになってきた。",
-    "summary": "各Projectの現在地そのものに大きな変化はありません。DangoではCursor Agentを、Cursor側のクラウドだけでなく、自分や組織が管理するMac・VM・worker上で動かす公式ルートを候補に追加しました。コード・秘密情報・ビルド結果を管理下に置きたい仕事では、自作の遠隔実行基盤を作る前にこの経路を検討できます。これは実行場所の選択肢であり、AIそのものが賢くなるという意味ではありません。",
+    "headline": "長時間のAI仕事は、仕組みを自作する前に『借りられる実行基盤』を比べる。",
+    "summary": "各Projectの現在地そのものに大きな変化はありません。Dangoでは、長時間・多ツール・複数Agentの仕事で必要になる実行基盤を自作する前に、OpenAIのAgents APIを再利用候補として比較する方針を追加しました。文脈の整理、道具の呼び出し、複数Agentの連携、sandbox実行などをまとめて借りられる可能性があります。まだ桃多郎内での実測比較はなく、モデル性能が上がったという意味でもありません。",
     "human_decision_count": 1,
     "active_watch_count": 2
   },
@@ -16,7 +16,7 @@
       "title": "桃多郎の現在地ページ",
       "meaning": "MOMOを開けば、いま何が動き、何が止まり、最近何が変わったかを短時間で見られます。",
       "source_label": "MOMO Current State Cockpit v0",
-      "revision": "d302975a90e7920be81fe982c6775e38e3f30839"
+      "revision": "efad5d73d50c617b904eade2b86619730b732834"
     },
     {
       "status": "WATCH",
@@ -27,9 +27,9 @@
     {
       "status": "WATCH",
       "title": "AIモデルと道具選びの学習",
-      "meaning": "どのAI・強度・道具・実行環境を選ぶとうまくいくかをDangoへ蓄積しています。直近では、Cursor Agentを自分や組織の管理マシン上で動かす公式ルートが候補に加わりました。",
+      "meaning": "どのAI・強度・道具・実行環境を選ぶとうまくいくかをDangoへ蓄積しています。直近では、長時間・多ツール・複数Agentの仕事で実行基盤を自作する前に、OpenAIのAgents APIを再利用候補として比較する方針が加わりました。",
       "source_label": "INNU Routing Intelligence Loop",
-      "revision": "c9eb1852c8164fde19232fee6f1b516d9be08273"
+      "revision": "62a8c5f8d11bc242f82d2cfe5857efbb56d26eae"
     },
     {
       "status": "HOLD",
@@ -46,9 +46,9 @@
       "status": "ACTIVE",
       "current": "『今どこ？』をすぐ見られる現在地ページと、AIモデルや道具選びの重要ニュースをHuman向けに公開しています。",
       "source_label": "MOMO main",
-      "source_url": "https://github.com/asklessquill/MOMO/commit/d302975a90e7920be81fe982c6775e38e3f30839",
-      "revision": "d302975a90e7920be81fe982c6775e38e3f30839",
-      "observed_at": "2026-09-11T16:32:16+09:00",
+      "source_url": "https://github.com/asklessquill/MOMO/commit/efad5d73d50c617b904eade2b86619730b732834",
+      "revision": "efad5d73d50c617b904eade2b86619730b732834",
+      "observed_at": "2026-09-11T18:28:23+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     },
     {
@@ -59,7 +59,7 @@
       "source_label": "MOMO-Observatory main",
       "source_url": "https://github.com/asklessquill/MOMO-Observatory/commit/280a31428dff27ea0ac88f36529421de6cafe707",
       "revision": "280a31428dff27ea0ac88f36529421de6cafe707",
-      "observed_at": "2026-09-11T16:32:16+09:00",
+      "observed_at": "2026-09-11T18:28:23+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     },
     {
@@ -70,7 +70,7 @@
       "source_label": "KIBI Operationalization Phase 1",
       "source_url": "https://github.com/asklessquill/KIBI/commit/19d36fa97a661e15a5cc97eb031134f66bd5311c",
       "revision": "19d36fa97a661e15a5cc97eb031134f66bd5311c",
-      "observed_at": "2026-09-11T16:32:16+09:00",
+      "observed_at": "2026-09-11T18:28:23+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     },
     {
@@ -81,7 +81,7 @@
       "source_label": "KIJI main",
       "source_url": "https://github.com/asklessquill/Kiji/commit/bb66d24ff72c7ca3bed35a0f933c34a4ba55f19f",
       "revision": "bb66d24ff72c7ca3bed35a0f933c34a4ba55f19f",
-      "observed_at": "2026-09-11T16:32:16+09:00",
+      "observed_at": "2026-09-11T18:28:23+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     },
     {
@@ -92,7 +92,7 @@
       "source_label": "INNU main",
       "source_url": "https://github.com/asklessquill/Innu/commit/732733d8954158bd72d5836ebe2d7b32bcc28c92",
       "revision": "732733d8954158bd72d5836ebe2d7b32bcc28c92",
-      "observed_at": "2026-09-11T16:32:16+09:00",
+      "observed_at": "2026-09-11T18:28:23+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     },
     {
@@ -103,7 +103,7 @@
       "source_label": "SARU main / Cycle-2 Phase 1",
       "source_url": "https://github.com/asklessquill/Saru/commit/57fc3a4105658d03b4d538d1db55b937e2a9a21a",
       "revision": "57fc3a4105658d03b4d538d1db55b937e2a9a21a",
-      "observed_at": "2026-09-11T16:32:16+09:00",
+      "observed_at": "2026-09-11T18:28:23+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     },
     {
@@ -114,7 +114,7 @@
       "source_label": "FROG main",
       "source_url": "https://github.com/asklessquill/FROG/commit/121f25d4a700f17b9e6c9a160517f3a6c90d5b42",
       "revision": "121f25d4a700f17b9e6c9a160517f3a6c90d5b42",
-      "observed_at": "2026-09-11T16:32:16+09:00",
+      "observed_at": "2026-09-11T18:28:23+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     },
     {
@@ -125,22 +125,30 @@
       "source_label": "SandFrog main / EXP026-B",
       "source_url": "https://github.com/asklessquill/SandFrog/commit/ea7f25f5abf8886a2d9a9f7d5e6f5cd237ccf232",
       "revision": "ea7f25f5abf8886a2d9a9f7d5e6f5cd237ccf232",
-      "observed_at": "2026-09-11T16:32:16+09:00",
+      "observed_at": "2026-09-11T18:28:23+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     },
     {
       "name": "Dango",
       "role": "AIモデルと道具選びの経験を貯める",
       "status": "WATCH",
-      "current": "実際の作業結果と外部EvidenceからAIの選び方を継続して学んでいます。直近では、Cursor Agentを自分や組織が管理するMac・VM・worker上で動かす公式ルートを候補に追加しました。コードや秘密情報、実行する道具を管理下に置きたい時に、自作の遠隔実行基盤より先に検討できます。モデル性能とは別の選択軸です。",
-      "source_label": "Dango main / Cursor self-hosted execution routing",
-      "source_url": "https://github.com/asklessquill/Dango/commit/c9eb1852c8164fde19232fee6f1b516d9be08273",
-      "revision": "c9eb1852c8164fde19232fee6f1b516d9be08273",
-      "observed_at": "2026-09-11T16:32:16+09:00",
+      "current": "実際の作業結果と外部EvidenceからAIの選び方を継続して学んでいます。直近では、長時間・多ツール・複数Agentの仕事で必要になる文脈整理、道具の呼び出し、Agent連携、sandbox実行などを自作する前に、OpenAIのAgents APIを再利用候補として比較する方針を追加しました。まだ桃多郎内での実測比較はなく、モデル性能の優劣とは別の選択です。",
+      "source_label": "Dango main / Agents API managed harness routing",
+      "source_url": "https://github.com/asklessquill/Dango/commit/62a8c5f8d11bc242f82d2cfe5857efbb56d26eae",
+      "revision": "62a8c5f8d11bc242f82d2cfe5857efbb56d26eae",
+      "observed_at": "2026-09-11T18:28:23+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     }
   ],
   "recent": [
+    {
+      "date": "2026-09-11",
+      "status": "WATCH",
+      "title": "長時間のAI仕事は、実行基盤を自作する前に借りられるものを比べる",
+      "meaning": "OpenAIのAgents APIを、長時間・多ツール・複数Agentの仕事で使う実行基盤の再利用候補に追加しました。文脈整理や道具の呼び出し、Agent連携、sandbox実行を自前で組む前に、小さく比較します。まだ桃多郎内での実測はなく、モデル性能が上がったという話でもありません。",
+      "source_label": "Dango Agents API managed harness routing",
+      "revision": "62a8c5f8d11bc242f82d2cfe5857efbb56d26eae"
+    },
     {
       "date": "2026-09-11",
       "status": "WATCH",
