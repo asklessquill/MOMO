@@ -2,11 +2,11 @@
   "schema_version": "0.1",
   "projection": "MOMO Human-facing public snapshot",
   "authority_note": "このページは『いまどうなってる？』を見るための案内板です。各プロジェクトの正本はそれぞれのGitにあり、ここに表示しただけで状態や権限は変わりません。",
-  "observed_at": "2026-09-12T06:29:17+09:00",
+  "observed_at": "2026-09-12T08:31:32+09:00",
   "system": {
     "status": "ACTIVE",
-    "headline": "長く止まったり再開したりするAI仕事も、最初から実行基盤を自作しなくてよい候補が増えた。",
-    "summary": "各Projectの現在地そのものに大きな変化はありません。Dangoでは、クラッシュや再起動をまたぐ状態保持、長い待ち時間、Human承認、複数Agentの調整が必要なMicrosoft系の仕事で、独自の実行基盤を作る前にMicrosoft Agent Framework + Durable Taskを比較するルートを追加しました。外部書き込みの重複防止やGit復旧まで自動で保証されるとは扱いません。",
+    "headline": "ローカルAI実行機は、容量だけでなくモデルごとの実測速度まで見て選ぶ候補が増えた。",
+    "summary": "各Projectの現在地そのものに大きな変化はありません。Dangoでは、M5 Mac Studioやmanaged executionに加えてDGX SparkをローカルAI実行候補へ追加しました。CUDA/NVIDIA互換性や128 GB級の容量が必要な仕事では比較対象にしますが、載るモデルの大きさだけで速さや品質を判断せず、モデル構造と実行方法ごとの実測を見て選びます。World SEでの実機検証はまだありません。",
     "human_decision_count": 1,
     "active_watch_count": 2
   },
@@ -27,9 +27,9 @@
     {
       "status": "WATCH",
       "title": "AIモデルと道具選びの学習",
-      "meaning": "どのAI・強度・道具・実行環境を選ぶとうまくいくかをDangoへ蓄積しています。直近では、長時間の待機・再開や複数Agentの調整が必要なMicrosoft系の仕事で、独自基盤を作る前にDurable Taskを使った耐久実行を候補にするルールが加わりました。",
+      "meaning": "どのAI・強度・道具・実行環境を選ぶとうまくいくかをDangoへ蓄積しています。直近ではDGX Sparkをローカル実行候補へ加え、容量だけでなくモデル構造と実行方法ごとの実測速度を見て選ぶルールが加わりました。",
       "source_label": "INNU Routing Intelligence Loop",
-      "revision": "735c95c6999e97d38982d91ae5e03c0350b51ce5"
+      "revision": "c3084795609117396ecc27b08c1c1e5d1f220dc8"
     },
     {
       "status": "HOLD",
@@ -132,15 +132,23 @@
       "name": "Dango",
       "role": "AIモデルと道具選びの経験を貯める",
       "status": "WATCH",
-      "current": "実際の作業結果と外部EvidenceからAIと実行環境の選び方を継続して学んでいます。直近では、クラッシュや再起動をまたぐ状態保持、長い待機、Human承認、複数Agentの調整が必要なMicrosoft系の仕事で、独自の実行基盤を作る前にMicrosoft Agent Framework + Durable Taskを比較するルートを追加しました。外部書き込みの重複防止やGit復旧は別に確認します。",
-      "source_label": "Dango main / Microsoft durable agent workflow routing",
-      "source_url": "https://github.com/asklessquill/Dango/commit/735c95c6999e97d38982d91ae5e03c0350b51ce5",
-      "revision": "735c95c6999e97d38982d91ae5e03c0350b51ce5",
-      "observed_at": "2026-09-12T06:29:17+09:00",
+      "current": "実際の作業結果と外部EvidenceからAIと実行環境の選び方を継続して学んでいます。直近ではDGX SparkをM5 Mac Studioやmanaged executionと並ぶローカル実行候補へ加えました。CUDA/NVIDIA互換性や128 GB級の容量が効く仕事では比較しますが、モデルが載ることと実際に速いこと、仕事の品質が高いことは分けて判断します。World SE実機テストは未実施です。",
+      "source_label": "Dango main / DGX Spark local execution routing",
+      "source_url": "https://github.com/asklessquill/Dango/commit/c3084795609117396ecc27b08c1c1e5d1f220dc8",
+      "revision": "c3084795609117396ecc27b08c1c1e5d1f220dc8",
+      "observed_at": "2026-09-12T08:31:32+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     }
   ],
   "recent": [
+    {
+      "date": "2026-09-12",
+      "status": "WATCH",
+      "title": "ローカルAI実行機は、載るモデルの大きさだけで選ばない",
+      "meaning": "DGX Sparkを、M5 Mac Studioやmanaged executionと並ぶローカル実行候補に追加しました。CUDA/NVIDIA互換性や128 GB級の容量が必要な仕事では候補になりますが、同じ機械でもモデル構造や実行方法で速度差が大きいため、実測してから選びます。World SEでの実機検証や購入判断はまだ行っていません。",
+      "source_label": "Dango DGX Spark local execution routing",
+      "revision": "c3084795609117396ecc27b08c1c1e5d1f220dc8"
+    },
     {
       "date": "2026-09-12",
       "status": "WATCH",
