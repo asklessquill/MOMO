@@ -1,10 +1,27 @@
 {
   "title": "Oh Dango News",
   "subtitle": "Dangoのmodel-routing knowledgeから、Humanが知る価値のある更新だけをMOMOが投影します。",
-  "updated_at": "2026-09-11T11:52:00+09:00",
+  "updated_at": "2026-09-11T12:14:00+09:00",
   "source": "asklessquill/Dango (private durable knowledge base)",
   "publication_rule": "Material / routing-changing / canonical prompting developments only. Low-confidence inbox-only evidence stays private until it becomes worth surfacing.",
   "items": [
+    {
+      "date": "2026-09-11",
+      "human_kind": "自動化",
+      "human_title": "Business/Enterpriseなら、Codexを毎回ログインせず定期実行できる",
+      "human_change": "OpenAIには、Codex CLIやローカル自動化をスクリプト・定期ジョブ・CIから動かすための正式なAccess Token経路があります。ChatGPT Business/Enterpriseでは、毎回Humanが画面でログインして起動する方式だけに頼らなくてよくなります。",
+      "human_action": "将来INNUをBusiness/Enterpriseへ載せる場合、Codexを夜間ジョブやCIから起動する用途では、ブラウザ操作でログインを再現する仕組みを自作する前にこの正式ルートを検討できます。普通のAPI Keyだけで足りる仕事は、無理にCodex Tokenへ移さずAPI Keyのままで構いません。",
+      "human_example": "たとえば『毎晩Gitを確認してテストし、問題があれば修正案を作る』処理をMacやCI runnerで動かす場合、Business/EnterpriseならCodex Access Tokenをsecret storeに置き、Humanのログイン操作なしで反復実行する構成を候補にできます。",
+      "human_limit": "現時点の公式対象はBusiness/Enterpriseです。Plus/Proで同じ方法が使えるとは扱いません。またTokenを作れることと、自動実行してよい権限は別です。Codex Local許可、scope、秘密情報の保管、期限・rotation・revocation、利用コストは別途管理が必要です。",
+      "kind": "Capability / Authentication Routing",
+      "signal": "Canonical routing",
+      "title": "Codex workspace access tokenが非対話ローカル自動化の正式ルートになる",
+      "summary": "OpenAIはBusiness/Enterprise向けに、Codex CLI・app-server・scheduled job・CI runnerなどのtrusted non-interactive local workflowをChatGPT workspace identityで認証するAccess Tokenを提供している。",
+      "strength": "HIGH official product and permission semantics; task-level quality, quota and cost remain unknown",
+      "astra_vs_sol": "モデル性能差ではない。認証・実行surfaceをmodel/tierとは独立して選ぶためのrouting update。",
+      "implication": "Business/Enterpriseでworkspace-managed Codex accessが必要な反復ローカル実行では、custom browser-login relayより先にAccess Tokenを評価する。API keyで十分ならAPI keyを維持する。",
+      "source_url": "https://learn.chatgpt.com/docs/enterprise/access-tokens"
+    },
     {
       "date": "2026-09-11",
       "kind": "Builder / Cost Routing",
