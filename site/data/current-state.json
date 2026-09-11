@@ -2,11 +2,11 @@
   "schema_version": "0.1",
   "projection": "MOMO Human-facing public snapshot",
   "authority_note": "このページは『いまどうなってる？』を見るための案内板です。各プロジェクトの正本はそれぞれのGitにあり、ここに表示しただけで状態や権限は変わりません。",
-  "observed_at": "2026-09-12T01:33:01+09:00",
+  "observed_at": "2026-09-12T02:28:56+09:00",
   "system": {
     "status": "ACTIVE",
-    "headline": "長く動くAI基盤は、全部自作する前に既存のSDKを試す。",
-    "summary": "各Projectの現在地そのものに大きな変化はありません。Dangoでは、長時間動くAIの実行基盤が必要な時、managedな仕組みで足りなければすぐ完全自作へ進むのではなく、既存SDKを使って実行場所や状態管理を自分側に残す中間ルートを比較するルールを追加しました。復旧機能があっても、外部書き込みやGitまで安全に復旧できることは別途実証が必要です。",
+    "headline": "M365の小さなAI処理は、専用配管を作る前にワークフロー内で試す。",
+    "summary": "各Projectの現在地そのものに大きな変化はありません。Dangoでは、Microsoft 365の既存ワークフロー内で限定された推論や道具利用が必要な時、別の実行基盤や専用ブリッジを作る前にCopilot Studioのagent nodeを試すルートを追加しました。長時間運転・強い復旧・実行場所の所有が必要な仕事は別ルートで扱います。",
     "human_decision_count": 1,
     "active_watch_count": 2
   },
@@ -27,9 +27,9 @@
     {
       "status": "WATCH",
       "title": "AIモデルと道具選びの学習",
-      "meaning": "どのAI・強度・道具・実行環境を選ぶとうまくいくかをDangoへ蓄積しています。直近では、managedな実行基盤で足りない時に、完全自作へ進む前に既存SDKを使った所有型の実行・復旧ルートを比較するルールが加わりました。",
+      "meaning": "どのAI・強度・道具・実行環境を選ぶとうまくいくかをDangoへ蓄積しています。直近では、M365の既存ワークフロー内で限定された推論や道具利用が必要な時、専用配管を作る前にCopilot Studioのagent nodeを試すルールが加わりました。",
       "source_label": "INNU Routing Intelligence Loop",
-      "revision": "d625e9e0ecc09ebba2cf87de728008ce1563fcae"
+      "revision": "45bb5f1d8232339596e2713b1f22e79ea7376997"
     },
     {
       "status": "HOLD",
@@ -132,15 +132,23 @@
       "name": "Dango",
       "role": "AIモデルと道具選びの経験を貯める",
       "status": "WATCH",
-      "current": "実際の作業結果と外部EvidenceからAIと実行環境の選び方を継続して学んでいます。直近では、managedな実行基盤で足りない長時間AIの仕事に対し、完全自作へ進む前に既存SDKを使って実行場所や状態管理を自分側に残す中間ルートを比較するルールを加えました。復旧機能だけで外部書き込みやGitの整合性まで保証されたとは扱いません。",
-      "source_label": "Dango main / durable owned-harness routing",
-      "source_url": "https://github.com/asklessquill/Dango/commit/d625e9e0ecc09ebba2cf87de728008ce1563fcae",
-      "revision": "d625e9e0ecc09ebba2cf87de728008ce1563fcae",
-      "observed_at": "2026-09-12T01:33:01+09:00",
+      "current": "実際の作業結果と外部EvidenceからAIと実行環境の選び方を継続して学んでいます。直近では、M365の既存ワークフロー内で限定された推論や道具利用が必要な時、専用ブリッジを作る前にCopilot Studioのagent nodeを試すルートを追加しました。加えて、Grok 4.6 XHighは難しいBuilder/Explorerの候補として実測Evidenceが強まりましたが、独立レビューは引き続き必要です。",
+      "source_label": "Dango main / M365 workflow agent routing + Grok 4.6 XHigh evidence",
+      "source_url": "https://github.com/asklessquill/Dango/commit/45bb5f1d8232339596e2713b1f22e79ea7376997",
+      "revision": "45bb5f1d8232339596e2713b1f22e79ea7376997",
+      "observed_at": "2026-09-12T02:28:56+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     }
   ],
   "recent": [
+    {
+      "date": "2026-09-12",
+      "status": "WATCH",
+      "title": "M365の小さなAI処理は、別の実行基盤を作る前にワークフロー内で試す",
+      "meaning": "既存のMicrosoft 365ワークフローの途中で、限定された推論や道具利用だけが必要なら、まずCopilot Studioのagent nodeを試します。長時間運転、強い復旧、実行場所の所有が必要な仕事まで置き換えるものではなく、外部への書き込み権限も自動では増えません。",
+      "source_label": "Dango Copilot Studio workflow agent routing",
+      "revision": "3de77571f7887be5e773ae242bbd984937ddf922"
+    },
     {
       "date": "2026-09-12",
       "status": "WATCH",
