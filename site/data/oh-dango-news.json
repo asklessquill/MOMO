@@ -1,10 +1,27 @@
 {
   "title": "Oh Dango News",
   "subtitle": "Dangoのmodel-routing knowledgeから、Humanが知る価値のある更新だけをMOMOが投影します。",
-  "updated_at": "2026-09-11T12:14:00+09:00",
+  "updated_at": "2026-09-11T14:07:00+09:00",
   "source": "asklessquill/Dango (private durable knowledge base)",
   "publication_rule": "Material / routing-changing / canonical prompting developments only. Low-confidence inbox-only evidence stays private until it becomes worth surfacing.",
   "items": [
+    {
+      "date": "2026-09-11",
+      "human_kind": "自動化",
+      "human_title": "『毎時見に行く』を減らせる。Gmail・Slack・GitHub PRは変化した時だけ起動できる",
+      "human_change": "ChatGPT Workには、Gmailの新着、Slackのチャンネル投稿、GitHubの対応PR更新をきっかけに処理を起動するevent-triggered taskがあります。対応する監視なら、何も起きていないのに毎時AIを呼び出す必要がありません。",
+      "human_action": "今後INNUが監視タスクを作る時は、最初に『本当に毎時確認が必要か？』を判定します。Gmail・Slack・GitHub PRのように対応イベントがある仕事はイベント起動を先に検討し、Webニュース、任意のGit commit、Macのローカル状態、定時まとめなどは従来どおり時間ベースで監視します。",
+      "human_example": "たとえば『PRに変更が入ったらレビューしてDangoへ学習結果を残す』なら毎時GitHubを見に行くのではなくPR更新で起動できます。一方、このINNU Routing Intelligence LoopのようにWeb・複数repo・新しい知識を定期探索する仕事は、PRイベントだけでは拾えないため毎時実行を維持します。",
+      "human_limit": "GitHub側で現在公式に示されているイベントは対応するPR activityで、任意のcommit監視ではありません。Work、対応プラン、接続App、workspace権限が必要で、外部書込みなど承認が必要なActionは途中で止まることがあります。イベント起動に変えれば必ずtokenが安くなる、という実測まではまだありません。",
+      "kind": "Capability / Trigger Routing",
+      "signal": "Canonical routing",
+      "title": "Supported Work webhooks should precede empty recurring polling",
+      "summary": "OpenAIはChatGPT WorkでGmail、Slack、GitHub PR activityを対象にevent-triggered scheduled tasksを提供している。対応signalでは定期pollingと別routeとして扱える。",
+      "strength": "HIGH official product semantics; task-level quota savings remain unmeasured",
+      "astra_vs_sol": "モデル性能差ではない。trigger transportとexecution surfaceの選択ルール。",
+      "implication": "supported eventならWork webhookを先に検討し、web/news・任意Git state・local runtime・定期集計はpollingを維持する。",
+      "source_url": "https://help.openai.com/en/articles/10291617"
+    },
     {
       "date": "2026-09-11",
       "human_kind": "自動化",
