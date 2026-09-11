@@ -2,11 +2,11 @@
   "schema_version": "0.1",
   "projection": "MOMO Human-facing public snapshot",
   "authority_note": "このページは『いまどうなってる？』を見るための案内板です。各プロジェクトの正本はそれぞれのGitにあり、ここに表示しただけで状態や権限は変わりません。",
-  "observed_at": "2026-09-12T04:32:54+09:00",
+  "observed_at": "2026-09-12T06:29:17+09:00",
   "system": {
     "status": "ACTIVE",
-    "headline": "同じ仕事を繰り返すなら、毎回ゼロから始めずProjectの文脈を引き継ぐ候補が増えた。",
-    "summary": "各Projectの現在地そのものに大きな変化はありません。Dangoでは、Slack・schedule・pull request activityのような対応イベントから継続する仕事で、毎回独立したAgentを起こすよりCursor Projectsの蓄積文脈を再利用するルートを候補に追加しました。対応していないイベントや、厳密な重複排除・再送・外部更新の整合性が必要な仕事は別の経路を使います。",
+    "headline": "長く止まったり再開したりするAI仕事も、最初から実行基盤を自作しなくてよい候補が増えた。",
+    "summary": "各Projectの現在地そのものに大きな変化はありません。Dangoでは、クラッシュや再起動をまたぐ状態保持、長い待ち時間、Human承認、複数Agentの調整が必要なMicrosoft系の仕事で、独自の実行基盤を作る前にMicrosoft Agent Framework + Durable Taskを比較するルートを追加しました。外部書き込みの重複防止やGit復旧まで自動で保証されるとは扱いません。",
     "human_decision_count": 1,
     "active_watch_count": 2
   },
@@ -27,9 +27,9 @@
     {
       "status": "WATCH",
       "title": "AIモデルと道具選びの学習",
-      "meaning": "どのAI・強度・道具・実行環境を選ぶとうまくいくかをDangoへ蓄積しています。直近では、繰り返し・イベント起点の仕事でも、同じProjectの文脈を引き継ぐ価値が高い時はCursor Projectsを候補にするルールが加わりました。",
+      "meaning": "どのAI・強度・道具・実行環境を選ぶとうまくいくかをDangoへ蓄積しています。直近では、長時間の待機・再開や複数Agentの調整が必要なMicrosoft系の仕事で、独自基盤を作る前にDurable Taskを使った耐久実行を候補にするルールが加わりました。",
       "source_label": "INNU Routing Intelligence Loop",
-      "revision": "931f820717ccb891c65961ac8d71e32f1230f4c3"
+      "revision": "735c95c6999e97d38982d91ae5e03c0350b51ce5"
     },
     {
       "status": "HOLD",
@@ -132,15 +132,23 @@
       "name": "Dango",
       "role": "AIモデルと道具選びの経験を貯める",
       "status": "WATCH",
-      "current": "実際の作業結果と外部EvidenceからAIと実行環境の選び方を継続して学んでいます。直近では、Slack・schedule・pull request activityなどから繰り返し動く仕事でも、同じProjectの文脈を再利用する価値が高い時はCursor Projectsを候補にするルートを追加しました。対応外のイベントや、厳密な配信・重複排除・外部更新の整合性が必要な場合は別ルートを使います。",
-      "source_label": "Dango main / Cursor Projects subscription routing",
-      "source_url": "https://github.com/asklessquill/Dango/commit/931f820717ccb891c65961ac8d71e32f1230f4c3",
-      "revision": "931f820717ccb891c65961ac8d71e32f1230f4c3",
-      "observed_at": "2026-09-12T04:32:54+09:00",
+      "current": "実際の作業結果と外部EvidenceからAIと実行環境の選び方を継続して学んでいます。直近では、クラッシュや再起動をまたぐ状態保持、長い待機、Human承認、複数Agentの調整が必要なMicrosoft系の仕事で、独自の実行基盤を作る前にMicrosoft Agent Framework + Durable Taskを比較するルートを追加しました。外部書き込みの重複防止やGit復旧は別に確認します。",
+      "source_label": "Dango main / Microsoft durable agent workflow routing",
+      "source_url": "https://github.com/asklessquill/Dango/commit/735c95c6999e97d38982d91ae5e03c0350b51ce5",
+      "revision": "735c95c6999e97d38982d91ae5e03c0350b51ce5",
+      "observed_at": "2026-09-12T06:29:17+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     }
   ],
   "recent": [
+    {
+      "date": "2026-09-12",
+      "status": "WATCH",
+      "title": "長く止まるAI仕事も、実行基盤を自作する前にMicrosoftの耐久実行を比べる",
+      "meaning": "再起動をまたぐ状態保持、長い待機、Human承認、複数Agentの調整が必要なMicrosoft系の仕事では、Microsoft Agent Framework + Durable Taskを再利用候補にします。完了済み処理の再実行を減らせる仕組みはありますが、外部書き込みの重複防止・Git復旧・取り消せない操作の許可まで保証されるとは扱いません。",
+      "source_label": "Dango Microsoft durable agent workflow routing",
+      "revision": "735c95c6999e97d38982d91ae5e03c0350b51ce5"
+    },
     {
       "date": "2026-09-12",
       "status": "WATCH",
