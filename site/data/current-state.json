@@ -2,11 +2,11 @@
   "schema_version": "0.1",
   "projection": "MOMO Human-facing public snapshot",
   "authority_note": "このページは『いまどうなってる？』を見るための案内板です。各プロジェクトの正本はそれぞれのGitにあり、ここに表示しただけで状態や権限は変わりません。",
-  "observed_at": "2026-09-12T02:28:56+09:00",
+  "observed_at": "2026-09-12T04:32:54+09:00",
   "system": {
     "status": "ACTIVE",
-    "headline": "M365の小さなAI処理は、専用配管を作る前にワークフロー内で試す。",
-    "summary": "各Projectの現在地そのものに大きな変化はありません。Dangoでは、Microsoft 365の既存ワークフロー内で限定された推論や道具利用が必要な時、別の実行基盤や専用ブリッジを作る前にCopilot Studioのagent nodeを試すルートを追加しました。長時間運転・強い復旧・実行場所の所有が必要な仕事は別ルートで扱います。",
+    "headline": "同じ仕事を繰り返すなら、毎回ゼロから始めずProjectの文脈を引き継ぐ候補が増えた。",
+    "summary": "各Projectの現在地そのものに大きな変化はありません。Dangoでは、Slack・schedule・pull request activityのような対応イベントから継続する仕事で、毎回独立したAgentを起こすよりCursor Projectsの蓄積文脈を再利用するルートを候補に追加しました。対応していないイベントや、厳密な重複排除・再送・外部更新の整合性が必要な仕事は別の経路を使います。",
     "human_decision_count": 1,
     "active_watch_count": 2
   },
@@ -27,9 +27,9 @@
     {
       "status": "WATCH",
       "title": "AIモデルと道具選びの学習",
-      "meaning": "どのAI・強度・道具・実行環境を選ぶとうまくいくかをDangoへ蓄積しています。直近では、M365の既存ワークフロー内で限定された推論や道具利用が必要な時、専用配管を作る前にCopilot Studioのagent nodeを試すルールが加わりました。",
+      "meaning": "どのAI・強度・道具・実行環境を選ぶとうまくいくかをDangoへ蓄積しています。直近では、繰り返し・イベント起点の仕事でも、同じProjectの文脈を引き継ぐ価値が高い時はCursor Projectsを候補にするルールが加わりました。",
       "source_label": "INNU Routing Intelligence Loop",
-      "revision": "45bb5f1d8232339596e2713b1f22e79ea7376997"
+      "revision": "931f820717ccb891c65961ac8d71e32f1230f4c3"
     },
     {
       "status": "HOLD",
@@ -132,15 +132,23 @@
       "name": "Dango",
       "role": "AIモデルと道具選びの経験を貯める",
       "status": "WATCH",
-      "current": "実際の作業結果と外部EvidenceからAIと実行環境の選び方を継続して学んでいます。直近では、M365の既存ワークフロー内で限定された推論や道具利用が必要な時、専用ブリッジを作る前にCopilot Studioのagent nodeを試すルートを追加しました。加えて、Grok 4.6 XHighは難しいBuilder/Explorerの候補として実測Evidenceが強まりましたが、独立レビューは引き続き必要です。",
-      "source_label": "Dango main / M365 workflow agent routing + Grok 4.6 XHigh evidence",
-      "source_url": "https://github.com/asklessquill/Dango/commit/45bb5f1d8232339596e2713b1f22e79ea7376997",
-      "revision": "45bb5f1d8232339596e2713b1f22e79ea7376997",
-      "observed_at": "2026-09-12T02:28:56+09:00",
+      "current": "実際の作業結果と外部EvidenceからAIと実行環境の選び方を継続して学んでいます。直近では、Slack・schedule・pull request activityなどから繰り返し動く仕事でも、同じProjectの文脈を再利用する価値が高い時はCursor Projectsを候補にするルートを追加しました。対応外のイベントや、厳密な配信・重複排除・外部更新の整合性が必要な場合は別ルートを使います。",
+      "source_label": "Dango main / Cursor Projects subscription routing",
+      "source_url": "https://github.com/asklessquill/Dango/commit/931f820717ccb891c65961ac8d71e32f1230f4c3",
+      "revision": "931f820717ccb891c65961ac8d71e32f1230f4c3",
+      "observed_at": "2026-09-12T04:32:54+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     }
   ],
   "recent": [
+    {
+      "date": "2026-09-12",
+      "status": "WATCH",
+      "title": "繰り返す仕事は、毎回ゼロから起こさずProjectの文脈を引き継ぐ候補が増えた",
+      "meaning": "Slack・schedule・pull request activityなど対応するきっかけから同じ仕事を続ける時、過去の文脈や分担を引き継ぐ価値が高ければCursor Projectsを候補にします。独立した出来事なら軽い実行を使い、厳密な重複排除・再送・外部更新の整合性が必要なら別の仕組みを残します。",
+      "source_label": "Dango Cursor Projects subscription routing",
+      "revision": "931f820717ccb891c65961ac8d71e32f1230f4c3"
+    },
     {
       "date": "2026-09-12",
       "status": "WATCH",
@@ -187,7 +195,7 @@
       "title": "M365の道具がよく変わるなら、MCPで動的に見つける候補が増えた",
       "meaning": "Microsoft 365で外部Capabilityを使う時、道具の増減が多く鮮度が重要ならMCPの動的発見を候補にします。決まった道具だけを安全に使いたい時は固定し、認証方式が合わない時はAPI pluginなど別の経路へ切り替えます。まだ桃多郎内での実運用比較はありません。",
       "source_label": "Dango M365 MCP capability routing",
-      "revision": "70e8f556a27183edfefe9f9e9cd4d513612912f"
+      "revision": "70e8f556a27183edfefe3276e045f20647419749"
     },
     {
       "date": "2026-09-11",
