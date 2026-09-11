@@ -1,10 +1,21 @@
 {
   "title": "Oh Dango News",
   "subtitle": "Dangoのmodel-routing knowledgeから、Humanが知る価値のある更新だけをMOMOが投影します。",
-  "updated_at": "2026-09-11T10:08:00+09:00",
+  "updated_at": "2026-09-11T11:52:00+09:00",
   "source": "asklessquill/Dango (private durable knowledge base)",
   "publication_rule": "Material / routing-changing / canonical prompting developments only. Low-confidence inbox-only evidence stays private until it becomes worth surfacing.",
   "items": [
+    {
+      "date": "2026-09-11",
+      "kind": "Builder / Cost Routing",
+      "signal": "Canonical scoped routing",
+      "title": "Cursor Teamsでは、同じ品質ならfirst-party modelに課金上の追い風がある",
+      "summary": "Cursorの現行公式仕様では、Teams/Enterpriseでthird-party modelを使うとmodel API価格に加えて100万tokenあたり$0.25のCursor Token Rateがかかる。これは直接選択だけでなくAutoがthird-partyへrouteした場合やBYOKにも適用され、Cursor first-partyのGrok/Composerは免除される。",
+      "strength": "HIGH official pricing semantics; task-level quality and total completion cost remain workload-dependent",
+      "astra_vs_sol": "Astra/Sol固有の性能差ではない。Cursor上でthird-party modelを選ぶ時のplan/surface cost axisであり、Grok/Composerの免除を品質優位とは解釈しない。",
+      "implication": "INNUはCursor Teams/EnterpriseのBuilder選定でplan→first/third-party→direct/Auto→actual routed modelを分離し、third-party surchargeを総完了コストへ含める。task-sufficientならfirst-partyにcost advantageがあるが、semantic fit・手戻り・review/recoveryを上回る万能ルールにはしない。",
+      "source_url": "https://cursor.com/docs/models-and-pricing"
+    },
     {
       "date": "2026-09-11",
       "kind": "Capability / Managed Surface",
