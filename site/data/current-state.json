@@ -2,11 +2,11 @@
   "schema_version": "0.1",
   "projection": "MOMO Human-facing public snapshot",
   "authority_note": "このページは『いまどうなってる？』を見るための案内板です。各プロジェクトの正本はそれぞれのGitにあり、ここに表示しただけで状態や権限は変わりません。",
-  "observed_at": "2026-09-11T12:29:00+09:00",
+  "observed_at": "2026-09-11T14:30:51+09:00",
   "system": {
     "status": "ACTIVE",
-    "headline": "Humanのログイン操作を減らす、正式な自動化ルートが1つ増えた。",
-    "summary": "各Projectの現在地そのものに大きな変化はありません。Dangoでは、Business / Enterprise環境でCodexを定期ジョブやCIから動かす時、ブラウザログインを自作する前に公式のWorkspace Access Tokenを検討するルールが加わりました。普通のAPI Keyで足りる仕事は、そのままAPI Keyを使います。",
+    "headline": "何でも毎時間見に行くより、変化が起きた時だけ動ける仕事が増えた。",
+    "summary": "各Projectの現在地そのものに大きな変化はありません。Dangoでは、Gmail・Slack・GitHub PRのようにWorkが対応するイベントなら、何も起きていない時間まで繰り返し確認するより『変化が起きた時だけ動く』方法を先に選ぶルールが加わりました。Webやニュース、任意のGit変更、Macなどの実行状態は今まで通り定期確認が必要です。",
     "human_decision_count": 1,
     "active_watch_count": 2
   },
@@ -16,20 +16,20 @@
       "title": "桃多郎の現在地ページ",
       "meaning": "MOMOを開けば、いま何が動き、何が止まり、最近何が変わったかを短時間で見られます。",
       "source_label": "MOMO Current State Cockpit v0",
-      "revision": "0ec95fb0f02be136487a7d5b0ed4cf8da98098d9"
+      "revision": "fa129fda88fbd7c43a5202bd37e026a2cc60cbc2"
     },
     {
       "status": "WATCH",
       "title": "現在地の自動見回り",
-      "meaning": "各Gitの変化を定期的に確認し、意味のある変化があった時だけこのページを更新します。変化がなければ何もしません。",
+      "meaning": "各Gitの変化を定期的に確認し、意味のある変化があった時だけこのページを更新します。任意のGit変更はイベント監視の対象外なので、ここは定期確認を続けます。",
       "source_label": "MOMO Current State Watch"
     },
     {
       "status": "WATCH",
       "title": "AIモデルと道具選びの学習",
-      "meaning": "どのAI・強度・道具・実行環境を選ぶとうまくいくかをDangoへ蓄積しています。直近では、Business / EnterpriseでCodexを無人実行する時に使える公式Access Token経路が選択肢へ加わりました。",
+      "meaning": "どのAI・強度・道具・実行環境を選ぶとうまくいくかをDangoへ蓄積しています。直近では、対応しているメール・Slack・GitHub PR監視なら、毎時間の空振り確認よりイベント発火を先に選ぶルールが加わりました。",
       "source_label": "INNU Routing Intelligence Loop",
-      "revision": "b7db59c297a00bd04c8ba97486202bbc5c2505d9"
+      "revision": "e51d8e8e82dca45971d6b479c8bf32ac0cba9a9d"
     },
     {
       "status": "HOLD",
@@ -46,9 +46,9 @@
       "status": "ACTIVE",
       "current": "『今どこ？』をすぐ見られる現在地ページと、AIモデルや道具選びの重要ニュースをHuman向けに公開しています。",
       "source_label": "MOMO main",
-      "source_url": "https://github.com/asklessquill/MOMO/commit/0ec95fb0f02be136487a7d5b0ed4cf8da98098d9",
-      "revision": "0ec95fb0f02be136487a7d5b0ed4cf8da98098d9",
-      "observed_at": "2026-09-11T12:29:00+09:00",
+      "source_url": "https://github.com/asklessquill/MOMO/commit/fa129fda88fbd7c43a5202bd37e026a2cc60cbc2",
+      "revision": "fa129fda88fbd7c43a5202bd37e026a2cc60cbc2",
+      "observed_at": "2026-09-11T14:30:51+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     },
     {
@@ -59,7 +59,7 @@
       "source_label": "MOMO-Observatory main",
       "source_url": "https://github.com/asklessquill/MOMO-Observatory/commit/280a31428dff27ea0ac88f36529421de6cafe707",
       "revision": "280a31428dff27ea0ac88f36529421de6cafe707",
-      "observed_at": "2026-09-11T12:29:00+09:00",
+      "observed_at": "2026-09-11T14:30:51+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     },
     {
@@ -70,7 +70,7 @@
       "source_label": "KIBI Operationalization Phase 1",
       "source_url": "https://github.com/asklessquill/KIBI/commit/19d36fa97a661e15a5cc97eb031134f66bd5311c",
       "revision": "19d36fa97a661e15a5cc97eb031134f66bd5311c",
-      "observed_at": "2026-09-11T12:29:00+09:00",
+      "observed_at": "2026-09-11T14:30:51+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     },
     {
@@ -81,7 +81,7 @@
       "source_label": "KIJI main",
       "source_url": "https://github.com/asklessquill/Kiji/commit/bb66d24ff72c7ca3bed35a0f933c34a4ba55f19f",
       "revision": "bb66d24ff72c7ca3bed35a0f933c34a4ba55f19f",
-      "observed_at": "2026-09-11T12:29:00+09:00",
+      "observed_at": "2026-09-11T14:30:51+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     },
     {
@@ -92,7 +92,7 @@
       "source_label": "INNU main",
       "source_url": "https://github.com/asklessquill/Innu/commit/732733d8954158bd72d5836ebe2d7b32bcc28c92",
       "revision": "732733d8954158bd72d5836ebe2d7b32bcc28c92",
-      "observed_at": "2026-09-11T12:29:00+09:00",
+      "observed_at": "2026-09-11T14:30:51+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     },
     {
@@ -103,7 +103,7 @@
       "source_label": "SARU main / Cycle-2 Phase 1",
       "source_url": "https://github.com/asklessquill/Saru/commit/57fc3a4105658d03b4d538d1db55b937e2a9a21a",
       "revision": "57fc3a4105658d03b4d538d1db55b937e2a9a21a",
-      "observed_at": "2026-09-11T12:29:00+09:00",
+      "observed_at": "2026-09-11T14:30:51+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     },
     {
@@ -114,7 +114,7 @@
       "source_label": "FROG main",
       "source_url": "https://github.com/asklessquill/FROG/commit/121f25d4a700f17b9e6c9a160517f3a6c90d5b42",
       "revision": "121f25d4a700f17b9e6c9a160517f3a6c90d5b42",
-      "observed_at": "2026-09-11T12:29:00+09:00",
+      "observed_at": "2026-09-11T14:30:51+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     },
     {
@@ -125,22 +125,30 @@
       "source_label": "SandFrog main / EXP026-B",
       "source_url": "https://github.com/asklessquill/SandFrog/commit/ea7f25f5abf8886a2d9a9f7d5e6f5cd237ccf232",
       "revision": "ea7f25f5abf8886a2d9a9f7d5e6f5cd237ccf232",
-      "observed_at": "2026-09-11T12:29:00+09:00",
+      "observed_at": "2026-09-11T14:30:51+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     },
     {
       "name": "Dango",
       "role": "AIモデルと道具選びの経験を貯める",
       "status": "WATCH",
-      "current": "実際の作業結果と外部EvidenceからAIの選び方を継続して学んでいます。新しく、Business / EnterpriseでCodexを定期ジョブやCIから無人実行する場合、公式のWorkspace Access Tokenを認証候補として先に検討するルールが加わりました。API Keyで足りる仕事はAPI Keyを維持します。",
-      "source_label": "Dango main / Codex workspace access token route",
-      "source_url": "https://github.com/asklessquill/Dango/commit/b7db59c297a00bd04c8ba97486202bbc5c2505d9",
-      "revision": "b7db59c297a00bd04c8ba97486202bbc5c2505d9",
-      "observed_at": "2026-09-11T12:29:00+09:00",
+      "current": "実際の作業結果と外部EvidenceからAIの選び方を継続して学んでいます。新しく、Workが対応するGmail・Slack・GitHub PR監視では、毎時間の空振り確認よりイベント発火を先に検討するルールが加わりました。Web・ニュース・任意のGit変更・ローカル実行状態は定期確認を続けます。",
+      "source_label": "Dango main / event-triggered vs polling routing",
+      "source_url": "https://github.com/asklessquill/Dango/commit/e51d8e8e82dca45971d6b479c8bf32ac0cba9a9d",
+      "revision": "e51d8e8e82dca45971d6b479c8bf32ac0cba9a9d",
+      "observed_at": "2026-09-11T14:30:51+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     }
   ],
   "recent": [
+    {
+      "date": "2026-09-11",
+      "status": "WATCH",
+      "title": "対応している監視は『変化が起きた時だけ動く』方を先に選ぶ",
+      "meaning": "Gmail・Slack・GitHub PRのようにWorkがイベントを受け取れる仕事は、毎時間確認し続けるよりイベント発火を優先します。一方、Web・ニュース・任意のGit変更・Macなどの実行状態はイベントだけでは見えないため、定期確認を続けます。",
+      "source_label": "Dango Work event-triggered vs polling routing",
+      "revision": "e51d8e8e82dca45971d6b479c8bf32ac0cba9a9d"
+    },
     {
       "date": "2026-09-11",
       "status": "WATCH",
