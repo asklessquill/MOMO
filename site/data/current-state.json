@@ -2,11 +2,11 @@
   "schema_version": "0.1",
   "projection": "MOMO Human-facing public snapshot",
   "authority_note": "このページは『いまどうなってる？』を見るための案内板です。各プロジェクトの正本はそれぞれのGitにあり、ここに表示しただけで状態や権限は変わりません。",
-  "observed_at": "2026-09-11T23:29:15+09:00",
+  "observed_at": "2026-09-12T01:33:01+09:00",
   "system": {
     "status": "ACTIVE",
-    "headline": "足りない能力は、作る前に既存のMCP候補を探す。",
-    "summary": "各Projectの現在地そのものに大きな変化はありません。Dangoでは、外部Capabilityが必要になった時にすぐ新規開発へ進まず、まず公式MCP Registryから既存候補を探すルールを追加しました。ただし、Registryに載っていることは安全性・適合性・導入許可・実行権限を意味しません。候補を見つけた後に、用途・権限・安全性・費用・実行環境を別々に確認します。",
+    "headline": "長く動くAI基盤は、全部自作する前に既存のSDKを試す。",
+    "summary": "各Projectの現在地そのものに大きな変化はありません。Dangoでは、長時間動くAIの実行基盤が必要な時、managedな仕組みで足りなければすぐ完全自作へ進むのではなく、既存SDKを使って実行場所や状態管理を自分側に残す中間ルートを比較するルールを追加しました。復旧機能があっても、外部書き込みやGitまで安全に復旧できることは別途実証が必要です。",
     "human_decision_count": 1,
     "active_watch_count": 2
   },
@@ -27,9 +27,9 @@
     {
       "status": "WATCH",
       "title": "AIモデルと道具選びの学習",
-      "meaning": "どのAI・強度・道具・実行環境を選ぶとうまくいくかをDangoへ蓄積しています。直近では、外部Capabilityが必要な時に、作る前に公式MCP Registryから既存候補を探し、その後に安全性・権限・費用などを別々に確認するルールが加わりました。",
+      "meaning": "どのAI・強度・道具・実行環境を選ぶとうまくいくかをDangoへ蓄積しています。直近では、managedな実行基盤で足りない時に、完全自作へ進む前に既存SDKを使った所有型の実行・復旧ルートを比較するルールが加わりました。",
       "source_label": "INNU Routing Intelligence Loop",
-      "revision": "566e5fd64e623120fc2865675c1193c9953cc3c5"
+      "revision": "d625e9e0ecc09ebba2cf87de728008ce1563fcae"
     },
     {
       "status": "HOLD",
@@ -132,15 +132,23 @@
       "name": "Dango",
       "role": "AIモデルと道具選びの経験を貯める",
       "status": "WATCH",
-      "current": "実際の作業結果と外部EvidenceからAIと実行環境の選び方を継続して学んでいます。直近では、外部Capabilityが必要な時に、まず公式MCP Registryで既存候補を探し、その後に用途・安全性・権限・費用・実行環境を別々に確認するルールを加えました。Registryに載っているだけでは導入や実行を許可しません。",
-      "source_label": "Dango main / MCP capability discovery routing",
-      "source_url": "https://github.com/asklessquill/Dango/commit/566e5fd64e623120fc2865675c1193c9953cc3c5",
-      "revision": "566e5fd64e623120fc2865675c1193c9953cc3c5",
-      "observed_at": "2026-09-11T23:29:15+09:00",
+      "current": "実際の作業結果と外部EvidenceからAIと実行環境の選び方を継続して学んでいます。直近では、managedな実行基盤で足りない長時間AIの仕事に対し、完全自作へ進む前に既存SDKを使って実行場所や状態管理を自分側に残す中間ルートを比較するルールを加えました。復旧機能だけで外部書き込みやGitの整合性まで保証されたとは扱いません。",
+      "source_label": "Dango main / durable owned-harness routing",
+      "source_url": "https://github.com/asklessquill/Dango/commit/d625e9e0ecc09ebba2cf87de728008ce1563fcae",
+      "revision": "d625e9e0ecc09ebba2cf87de728008ce1563fcae",
+      "observed_at": "2026-09-12T01:33:01+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     }
   ],
   "recent": [
+    {
+      "date": "2026-09-12",
+      "status": "WATCH",
+      "title": "長時間AIは、managedか完全自作かの二択ではなくなった",
+      "meaning": "managedな実行基盤では制御が足りない仕事でも、すぐ完全自作へ進まず、既存SDKを使って実行場所や状態を自分側に残す中間ルートを比較します。復旧機能があっても、外部書き込み・Git・二重実行まで安全になるとは扱わず、小さな障害試験で確かめてから使います。",
+      "source_label": "Dango durable owned-harness routing",
+      "revision": "d625e9e0ecc09ebba2cf87de728008ce1563fcae"
+    },
     {
       "date": "2026-09-11",
       "status": "WATCH",
