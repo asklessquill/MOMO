@@ -2,11 +2,11 @@
   "schema_version": "0.1",
   "projection": "MOMO Human-facing public snapshot",
   "authority_note": "このページは『いまどうなってる？』を見るための案内板です。各プロジェクトの正本はそれぞれのGitにあり、ここに表示しただけで状態や権限は変わりません。",
-  "observed_at": "2026-09-11T19:33:24+09:00",
+  "observed_at": "2026-09-11T20:32:30+09:00",
   "system": {
     "status": "ACTIVE",
-    "headline": "M365の道具は、変化が多いならMCPで動的に見つける。",
-    "summary": "各Projectの現在地そのものに大きな変化はありません。Dangoでは、Microsoft 365で外部Capabilityを使う時、道具の増減が多く鮮度が重要ならMCPの動的発見を候補にし、決まった道具だけを安全に使いたい時は固定し、認証方式が合わない時はAPI pluginなど別の経路へ切り替える判断ルールを追加しました。まだ桃多郎内での実運用比較はなく、モデル性能の優劣とは別の選択です。",
+    "headline": "Mac Studioを買うなら、いまはM5世代を基準に考える。",
+    "summary": "各Projectの現在地そのものに大きな変化はありません。Dangoでは、M5 Mac StudioをローカルAI・常設実行機の新しい比較候補として追加しました。秘密データを外へ出したくない仕事、繰り返し実行、大容量メモリが効く仕事ではクラウドと実測比較し、非緊急の購入はM5世代を基準に考えます。まだ桃多郎内でM5実機を測ったわけではなく、managed modelの品質を置き換える判断でもありません。",
     "human_decision_count": 1,
     "active_watch_count": 2
   },
@@ -16,7 +16,7 @@
       "title": "桃多郎の現在地ページ",
       "meaning": "MOMOを開けば、いま何が動き、何が止まり、最近何が変わったかを短時間で見られます。",
       "source_label": "MOMO Current State Cockpit v0",
-      "revision": "ee7a1cc97135553208efe9f9e9cd4d513612912f"
+      "revision": "2719d143106953dad1d181b52a49d5170312506d"
     },
     {
       "status": "WATCH",
@@ -27,9 +27,9 @@
     {
       "status": "WATCH",
       "title": "AIモデルと道具選びの学習",
-      "meaning": "どのAI・強度・道具・実行環境を選ぶとうまくいくかをDangoへ蓄積しています。直近では、Microsoft 365で外部Capabilityを使う時に、MCPの動的発見・固定された道具・API pluginをどう使い分けるかという判断ルールが加わりました。",
+      "meaning": "どのAI・強度・道具・実行環境を選ぶとうまくいくかをDangoへ蓄積しています。直近では、M5 Mac StudioをローカルAIや常設実行機として使う場合の比較ルールが加わりました。",
       "source_label": "INNU Routing Intelligence Loop",
-      "revision": "70e8f556a27183edfefe3276e045f20647419749"
+      "revision": "6fc7b2397b141e19f9a3681b817ca1d7d0202735"
     },
     {
       "status": "HOLD",
@@ -46,9 +46,9 @@
       "status": "ACTIVE",
       "current": "『今どこ？』をすぐ見られる現在地ページと、AIモデルや道具選びの重要ニュースをHuman向けに公開しています。",
       "source_label": "MOMO main",
-      "source_url": "https://github.com/asklessquill/MOMO/commit/ee7a1cc97135553208efe9f9e9cd4d513612912f",
-      "revision": "ee7a1cc97135553208efe9f9e9cd4d513612912f",
-      "observed_at": "2026-09-11T19:33:24+09:00",
+      "source_url": "https://github.com/asklessquill/MOMO/commit/2719d143106953dad1d181b52a49d5170312506d",
+      "revision": "2719d143106953dad1d181b52a49d5170312506d",
+      "observed_at": "2026-09-11T20:32:30+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     },
     {
@@ -132,15 +132,23 @@
       "name": "Dango",
       "role": "AIモデルと道具選びの経験を貯める",
       "status": "WATCH",
-      "current": "実際の作業結果と外部EvidenceからAIの選び方を継続して学んでいます。直近では、Microsoft 365で外部Capabilityを使う時、MCPの動的発見・固定された道具・API pluginを、鮮度・決定性・認証方式・道具の広さで使い分ける判断ルールを追加しました。まだ桃多郎内での実運用比較はありません。",
-      "source_label": "Dango main / M365 MCP capability routing",
-      "source_url": "https://github.com/asklessquill/Dango/commit/70e8f556a27183edfefe3276e045f20647419749",
-      "revision": "70e8f556a27183edfefe3276e045f20647419749",
-      "observed_at": "2026-09-11T19:33:24+09:00",
+      "current": "実際の作業結果と外部EvidenceからAIと実行環境の選び方を継続して学んでいます。直近では、M5 Mac StudioをローカルAI・常設実行機の比較候補へ追加し、privacy・反復実行・大容量memoryが効く仕事ではmanaged routeと総コストで比べるルールを加えました。まだ桃多郎内でM5実機の比較はしていません。",
+      "source_label": "Dango main / M5 Mac Studio local execution routing",
+      "source_url": "https://github.com/asklessquill/Dango/commit/6fc7b2397b141e19f9a3681b817ca1d7d0202735",
+      "revision": "6fc7b2397b141e19f9a3681b817ca1d7d0202735",
+      "observed_at": "2026-09-11T20:32:30+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     }
   ],
   "recent": [
+    {
+      "date": "2026-09-11",
+      "status": "WATCH",
+      "title": "Mac Studioを買うなら、いまはM5世代を新しい基準にする",
+      "meaning": "M5 Mac Studioを、ローカルAIや常設実行機の現実的な比較候補に追加しました。秘密データを外へ出したくない仕事、繰り返し実行、大容量メモリが効く仕事では、まず1台でクラウドやmanaged modelと実測比較します。まだ桃多郎内でM5実機を測っていないため、複数台化や全面置換は前提にしません。",
+      "source_label": "Dango M5 Mac Studio local execution routing",
+      "revision": "6fc7b2397b141e19f9a3681b817ca1d7d0202735"
+    },
     {
       "date": "2026-09-11",
       "status": "WATCH",
