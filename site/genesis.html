@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Genesis — Birth of the Next World | Project 桃多郎</title>
+  <meta name="description" content="World SE Genesisの現在地、Common Ancestor、意図的な未完成、Evidence、MOMO / KINN分岐までをHuman向けに可視化します。">
+  <meta name="theme-color" content="#1c1613">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .genesis-page{max-width:1180px;margin:0 auto;padding:6.8rem 1.25rem 5rem}.genesis-hero{padding:2.8rem 0 1.5rem}.genesis-hero h1{margin:.2rem 0 .55rem}.genesis-subtitle{font-size:clamp(1.15rem,2.5vw,1.6rem);color:#6a4632;margin:.2rem 0 1rem}.genesis-status{display:flex;gap:.55rem;flex-wrap:wrap;margin-top:1rem}.pill{display:inline-flex;align-items:center;border:1px solid rgba(113,87,67,.22);border-radius:999px;padding:.34rem .68rem;background:rgba(255,255,255,.56);font-size:.8rem;font-weight:750}.pill-live{background:rgba(250,226,190,.72)}.layout{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:1.2rem;align-items:start}.panel{border:1px solid rgba(113,87,67,.2);border-radius:20px;padding:1.2rem 1.25rem;background:rgba(255,255,255,.52);box-shadow:0 10px 30px rgba(68,45,32,.05)}.panel h2,.panel h3{margin-top:.15rem}.summary-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.85rem;margin:1rem 0 1.3rem}.summary-card{padding:1rem;border:1px solid rgba(113,87,67,.16);border-radius:16px;background:rgba(255,255,255,.46)}.summary-card strong{display:block;margin-bottom:.35rem}.check-list,.plain-list{margin:.45rem 0 0;padding-left:1.25rem}.check-list li,.plain-list li{margin:.38rem 0}.roadmap{list-style:none;margin:1rem 0 0;padding:0;display:grid;gap:0}.roadmap li{display:grid;grid-template-columns:28px 1fr;gap:.75rem;position:relative;padding:0 0 1rem}.roadmap li:not(:last-child)::before{content:"";position:absolute;left:13px;top:25px;bottom:-2px;width:2px;background:rgba(113,87,67,.18)}.roadmap-mark{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;border:2px solid rgba(113,87,67,.25);background:#fff;font-weight:800;font-size:.82rem;z-index:1}.roadmap .COMPLETE .roadmap-mark{background:rgba(221,239,220,.9)}.roadmap .IN_PROGRESS .roadmap-mark{background:rgba(250,226,190,.92);border-color:#c9956d}.roadmap-title{font-weight:800}.roadmap-detail{font-size:.86rem;color:#6d625b}.ancestor-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem;margin-top:1rem}.ancestor-card{border:1px solid rgba(113,87,67,.16);border-radius:15px;padding:.9rem 1rem;background:rgba(255,255,255,.42)}.ancestor-card strong{display:block;margin-bottom:.2rem}.incomplete{display:grid;gap:.7rem;margin-top:1rem}.incomplete-item{border-left:3px solid #c9956d;padding:.7rem .9rem;background:rgba(255,255,255,.38);border-radius:0 12px 12px 0}.incomplete-item strong{display:block}.evidence{position:sticky;top:6.4rem}.evidence-list{display:grid;gap:.65rem;margin-top:.8rem}.evidence-row{display:grid;grid-template-columns:1fr auto;gap:.65rem;align-items:start;border-bottom:1px solid rgba(113,87,67,.12);padding-bottom:.6rem}.evidence-row:last-child{border-bottom:0}.evidence-row small{display:block;color:#6d625b}.status-dot{font-size:.72rem;font-weight:800;letter-spacing:.04em}.fork{margin-top:1.1rem;text-align:center}.fork-origin{display:inline-block;padding:.5rem .85rem;border:1px solid rgba(113,87,67,.2);border-radius:999px;background:rgba(255,255,255,.65);font-weight:800}.fork-line{width:2px;height:1.4rem;background:rgba(113,87,67,.22);margin:0 auto}.fork-branches{display:grid;grid-template-columns:1fr 1fr;gap:1rem;position:relative}.fork-branches::before{content:"";position:absolute;left:25%;right:25%;top:-.7rem;height:2px;background:rgba(113,87,67,.22)}.fork-card{border:1px solid rgba(113,87,67,.18);border-radius:16px;padding:1rem;background:rgba(255,255,255,.48)}.fork-card strong{display:block;font-size:1.05rem}.history-note{margin-top:1rem;padding:.9rem 1rem;border-radius:14px;background:rgba(201,149,109,.10);font-size:.9rem}.muted{color:#6d625b}.error{padding:1rem;border:1px solid rgba(160,70,60,.3);border-radius:14px;background:rgba(244,215,211,.52)}@media(max-width:900px){.layout{grid-template-columns:1fr}.evidence{position:static}.summary-grid{grid-template-columns:1fr}.ancestor-grid{grid-template-columns:1fr}.genesis-page{padding-top:5.8rem}}@media(max-width:560px){.fork-branches{grid-template-columns:1fr}.fork-branches::before{display:none}}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">本文へ移動</a>
+  <header class="mast">
+    <a class="brand" href="index.html">
+      <img src="assets/momo-git-icon.png" width="56" height="56" alt="Project 桃多郎">
+      <span>Project 桃多郎</span>
+    </a>
+    <nav aria-label="Sections">
+      <a href="index.html">Home</a>
+      <a href="cockpit.html">Current</a>
+      <a href="oh-dango-news.html">News</a>
+      <a href="genesis.html" aria-current="page">Genesis</a>
+    </nav>
+  </header>
+
+  <main id="main" class="genesis-page">
+    <section class="genesis-hero">
+      <p class="kicker">MOMO / GENESIS</p>
+      <h1 id="title">WORLD SE — GENESIS</h1>
+      <p class="genesis-subtitle" id="subtitle">Birth of the Next World</p>
+      <p class="lead">今のWorldを閉じ、Common Ancestorを確定し、MOMO / KINNへ分岐する一度きりの節目を追います。未完成は失敗ではなく、Genesisへ持ち込まないと決めた境界も含めて表示します。</p>
+      <div class="genesis-status">
+        <span class="pill pill-live" id="status">Loading…</span>
+        <span class="pill" id="phase">Current phase loading…</span>
+        <span class="pill" id="checkpoint">Checkpoint loading…</span>
+      </div>
+    </section>
+
+    <div class="layout">
+      <div>
+        <section class="panel" aria-labelledby="summary-title">
+          <p class="kicker">NOW</p>
+          <h2 id="summary-title">Genesisの現在地</h2>
+          <p id="phase-summary" class="muted">状態を読み込んでいます。</p>
+          <div class="summary-grid">
+            <article class="summary-card"><strong>Completed</strong><ul class="check-list" id="completed"></ul></article>
+            <article class="summary-card"><strong>In progress</strong><ul class="plain-list" id="in-progress"></ul></article>
+            <article class="summary-card"><strong>Next</strong><ul class="plain-list" id="next"></ul></article>
+          </div>
+        </section>
+
+        <section class="panel" style="margin-top:1rem" aria-labelledby="roadmap-title">
+          <p class="kicker">ROADMAP</p>
+          <h2 id="roadmap-title">Common Ancestorから分岐まで</h2>
+          <ol class="roadmap" id="roadmap"></ol>
+        </section>
+
+        <section class="panel" style="margin-top:1rem" aria-labelledby="ancestor-title">
+          <p class="kicker">COMMON ANCESTOR</p>
+          <h2 id="ancestor-title">Genesisで何を持っていくか</h2>
+          <p class="muted">実装詳細ではなく、次のWorldへ継承する意味と責任の核。</p>
+          <div class="ancestor-grid" id="ancestor"></div>
+        </section>
+
+        <section class="panel" style="margin-top:1rem" aria-labelledby="incomplete-title">
+          <p class="kicker">KNOWN INCOMPLETENESS</p>
+          <h2 id="incomplete-title">意図的に未完成なもの</h2>
+          <p class="muted">未完成＝失敗ではありません。Genesisの成立条件に含めないと明示した領域です。</p>
+          <div class="incomplete" id="incomplete"></div>
+        </section>
+
+        <section class="panel" style="margin-top:1rem" aria-labelledby="fork-title">
+          <p class="kicker">LINEAGE</p>
+          <h2 id="fork-title">Genesis v1 のその先</h2>
+          <div class="fork">
+            <div class="fork-origin" id="fork-origin">Genesis v1</div>
+            <div class="fork-line"></div>
+            <div class="fork-branches" id="fork-branches"></div>
+          </div>
+          <p class="history-note">Genesis完了後もこのページは消しません。進捗ページから「このWorldはどのCommon Ancestorから生まれたか」を示す系譜ページへ役割を変えます。</p>
+        </section>
+      </div>
+
+      <aside class="panel evidence" aria-labelledby="evidence-title">
+        <p class="kicker">LATEST EVIDENCE</p>
+        <h2 id="evidence-title">根拠の現在地</h2>
+        <div class="evidence-list" id="evidence"></div>
+        <p class="history-note" id="authority">Working projection · not Canonical</p>
+        <p><a href="genesis-2026-09-05.html">2026-09-05 Genesis Snapshot →</a></p>
+        <p><a href="cockpit.html">Current State →</a></p>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <p>Past evidence remains. Current state may change. Genesis ratification is a separate Human decision.</p>
+    <p class="muted" id="updated">Genesis stateを読み込み中…</p>
+  </footer>
+
+  <script>
+    (() => {
+      const $ = (id) => document.getElementById(id);
+      const text = (id, value) => { if ($(id) && value != null) $(id).textContent = value; };
+      const list = (id, values, prefix = "") => {
+        const root = $(id); if (!root) return;
+        root.replaceChildren(...(values || []).map((value) => {
+          const li = document.createElement("li"); li.textContent = `${prefix}${value}`; return li;
+        }));
+      };
+
+      fetch("data/genesis-state.json", { cache: "no-store" })
+        .then((res) => { if (!res.ok) throw new Error("Genesis state unavailable"); return res.json(); })
+        .then((data) => {
+          text("title", data.title);
+          text("subtitle", data.subtitle);
+          text("status", data.status);
+          text("phase", data.current_phase?.label);
+          text("phase-summary", data.current_phase?.summary);
+          text("checkpoint", `Checkpoint: ${data.checkpoint || "unknown"}`);
+          list("completed", data.completed, "✓ ");
+          list("in-progress", data.in_progress, "→ ");
+          list("next", data.next, "→ ");
+
+          const roadmap = $("roadmap");
+          roadmap.replaceChildren(...(data.roadmap || []).map((item) => {
+            const li = document.createElement("li"); li.className = item.status || "PENDING";
+            const mark = document.createElement("span"); mark.className = "roadmap-mark";
+            mark.textContent = item.status === "COMPLETE" ? "✓" : item.status === "IN_PROGRESS" ? "◉" : "○";
+            const body = document.createElement("div");
+            const title = document.createElement("div"); title.className = "roadmap-title"; title.textContent = item.label;
+            body.append(title);
+            if (item.detail) { const detail = document.createElement("div"); detail.className = "roadmap-detail"; detail.textContent = item.detail; body.append(detail); }
+            li.append(mark, body); return li;
+          }));
+
+          const ancestor = $("ancestor");
+          ancestor.replaceChildren(...(data.common_ancestor || []).map((item) => {
+            const card = document.createElement("article"); card.className = "ancestor-card";
+            const name = document.createElement("strong"); name.textContent = item.name;
+            const carries = document.createElement("span"); carries.textContent = item.carries;
+            card.append(name, carries); return card;
+          }));
+
+          const incomplete = $("incomplete");
+          incomplete.replaceChildren(...(data.known_incompleteness || []).map((item) => {
+            const card = document.createElement("article"); card.className = "incomplete-item";
+            const name = document.createElement("strong"); name.textContent = item.item;
+            const meaning = document.createElement("span"); meaning.textContent = `→ ${item.meaning}`;
+            card.append(name, meaning); return card;
+          }));
+
+          const evidence = $("evidence");
+          evidence.replaceChildren(...(data.evidence || []).map((item) => {
+            const row = document.createElement("div"); row.className = "evidence-row";
+            const body = document.createElement("div"); const label = document.createElement("strong"); label.textContent = item.label;
+            const value = document.createElement("small"); value.textContent = item.value; body.append(label, value);
+            const status = document.createElement("span"); status.className = "status-dot"; status.textContent = item.status;
+            row.append(body, status); return row;
+          }));
+
+          text("fork-origin", data.fork?.origin || "Genesis v1");
+          const branches = $("fork-branches");
+          branches.replaceChildren(...(data.fork?.branches || []).map((item) => {
+            const card = document.createElement("article"); card.className = "fork-card";
+            const name = document.createElement("strong"); name.textContent = item.name;
+            const target = document.createElement("span"); target.textContent = item.target;
+            card.append(name, target); return card;
+          }));
+
+          const auth = data.authority?.canonical ? "Canonical" : "Working projection · not Canonical";
+          text("authority", `${auth}. ${data.authority?.note || ""}`);
+          if (data.observed_at) {
+            const when = new Date(data.observed_at);
+            text("updated", `${when.toLocaleString("ja-JP", { timeZone: "Asia/Tokyo" })} JST 時点 · Final Genesis is not yet ratified.`);
+          }
+        })
+        .catch((error) => {
+          text("status", "UNKNOWN");
+          text("phase", "Genesis state unavailable");
+          text("phase-summary", "古い状態を現在地として推測表示しません。");
+          const panel = $("completed")?.closest(".panel");
+          if (panel) { const p = document.createElement("p"); p.className = "error"; p.textContent = error.message; panel.append(p); }
+        });
+    })();
+  </script>
+</body>
+</html>
