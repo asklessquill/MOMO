@@ -1,0 +1,158 @@
+{
+  "schema_version": "genesis-state.v1",
+  "observed_at": "2026-09-12T12:39:00+09:00",
+  "authority": {
+    "kind": "human-provided working projection",
+    "canonical": false,
+    "note": "This is a Human-facing and machine-readable Genesis progress projection. Final Genesis is not ratified yet. Historical evidence is preserved separately."
+  },
+  "title": "WORLD SE — GENESIS",
+  "subtitle": "Birth of the Next World",
+  "status": "IN_PROGRESS",
+  "current_phase": {
+    "id": "kiji-genesis-data-science-core-v0",
+    "label": "KIJI Genesis Data Science Core v0",
+    "summary": "Qualifying KIJI's measurement capability before the common ancestor is ratified and forked."
+  },
+  "checkpoint": "world-se-common-ancestor-v0",
+  "completed": [
+    "Local Closure",
+    "Common Ancestor pre-completion freeze",
+    "KIBI local preservation",
+    "SARU local preservation",
+    "KIJI fresh baseline — 366 tests PASS"
+  ],
+  "in_progress": [
+    "KIJI ‘測る術’ Genesis qualification"
+  ],
+  "next": [
+    "KIJI Acceptance Review",
+    "INNU Generic Build Qualification",
+    "Fresh / Portability Verification",
+    "Genesis v1 Ratification",
+    "MOMO / KINN Fork"
+  ],
+  "roadmap": [
+    {
+      "id": "pre-genesis-cleanup",
+      "label": "Pre-Genesis cleanup",
+      "status": "COMPLETE"
+    },
+    {
+      "id": "local-closure-gate",
+      "label": "Local Closure Gate",
+      "status": "COMPLETE",
+      "detail": "PASS"
+    },
+    {
+      "id": "kiji-data-science-core",
+      "label": "KIJI Data Science Core",
+      "status": "IN_PROGRESS"
+    },
+    {
+      "id": "kiji-acceptance-review",
+      "label": "KIJI Acceptance Review",
+      "status": "PENDING"
+    },
+    {
+      "id": "innu-qualification",
+      "label": "INNU Qualification",
+      "status": "PENDING"
+    },
+    {
+      "id": "fresh-reproduction",
+      "label": "Fresh Reproduction",
+      "status": "PENDING"
+    },
+    {
+      "id": "genesis-v1",
+      "label": "Genesis v1",
+      "status": "PENDING"
+    }
+  ],
+  "common_ancestor": [
+    {
+      "name": "MOMO",
+      "carries": "meaning / World identity"
+    },
+    {
+      "name": "KIBI",
+      "carries": "semantic connection protocol"
+    },
+    {
+      "name": "KIJI",
+      "carries": "observe / measure / interpret"
+    },
+    {
+      "name": "SARU",
+      "carries": "Human World Activation boundary"
+    },
+    {
+      "name": "INNU",
+      "carries": "build / verify / recover"
+    }
+  ],
+  "known_incompleteness": [
+    {
+      "item": "KIBI runtime interoperability",
+      "meaning": "not required before Genesis"
+    },
+    {
+      "item": "SARU real Human-world activation",
+      "meaning": "intentionally unresolved"
+    },
+    {
+      "item": "KIJI M8 / causal analysis",
+      "meaning": "not part of Genesis"
+    },
+    {
+      "item": "Investment specialization",
+      "meaning": "belongs to KINN after fork"
+    }
+  ],
+  "evidence": [
+    {
+      "label": "Local Closure",
+      "value": "PASS",
+      "status": "PASS"
+    },
+    {
+      "label": "KIJI baseline",
+      "value": "366 passed",
+      "status": "PASS"
+    },
+    {
+      "label": "KIJI candidate",
+      "value": "building",
+      "status": "IN_PROGRESS"
+    },
+    {
+      "label": "Genesis checkpoint",
+      "value": "world-se-common-ancestor-v0",
+      "status": "RECORDED"
+    },
+    {
+      "label": "Final Genesis",
+      "value": "not yet ratified",
+      "status": "PENDING"
+    }
+  ],
+  "fork": {
+    "status": "NOT_YET_RATIFIED",
+    "origin": "Genesis v1",
+    "branches": [
+      {
+        "name": "MOMO Generic",
+        "target": "Windows"
+      },
+      {
+        "name": "KINN Specialized",
+        "target": "Mac mini"
+      }
+    ]
+  },
+  "history": {
+    "prior_genesis_snapshot": "genesis-2026-09-05.html",
+    "preservation_rule": "Past Genesis snapshots remain historical evidence even when current Genesis state changes."
+  }
+}
