@@ -2,7 +2,7 @@
   "schema_version": "0.1",
   "projection": "MOMO Human-facing public snapshot",
   "authority_note": "このページは『いまどうなってる？』を見るための案内板です。各プロジェクトの正本はそれぞれのGitにあり、ここに表示しただけで状態や権限は変わりません。",
-  "observed_at": "2026-09-12T19:30:13+09:00",
+  "observed_at": "2026-09-12T20:31:52+09:00",
   "system": {
     "status": "ACTIVE",
     "headline": "Genesisの進行表がMOMOに加わり、最終確定前の現在地が見えるようになった。",
@@ -34,9 +34,9 @@
     {
       "status": "WATCH",
       "title": "AIモデルと道具選びの学習",
-      "meaning": "どのAI・強度・道具・実行環境を選ぶとうまくいくかをDangoへ蓄積しています。直近では、Cursor Projectsの並列Subagentは無料の高速化ではなく、独立したcontextとtokenを使うため、大仕事で価値が出る時だけ必要最小限から使う候補へ更新しました。World SEでの実料金や最適並列数はまだ実測していません。",
+      "meaning": "どのAI・強度・道具・実行環境を選ぶとうまくいくかをDangoへ蓄積しています。直近では、Cursorの推論はCloudに残したまま、自分のMac・GPU機・VMをTool実行先として使うSelf-Hosted Machinesを実行環境の候補に追加しました。完全on-premやlocal inferenceではなく、常設Macでの安定性・再接続・並列実行・総costはまだ実測していません。",
       "source_label": "INNU Routing Intelligence Loop",
-      "revision": "795c630157f7518d117caeb88be6ee0c3646858e"
+      "revision": "a1fd6c4e12ca9750b0676f8587e18253369ad2ca"
     },
     {
       "status": "HOLD",
@@ -139,15 +139,23 @@
       "name": "Dango",
       "role": "AIモデルと道具選びの経験を貯める",
       "status": "WATCH",
-      "current": "実際の作業結果と外部EvidenceからAIと実行環境の選び方を継続して学んでいます。直近では、Cursor Projectsを長い仕事の候補にしつつ、並列Subagentごとにcontextとtokenを使うため、単純な仕事は1 Agentのまま、独立して並列化できる大仕事だけ必要最小限から増やす候補へ更新しました。World SEでの実料金・最適並列数・完了時間短縮率はまだ実測していません。",
+      "current": "実際の作業結果と外部EvidenceからAIと実行環境の選び方を継続して学んでいます。直近では、Cursorの推論・計画はCloudに残しつつ、ファイル編集・terminal・browser・local MCPなどのTool実行だけを自分のMac・GPU機・VMへ移すSelf-Hosted Machinesを候補に追加しました。通常はmanaged Cloud Agentを優先し、ローカル状態や固有hardwareが必要な時だけ使います。完全on-premやlocal inferenceではなく、World SEでの安定性・再接続・並列実行・総costはまだ未実測です。",
       "source_label": "Dango main / routing watch",
-      "source_url": "https://github.com/asklessquill/Dango/commit/795c630157f7518d117caeb88be6ee0c3646858e",
-      "revision": "795c630157f7518d117caeb88be6ee0c3646858e",
-      "observed_at": "2026-09-12T19:30:13+09:00",
+      "source_url": "https://github.com/asklessquill/Dango/commit/a1fd6c4e12ca9750b0676f8587e18253369ad2ca",
+      "revision": "a1fd6c4e12ca9750b0676f8587e18253369ad2ca",
+      "observed_at": "2026-09-12T20:31:52+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     }
   ],
   "recent": [
+    {
+      "date": "2026-09-12",
+      "status": "WATCH",
+      "title": "Cursorは、自分のMacやGPU機をAgentの『作業場所』として使える",
+      "meaning": "CursorのSelf-Hosted Machinesでは、推論・計画はCursor Cloudに残したまま、Tool実行だけを自分のMac・GPU機・VMへ移せます。ローカル状態や固有hardwareが必要な仕事では、自作の遠隔操作基盤を増やす前の候補になります。ただし完全on-premやlocal inferenceではなく、必要なfile内容やTool結果は推論のためCursor側へ送られます。桃多郎での常設Mac実測はまだありません。",
+      "source_label": "Dango Cursor self-hosted execution routing",
+      "revision": "a1fd6c4e12ca9750b0676f8587e18253369ad2ca"
+    },
     {
       "date": "2026-09-12",
       "status": "WATCH",
