@@ -1,10 +1,27 @@
 {
   "title": "Oh Dango News",
   "subtitle": "Dangoのmodel-routing knowledgeから、Humanが知る価値のある更新だけをMOMOが投影します。",
-  "updated_at": "2026-09-12T22:00:00+09:00",
+  "updated_at": "2026-09-12T22:41:00+09:00",
   "source": "asklessquill/Dango (private durable knowledge base)",
   "publication_rule": "Publish when a well-supported finding materially changes a practical Human choice about model, surface, tool, cost, runtime, recovery, capability or workflow. Scoped candidates may be published when their bounded consequence is clear; backend-only, weak or duplicate findings stay private.",
   "items": [
+    {
+      "date": "2026-09-12",
+      "human_kind": "復旧/安全",
+      "human_title": "機密情報は、モデル名だけでなく『どの経路を通るか』まで選ぶ",
+      "human_change": "Anthropicの2026年9月Threat Intelligence Reportでは、第三者model routing service経由の利用セッションがClaudeへ中継され、さらに無許可のdistillation活動に使われた事例が報告されました。そこには氏名・メール・企業データ・社内予算情報・有効なaccess credentialなどの機密情報が含まれていました。同じClaudeや同じモデル名でも、direct providerと第三者routerではdata pathとgovernanceが同一とは限りません。",
+      "human_action": "INNUが秘密情報、credential、private repo、社内機密、規制対象データを扱う時は、第三者routerのdata handling・下流provider・retention/training条件・enterprise controlが確認できない限り、direct providerまたは明示的に管理されたenterprise routeを優先します。確認済みのintermediaryまで一律禁止にはしません。",
+      "human_example": "たとえばprivate repoの設定ファイルにtokenや顧客情報が含まれる調査では、料金やmodel availabilityだけを理由に未確認のmodel routerへ流さず、OpenAI/Anthropic等のdirect APIや契約済みenterprise surfaceを先に使います。低機密の公開コード比較なら、routerの価格・latency・fallback利点を普通に比較できます。",
+      "human_limit": "Anthropicの報告は第三者router全体が危険だと示すものではありません。公開報告では関係した全サービス名や個別契約条件は明らかではなく、各routerの現在のprivacy policyや技術実装は別途確認が必要です。またこれはモデル品質・速度・料金の比較Evidenceではありません。",
+      "kind": "Provider Path / Sensitive Data Governance",
+      "signal": "Candidate scoped routing",
+      "title": "Separate model identity from intermediary data path for sensitive workloads",
+      "summary": "Anthropic reported sensitive end-user sessions originating from third-party model routing services being relayed into Claude and used in unauthorized distillation activity. The evidence supports data-path preflight for intermediaries, not a blanket ban.",
+      "strength": "HIGH official evidence for intermediary data-path risk; MEDIUM for any specific unnamed router",
+      "astra_vs_sol": "モデル性能比較ではない。provider/model/surfaceとdata-governance pathを別axisとして扱う更新。",
+      "implication": "For secrets and confidential workloads, prefer direct or explicitly governed enterprise routes when an intermediary path is unknown; verified intermediaries remain valid candidates.",
+      "source_url": "https://www.anthropic.com/threat-intelligence-report-september-2026"
+    },
     {
       "date": "2026-09-12",
       "human_kind": "作業環境",
