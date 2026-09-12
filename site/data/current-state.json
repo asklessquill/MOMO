@@ -2,7 +2,7 @@
   "schema_version": "0.1",
   "projection": "MOMO Human-facing public snapshot",
   "authority_note": "このページは『いまどうなってる？』を見るための案内板です。各プロジェクトの正本はそれぞれのGitにあり、ここに表示しただけで状態や権限は変わりません。",
-  "observed_at": "2026-09-12T21:29:04+09:00",
+  "observed_at": "2026-09-12T23:32:50+09:00",
   "system": {
     "status": "ACTIVE",
     "headline": "Genesisの進行表がMOMOに加わり、最終確定前の現在地が見えるようになった。",
@@ -34,9 +34,9 @@
     {
       "status": "WATCH",
       "title": "AIモデルと道具選びの学習",
-      "meaning": "どのAI・強度・道具・実行環境を選ぶとうまくいくかをDangoへ蓄積しています。直近ではClaude Sonnet 5を新しい外部候補として追加し、モデル名だけでなくeffortと実際のtoken量を分けて比べるようにしました。公式価格は下がっていますが、同じ文章でもtoken量が増える場合があるため、完了した仕事全体のcostで判断します。World SEでの同条件比較はまだありません。",
+      "meaning": "どのAI・強度・道具・実行環境を選ぶとうまくいくかをDangoへ蓄積しています。直近ではCursor Cloud Agentで『複数repoを扱う』ことと『Long-runningで長時間動かす』ことを、同じ1 Agentで当然に組み合わせない制約を追加しました。両方が必要なら、短いcross-repo作業へ分けるか、別の実行経路を比較します。",
       "source_label": "INNU Routing Intelligence Loop",
-      "revision": "596b2f9bd20b4f37521c57fb70b28296982d0fc0"
+      "revision": "e053df6f7b37e626af771cb8cbef4eff85f07651"
     },
     {
       "status": "HOLD",
@@ -139,15 +139,23 @@
       "name": "Dango",
       "role": "AIモデルと道具選びの経験を貯める",
       "status": "WATCH",
-      "current": "実際の作業結果と外部EvidenceからAIと実行環境の選び方を継続して学んでいます。直近ではClaude Sonnet 5を外部候補へ追加し、low / medium / high / xhigh / maxのeffortをモデル名とは別の選択軸として扱うようにしました。公式価格だけで安さを決めず、実token量・成功・手戻りまで含めた完了costで比較します。World SEでの同条件実測はまだありません。",
+      "current": "実際の作業結果と外部EvidenceからAIと実行環境の選び方を継続して学んでいます。直近ではCursor Cloud Agentのmulti-repo環境とLong-runningを、同じ1 Agentで当然に組み合わせない制約を追加しました。両方が必要な仕事はboundedなcross-repo工程へ分けるか、別surfaceを比較します。Cursor Projects全体の能力を否定するものではなく、桃多郎での実測もまだありません。",
       "source_label": "Dango main / routing watch",
-      "source_url": "https://github.com/asklessquill/Dango/commit/596b2f9bd20b4f37521c57fb70b28296982d0fc0",
-      "revision": "596b2f9bd20b4f37521c57fb70b28296982d0fc0",
-      "observed_at": "2026-09-12T21:29:04+09:00",
+      "source_url": "https://github.com/asklessquill/Dango/commit/e053df6f7b37e626af771cb8cbef4eff85f07651",
+      "revision": "e053df6f7b37e626af771cb8cbef4eff85f07651",
+      "observed_at": "2026-09-12T23:32:50+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     }
   ],
   "recent": [
+    {
+      "date": "2026-09-12",
+      "status": "WATCH",
+      "title": "Cursorで『複数repoを長時間1本で回す』は、まだ前提にしない",
+      "meaning": "Cursor Cloud Agentsは複数repoを扱えますが、現在確認できた公式制約ではmulti-repo環境でLong-runningは使えません。両方が必要な仕事は、短いcross-repo作業へ区切る、Projects側で工程を分ける、または別の実行経路を比較します。これはCursor Projects全体が長時間のmulti-repo仕事を扱えないという意味ではなく、桃多郎での実測もまだありません。",
+      "source_label": "Dango Cursor multi-repo long-running boundary",
+      "revision": "e053df6f7b37e626af771cb8cbef4eff85f07651"
+    },
     {
       "date": "2026-09-12",
       "status": "WATCH",
