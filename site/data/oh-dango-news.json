@@ -1,10 +1,27 @@
 {
   "title": "Oh Dango News",
   "subtitle": "Dangoのmodel-routing knowledgeから、Humanが知る価値のある更新だけをMOMOが投影します。",
-  "updated_at": "2026-09-12T17:58:00+09:00",
+  "updated_at": "2026-09-12T19:20:00+09:00",
   "source": "asklessquill/Dango (private durable knowledge base)",
   "publication_rule": "Publish when a well-supported finding materially changes a practical Human choice about model, surface, tool, cost, runtime, recovery, capability or workflow. Scoped candidates may be published when their bounded consequence is clear; backend-only, weak or duplicate findings stay private.",
   "items": [
+    {
+      "date": "2026-09-12",
+      "human_kind": "コスト",
+      "human_title": "Cursor Projectsは大仕事向け。Subagentは『多いほど得』ではない",
+      "human_change": "Cursor Projectsは長い機能開発や移行を継続し、複数Agentへ仕事を分けられます。ただしCursor公式Docsでは、各Subagentが独立したcontextとtokenを使い、5並列なら概ね5倍のtokenになり得ると説明されています。Cloud Agentも選択したmodelのAPI価格で課金されるため、大量並列は無料の高速化ではありません。",
+      "human_action": "INNUは、長期間のcontext保持や独立した作業を同時に進める価値がある時にProjectsを使います。そのうえでSubagent数は必要最小限から始め、単純・密結合・すぐ検証できる作業は通常のCursor Agent 1本へ戻します。『難しいからAgentを増やす』ではなく、『独立して並列化でき、時間短縮がtoken増を上回るか』で決めます。",
+      "human_example": "たとえばMOMO/KIBI/INNUをまたぐ大きな移行で、調査・実装・テストが独立して進められるならProjectsで数Agentへ分担する価値があります。一方README修正や1ファイルのbug fixを5 Agentへ分けるのは、context取得を5回行うぶん遅く高くなる可能性があるので1 Agentで処理します。",
+      "human_limit": "『5 Agentで約5倍』はCursor公式の目安で、桃多郎Project固有の実料金ではありません。Projects自体はbetaで、coordinatorの追加cost、cache、plan allowance、最適な並列数、World SEでの完了時間短縮率はまだ実測していません。並列化で失敗やHuman待ちが大きく減るなら、tokenが増えても総仕事コストでは得になる場合があります。",
+      "kind": "Execution Surface / Parallelism Cost",
+      "signal": "Candidate scoped routing",
+      "title": "Cost-gate Cursor Projects and subagent parallelism",
+      "summary": "Cursor documents independent context/token consumption for subagents, roughly five-times token usage for five parallel subagents, startup overhead, and API-model pricing for Cloud Agents. Projects parallelism should therefore be chosen by decomposition value rather than maximum available concurrency.",
+      "strength": "HIGH official Cursor cost/performance semantics; MEDIUM for World SE routing generalization",
+      "astra_vs_sol": "OpenAIモデル比較ではない。Cursor Projects / Cloud Agentsのsurface・concurrency・costをmodel/tierと分離する更新。",
+      "implication": "Use Projects for persistent or genuinely parallel work, but keep simple work on one bounded agent and increase concurrency only when elapsed-time/context-isolation value justifies independent token budgets.",
+      "source_url": "https://prod.cursor.com/docs/subagents"
+    },
     {
       "date": "2026-09-12",
       "human_kind": "モデル選び",
