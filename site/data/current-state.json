@@ -2,15 +2,22 @@
   "schema_version": "0.1",
   "projection": "MOMO Human-facing public snapshot",
   "authority_note": "このページは『いまどうなってる？』を見るための案内板です。各プロジェクトの正本はそれぞれのGitにあり、ここに表示しただけで状態や権限は変わりません。",
-  "observed_at": "2026-09-12T11:29:14+09:00",
+  "observed_at": "2026-09-12T13:31:12+09:00",
   "system": {
     "status": "ACTIVE",
-    "headline": "Astraの巨大コンテキストは、入るだけ詰めず、272K付近を越える前にコストを比べる。",
-    "summary": "各Projectの現在地そのものに大きな変化はありません。Dangoでは、GPT-6 Astra APIの大きなコンテキストを容量だけで使い切らず、入力が272K tokens付近を越える前に全文投入・検索・圧縮・分割を比較する判断を追加しました。必要な情報を削ることが目的ではなく、品質と総コストの両方を見て選びます。これはAPI利用の判断で、ChatGPTやCodexのsubscription枠へそのまま当てはめません。",
+    "headline": "Genesisの進行表がMOMOに加わり、最終確定前の現在地が見えるようになった。",
+    "summary": "World SEの共通の出発点を固める工程をGenesisとしてMOMOで見える化しました。まだ最終確定ではなく、MOMO上の進行表ではKIJIの『測る力』の確認が現在の中心です。各Projectの正本Gitには新しい状態変更が確認されていないため、個別statusは変えていません。",
     "human_decision_count": 1,
     "active_watch_count": 2
   },
   "now": [
+    {
+      "status": "ACTIVE",
+      "title": "Genesisの進行表",
+      "meaning": "World SEの共通の出発点を固める工程をMOMOから追えるようになりました。最終確定はまだで、いまはKIJIの『測る力』を確認する段階として表示しています。個別Projectのstatusは各Gitの正本が変わるまで動かしません。",
+      "source_label": "MOMO Genesis working projection",
+      "revision": "3072385f5504d5576650b02d908759e6164ffab9"
+    },
     {
       "status": "ACTIVE",
       "title": "桃多郎の現在地ページ",
@@ -27,7 +34,7 @@
     {
       "status": "WATCH",
       "title": "AIモデルと道具選びの学習",
-      "meaning": "どのAI・強度・道具・実行環境を選ぶとうまくいくかをDangoへ蓄積しています。直近ではAstra APIで入力が272K tokens付近を越える前に、全文投入・検索・圧縮・分割の総コストと品質を比較するルールが加わりました。",
+      "meaning": "どのAI・強度・道具・実行環境を選ぶとうまくいくかをDangoへ蓄積しています。直近で増えたAPI向け判断はまだWorld SE実測がないため、Human向けCurrent Stateには昇格していません。",
       "source_label": "INNU Routing Intelligence Loop",
       "revision": "f20fd71d85b688b8cfefe349d2cb21a4f0300018"
     },
@@ -44,11 +51,11 @@
       "name": "MOMO",
       "role": "全体の意味をまとめ、人に見せる",
       "status": "ACTIVE",
-      "current": "『今どこ？』をすぐ見られる現在地ページと、AIモデルや道具選びの重要ニュースをHuman向けに公開しています。",
+      "current": "『今どこ？』を見る現在地ページに加え、World SE Genesisの進行表を公開しました。Genesisはまだ最終確定前で、個別Projectの正本statusを置き換えるものではありません。",
       "source_label": "MOMO main",
-      "source_url": "https://github.com/asklessquill/MOMO/commit/2719d143106953dad1d181b52a49d5170312506d",
-      "revision": "2719d143106953dad1d181b52a49d5170312506d",
-      "observed_at": "2026-09-11T20:32:30+09:00",
+      "source_url": "https://github.com/asklessquill/MOMO/commit/3072385f5504d5576650b02d908759e6164ffab9",
+      "revision": "3072385f5504d5576650b02d908759e6164ffab9",
+      "observed_at": "2026-09-12T13:31:12+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     },
     {
@@ -132,15 +139,23 @@
       "name": "Dango",
       "role": "AIモデルと道具選びの経験を貯める",
       "status": "WATCH",
-      "current": "実際の作業結果と外部EvidenceからAIと実行環境の選び方を継続して学んでいます。直近ではGPT-6 Astra APIの大きな入力で、272K tokens付近を越える前に全文投入・検索・圧縮・分割を比較するコスト判断を追加しました。最大contextは『使える容量』であって『常に埋めるべき枠』とは扱いません。品質を落としてまで小さくすることもしません。",
-      "source_label": "Dango main / Astra large-context cost routing",
-      "source_url": "https://github.com/asklessquill/Dango/commit/f20fd71d85b688b8cfefe349d2cb21a4f0300018",
-      "revision": "f20fd71d85b688b8cfefe349d2cb21a4f0300018",
-      "observed_at": "2026-09-12T11:29:14+09:00",
+      "current": "実際の作業結果と外部EvidenceからAIと実行環境の選び方を継続して学んでいます。直近ではGPT-6 Astra APIの長時間制御や処理速度・料金の選び方も追加されましたが、World SEでの実測がまだないため、Human向けの実践判断としては未昇格です。",
+      "source_label": "Dango main / routing watch",
+      "source_url": "https://github.com/asklessquill/Dango/commit/96659055ef22c3ccdd1a117f9da7cc078f51655b",
+      "revision": "96659055ef22c3ccdd1a117f9da7cc078f51655b",
+      "observed_at": "2026-09-12T13:31:12+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     }
   ],
   "recent": [
+    {
+      "date": "2026-09-12",
+      "status": "ACTIVE",
+      "title": "Genesisの進行状況をMOMOから見られるようになった",
+      "meaning": "World SEの共通の出発点を固める工程を、専用の進行表として公開しました。最終Genesisはまだ確定しておらず、現在はKIJIの『測る力』を確認する段階として表示しています。これはMOMOの進行投影で、KIJIなど各Projectの正本statusそのものを変更するものではありません。",
+      "source_label": "MOMO World SE Genesis",
+      "revision": "3072385f5504d5576650b02d908759e6164ffab9"
+    },
     {
       "date": "2026-09-12",
       "status": "WATCH",
@@ -344,18 +359,18 @@
   "next_options": [
     {
       "priority": 1,
-      "title": "『再開』を本当に短くする",
-      "meaning": "Observatoryにある共通ブートストラップ案を、小さな実証で確かめる。新しいルールを増やすのではなく、Gitから元の仕事へ安全に戻れるかを見る。"
+      "title": "KIJIの確認を終える",
+      "meaning": "Genesis進行表では次にKIJIのAcceptance Reviewが置かれています。結果がKIJIの正本へ記録された時に、Current Stateの個別statusへ反映します。"
     },
     {
       "priority": 2,
-      "title": "KIBIを1つだけ実際につないでみる",
-      "meaning": "設計済みの最小運用プロフィールを、限定された1経路で試す候補。実装開始には別の明示的なTaskが必要です。"
+      "title": "INNUの汎用Build力を確認する",
+      "meaning": "KIJI確認の後は、Genesis進行表上でINNUの汎用Build Qualificationが次候補です。実際の開始や完了はINNU正本の記録を待ちます。"
     },
     {
       "priority": 3,
-      "title": "日常運用の型を小さく試す",
-      "meaning": "開始・停止・再開・見回り・失敗・復旧を、Humanの手数が少ない形で1本だけ実証する。"
+      "title": "別環境でも再現できるか確かめる",
+      "meaning": "Genesisを最終確定する前に、Fresh / Portability Verificationで同じ状態を別環境から復元できるか確かめる流れが置かれています。"
     }
   ]
 }
