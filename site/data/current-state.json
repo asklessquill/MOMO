@@ -2,11 +2,11 @@
   "schema_version": "0.1",
   "projection": "MOMO Human-facing public snapshot",
   "authority_note": "このページは『いまどうなってる？』を見るための案内板です。各プロジェクトの正本はそれぞれのGitにあり、ここに表示しただけで状態や権限は変わりません。",
-  "observed_at": "2026-09-12T08:31:32+09:00",
+  "observed_at": "2026-09-12T11:29:14+09:00",
   "system": {
     "status": "ACTIVE",
-    "headline": "ローカルAI実行機は、容量だけでなくモデルごとの実測速度まで見て選ぶ候補が増えた。",
-    "summary": "各Projectの現在地そのものに大きな変化はありません。Dangoでは、M5 Mac Studioやmanaged executionに加えてDGX SparkをローカルAI実行候補へ追加しました。CUDA/NVIDIA互換性や128 GB級の容量が必要な仕事では比較対象にしますが、載るモデルの大きさだけで速さや品質を判断せず、モデル構造と実行方法ごとの実測を見て選びます。World SEでの実機検証はまだありません。",
+    "headline": "Astraの巨大コンテキストは、入るだけ詰めず、272K付近を越える前にコストを比べる。",
+    "summary": "各Projectの現在地そのものに大きな変化はありません。Dangoでは、GPT-6 Astra APIの大きなコンテキストを容量だけで使い切らず、入力が272K tokens付近を越える前に全文投入・検索・圧縮・分割を比較する判断を追加しました。必要な情報を削ることが目的ではなく、品質と総コストの両方を見て選びます。これはAPI利用の判断で、ChatGPTやCodexのsubscription枠へそのまま当てはめません。",
     "human_decision_count": 1,
     "active_watch_count": 2
   },
@@ -27,9 +27,9 @@
     {
       "status": "WATCH",
       "title": "AIモデルと道具選びの学習",
-      "meaning": "どのAI・強度・道具・実行環境を選ぶとうまくいくかをDangoへ蓄積しています。直近ではDGX Sparkをローカル実行候補へ加え、容量だけでなくモデル構造と実行方法ごとの実測速度を見て選ぶルールが加わりました。",
+      "meaning": "どのAI・強度・道具・実行環境を選ぶとうまくいくかをDangoへ蓄積しています。直近ではAstra APIで入力が272K tokens付近を越える前に、全文投入・検索・圧縮・分割の総コストと品質を比較するルールが加わりました。",
       "source_label": "INNU Routing Intelligence Loop",
-      "revision": "c3084795609117396ecc27b08c1c1e5d1f220dc8"
+      "revision": "f20fd71d85b688b8cfefe349d2cb21a4f0300018"
     },
     {
       "status": "HOLD",
@@ -132,15 +132,23 @@
       "name": "Dango",
       "role": "AIモデルと道具選びの経験を貯める",
       "status": "WATCH",
-      "current": "実際の作業結果と外部EvidenceからAIと実行環境の選び方を継続して学んでいます。直近ではDGX SparkをM5 Mac Studioやmanaged executionと並ぶローカル実行候補へ加えました。CUDA/NVIDIA互換性や128 GB級の容量が効く仕事では比較しますが、モデルが載ることと実際に速いこと、仕事の品質が高いことは分けて判断します。World SE実機テストは未実施です。",
-      "source_label": "Dango main / DGX Spark local execution routing",
-      "source_url": "https://github.com/asklessquill/Dango/commit/c3084795609117396ecc27b08c1c1e5d1f220dc8",
-      "revision": "c3084795609117396ecc27b08c1c1e5d1f220dc8",
-      "observed_at": "2026-09-12T08:31:32+09:00",
+      "current": "実際の作業結果と外部EvidenceからAIと実行環境の選び方を継続して学んでいます。直近ではGPT-6 Astra APIの大きな入力で、272K tokens付近を越える前に全文投入・検索・圧縮・分割を比較するコスト判断を追加しました。最大contextは『使える容量』であって『常に埋めるべき枠』とは扱いません。品質を落としてまで小さくすることもしません。",
+      "source_label": "Dango main / Astra large-context cost routing",
+      "source_url": "https://github.com/asklessquill/Dango/commit/f20fd71d85b688b8cfefe349d2cb21a4f0300018",
+      "revision": "f20fd71d85b688b8cfefe349d2cb21a4f0300018",
+      "observed_at": "2026-09-12T11:29:14+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     }
   ],
   "recent": [
+    {
+      "date": "2026-09-12",
+      "status": "WATCH",
+      "title": "Astraの巨大コンテキストは、入るだけ詰めずコスト境界を見て使う",
+      "meaning": "GPT-6 Astra APIでは、大きなcontextを使えることと安く使えることを分けて考えます。入力が272K tokens付近を越える前に、全文を一度に渡すか、検索・圧縮・分割で必要な情報を保てるかを比較します。品質を落として境界以下へ押し込むのが目的ではなく、成功する仕事全体のコストで選びます。ChatGPTやCodexのsubscription枠へはそのまま当てはめません。",
+      "source_label": "Dango Astra API large-context cost routing",
+      "revision": "f20fd71d85b688b8cfefe349d2cb21a4f0300018"
+    },
     {
       "date": "2026-09-12",
       "status": "WATCH",
