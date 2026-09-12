@@ -25,6 +25,12 @@
     link.textContent = "Oh Dango News";
     mastNav.append(link);
   }
+  if (mastNav && !mastNav.querySelector('a[href="genesis.html"]')) {
+    const link = document.createElement("a");
+    link.href = "genesis.html";
+    link.textContent = "Genesis";
+    mastNav.append(link);
+  }
 
   const deeper = document.querySelector("#deeper .deeper");
   if (deeper && !deeper.querySelector('a[href="cockpit.html"]')) {
@@ -48,6 +54,14 @@
     const link = document.createElement("a");
     link.href = "oh-dango-news.html";
     link.textContent = "Oh Dango News — model routing updates";
+    li.append(link);
+    deeper.prepend(li);
+  }
+  if (deeper && !deeper.querySelector('a[href="genesis.html"]')) {
+    const li = document.createElement("li");
+    const link = document.createElement("a");
+    link.href = "genesis.html";
+    link.textContent = "Genesis — Birth of the Next World";
     li.append(link);
     deeper.prepend(li);
   }
