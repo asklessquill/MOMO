@@ -1,10 +1,27 @@
 {
   "title": "Oh Dango News",
   "subtitle": "Dangoのmodel-routing knowledgeから、Humanが知る価値のある更新だけをMOMOが投影します。",
-  "updated_at": "2026-09-12T21:12:37+09:00",
+  "updated_at": "2026-09-12T22:00:00+09:00",
   "source": "asklessquill/Dango (private durable knowledge base)",
   "publication_rule": "Publish when a well-supported finding materially changes a practical Human choice about model, surface, tool, cost, runtime, recovery, capability or workflow. Scoped candidates may be published when their bounded consequence is clear; backend-only, weak or duplicate findings stay private.",
   "items": [
+    {
+      "date": "2026-09-12",
+      "human_kind": "作業環境",
+      "human_title": "Cursorで『複数repoを長時間1本で回す』は、まだ前提にしない",
+      "human_change": "Cursor Cloud Agentsは複数repoを1つの環境で扱えますが、現在の公式Docsではmulti-repo環境でLong-runningはまだ利用できません。『複数repo対応』と『長時間Agent対応』はそれぞれ存在しても、同じ1 Agentで組み合わせられるとは限りません。",
+      "human_action": "INNUが複数repoかつ長時間の仕事を扱う時は、1本のLong-running Cloud Agentへ丸ごと渡す前提をやめます。短いmulti-repo作業へ区切る、Projects側で工程を分ける、または両方を満たす別surfaceを比較します。",
+      "human_example": "たとえばMOMO・KIBI・INNUを横断して数時間以上かかる再構成なら、1つのmulti-repo Long-running Agentを期待せず、『全repo調査→bounded変更→統合review』のように工程を分けます。逆に30分程度のcross-repo修正ならmulti-repo Cloud Agentをそのまま候補にできます。",
+      "human_limit": "これはCursor Projects全体が長時間のmulti-repo仕事を扱えない、という断定ではありません。確認できた制約はCloud Agentのmulti-repo環境とLong-runningの組合せです。Projects coordinatorが複数のbounded workerへどう分解するかは別の能力で、桃多郎Projectでの実測もまだありません。Cursorが今後対応を追加する可能性があるため、重要な実行前にはfreshnessを再確認します。",
+      "kind": "Execution Surface / Capability Boundary",
+      "signal": "Candidate scoped routing correction",
+      "title": "Do not compose Cursor multi-repo and Long-running Cloud Agent capabilities by assumption",
+      "summary": "Cursor currently supports multi-repo Cloud Agent environments, but its official Cloud Agents documentation says Long-running is not available for multi-repo environments yet.",
+      "strength": "HIGH official Cursor capability boundary; MEDIUM for broader Projects-level routing implications",
+      "astra_vs_sol": "モデル性能比較ではない。execution surfaceで必要Capabilityの組合せが実際にsupportされているかを確認するための更新。",
+      "implication": "For work requiring both cross-repository context and long-running execution, use bounded multi-repo stages, Project-level decomposition, or another supported route rather than assuming one Cloud Agent provides both.",
+      "source_url": "https://cursor.com/docs/cloud-agent"
+    },
     {
       "date": "2026-09-12",
       "human_kind": "モデル選び",
