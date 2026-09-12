@@ -2,7 +2,7 @@
   "schema_version": "0.1",
   "projection": "MOMO Human-facing public snapshot",
   "authority_note": "このページは『いまどうなってる？』を見るための案内板です。各プロジェクトの正本はそれぞれのGitにあり、ここに表示しただけで状態や権限は変わりません。",
-  "observed_at": "2026-09-12T16:28:08+09:00",
+  "observed_at": "2026-09-12T19:30:13+09:00",
   "system": {
     "status": "ACTIVE",
     "headline": "Genesisの進行表がMOMOに加わり、最終確定前の現在地が見えるようになった。",
@@ -34,9 +34,9 @@
     {
       "status": "WATCH",
       "title": "AIモデルと道具選びの学習",
-      "meaning": "どのAI・強度・道具・実行環境を選ぶとうまくいくかをDangoへ蓄積しています。直近では、常設Agentで使うSDKを無条件に最新版へ追従させず、検証済みのminor系へ固定して更新時に再確認する候補が加わりました。実測がない判断は、実践済みとしては扱いません。",
+      "meaning": "どのAI・強度・道具・実行環境を選ぶとうまくいくかをDangoへ蓄積しています。直近では、Cursor Projectsの並列Subagentは無料の高速化ではなく、独立したcontextとtokenを使うため、大仕事で価値が出る時だけ必要最小限から使う候補へ更新しました。World SEでの実料金や最適並列数はまだ実測していません。",
       "source_label": "INNU Routing Intelligence Loop",
-      "revision": "5f87e16d0d5ec817ee9a4987657dcfa8dd732ac8"
+      "revision": "795c630157f7518d117caeb88be6ee0c3646858e"
     },
     {
       "status": "HOLD",
@@ -139,15 +139,23 @@
       "name": "Dango",
       "role": "AIモデルと道具選びの経験を貯める",
       "status": "WATCH",
-      "current": "実際の作業結果と外部EvidenceからAIと実行環境の選び方を継続して学んでいます。直近では、長時間・無人で動くAgentのSDKを無条件に最新版へ追従させず、検証済みのminor系へ固定し、minor更新をmigrationとして再確認する候補を追加しました。現在のWorld SE各runtimeでの適用状況はまだ未棚卸しです。",
+      "current": "実際の作業結果と外部EvidenceからAIと実行環境の選び方を継続して学んでいます。直近では、Cursor Projectsを長い仕事の候補にしつつ、並列Subagentごとにcontextとtokenを使うため、単純な仕事は1 Agentのまま、独立して並列化できる大仕事だけ必要最小限から増やす候補へ更新しました。World SEでの実料金・最適並列数・完了時間短縮率はまだ実測していません。",
       "source_label": "Dango main / routing watch",
-      "source_url": "https://github.com/asklessquill/Dango/commit/5f87e16d0d5ec817ee9a4987657dcfa8dd732ac8",
-      "revision": "5f87e16d0d5ec817ee9a4987657dcfa8dd732ac8",
-      "observed_at": "2026-09-12T16:28:08+09:00",
+      "source_url": "https://github.com/asklessquill/Dango/commit/795c630157f7518d117caeb88be6ee0c3646858e",
+      "revision": "795c630157f7518d117caeb88be6ee0c3646858e",
+      "observed_at": "2026-09-12T19:30:13+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     }
   ],
   "recent": [
+    {
+      "date": "2026-09-12",
+      "status": "WATCH",
+      "title": "Cursor Projectsは大仕事向け。Subagentは必要な分だけ使う",
+      "meaning": "Cursor Projectsは長い文脈や独立した作業の並列化に使えますが、Subagentごとに独立したcontextとtokenを使うため、数を増やせば自動的に得になるわけではありません。単純・密結合・すぐ検証できる仕事は1 Agentを優先し、並列化で時間短縮やcontext分離の価値が出る時だけ増やします。桃多郎での実料金や最適な並列数はまだ実測していません。",
+      "source_label": "Dango Cursor Projects parallelism cost routing",
+      "revision": "555d7c5af421b0a3a2fd6e0320462269b824d882"
+    },
     {
       "date": "2026-09-12",
       "status": "WATCH",
