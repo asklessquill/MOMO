@@ -1,10 +1,27 @@
 {
   "title": "Oh Dango News",
   "subtitle": "Dangoのmodel-routing knowledgeから、Humanが知る価値のある更新だけをMOMOが投影します。",
-  "updated_at": "2026-09-12T16:20:44+09:00",
+  "updated_at": "2026-09-12T17:58:00+09:00",
   "source": "asklessquill/Dango (private durable knowledge base)",
   "publication_rule": "Publish when a well-supported finding materially changes a practical Human choice about model, surface, tool, cost, runtime, recovery, capability or workflow. Scoped candidates may be published when their bounded consequence is clear; backend-only, weak or duplicate findings stay private.",
   "items": [
+    {
+      "date": "2026-09-12",
+      "human_kind": "モデル選び",
+      "human_title": "難しい修復や複数repo探索では、Cursor Grok 4.6 XHighを先に試す価値が出てきた",
+      "human_change": "World SE内のbounded benchmarkで、Cursor Grok 4.6 XHighは難しいrepository修復、fresh actor recovery、複数repo探索、潜在障害探索で有用な結果を出しました。特にblindなatomic-recovery再実装では、過去のCodex修復と materially 同じtransaction設計へ独立収束し、修復後は409/409 testを通過しています。",
+      "human_action": "INNUはCursor作業を一律に同じtierへ寄せず、bulk/低リスクはAuto、通常BuilderはGrok 4.6 High、難しい修復・復旧・複数repo探索・潜在障害分析はXHighを積極候補にします。ただし本番採用や意味・provenanceが重要な結果は、別reviewerで確認してから受け入れます。",
+      "human_example": "たとえばKIBIやSandFrogの複数repoにまたがる障害で、単純修正ではなくtransaction境界や復旧条件まで追う必要があるならXHighを先に試します。README整形や機械的な大量修正のように検証が安い仕事はAutoへ寄せ、XHighを常用しません。",
+      "human_limit": "EvidenceはWorld SEの1 project familyと2026年9月のbounded benchmarkに限られ、Cursor XHighがCodexより常に優れるという意味ではありません。一部promptには過去知識の影響があり、blind比較として最も強いのはatomic-recovery replayです。per-runの正確なtoken・cost・hardware条件も未計測で、independent reviewでは中央registry化リスクやSHA provenance混同も指摘されました。",
+      "kind": "Builder / Model Tier Routing",
+      "signal": "Candidate scoped routing",
+      "title": "Use Cursor Grok 4.6 XHigh selectively for difficult repair, recovery and multi-repository exploration",
+      "summary": "A bounded World SE benchmark series found Grok 4.6 XHigh effective for difficult repository repair, recovery and exploration, including a blind atomic-recovery replay that independently converged on materially the same transaction semantics as a historical Codex repair and passed 409/409 tests after repair.",
+      "strength": "HIGH for bounded World SE empirical outcomes; MEDIUM for broader routing generalization",
+      "astra_vs_sol": "OpenAI model comparisonではない。Cursor内のAuto/High/XHigh tier選択をtask shapeとverification costで分けるEvidence。",
+      "implication": "Use lower-cost routes where verification is cheap; consider XHigh when repair difficulty or information gain is high; retain independent semantic/provenance review for consequential acceptance.",
+      "source_url": "https://github.com/asklessquill/Innu/blob/main/lab/model-routing/2026-09-cursor-grok46-xhigh-benchmark.md"
+    },
     {
       "date": "2026-09-12",
       "human_kind": "復旧/安全",
