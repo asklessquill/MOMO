@@ -1,10 +1,27 @@
 {
   "title": "Oh Dango News",
   "subtitle": "Dangoのmodel-routing knowledgeから、Humanが知る価値のある更新だけをMOMOが投影します。",
-  "updated_at": "2026-09-12T20:20:00+09:00",
+  "updated_at": "2026-09-12T21:12:37+09:00",
   "source": "asklessquill/Dango (private durable knowledge base)",
   "publication_rule": "Publish when a well-supported finding materially changes a practical Human choice about model, surface, tool, cost, runtime, recovery, capability or workflow. Scoped candidates may be published when their bounded consequence is clear; backend-only, weak or duplicate findings stay private.",
   "items": [
+    {
+      "date": "2026-09-12",
+      "human_kind": "モデル選び",
+      "human_title": "Claude Sonnet 5は安くなった。でも『3分の1安い』とは決めつけない",
+      "human_change": "AnthropicのClaude Sonnet 5は現在、APIで入力$2/100万token・出力$10/100万tokenとなり、Sonnet 4.6の$3/$15より名目単価が下がりました。さらにClaude APIとClaude Codeではeffortがhigh既定で、low・medium・high・xhigh・maxを仕事に合わせて選べます。ただしAnthropicは、Sonnet 5の新tokenizerが同じ文章でもSonnet 4.6より約30%多くtoken化すると説明しており、単価差だけをそのまま実コスト差にはできません。",
+      "human_action": "INNUがClaudeを候補にする時は、Sonnet 5というモデル名だけでなくeffortも明示します。通常のcost-sensitiveなagentic/codingはまずmediumとhighを比較し、最難関だけxhigh、token消費をほぼ気にしない明示的な実験だけmaxを候補にします。移行判断では請求単価ではなく、実際のinput/output token、成功率、やり直し、reviewまで含む『仕事1件を終える総コスト』を測ります。",
+      "human_example": "たとえば同じrepo修復をSonnet 5 mediumとhighで1回ずつ走らせ、実token数・所要時間・test結果・review指摘・手戻りを記録します。mediumで十分ならhighを常用せず、逆に難しいmulti-step修復でhigh/xhighが再実行を大きく減らすなら、tokenが増えても上位effortを選びます。",
+      "human_limit": "これはSonnet 5がAstra、Sol、Cursor Grokより優れるというEvidenceではありません。現時点ではAnthropic公式のmodel/effort/pricing仕様であり、桃多郎Projectでのmatched実測はまだありません。またClaude Codeのsubscription quotaやAWS/Google/Microsoft等のmarketplace料金はdirect Claude APIと同一とは限りません。約30%のtokenizer差も内容依存です。",
+      "kind": "Model / Effort / Cost Routing",
+      "signal": "Candidate scoped routing",
+      "title": "Route Claude Sonnet 5 by explicit effort and measured tokenization, not sticker price alone",
+      "summary": "Claude Sonnet 5 is $2/MTok input and $10/MTok output on the direct Claude API, defaults to high effort on Claude API/Claude Code, supports low through max effort, and uses a tokenizer Anthropic says produces roughly 30% more tokens than Sonnet 4.6 for the same text.",
+      "strength": "HIGH official Anthropic model/effort/pricing/tokenizer semantics; MEDIUM for World SE routing generalization",
+      "astra_vs_sol": "OpenAIモデルとの直接比較ではない。Anthropic routeをmodel identity、effort、actual tokenization、surfaceから分離して評価するための更新。",
+      "implication": "Evaluate Sonnet 5 as an external route; compare medium versus high for ordinary agentic work, reserve xhigh/max for justified hard work, and measure completed-task economics rather than inferring savings from nominal per-token prices.",
+      "source_url": "https://platform.claude.com/docs/en/models/sonnet-5/whats-new-sonnet-5"
+    },
     {
       "date": "2026-09-12",
       "human_kind": "作業環境",
