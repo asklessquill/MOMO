@@ -1,10 +1,27 @@
 {
   "title": "Oh Dango News",
   "subtitle": "Dangoのmodel-routing knowledgeから、Humanが知る価値のある更新だけをMOMOが投影します。",
-  "updated_at": "2026-09-12T15:34:57+09:00",
+  "updated_at": "2026-09-12T16:20:44+09:00",
   "source": "asklessquill/Dango (private durable knowledge base)",
   "publication_rule": "Publish when a well-supported finding materially changes a practical Human choice about model, surface, tool, cost, runtime, recovery, capability or workflow. Scoped candidates may be published when their bounded consequence is clear; backend-only, weak or duplicate findings stay private.",
   "items": [
+    {
+      "date": "2026-09-12",
+      "human_kind": "復旧/安全",
+      "human_title": "常設Agentは、SDKを『最新版へ自動追従』させない",
+      "human_change": "OpenAI Agents SDKはまだ0.Y.Z系で進化中で、公式ルール上はminor versionが上がる時にbreaking changeを含むことがあります。最近も0.21.0でOpenAI HTTP統合がHTTPX2へ移行し、0.22.0では失敗処理やoutput guardrail周辺の挙動が変わっています。",
+      "human_action": "INNUが長時間・無人・復旧コストの高いAgentを作る時は、Agents SDKをtested minor lineへ固定します。0.21.x→0.22.xのようなminor更新は単なる依存更新ではなくmigrationとして扱い、transport、MCP、guardrail、session、retry/recoveryを再確認してから昇格します。",
+      "human_example": "たとえば夜間にGitやM365を扱う常設Agentなら、requirements/lockfileを0.22.xの検証済み範囲へ固定します。0.23.xが出ても即時自動更新せず、sandbox branchで起動・tool実行・session復旧・失敗時rollbackを通してから本番へ入れます。逆に捨ててもよい短時間実験ならlatestを隔離環境で試せます。",
+      "human_limit": "これは0.22.xが危険だという意味ではありません。公式versioning方針から、minor更新を無条件に互換とみなさないという運用ルールです。現在のWorld SE各runtimeがどのAgents SDK versionを使っているかは未棚卸しで、Responses API直呼びなどSDKを使わない経路には適用しません。patch更新も無事故を保証しないため通常の回帰確認は残します。",
+      "kind": "Runtime / Dependency Upgrade Safety",
+      "signal": "Candidate routing",
+      "title": "Gate OpenAI Agents SDK minor upgrades for persistent agent runtimes",
+      "summary": "OpenAI Agents SDK explicitly allows breaking public-interface changes on minor Y bumps while the package remains 0.Y.Z; persistent runtimes should pin a tested minor line and revalidate minor upgrades.",
+      "strength": "HIGH official OpenAI versioning and migration semantics; no matched World SE regression observed yet",
+      "astra_vs_sol": "モデル性能比較ではない。Agent harness/runtime dependencyをmodel/tierとは独立して安全に選ぶ更新。",
+      "implication": "unattended durable agentではtested 0.Y.x lineを固定し、minor upgradeはmigration gate、patch upgradeはfocused regression routeとして扱う。",
+      "source_url": "https://openai.github.io/openai-agents-python/release/"
+    },
     {
       "date": "2026-09-12",
       "human_kind": "コスト",
