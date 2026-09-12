@@ -2,7 +2,7 @@
   "schema_version": "0.1",
   "projection": "MOMO Human-facing public snapshot",
   "authority_note": "このページは『いまどうなってる？』を見るための案内板です。各プロジェクトの正本はそれぞれのGitにあり、ここに表示しただけで状態や権限は変わりません。",
-  "observed_at": "2026-09-12T15:29:47+09:00",
+  "observed_at": "2026-09-12T16:28:08+09:00",
   "system": {
     "status": "ACTIVE",
     "headline": "Genesisの進行表がMOMOに加わり、最終確定前の現在地が見えるようになった。",
@@ -34,9 +34,9 @@
     {
       "status": "WATCH",
       "title": "AIモデルと道具選びの学習",
-      "meaning": "どのAI・強度・道具・実行環境を選ぶとうまくいくかをDangoへ蓄積しています。直近では、道具が増えた時に全部を毎回見せず必要なものだけ後から探す候補も増えました。World SEでの実測がない判断は、実践済みとしては扱いません。",
+      "meaning": "どのAI・強度・道具・実行環境を選ぶとうまくいくかをDangoへ蓄積しています。直近では、常設Agentで使うSDKを無条件に最新版へ追従させず、検証済みのminor系へ固定して更新時に再確認する候補が加わりました。実測がない判断は、実践済みとしては扱いません。",
       "source_label": "INNU Routing Intelligence Loop",
-      "revision": "1eee3a499879733dd5af30e708f7d36e51758fd7"
+      "revision": "5f87e16d0d5ec817ee9a4987657dcfa8dd732ac8"
     },
     {
       "status": "HOLD",
@@ -62,11 +62,11 @@
       "name": "MOMO-Observatory",
       "role": "裏側で全体の記録と根拠を持つ",
       "status": "HOLD",
-      "current": "全体設計と引っ越し準備は完了済みです。加えて、作業中断後に『再開』だけで安全に元の仕事へ戻るための共通ブートストラップ案を記録しました。まだ候補設計で、各Projectへ導入したわけではありません。",
+      "current": "中断やActor変更の後でも、Humanが長い引継ぎを作り直さずにGitの正本から安全に仕事へ戻るための共通ブートストラップ案を強化しました。AI側で必要な詳細を回収し、Humanには現在地・意味・次の一手だけを返す考え方まで整理済みです。まだ候補設計で、各Projectへ導入したわけではありません。",
       "source_label": "MOMO-Observatory main",
-      "source_url": "https://github.com/asklessquill/MOMO-Observatory/commit/280a31428dff27ea0ac88f36529421de6cafe707",
-      "revision": "280a31428dff27ea0ac88f36529421de6cafe707",
-      "observed_at": "2026-09-11T21:29:59+09:00",
+      "source_url": "https://github.com/asklessquill/MOMO-Observatory/commit/b42854ba9c33cbca11dc84a3cea071b565b9f93b",
+      "revision": "b42854ba9c33cbca11dc84a3cea071b565b9f93b",
+      "observed_at": "2026-09-12T16:28:08+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     },
     {
@@ -77,7 +77,7 @@
       "source_label": "KIBI Operationalization Phase 1",
       "source_url": "https://github.com/asklessquill/KIBI/commit/19d36fa97a661e15a5cc97eb031134f66bd5311c",
       "revision": "19d36fa97a661e15a5cc97eb031134f66bd5311c",
-      "observed_at": "2026-09-11T21:29:59+09:00",
+      "observed_at": "2026-09-12T16:28:08+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     },
     {
@@ -88,7 +88,7 @@
       "source_label": "KIJI main",
       "source_url": "https://github.com/asklessquill/Kiji/commit/bb66d24ff72c7ca3bed35a0f933c34a4ba55f19f",
       "revision": "bb66d24ff72c7ca3bed35a0f933c34a4ba55f19f",
-      "observed_at": "2026-09-11T21:29:59+09:00",
+      "observed_at": "2026-09-12T16:28:08+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     },
     {
@@ -99,7 +99,7 @@
       "source_label": "INNU main",
       "source_url": "https://github.com/asklessquill/Innu/commit/732733d8954158bd72d5836ebe2d7b32bcc28c92",
       "revision": "732733d8954158bd72d5836ebe2d7b32bcc28c92",
-      "observed_at": "2026-09-11T21:29:59+09:00",
+      "observed_at": "2026-09-12T16:28:08+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     },
     {
@@ -110,7 +110,7 @@
       "source_label": "SARU main / Cycle-2 Phase 1",
       "source_url": "https://github.com/asklessquill/Saru/commit/57fc3a4105658d03b4d538d1db55b937e2a9a21a",
       "revision": "57fc3a4105658d03b4d538d1db55b937e2a9a21a",
-      "observed_at": "2026-09-11T21:29:59+09:00",
+      "observed_at": "2026-09-12T16:28:08+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     },
     {
@@ -121,7 +121,7 @@
       "source_label": "FROG main",
       "source_url": "https://github.com/asklessquill/FROG/commit/121f25d4a700f17b9e6c9a160517f3a6c90d5b42",
       "revision": "121f25d4a700f17b9e6c9a160517f3a6c90d5b42",
-      "observed_at": "2026-09-11T21:29:59+09:00",
+      "observed_at": "2026-09-12T16:28:08+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     },
     {
@@ -132,22 +132,30 @@
       "source_label": "SandFrog main / EXP026-B",
       "source_url": "https://github.com/asklessquill/SandFrog/commit/ea7f25f5abf8886a2d9a9f7d5e6f5cd237ccf232",
       "revision": "ea7f25f5abf8886a2d9a9f7d5e6f5cd237ccf232",
-      "observed_at": "2026-09-11T21:29:59+09:00",
+      "observed_at": "2026-09-12T16:28:08+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     },
     {
       "name": "Dango",
       "role": "AIモデルと道具選びの経験を貯める",
       "status": "WATCH",
-      "current": "実際の作業結果と外部EvidenceからAIと実行環境の選び方を継続して学んでいます。直近では、Capabilityが増えた時に必要な道具だけを後から探して読み込む方法も候補に加わりました。World SEでのtoken・速度・精度の比較実測はまだありません。",
+      "current": "実際の作業結果と外部EvidenceからAIと実行環境の選び方を継続して学んでいます。直近では、長時間・無人で動くAgentのSDKを無条件に最新版へ追従させず、検証済みのminor系へ固定し、minor更新をmigrationとして再確認する候補を追加しました。現在のWorld SE各runtimeでの適用状況はまだ未棚卸しです。",
       "source_label": "Dango main / routing watch",
-      "source_url": "https://github.com/asklessquill/Dango/commit/1eee3a499879733dd5af30e708f7d36e51758fd7",
-      "revision": "1eee3a499879733dd5af30e708f7d36e51758fd7",
-      "observed_at": "2026-09-12T15:29:47+09:00",
+      "source_url": "https://github.com/asklessquill/Dango/commit/5f87e16d0d5ec817ee9a4987657dcfa8dd732ac8",
+      "revision": "5f87e16d0d5ec817ee9a4987657dcfa8dd732ac8",
+      "observed_at": "2026-09-12T16:28:08+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     }
   ],
   "recent": [
+    {
+      "date": "2026-09-12",
+      "status": "WATCH",
+      "title": "常設Agentは、SDKを最新版へ自動追従させない候補が加わった",
+      "meaning": "OpenAI Agents SDKは0.Y.Z系で進化中のため、長時間・無人・復旧コストの高いAgentでは検証済みのminor系へ固定する候補を追加しました。minorが変わる時は単なる依存更新ではなく、MCP・session・guardrail・retryや復旧まで再確認してから使います。現在のWorld SE各runtimeでどのSDK版を使っているかはまだ未棚卸しです。",
+      "source_label": "Dango Agents SDK dependency routing",
+      "revision": "c6ea3afac23edea701232b7704a8e571a8d9240b"
+    },
     {
       "date": "2026-09-12",
       "status": "ACTIVE",
@@ -327,10 +335,10 @@
     {
       "date": "2026-09-10",
       "status": "HOLD",
-      "title": "『再開』だけで元の仕事へ安全に戻る案を記録した",
-      "meaning": "長い引継ぎ文を毎回貼らず、Gitの現在地と元のTaskを読んで残作業だけ続ける共通ブートストラップ案をObservatoryへ保存しました。まだ設計候補です。",
+      "title": "『再開』時にHumanが引継ぎを作り直さない設計を強化した",
+      "meaning": "中断やActor変更の後は、AI側がGitの正本・元のTask・必要な実測値を回収し、Humanには現在地・意味・次の一手だけを返す共通ブートストラップ案へ強化しました。MemoryやCustom Instructionsは補助であり、正本や権限にはしません。まだ各Projectへ導入したわけではありません。",
       "source_label": "MOMO-Observatory resume/bootstrap note",
-      "revision": "280a31428dff27ea0ac88f36529421de6cafe707"
+      "revision": "b42854ba9c33cbca11dc84a3cea071b565b9f93b"
     },
     {
       "date": "2026-09-10",
