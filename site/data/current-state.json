@@ -2,7 +2,7 @@
   "schema_version": "0.1",
   "projection": "MOMO Human-facing public snapshot",
   "authority_note": "このページは『いまどうなってる？』を見るための案内板です。各プロジェクトの正本はそれぞれのGitにあり、ここに表示しただけで状態や権限は変わりません。",
-  "observed_at": "2026-09-13T06:28:17+09:00",
+  "observed_at": "2026-09-13T08:28:36+09:00",
   "system": {
     "status": "ACTIVE",
     "headline": "MOMO-Observatoryの整理版が正式採用され、AI Knowledge基盤の再構成へ移れる状態になった。",
@@ -41,9 +41,9 @@
     {
       "status": "WATCH",
       "title": "AIモデルと道具選びの学習",
-      "meaning": "どのAI・強度・道具・実行環境を選ぶとうまくいくかをDangoへ蓄積しています。直近では、Cursor経由のOpenAIモデルを長期の固定経路として扱わず、必要期間まで提供が続くかを確認するルールを追加しました。Cursor自体が使えなくなるという意味ではありません。",
+      "meaning": "どのAI・強度・道具・実行環境を選ぶとうまくいくかをDangoへ蓄積しています。直近では、制限付きのAI能力は『モデルが強いか』より先に、利用資格と作業の許可が本当にあるかを確認するルールを追加しました。",
       "source_label": "INNU Routing Intelligence Loop",
-      "revision": "08b64a142239d765f0de2315e5298348763ff2e1"
+      "revision": "ab6bfd31cb5d81d44125eb7cc5b1135380f001e0"
     },
     {
       "status": "HOLD",
@@ -146,11 +146,11 @@
       "name": "Dango",
       "role": "AIモデルと道具選びの経験を貯める",
       "status": "WATCH",
-      "current": "実際の作業結果と外部EvidenceからAIと実行環境の選び方を継続して学んでいます。直近では、Cursor経由のOpenAIモデル提供には将来の変更予定があるため、長く動かす仕事ではCursorという道具とOpenAIという提供元を分けて考え、必要期間まで使える経路かを確認するルールを追加しました。Cursor自体は引き続き他モデルを含む実行環境候補です。",
+      "current": "実際の作業結果と外部EvidenceからAIと実行環境の選び方を継続して学んでいます。直近では、同じ基盤モデルでも利用資格や安全設定によって使える仕事が変わるため、制限付き能力は『モデルの強さ』より先にアクセス資格と作業許可を確認するルールを追加しました。",
       "source_label": "Dango main / routing watch",
-      "source_url": "https://github.com/asklessquill/Dango/commit/08b64a142239d765f0de2315e5298348763ff2e1",
-      "revision": "08b64a142239d765f0de2315e5298348763ff2e1",
-      "observed_at": "2026-09-13T06:28:17+09:00",
+      "source_url": "https://github.com/asklessquill/Dango/commit/ab6bfd31cb5d81d44125eb7cc5b1135380f001e0",
+      "revision": "ab6bfd31cb5d81d44125eb7cc5b1135380f001e0",
+      "observed_at": "2026-09-13T08:28:36+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     }
   ],
@@ -158,18 +158,18 @@
     {
       "date": "2026-09-13",
       "status": "WATCH",
+      "title": "制限付きAIは、強さより先に『本当に使えるか』を見る",
+      "meaning": "AnthropicのMythos 5.1はFable 5.1と同じ基盤モデルですが、より制限の少ない安全設定を使える対象は審査済みの一部利用者に限られます。Dangoでは、こうした能力を上位モデルとして単純比較せず、利用資格と作業の許可を確認してから候補に入れるようにしました。",
+      "source_label": "Dango trusted-access routing gate",
+      "revision": "beb87cca77c07efcdb4bc7c800ff0478c27baffc"
+    },
+    {
+      "date": "2026-09-13",
+      "status": "WATCH",
       "title": "Cursor経由のOpenAI利用は、長期の固定経路にしない",
       "meaning": "OpenAIはCursorへのモデル提供契約を2026年11月12日に終了する予定と公表しています。今すぐCursorが使えなくなるわけではありませんが、OpenAI固有のモデルを長く使う仕事では、必要な期間まで提供が続くかを確認し、必要なら直接OpenAIを使う経路などを選びます。",
       "source_label": "Dango Cursor / OpenAI continuity gate",
       "revision": "08b64a142239d765f0de2315e5298348763ff2e1"
-    },
-    {
-      "date": "2026-09-13",
-      "status": "COMPLETE",
-      "title": "MOMO-Observatoryの整理版を正式採用した",
-      "meaning": "既存の正しい意味や設計は変えず、古いTask・過去の作業場所・移行/復旧資料を『今の指示』と誤読しない入口整理だけを行いました。独立レビューはPASS / 0 findingsで、レビュー済み候補をそのままmainへFast-forwardしました。",
-      "source_label": "MOMO-Observatory Genesis v0 clean baseline",
-      "revision": "7599f49d574f8f51f7f0ec0057b7935e7e4cf3ab"
     }
   ],
   "human_decisions": [
