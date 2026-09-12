@@ -1,6 +1,6 @@
 {
   "schema_version": "genesis-state.v1",
-  "observed_at": "2026-09-12T12:39:00+09:00",
+  "observed_at": "2026-09-13T00:18:21+09:00",
   "authority": {
     "kind": "human-provided working projection",
     "canonical": false,
@@ -10,9 +10,9 @@
   "subtitle": "Birth of the Next World",
   "status": "IN_PROGRESS",
   "current_phase": {
-    "id": "kiji-genesis-data-science-core-v0",
-    "label": "KIJI Genesis Data Science Core v0",
-    "summary": "Qualifying KIJI's measurement capability before the common ancestor is ratified and forked."
+    "id": "ai-knowledge-foundation-recomposition",
+    "label": "AI Knowledge基盤の再構成",
+    "summary": "World SE本体の拡張をいったん止め、AIが知識を永続化・訂正・回復できる土台を先に固めています。MOMO-ObservatoryのClean Baseline整理は独立レビューPASS / 0 findingsを経て正式採用済みです。"
   },
   "checkpoint": "world-se-common-ancestor-v0",
   "completed": [
@@ -20,17 +20,16 @@
     "Common Ancestor pre-completion freeze",
     "KIBI local preservation",
     "SARU local preservation",
-    "KIJI fresh baseline — 366 tests PASS"
+    "KIJI fresh baseline — 366 tests PASS",
+    "MOMO-Observatory Genesis v0 clean baseline — independent PASS / 0 findings, adopted"
   ],
   "in_progress": [
-    "KIJI ‘測る術’ Genesis qualification"
+    "AI Knowledge基盤の再構成"
   ],
   "next": [
-    "KIJI Acceptance Review",
-    "INNU Generic Build Qualification",
-    "Fresh / Portability Verification",
-    "Genesis v1 Ratification",
-    "MOMO / KINN Fork"
+    "Knowledge Genesis v0 semantic model",
+    "references / MOMO-Observatory responsibility split",
+    "Resume World SE Genesis from KIJI qualification"
   ],
   "roadmap": [
     {
@@ -45,9 +44,16 @@
       "detail": "PASS"
     },
     {
+      "id": "knowledge-foundation",
+      "label": "AI Knowledge Foundation",
+      "status": "IN_PROGRESS",
+      "detail": "MOB Clean Baseline adopted; generalized Knowledge semantics next"
+    },
+    {
       "id": "kiji-data-science-core",
       "label": "KIJI Data Science Core",
-      "status": "IN_PROGRESS"
+      "status": "PENDING",
+      "detail": "Paused while Knowledge foundation is recomposed"
     },
     {
       "id": "kiji-acceptance-review",
@@ -112,6 +118,11 @@
   ],
   "evidence": [
     {
+      "label": "MOB clean baseline",
+      "value": "PASS / 0 findings → main adopted at 7599f49",
+      "status": "PASS"
+    },
+    {
       "label": "Local Closure",
       "value": "PASS",
       "status": "PASS"
@@ -123,8 +134,8 @@
     },
     {
       "label": "KIJI candidate",
-      "value": "building",
-      "status": "IN_PROGRESS"
+      "value": "candidate built; acceptance not completed",
+      "status": "PENDING"
     },
     {
       "label": "Genesis checkpoint",

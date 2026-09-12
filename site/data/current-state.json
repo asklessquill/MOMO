@@ -2,19 +2,26 @@
   "schema_version": "0.1",
   "projection": "MOMO Human-facing public snapshot",
   "authority_note": "このページは『いまどうなってる？』を見るための案内板です。各プロジェクトの正本はそれぞれのGitにあり、ここに表示しただけで状態や権限は変わりません。",
-  "observed_at": "2026-09-12T23:32:50+09:00",
+  "observed_at": "2026-09-13T00:18:21+09:00",
   "system": {
     "status": "ACTIVE",
-    "headline": "Genesisの進行表がMOMOに加わり、最終確定前の現在地が見えるようになった。",
-    "summary": "World SEの共通の出発点を固める工程をGenesisとしてMOMOで見える化しました。まだ最終確定ではなく、MOMO上の進行表ではKIJIの『測る力』の確認が現在の中心です。各Projectの正本Gitには新しい状態変更が確認されていないため、個別statusは変えていません。",
+    "headline": "MOMO-Observatoryの整理版が正式採用され、AI Knowledge基盤の再構成へ移れる状態になった。",
+    "summary": "MOMO-Observatoryは既存のCanonicalな意味と受入済み設計を変えず、古いTask・昔の作業場所・移行/復旧資料を『今の指示』と誤読しない入口整理を完了しました。独立レビューPASS / 0 findings後、mainへ正式採用済みです。World SE本体の拡張はいったん急がず、現在はAI Knowledge基盤の再構成を優先しています。",
     "human_decision_count": 1,
     "active_watch_count": 2
   },
   "now": [
     {
-      "status": "ACTIVE",
+      "status": "COMPLETE",
+      "title": "MOMO-Observatoryの整理版を正式採用",
+      "meaning": "正しい中身はそのままに、古いTask・昔の作業場所・移行/復旧資料を『今の指示』と誤読しないよう入口を整理しました。独立レビューPASS / 0 findings後、mainへ採用済みです。Observatoryの実装・runtime・Application導入を完了したという意味ではありません。",
+      "source_label": "MOMO-Observatory Genesis v0 clean baseline",
+      "revision": "7599f49d574f8f51f7f0ec0057b7935e7e4cf3ab"
+    },
+    {
+      "status": "HOLD",
       "title": "Genesisの進行表",
-      "meaning": "World SEの共通の出発点を固める工程をMOMOから追えるようになりました。最終確定はまだで、いまはKIJIの『測る力』を確認する段階として表示しています。個別Projectのstatusは各Gitの正本が変わるまで動かしません。",
+      "meaning": "World SE Genesisの進行表は残していますが、現在はAI Knowledge基盤の再構成を優先しているため、KIJIの『測る力』の確認は再開前提で保留中です。最終Genesisはまだ確定していません。",
       "source_label": "MOMO Genesis working projection",
       "revision": "3072385f5504d5576650b02d908759e6164ffab9"
     },
@@ -61,12 +68,12 @@
     {
       "name": "MOMO-Observatory",
       "role": "裏側で全体の記録と根拠を持つ",
-      "status": "HOLD",
-      "current": "中断やActor変更の後でも、Humanが長い引継ぎを作り直さずにGitの正本から安全に仕事へ戻るための共通ブートストラップ案を強化しました。AI側で必要な詳細を回収し、Humanには現在地・意味・次の一手だけを返す考え方まで整理済みです。まだ候補設計で、各Projectへ導入したわけではありません。",
-      "source_label": "MOMO-Observatory main",
-      "source_url": "https://github.com/asklessquill/MOMO-Observatory/commit/b42854ba9c33cbca11dc84a3cea071b565b9f93b",
-      "revision": "b42854ba9c33cbca11dc84a3cea071b565b9f93b",
-      "observed_at": "2026-09-12T16:28:08+09:00",
+      "status": "COMPLETE",
+      "current": "既存のCanonicalな意味と受入済み設計を変えず、古いTask・作業場所・移行/復旧資料を現在の指示と誤読しない入口整理を完了しました。独立レビューはPASS / 0 findingsで、整理版をmainへ正式採用済みです。これはObservatory実装・runtime・Application導入の完了を意味しません。",
+      "source_label": "MOMO-Observatory Genesis v0 clean baseline",
+      "source_url": "https://github.com/asklessquill/MOMO-Observatory/commit/7599f49d574f8f51f7f0ec0057b7935e7e4cf3ab",
+      "revision": "7599f49d574f8f51f7f0ec0057b7935e7e4cf3ab",
+      "observed_at": "2026-09-13T00:18:21+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     },
     {
@@ -148,6 +155,14 @@
     }
   ],
   "recent": [
+    {
+      "date": "2026-09-13",
+      "status": "COMPLETE",
+      "title": "MOMO-Observatoryの整理版を正式採用した",
+      "meaning": "既存の正しい意味や設計は変えず、古いTask・過去の作業場所・移行/復旧資料を『今の指示』と誤読しない入口整理だけを行いました。独立レビューはPASS / 0 findingsで、レビュー済み候補をそのままmainへFast-forwardしました。",
+      "source_label": "MOMO-Observatory Genesis v0 clean baseline",
+      "revision": "7599f49d574f8f51f7f0ec0057b7935e7e4cf3ab"
+    },
     {
       "date": "2026-09-12",
       "status": "WATCH",
@@ -407,18 +422,18 @@
   "next_options": [
     {
       "priority": 1,
-      "title": "KIJIの確認を終える",
-      "meaning": "Genesis進行表では次にKIJIのAcceptance Reviewが置かれています。結果がKIJIの正本へ記録された時に、Current Stateの個別statusへ反映します。"
+      "title": "AI Knowledge基盤の意味モデルを固める",
+      "meaning": "referencesとMOMO-Observatoryを材料に、source・observation・interpretation・currentness・訂正/置換・conflict・モデル由来を一般化します。MOBをreferencesへ統合すると先に決めません。"
     },
     {
       "priority": 2,
-      "title": "INNUの汎用Build力を確認する",
-      "meaning": "KIJI確認の後は、Genesis進行表上でINNUの汎用Build Qualificationが次候補です。実際の開始や完了はINNU正本の記録を待ちます。"
+      "title": "referencesとMOBの役割分担を決める",
+      "meaning": "一般化した意味モデルを基に、公開Reference、privateなSystem意味、将来のKnowledge substrateをどこで持つかを決めます。"
     },
     {
       "priority": 3,
-      "title": "別環境でも再現できるか確かめる",
-      "meaning": "Genesisを最終確定する前に、Fresh / Portability Verificationで同じ状態を別環境から復元できるか確かめる流れが置かれています。"
+      "title": "World SE Genesisを再開する",
+      "meaning": "Knowledge基盤の土台が整った後で、保留しているKIJIの確認からWorld SE Genesisへ戻ります。完了しただけで自動再開はしません。"
     }
   ]
 }
