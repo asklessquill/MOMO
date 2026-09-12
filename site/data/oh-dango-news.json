@@ -1,10 +1,27 @@
 {
   "title": "Oh Dango News",
   "subtitle": "Dangoのmodel-routing knowledgeから、Humanが知る価値のある更新だけをMOMOが投影します。",
-  "updated_at": "2026-09-12T19:20:00+09:00",
+  "updated_at": "2026-09-12T20:20:00+09:00",
   "source": "asklessquill/Dango (private durable knowledge base)",
   "publication_rule": "Publish when a well-supported finding materially changes a practical Human choice about model, surface, tool, cost, runtime, recovery, capability or workflow. Scoped candidates may be published when their bounded consequence is clear; backend-only, weak or duplicate findings stay private.",
   "items": [
+    {
+      "date": "2026-09-12",
+      "human_kind": "作業環境",
+      "human_title": "Cursorは、自分のMacやGPU機をAgentの『作業場所』としてそのまま使える",
+      "human_change": "CursorのSelf-Hosted Machinesでは、AIの推論や計画はCursor Cloudに残したまま、ファイル編集・terminal・browser操作・local MCPなどのTool実行だけを自分のMac、GPU機、VMへ移せます。つまり『ローカルLLMを構築する』より軽く、今ある常設Macや特殊hardwareをCursor Agentの実行機として再利用できる選択肢です。",
+      "human_action": "通常はCursor-managed Cloud Agentを使い、ローカル状態・Mac固有環境・GPU・社内/private service・local MCPが必要な時だけSelf-Hostedへ寄せます。1人で1台を使うならまずMy Machinesを候補にし、共有fleetやautoscalingが本当に必要になってからEnterpriseのTeam Poolsを検討します。",
+      "human_example": "たとえば現在の常設Macでしか動かないbrowser/GUI、ローカルファイル、SSH先、Mac固有testをCursorに触らせたい場合、独自の遠隔操作配管を増築する前にMy Machinesを試せます。GPU付きWindows/Linux機を借りた時も、そのmachineをTool実行先として使うrouteを比較できます。",
+      "human_limit": "これは完全on-premやlocal inferenceではありません。推論・planningはCursor Cloudで行われ、必要なfile内容、terminal出力、diff、screenshot、local MCP結果などは推論のためCursor側へ送られます。Team PoolsはEnterpriseが必要で、自前infraの運用費も別途かかります。桃多郎Projectではまだ常設Macでの安定性、再接続、並列実行、総costを実測していません。",
+      "kind": "Execution Environment / Self-Hosted Agent Worker",
+      "signal": "Candidate scoped routing",
+      "title": "Choose Cursor Self-Hosted Machines only when owned-hardware execution materially helps",
+      "summary": "Cursor Self-Hosted Machines keeps the agent loop/inference/planning in Cursor cloud while moving tool execution to user-managed hardware. My Machines supports personal workers; Team Pools provide Enterprise shared fleets.",
+      "strength": "HIGH official Cursor execution/data-flow/plan semantics; MEDIUM for World SE routing generalization",
+      "astra_vs_sol": "モデル性能比較ではない。model/tierとは独立したexecution-locationの選択。",
+      "implication": "Default to managed Cloud Agents; use My Machines when one Human genuinely needs owned Mac/GPU/local-state/private-service execution, and reserve Team Pools for shared Enterprise fleet needs.",
+      "source_url": "https://cursor.com/docs/cloud-agent/self-hosted"
+    },
     {
       "date": "2026-09-12",
       "human_kind": "コスト",
