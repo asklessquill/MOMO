@@ -2,7 +2,7 @@
   "schema_version": "0.1",
   "projection": "MOMO Human-facing public snapshot",
   "authority_note": "このページは『いまどうなってる？』を見るための案内板です。各プロジェクトの正本はそれぞれのGitにあり、ここに表示しただけで状態や権限は変わりません。",
-  "observed_at": "2026-09-13T00:18:21+09:00",
+  "observed_at": "2026-09-13T03:29:39+09:00",
   "system": {
     "status": "ACTIVE",
     "headline": "MOMO-Observatoryの整理版が正式採用され、AI Knowledge基盤の再構成へ移れる状態になった。",
@@ -41,9 +41,9 @@
     {
       "status": "WATCH",
       "title": "AIモデルと道具選びの学習",
-      "meaning": "どのAI・強度・道具・実行環境を選ぶとうまくいくかをDangoへ蓄積しています。直近ではCursor Cloud Agentで『複数repoを扱う』ことと『Long-runningで長時間動かす』ことを、同じ1 Agentで当然に組み合わせない制約を追加しました。両方が必要なら、短いcross-repo作業へ分けるか、別の実行経路を比較します。",
+      "meaning": "どのAI・強度・道具・実行環境を選ぶとうまくいくかをDangoへ蓄積しています。直近ではClaude系で、同じモデルでもClaude CodeとCowork / claude.aiでは既定の推論強度が異なるため、モデル名だけでなく利用面も残して比較するルールを追加しました。Astraとの公表benchmarkも、World SEでの実測なしに優劣へ一般化しません。",
       "source_label": "INNU Routing Intelligence Loop",
-      "revision": "e053df6f7b37e626af771cb8cbef4eff85f07651"
+      "revision": "5dada24ee31e3ac1e5cf3c3142ddc6577552f429"
     },
     {
       "status": "HOLD",
@@ -146,15 +146,23 @@
       "name": "Dango",
       "role": "AIモデルと道具選びの経験を貯める",
       "status": "WATCH",
-      "current": "実際の作業結果と外部EvidenceからAIと実行環境の選び方を継続して学んでいます。直近ではCursor Cloud Agentのmulti-repo環境とLong-runningを、同じ1 Agentで当然に組み合わせない制約を追加しました。両方が必要な仕事はboundedなcross-repo工程へ分けるか、別surfaceを比較します。Cursor Projects全体の能力を否定するものではなく、桃多郎での実測もまだありません。",
+      "current": "実際の作業結果と外部EvidenceからAIと実行環境の選び方を継続して学んでいます。直近ではClaude系で、同じモデルでもClaude CodeとCowork / claude.aiでは既定の推論強度が異なるため、モデル名だけでなく利用面も記録して比較するルールを追加しました。OpenAI公表のAstra対Fable benchmarkは比較候補として残しますが、World SE実測なしに全体の優劣へ一般化しません。",
       "source_label": "Dango main / routing watch",
-      "source_url": "https://github.com/asklessquill/Dango/commit/e053df6f7b37e626af771cb8cbef4eff85f07651",
-      "revision": "e053df6f7b37e626af771cb8cbef4eff85f07651",
-      "observed_at": "2026-09-12T23:32:50+09:00",
+      "source_url": "https://github.com/asklessquill/Dango/commit/5dada24ee31e3ac1e5cf3c3142ddc6577552f429",
+      "revision": "5dada24ee31e3ac1e5cf3c3142ddc6577552f429",
+      "observed_at": "2026-09-13T03:29:39+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     }
   ],
   "recent": [
+    {
+      "date": "2026-09-13",
+      "status": "WATCH",
+      "title": "Claudeはモデル名だけでなく、どこで使うかも分けて比べる",
+      "meaning": "Claude系は同じモデルでも、Claude CodeとCowork / claude.aiで既定の推論強度が異なるため、利用面を残さずに速度・品質・costを比べません。Astra対Fableの公表benchmarkも比較材料にはしますが、ベンダー公表値だけで桃多郎全体の優劣とは判断せず、必要なら同条件で実測します。",
+      "source_label": "Dango Claude surface-specific effort routing",
+      "revision": "5dada24ee31e3ac1e5cf3c3142ddc6577552f429"
+    },
     {
       "date": "2026-09-13",
       "status": "COMPLETE",
@@ -162,253 +170,6 @@
       "meaning": "既存の正しい意味や設計は変えず、古いTask・過去の作業場所・移行/復旧資料を『今の指示』と誤読しない入口整理だけを行いました。独立レビューはPASS / 0 findingsで、レビュー済み候補をそのままmainへFast-forwardしました。",
       "source_label": "MOMO-Observatory Genesis v0 clean baseline",
       "revision": "7599f49d574f8f51f7f0ec0057b7935e7e4cf3ab"
-    },
-    {
-      "date": "2026-09-12",
-      "status": "WATCH",
-      "title": "Cursorで『複数repoを長時間1本で回す』は、まだ前提にしない",
-      "meaning": "Cursor Cloud Agentsは複数repoを扱えますが、現在確認できた公式制約ではmulti-repo環境でLong-runningは使えません。両方が必要な仕事は、短いcross-repo作業へ区切る、Projects側で工程を分ける、または別の実行経路を比較します。これはCursor Projects全体が長時間のmulti-repo仕事を扱えないという意味ではなく、桃多郎での実測もまだありません。",
-      "source_label": "Dango Cursor multi-repo long-running boundary",
-      "revision": "e053df6f7b37e626af771cb8cbef4eff85f07651"
-    },
-    {
-      "date": "2026-09-12",
-      "status": "WATCH",
-      "title": "Claude Sonnet 5は、価格だけでなくeffortと実token量を分けて比べる",
-      "meaning": "Sonnet 5を外部のAI候補に追加しました。公式API価格は下がっていますが、同じ文章でも従来よりtoken量が増える場合があるため、『単価が下がった＝同じ仕事がその比率で安くなる』とは扱いません。通常のagent作業ではmediumと既定のhighを実測比較し、xhigh / maxは失敗や手戻りのcostが大きい仕事で必要性を確かめてから使います。まだWorld SEでの同条件比較はありません。",
-      "source_label": "Dango Sonnet 5 effort and cost routing",
-      "revision": "596b2f9bd20b4f37521c57fb70b28296982d0fc0"
-    },
-    {
-      "date": "2026-09-12",
-      "status": "WATCH",
-      "title": "Cursorは、自分のMacやGPU機をAgentの『作業場所』として使える",
-      "meaning": "CursorのSelf-Hosted Machinesでは、推論・計画はCursor Cloudに残したまま、Tool実行だけを自分のMac・GPU機・VMへ移せます。ローカル状態や固有hardwareが必要な仕事では、自作の遠隔操作基盤を増やす前の候補になります。ただし完全on-premやlocal inferenceではなく、必要なfile内容やTool結果は推論のためCursor側へ送られます。桃多郎での常設Mac実測はまだありません。",
-      "source_label": "Dango Cursor self-hosted execution routing",
-      "revision": "a1fd6c4e12ca9750b0676f8587e18253369ad2ca"
-    },
-    {
-      "date": "2026-09-12",
-      "status": "WATCH",
-      "title": "Cursor Projectsは大仕事向け。Subagentは必要な分だけ使う",
-      "meaning": "Cursor Projectsは長い文脈や独立した作業の並列化に使えますが、Subagentごとに独立したcontextとtokenを使うため、数を増やせば自動的に得になるわけではありません。単純・密結合・すぐ検証できる仕事は1 Agentを優先し、並列化で時間短縮やcontext分離の価値が出る時だけ増やします。桃多郎での実料金や最適な並列数はまだ実測していません。",
-      "source_label": "Dango Cursor Projects parallelism cost routing",
-      "revision": "555d7c5af421b0a3a2fd6e0320462269b824d882"
-    },
-    {
-      "date": "2026-09-12",
-      "status": "WATCH",
-      "title": "常設Agentは、SDKを最新版へ自動追従させない候補が加わった",
-      "meaning": "OpenAI Agents SDKは0.Y.Z系で進化中のため、長時間・無人・復旧コストの高いAgentでは検証済みのminor系へ固定する候補を追加しました。minorが変わる時は単なる依存更新ではなく、MCP・session・guardrail・retryや復旧まで再確認してから使います。現在のWorld SE各runtimeでどのSDK版を使っているかはまだ未棚卸しです。",
-      "source_label": "Dango Agents SDK dependency routing",
-      "revision": "c6ea3afac23edea701232b7704a8e571a8d9240b"
-    },
-    {
-      "date": "2026-09-12",
-      "status": "ACTIVE",
-      "title": "Genesisの進行状況をMOMOから見られるようになった",
-      "meaning": "World SEの共通の出発点を固める工程を、専用の進行表として公開しました。最終Genesisはまだ確定しておらず、現在はKIJIの『測る力』を確認する段階として表示しています。これはMOMOの進行投影で、KIJIなど各Projectの正本statusそのものを変更するものではありません。",
-      "source_label": "MOMO World SE Genesis",
-      "revision": "3072385f5504d5576650b02d908759e6164ffab9"
-    },
-    {
-      "date": "2026-09-12",
-      "status": "WATCH",
-      "title": "道具が増えても、全部を毎回AIへ見せない候補が増えた",
-      "meaning": "Capabilityの数が増える時は、よく使う道具だけを最初から見せ、残りは必要になった時に探して読み込む方法を候補にします。KIBIなど外部catalogを正本として残す経路もあります。まだWorld SEでtoken・速度・精度の比較実測はなく、見つけられることと実行許可は別です。",
-      "source_label": "Dango deferred tool discovery routing",
-      "revision": "1eee3a499879733dd5af30e708f7d36e51758fd7"
-    },
-    {
-      "date": "2026-09-12",
-      "status": "WATCH",
-      "title": "Astraの巨大コンテキストは、入るだけ詰めずコスト境界を見て使う",
-      "meaning": "GPT-6 Astra APIでは、大きなcontextを使えることと安く使えることを分けて考えます。入力が272K tokens付近を越える前に、全文を一度に渡すか、検索・圧縮・分割で必要な情報を保てるかを比較します。品質を落として境界以下へ押し込むのが目的ではなく、成功する仕事全体のコストで選びます。ChatGPTやCodexのsubscription枠へはそのまま当てはめません。",
-      "source_label": "Dango Astra API large-context cost routing",
-      "revision": "f20fd71d85b688b8cfefe349d2cb21a4f0300018"
-    },
-    {
-      "date": "2026-09-12",
-      "status": "WATCH",
-      "title": "ローカルAI実行機は、載るモデルの大きさだけで選ばない",
-      "meaning": "DGX Sparkを、M5 Mac Studioやmanaged executionと並ぶローカル実行候補に追加しました。CUDA/NVIDIA互換性や128 GB級の容量が必要な仕事では候補になりますが、同じ機械でもモデル構造や実行方法で速度差が大きいため、実測してから選びます。World SEでの実機検証や購入判断はまだ行っていません。",
-      "source_label": "Dango DGX Spark local execution routing",
-      "revision": "c3084795609117396ecc27b08c1c1e5d1f220dc8"
-    },
-    {
-      "date": "2026-09-12",
-      "status": "WATCH",
-      "title": "長く止まるAI仕事も、実行基盤を自作する前にMicrosoftの耐久実行を比べる",
-      "meaning": "再起動をまたぐ状態保持、長い待機、Human承認、複数Agentの調整が必要なMicrosoft系の仕事では、Microsoft Agent Framework + Durable Taskを再利用候補にします。完了済み処理の再実行を減らせる仕組みはありますが、外部書き込みの重複防止・Git復旧・取り消せない操作の許可まで保証されるとは扱いません。",
-      "source_label": "Dango Microsoft durable agent workflow routing",
-      "revision": "735c95c6999e97d38982d91ae5e03c0350b51ce5"
-    },
-    {
-      "date": "2026-09-12",
-      "status": "WATCH",
-      "title": "繰り返す仕事は、毎回ゼロから起こさずProjectの文脈を引き継ぐ候補が増えた",
-      "meaning": "Slack・schedule・pull request activityなど対応するきっかけから同じ仕事を続ける時、過去の文脈や分担を引き継ぐ価値が高ければCursor Projectsを候補にします。独立した出来事なら軽い実行を使い、厳密な重複排除・再送・外部更新の整合性が必要なら別の仕組みを残します。",
-      "source_label": "Dango Cursor Projects subscription routing",
-      "revision": "931f820717ccb891c65961ac8d71e32f1230f4c3"
-    },
-    {
-      "date": "2026-09-12",
-      "status": "WATCH",
-      "title": "M365の小さなAI処理は、別の実行基盤を作る前にワークフロー内で試す",
-      "meaning": "既存のMicrosoft 365ワークフローの途中で、限定された推論や道具利用だけが必要なら、まずCopilot Studioのagent nodeを試します。長時間運転、強い復旧、実行場所の所有が必要な仕事まで置き換えるものではなく、外部への書き込み権限も自動では増えません。",
-      "source_label": "Dango Copilot Studio workflow agent routing",
-      "revision": "3de77571f7887be5e773ae242bbd984937ddf922"
-    },
-    {
-      "date": "2026-09-12",
-      "status": "WATCH",
-      "title": "長時間AIは、managedか完全自作かの二択ではなくなった",
-      "meaning": "managedな実行基盤では制御が足りない仕事でも、すぐ完全自作へ進まず、既存SDKを使って実行場所や状態を自分側に残す中間ルートを比較します。復旧機能があっても、外部書き込み・Git・二重実行まで安全になるとは扱わず、小さな障害試験で確かめてから使います。",
-      "source_label": "Dango durable owned-harness routing",
-      "revision": "d625e9e0ecc09ebba2cf87de728008ce1563fcae"
-    },
-    {
-      "date": "2026-09-11",
-      "status": "WATCH",
-      "title": "足りないCapabilityは、作る前にMCP Registryで候補を探す",
-      "meaning": "外部Capabilityが必要になった時は、すぐ新規開発へ進まず、まず公式MCP Registryから既存候補を探します。ただし、掲載されていることは安全・適合・導入許可・実行権限を意味しません。候補を見つけた後に、用途・権限・安全性・費用・実行環境を別々に確認します。privateなCapabilityは別のprivate catalogで扱います。",
-      "source_label": "Dango MCP capability discovery routing",
-      "revision": "566e5fd64e623120fc2865675c1193c9953cc3c5"
-    },
-    {
-      "date": "2026-09-11",
-      "status": "WATCH",
-      "title": "Codexのbanked resetは、使う前に期限と今の枠を見る",
-      "meaning": "banked resetはcreditや恒久的な上限追加ではなく、期限つきの一回限りの選択肢です。使う前に期限と現在の利用枠を確認し、更新できる枠がない時は無駄に使いません。使えるかどうかや期限はaccountごとに異なるため、その場の表示を確認します。",
-      "source_label": "Dango Codex banked reset routing",
-      "revision": "8fb159f2bd04c19b13ea185866052e82f089230b"
-    },
-    {
-      "date": "2026-09-11",
-      "status": "WATCH",
-      "title": "Mac Studioを買うなら、いまはM5世代を新しい基準にする",
-      "meaning": "M5 Mac Studioを、ローカルAIや常設実行機の現実的な比較候補に追加しました。秘密データを外へ出したくない仕事、繰り返し実行、大容量メモリが効く仕事では、まず1台でクラウドやmanaged modelと実測比較します。まだ桃多郎内でM5実機を測っていないため、複数台化や全面置換は前提にしません。",
-      "source_label": "Dango M5 Mac Studio local execution routing",
-      "revision": "6fc7b2397b141e19f9a3681b817ca1d7d0202735"
-    },
-    {
-      "date": "2026-09-11",
-      "status": "WATCH",
-      "title": "M365の道具がよく変わるなら、MCPで動的に見つける候補が増えた",
-      "meaning": "Microsoft 365で外部Capabilityを使う時、道具の増減が多く鮮度が重要ならMCPの動的発見を候補にします。決まった道具だけを安全に使いたい時は固定し、認証方式が合わない時はAPI pluginなど別の経路へ切り替えます。まだ桃多郎内での実運用比較はありません。",
-      "source_label": "Dango M365 MCP capability routing",
-      "revision": "70e8f556a27183edfefe3276e045f20647419749"
-    },
-    {
-      "date": "2026-09-11",
-      "status": "WATCH",
-      "title": "長時間のAI仕事は、実行基盤を自作する前に借りられるものを比べる",
-      "meaning": "OpenAIのAgents APIを、長時間・多ツール・複数Agentの仕事で使う実行基盤の再利用候補に追加しました。文脈整理や道具の呼び出し、Agent連携、sandbox実行を自前で組む前に、小さく比較します。まだ桃多郎内での実測はなく、モデル性能が上がったという話でもありません。",
-      "source_label": "Dango Agents API managed harness routing",
-      "revision": "62a8c5f8d11bc242f82d2cfe5857efbb56d26eae"
-    },
-    {
-      "date": "2026-09-11",
-      "status": "WATCH",
-      "title": "AIを自分たちの管理マシンで動かす公式ルートが候補に入った",
-      "meaning": "Cursor AgentをCursor側のクラウドだけでなく、自分のMac・VMや組織管理のworker上で動かせる公式ルートをDangoへ追加しました。コード・秘密情報・ビルド・道具の実行場所を自分たちで管理したい仕事では、自作の遠隔実行基盤を作る前に検討します。AIそのものが賢くなるという意味ではありません。",
-      "source_label": "Dango Cursor self-hosted execution routing",
-      "revision": "c9eb1852c8164fde19232fee6f1b516d9be08273"
-    },
-    {
-      "date": "2026-09-11",
-      "status": "WATCH",
-      "title": "大きな仕事を『長く持てる仕事場』へ回す候補が増えた",
-      "meaning": "Cursor Projectsを、大きな機能開発・移行・アプリ作りなど、長い文脈と複数エージェントへの分担が役立つ仕事の候補に追加しました。小さく完結する作業は今まで通り軽いAgentを使い、並列数が多いだけではProjectsを選びません。",
-      "source_label": "Dango Cursor Projects work-package routing",
-      "revision": "bc740d5e1e178b6b1de07bb6449bcccc76446910"
-    },
-    {
-      "date": "2026-09-11",
-      "status": "WATCH",
-      "title": "対応している監視は『変化が起きた時だけ動く』方を先に選ぶ",
-      "meaning": "Gmail・Slack・GitHub PRのようにWorkがイベントを受け取れる仕事は、毎時間確認し続けるよりイベント発火を優先します。一方、Web・ニュース・任意のGit変更・Macなどの実行状態はイベントだけでは見えないため、定期確認を続けます。",
-      "source_label": "Dango Work event-triggered vs polling routing",
-      "revision": "e51d8e8e82dca45971d6b479c8bf32ac0cba9a9d"
-    },
-    {
-      "date": "2026-09-11",
-      "status": "WATCH",
-      "title": "Codexを無人で回す時の正式な認証ルートが増えた",
-      "meaning": "Business / Enterpriseでは、Codex CLIやローカル自動化を定期ジョブ・CIから動かす時にWorkspace Access Tokenを使えることが確認されました。ブラウザログインを自作で再現する前にこの公式ルートを検討し、API Keyで十分ならAPI Keyを使い続けます。",
-      "source_label": "Dango Codex workspace access token route",
-      "revision": "b7db59c297a00bd04c8ba97486202bbc5c2505d9"
-    },
-    {
-      "date": "2026-09-11",
-      "status": "WATCH",
-      "title": "CodexのBrowser / Computer Useは『見える＝使える』ではない",
-      "meaning": "管理されたWorkspaceでは、BrowserやComputer Useが画面にあっても、Workspace設定・対象サイトやアプリ・操作内容・Approval条件で止まる場合があります。今後はこれをモデルの失敗と混同せず、まず利用条件を確認します。",
-      "source_label": "Dango managed Codex policy boundary",
-      "revision": "00b1e1e31b0284ef143e219ca460718e383cad55"
-    },
-    {
-      "date": "2026-09-11",
-      "status": "WATCH",
-      "title": "難しいBuilder仕事でもGrok 4.6 ExtraHighを先に試せる材料が増えた",
-      "meaning": "World SE内の実測で、限定された難しい実装・復旧・原因調査ではGrok 4.6 ExtraHighが有力候補になりました。日常作業はCursor Auto、難しいBuilder/ExplorerはGrok XHigh、まだ残る深い判断や独立レビューはCodex、という3段階の使い分けです。",
-      "source_label": "Dango Grok 4.6 ExtraHigh routing knowledge",
-      "revision": "9980fc8cd1f1546ec323e26982d1c88ad1ef8b58"
-    },
-    {
-      "date": "2026-09-11",
-      "status": "WATCH",
-      "title": "長時間のCursor作業で比べるべきAI候補が増えた",
-      "meaning": "CursorBench 4.0をDangoへ取り込みました。近いスコアのモデルを順位だけで決めず、コスト・手数・実案件の結果まで見て選ぶ材料として使います。",
-      "source_label": "Dango CursorBench 4.0 knowledge",
-      "revision": "a73374f9ff63fa98a5862f7952836483830cda9d"
-    },
-    {
-      "date": "2026-09-11",
-      "status": "WATCH",
-      "title": "Cursorを日常のBuilder候補から外さない方針を公開した",
-      "meaning": "実測では、限定されたBuilder作業でCursor Autoが十分な品質へ届く例がありました。Codexは難しい復旧・安全性判断や独立チェックへ温存する、という使い分けをMOMO Newsへ反映しました。",
-      "source_label": "MOMO Oh Dango News",
-      "revision": "fbe37b9c1aac0addbbc05b1d53904889877d2dc9"
-    },
-    {
-      "date": "2026-09-10",
-      "status": "COMPLETE",
-      "title": "KIJIとINNUの『今の本体』をmainへ整理した",
-      "meaning": "長く使っていた作業branchや前身repoを履歴へ下げ、現在のKIJI・INNUをmainだけ見れば復元できる形へ整理しました。",
-      "source_label": "KIJI / INNU current authority",
-      "revision": "bb66d24ff72c7ca3bed35a0f933c34a4ba55f19f"
-    },
-    {
-      "date": "2026-09-10",
-      "status": "HOLD",
-      "title": "『再開』時にHumanが引継ぎを作り直さない設計を強化した",
-      "meaning": "中断やActor変更の後は、AI側がGitの正本・元のTask・必要な実測値を回収し、Humanには現在地・意味・次の一手だけを返す共通ブートストラップ案へ強化しました。MemoryやCustom Instructionsは補助であり、正本や権限にはしません。まだ各Projectへ導入したわけではありません。",
-      "source_label": "MOMO-Observatory resume/bootstrap note",
-      "revision": "b42854ba9c33cbca11dc84a3cea071b565b9f93b"
-    },
-    {
-      "date": "2026-09-10",
-      "status": "COMPLETE",
-      "title": "KIBIを『実際に使うならどうする？』まで具体化した",
-      "meaning": "接続ルールだけでなく、実際の運用で必要になる最小の振る舞い・失敗時の扱い・復旧の考え方まで設計しました。これは設計の完了で、実装開始ではありません。",
-      "source_label": "KIBI Operationalization Phase 1",
-      "revision": "19d36fa97a661e15a5cc97eb031134f66bd5311c"
-    },
-    {
-      "date": "2026-09-10",
-      "status": "WATCH",
-      "title": "桃多郎の現在地を自動で見回り始めた",
-      "meaning": "各Gitを定期的に確認し、意味のある変化があった時だけMOMOの現在地ページを更新する運用が動いています。",
-      "source_label": "MOMO Current State Watch"
-    },
-    {
-      "date": "2026-09-09",
-      "status": "COMPLETE",
-      "title": "MOMOから『今どこ？』が見えるようになった",
-      "meaning": "全体の状態、仲間ごとの現在地、最近の変化、Human判断待ち、次の候補を1ページで確認できるようになりました。",
-      "source_label": "MOMO Current State Cockpit v0",
-      "revision": "7f4015f6fdcc1bf2a1a28caeb718be1ef0b6fca7"
     }
   ],
   "human_decisions": [
