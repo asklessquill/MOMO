@@ -2,7 +2,7 @@
   "schema_version": "0.1",
   "projection": "MOMO Human-facing public snapshot",
   "authority_note": "このページは『いまどうなってる？』を見るための案内板です。各プロジェクトの正本はそれぞれのGitにあり、ここに表示しただけで状態や権限は変わりません。",
-  "observed_at": "2026-09-13T03:29:39+09:00",
+  "observed_at": "2026-09-13T06:28:17+09:00",
   "system": {
     "status": "ACTIVE",
     "headline": "MOMO-Observatoryの整理版が正式採用され、AI Knowledge基盤の再構成へ移れる状態になった。",
@@ -41,9 +41,9 @@
     {
       "status": "WATCH",
       "title": "AIモデルと道具選びの学習",
-      "meaning": "どのAI・強度・道具・実行環境を選ぶとうまくいくかをDangoへ蓄積しています。直近ではClaude系で、同じモデルでもClaude CodeとCowork / claude.aiでは既定の推論強度が異なるため、モデル名だけでなく利用面も残して比較するルールを追加しました。Astraとの公表benchmarkも、World SEでの実測なしに優劣へ一般化しません。",
+      "meaning": "どのAI・強度・道具・実行環境を選ぶとうまくいくかをDangoへ蓄積しています。直近では、Cursor経由のOpenAIモデルを長期の固定経路として扱わず、必要期間まで提供が続くかを確認するルールを追加しました。Cursor自体が使えなくなるという意味ではありません。",
       "source_label": "INNU Routing Intelligence Loop",
-      "revision": "5dada24ee31e3ac1e5cf3c3142ddc6577552f429"
+      "revision": "08b64a142239d765f0de2315e5298348763ff2e1"
     },
     {
       "status": "HOLD",
@@ -146,11 +146,11 @@
       "name": "Dango",
       "role": "AIモデルと道具選びの経験を貯める",
       "status": "WATCH",
-      "current": "実際の作業結果と外部EvidenceからAIと実行環境の選び方を継続して学んでいます。直近ではClaude系で、同じモデルでもClaude CodeとCowork / claude.aiでは既定の推論強度が異なるため、モデル名だけでなく利用面も記録して比較するルールを追加しました。OpenAI公表のAstra対Fable benchmarkは比較候補として残しますが、World SE実測なしに全体の優劣へ一般化しません。",
+      "current": "実際の作業結果と外部EvidenceからAIと実行環境の選び方を継続して学んでいます。直近では、Cursor経由のOpenAIモデル提供には将来の変更予定があるため、長く動かす仕事ではCursorという道具とOpenAIという提供元を分けて考え、必要期間まで使える経路かを確認するルールを追加しました。Cursor自体は引き続き他モデルを含む実行環境候補です。",
       "source_label": "Dango main / routing watch",
-      "source_url": "https://github.com/asklessquill/Dango/commit/5dada24ee31e3ac1e5cf3c3142ddc6577552f429",
-      "revision": "5dada24ee31e3ac1e5cf3c3142ddc6577552f429",
-      "observed_at": "2026-09-13T03:29:39+09:00",
+      "source_url": "https://github.com/asklessquill/Dango/commit/08b64a142239d765f0de2315e5298348763ff2e1",
+      "revision": "08b64a142239d765f0de2315e5298348763ff2e1",
+      "observed_at": "2026-09-13T06:28:17+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     }
   ],
@@ -158,10 +158,10 @@
     {
       "date": "2026-09-13",
       "status": "WATCH",
-      "title": "Claudeはモデル名だけでなく、どこで使うかも分けて比べる",
-      "meaning": "Claude系は同じモデルでも、Claude CodeとCowork / claude.aiで既定の推論強度が異なるため、利用面を残さずに速度・品質・costを比べません。Astra対Fableの公表benchmarkも比較材料にはしますが、ベンダー公表値だけで桃多郎全体の優劣とは判断せず、必要なら同条件で実測します。",
-      "source_label": "Dango Claude surface-specific effort routing",
-      "revision": "5dada24ee31e3ac1e5cf3c3142ddc6577552f429"
+      "title": "Cursor経由のOpenAI利用は、長期の固定経路にしない",
+      "meaning": "OpenAIはCursorへのモデル提供契約を2026年11月12日に終了する予定と公表しています。今すぐCursorが使えなくなるわけではありませんが、OpenAI固有のモデルを長く使う仕事では、必要な期間まで提供が続くかを確認し、必要なら直接OpenAIを使う経路などを選びます。",
+      "source_label": "Dango Cursor / OpenAI continuity gate",
+      "revision": "08b64a142239d765f0de2315e5298348763ff2e1"
     },
     {
       "date": "2026-09-13",
