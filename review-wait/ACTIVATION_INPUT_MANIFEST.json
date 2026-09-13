@@ -1,0 +1,49 @@
+{
+  "status": "preparation_only_no_activation_authority",
+  "date": "2026-09-13",
+  "phase6_primary_review_target": {
+    "repository": "asklessquill/MOMO",
+    "sha": "0d140db495859022f0c1faeb89436e9e6c1f66d1"
+  },
+  "reviewed_candidate_targets": {
+    "KIBI": "e998f340792ac11bcaff8977be04675caa7ae8e3",
+    "KIJI": "583601ce01fd67b9e517584460c18d95382b46f5",
+    "INNU": "10c07f8891d84750d765f046daaa4843395cc1ef",
+    "SARU": "68c19f112156c25d44b50ff1eed24455322c130e",
+    "MOMO-Observatory": "6683dd62f75ed8d49609d28143bcfce42dabc315",
+    "references": "21ee2743fb4d5b8598350d8d9a18e61caf98764d",
+    "Dango": "f8224a6e02dbd0630cbab0e821cf5f5d73e19770",
+    "FROG": "5640380362bd55121ff015f62e7ef6d16044c135",
+    "SandFrog": "225fb86962c1731d49ce708bc4ace5f3725108ec"
+  },
+  "live_main_snapshot": {
+    "MOMO": "4d2f0c0861a4ce676918f1cf87f1dd425cde3ef8",
+    "KIBI": "0cb56e9bca4bc8f4f962c601595fa0f5bb9307b6",
+    "KIJI": "bb66d24ff72c7ca3bed35a0f933c34a4ba55f19f",
+    "INNU": "732733d8954158bd72d5836ebe2d7b32bcc28c92",
+    "SARU": "57fc3a4105658d03b4d538d1db55b937e2a9a21a",
+    "MOMO-Observatory": "7599f49d574f8f51f7f0ec0057b7935e7e4cf3ab",
+    "references": "88498df34eee902c72f9b0e8c53bf91996e49dab",
+    "Dango": "0eb12a8618ce167f6963e0d58ae6dab0944d5a7f",
+    "FROG": "121f25d4a700f17b9e6c9a160517f3a6c90d5b42",
+    "SandFrog": "ea7f25f5abf8886a2d9a9f7d5e6f5cd237ccf232"
+  },
+  "known_drift": {
+    "KIBI": {
+      "classification": "content_neutral_history",
+      "detail": "known accidental placeholder create/revert pair; zero file diff against semantic baseline"
+    },
+    "Dango": {
+      "classification": "provisional_non_material_capability_drift",
+      "from": "9850591c0940d638e42ca012d3c03bf282b60ffe",
+      "to": "0eb12a8618ce167f6963e0d58ae6dab0944d5a7f",
+      "commits": 4,
+      "added_paths": [
+        "evidence/normalized/EV-20260913-0155.yaml",
+        "routing/google-gemini-windows-surface.yaml",
+        "episodes/2026/EP-20260913-GEMINI-WINDOWS-SURFACE-HARVEST.yaml"
+      ],
+      "rule": "retain and reconcile before activation; do not mutate the frozen Phase 6 review target"
+    }
+  }
+}
