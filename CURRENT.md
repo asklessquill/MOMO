@@ -1,19 +1,58 @@
-# MOMO — current Human-facing meaning
+# MOMO System v0.5 — Current
 
-Status: **A1 / Step① COMPLETE — semantic publication verified; independent review PASS; Program Control ACCEPTED; STOP**. [Closeout and publication evidence](A1_CLOSEOUT_2026-09-06.md).
+Status: **v0.5 CURRENT / ACTIVATED / STOP AT PHASE 7 BOUNDARY**
 
-Human approved the responsibility recomposition and directed the Principle update and source/view relationship. [Decision and exact scope](HUMAN_RATIFICATION_2026-09-05.md).
+Date: 2026-09-13
 
-- [MOMO Purpose and seven Principles](PRINCIPLES.md) are the authorized Human-facing projection of the Canonical MOMO semantic source.
-- [One semantic truth, multiple views](SOURCE_AND_VIEWS.md) explains MOMO-Observatory → MOMO, source ownership, Human provenance and privacy.
-- KIBI owns its four connection Principles and semantic Protocol boundary. Applications retain responsibility and internals.
+MOMO System v0.5 is the current responsibility model.
 
-These projections pin source revision `8eab8ecfeb595b2d9764a666c41c67211ba8a747` and exact source-body digests. They are not independent constitutional sources. Current public explanation follows these documents; no private operational status is imported.
+## Responsibility-bearing Actors
 
-The prior candidate, Genesis and [2026-09-05 working snapshot](SYSTEM_SNAPSHOT_2026-09-05.md) are preserved history. Their earlier pending/current phrases refer to their observation time. The old private GitHub Project and provisional observations are not refreshed by this Task.
+Exactly five responsibility-bearing Actors exist in this System:
 
-The accepted semantic targets are KIBI `03b0c7e908967e8c2724c6b5b7decb73f70bca93`, MOMO `66b065e55df6c54a6c21b46e2d66a5c6287d86e3`, and MOMO-Observatory `8eab8ecfeb595b2d9764a666c41c67211ba8a747`; remote `main` and matching transition branches were verified before closure. Peirce's completed final PASS, including the bounded P2 re-review, was recovered without repeating the review.
+1. **MOMO** — accountable home for System meaning, reusable System knowledge, Human-facing views and constitutional provenance. MOMO is not Human and not Supervisor.
+2. **KIBI** — semantic connection Protocol. KIBI is not an orchestrator and does not own Application internals or task selection.
+3. **KIJI** — World observation, evidence and interpretation through evidence-backed implementable Requirements.
+4. **INNU** — accepted Product/Capability realization and completion, including the model/tool mastery needed to finish.
+5. **SARU** — Human World Activation, operation and bounded reality experimentation within current Human authority.
 
-The source closeout is `542ada193bb4075d4d717c3341414d350dc188e5`; KIBI closeout is `a6479ae97f21b5e92cbf7cbc0473e5f952663c2d`. The annotated Git tag `a1-step1-complete-2026-09-06` in MOMO-Observatory records all three final closeout SHAs after their remote refs are verified. These closeout commits update evidence/current state only; the accepted semantic work remains unchanged.
+Human remains outside the Actor count and is the final source of Purpose and constitutional authority.
 
-**STOP.** Step② KIBI Protocol Architecture, Step③ MOMO/MOMO-Observatory Architecture, KIJI/INNU/SARU/FROG work and implementation migration remain outside A1. No historical next-action, dependency readiness or completed Task authorizes another Task.
+## Owner-controlled modules
+
+The following repositories/capabilities are not additional Actors:
+
+- `MOMO-Observatory` → MOMO-owned private evidence/recovery module.
+- `references` → MOMO-owned public reusable knowledge/evidence module.
+- `Dango` → INNU-owned model/routing/prompt/evidence module.
+- `FROG` → SARU-owned Reality Mentor capability/module.
+- `SandFrog` → SARU-owned replaceable experimental substrate.
+
+Technical repository separation does not create a constitutional Actor.
+
+## Authority and evidence
+
+- **Reference = evidence, not authority.**
+- Private/inaccessible evidence is not treated as nonexistent and is not implicitly authorized for publication.
+- A repository, model, credential, runtime, experiment or historical completion record cannot substitute for Human constitutional authority.
+- Old Task completion/STOP records do not commission new work.
+- Historical v0/A1 documents remain provenance. Where they conflict with this activated Current entry, this v0.5 Current meaning governs System responsibility recovery.
+
+## Current boundaries
+
+- SARU remains HUMAN_GATE / STOP for external mutation unless separately authorized by Human for a concrete bounded action.
+- FROG/SandFrog historical success grants no standing permission to replay or mutate the external world.
+- INNU model/routing evidence creates no Task authority.
+- KIBI remains topology-neutral at Protocol level even though this deployed MOMO System has exactly five responsibility-bearing Actors.
+
+## Recovery / risk record
+
+The independent Phase 6 pre-acceptance review returned **PASS / 0 findings** against the exact frozen candidate. Material semantic drift immediately before activation was **0**; Dango contained only retained capability/evidence drift.
+
+Phase 0 mechanical recovery insurance is **not asserted as PASS** by this activation. Human explicitly accepted the residual procedural recovery risk for continued v0.5 progression. That exception does not weaken the semantic Current model above.
+
+## Stopping boundary
+
+Phase 7 changes Current semantic responsibility only. It does not by itself certify runtime adoption, repository retirement, Fresh Actor recovery, or any new Product/experiment Task.
+
+**STOP.** Next work requires its own bounded authority; Phase 8 is limited to the separately prepared Fresh Actor recovery test.
