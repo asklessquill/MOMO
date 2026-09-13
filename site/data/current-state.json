@@ -2,7 +2,7 @@
   "schema_version": "0.1",
   "projection": "MOMO Human-facing public snapshot",
   "authority_note": "このページは『いまどうなってる？』を見るための案内板です。各プロジェクトの正本はそれぞれのGitにあり、ここに表示しただけで状態や権限は変わりません。",
-  "observed_at": "2026-09-13T10:31:33+09:00",
+  "observed_at": "2026-09-13T10:52:00+09:00",
   "system": {
     "status": "ACTIVE",
     "headline": "MOMO-Observatoryの整理版が正式採用され、AI Knowledge基盤の再構成へ移れる状態になった。",
@@ -35,15 +35,8 @@
     {
       "status": "WATCH",
       "title": "現在地の自動見回り",
-      "meaning": "各Gitの変化を定期的に確認し、意味のある変化があった時だけこのページを更新します。任意のGit変更はイベント監視の対象外なので、ここは定期確認を続けます。",
+      "meaning": "各Gitの変化を定期的に確認し、Projectの状態に意味のある変化があった時だけこのページを更新します。",
       "source_label": "MOMO Current State Watch"
-    },
-    {
-      "status": "WATCH",
-      "title": "AIモデルと道具選びの学習",
-      "meaning": "どのAI・強度・道具・実行環境を選ぶとうまくいくかをDangoへ蓄積しています。直近では、数時間級のAgent作業を『長く動けるから放置できる』とはみなさず、途中成果を残すcheckpointとHumanが方向修正・復旧できる入口を持つrouteを優先する判断を追加しました。",
-      "source_label": "INNU Routing Intelligence Loop",
-      "revision": "ecf3eed28fd151181f16531286fa199a8be3bcd0"
     },
     {
       "status": "HOLD",
@@ -102,7 +95,7 @@
       "name": "INNU",
       "role": "必要なものを作り切る",
       "status": "HOLD",
-      "current": "壊れ方・復旧・同時実行時の安全性まで含む現在の実装をmainへ一本化しました。古いOwataは履歴で、今後はINNU mainが現状の参照先です。モデルや道具選びの実測経験もここへ足しています。",
+      "current": "壊れ方・復旧・同時実行時の安全性まで含む現在の実装をmainへ一本化しました。古いOwataは履歴で、今後はINNU mainが現状の参照先です。",
       "source_label": "INNU main",
       "source_url": "https://github.com/asklessquill/Innu/commit/732733d8954158bd72d5836ebe2d7b32bcc28c92",
       "revision": "732733d8954158bd72d5836ebe2d7b32bcc28c92",
@@ -124,7 +117,7 @@
       "name": "FROG / KAERU",
       "role": "考えすぎる前に、小さく現実で試す",
       "status": "COMPLETE",
-      "current": "Humanが毎回作業を運ばなくても、GitHubからAIへ仕事を渡し、結果をGitへ返す経路を実際に動かして証明済みです。",
+      "current": "Humanが毎回作業を運ばなくても、GitHubからAIへ仕事を渡し、結果をGitへ返す経路を実際に動かして証明済みです。新しいLeapはまだ始めていません。",
       "source_label": "FROG main",
       "source_url": "https://github.com/asklessquill/FROG/commit/121f25d4a700f17b9e6c9a160517f3a6c90d5b42",
       "revision": "121f25d4a700f17b9e6c9a160517f3a6c90d5b42",
@@ -135,49 +128,33 @@
       "name": "SandFrog",
       "role": "壊してもよい実験場",
       "status": "BLOCKED",
-      "current": "Mac側のChatGPTログインが切れているため、その経路を使う次の実験だけ止まっています。新しいLeapはまだ始めません。",
+      "current": "Mac側で対象Projectへ安全に送れる状態を機械的に確認できなかったため、その経路を使う実験は止まっています。自動再試行や新しいLeapは許可されていません。",
       "source_label": "SandFrog main / EXP026-B",
       "source_url": "https://github.com/asklessquill/SandFrog/commit/ea7f25f5abf8886a2d9a9f7d5e6f5cd237ccf232",
       "revision": "ea7f25f5abf8886a2d9a9f7d5e6f5cd237ccf232",
-      "observed_at": "2026-09-12T16:28:08+09:00",
+      "observed_at": "2026-09-13T10:52:00+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     },
     {
       "name": "Dango",
       "role": "AIモデルと道具選びの経験を貯める",
       "status": "WATCH",
-      "current": "実際の作業結果と外部EvidenceからAIと実行環境の選び方を継続して学んでいます。直近では、数時間級のAgent作業を完全放置の前提にせず、中間成果を確認できるcheckpoint、Humanが方向修正できる入口、失敗時の復旧点を持つrouteを優先する判断を追加しました。長時間動作や並列数そのものは完全自律の証拠とはみなしません。",
+      "current": "実際の作業結果と外部Evidenceから、AIと実行環境の選び方を継続して学んでいます。個別のモデル・道具・料金・benchmark情報はCurrent StateではなくOh Dango News側で扱います。",
       "source_label": "Dango main / routing watch",
-      "source_url": "https://github.com/asklessquill/Dango/commit/ecf3eed28fd151181f16531286fa199a8be3bcd0",
-      "revision": "ecf3eed28fd151181f16531286fa199a8be3bcd0",
-      "observed_at": "2026-09-13T10:31:33+09:00",
+      "source_url": "https://github.com/asklessquill/Dango/commit/fef068566fa8c9fb411a23657df8ee7f75d3a036",
+      "revision": "fef068566fa8c9fb411a23657df8ee7f75d3a036",
+      "observed_at": "2026-09-13T10:52:00+09:00",
       "freshness": "CURRENT_AT_OBSERVATION"
     }
   ],
   "recent": [
     {
       "date": "2026-09-13",
-      "status": "WATCH",
-      "title": "長時間Agentは、途中で見直せる形で使う",
-      "meaning": "数時間級の仕事では、Agentが長く動けることや複数を並列に動かせることを『完全放置できる』証拠とはみなしません。途中成果をGitやreportへ残し、必要ならHumanが方向修正・権限確認・復旧できるrouteを優先します。短く低リスクな仕事まで過剰に区切る必要はありません。",
-      "source_label": "Dango long-horizon agent routing",
-      "revision": "ecf3eed28fd151181f16531286fa199a8be3bcd0"
-    },
-    {
-      "date": "2026-09-13",
-      "status": "WATCH",
-      "title": "個人向けGoogle Coding Agentの入口がAntigravity CLIへ移った",
-      "meaning": "Google AI Pro/Ultraや無料の個人利用では、Gemini CLIではなくAntigravity CLIが現在のterminal Agent入口です。Gemini CLIは企業契約や対応API keyでは残っているため全面終了ではありません。Cursor・Codex・Claude Codeとの優劣は、World SEで同じ仕事を試すまで判断しません。",
-      "source_label": "Dango Google agent surface routing",
-      "revision": "b9260bdf4564719bce58d5515f3d9d842a910899"
-    },
-    {
-      "date": "2026-09-13",
-      "status": "WATCH",
-      "title": "Claudeの利用枠を超えそうなら、追加料金の前に割引バンドルを比較",
-      "meaning": "ClaudeのPro・Max・Teamでは、含まれる利用枠を超えた後に使える追加容量を割引で事前購入できます。残高はClaude・Claude Code・Coworkなどで共有されるため、減った量を特定モデルや特定surfaceの消費とはみなしません。実際の超過が読める時だけ標準追加料金やplan変更と比較します。",
-      "source_label": "Dango Anthropic capacity routing",
-      "revision": "b9260bdf4564719bce58d5515f3d9d842a910899"
+      "status": "COMPLETE",
+      "title": "MOMO-Observatoryの整理版を正式採用",
+      "meaning": "古いTaskや作業場所を現在の指示と誤読しないよう入口を整理し、既存の意味や受入済み設計を変えずにmainへ採用しました。",
+      "source_label": "MOMO-Observatory Genesis v0 clean baseline",
+      "revision": "7599f49d574f8f51f7f0ec0057b7935e7e4cf3ab"
     }
   ],
   "human_decisions": [
