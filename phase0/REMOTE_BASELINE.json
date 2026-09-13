@@ -1,0 +1,48 @@
+{
+  "schema": "momo.v0.5.phase0.remote-baseline.v1",
+  "observed_date": "2026-09-13",
+  "phase": 0,
+  "phase0_pass": false,
+  "phase1_authorized": false,
+  "remote_main": {
+    "MOMO": "db1d5f4d08b5cbc1757aeccd03967a91510906ba",
+    "KIBI": "19d36fa97a661e15a5cc97eb031134f66bd5311c",
+    "Kiji": "bb66d24ff72c7ca3bed35a0f933c34a4ba55f19f",
+    "Innu": "732733d8954158bd72d5836ebe2d7b32bcc28c92",
+    "Saru": "57fc3a4105658d03b4d538d1db55b937e2a9a21a",
+    "MOMO-Observatory": "7599f49d574f8f51f7f0ec0057b7935e7e4cf3ab",
+    "references": "88498df34eee902c72f9b0e8c53bf91996e49dab",
+    "Dango": "b88e841b813e6d208c7f305fa8b5bbf765cdea67",
+    "FROG": "121f25d4a700f17b9e6c9a160517f3a6c90d5b42",
+    "SandFrog": "ea7f25f5abf8886a2d9a9f7d5e6f5cd237ccf232"
+  },
+  "fixed_accepted_targets": {
+    "MOMO_A1_human_facing": "66b065e55df6c54a6c21b46e2d66a5c6287d86e3",
+    "MOMO_Observatory_A1_semantic_source": "8eab8ecfeb595b2d9764a666c41c67211ba8a747",
+    "KIBI_A1_semantic": "03b0c7e908967e8c2724c6b5b7decb73f70bca93",
+    "KIBI_protocol_architecture_publication": "233b5260226c41b4ae5fcb123543b39045004ef3",
+    "MOMO_Observatory_architecture_review_target": "70a69732065c71b9fd91c41cbe96048d0290b577"
+  },
+  "current_authority_main": {
+    "Kiji": "bb66d24ff72c7ca3bed35a0f933c34a4ba55f19f",
+    "Innu": "732733d8954158bd72d5836ebe2d7b32bcc28c92",
+    "Saru": "57fc3a4105658d03b4d538d1db55b937e2a9a21a",
+    "FROG": "121f25d4a700f17b9e6c9a160517f3a6c90d5b42",
+    "SandFrog": "ea7f25f5abf8886a2d9a9f7d5e6f5cd237ccf232"
+  },
+  "observed_non_authoritative_or_candidate": {
+    "KIBI_operational_profile_checkpoint": "19d36fa97a661e15a5cc97eb031134f66bd5311c",
+    "references": "88498df34eee902c72f9b0e8c53bf91996e49dab",
+    "Dango": "b88e841b813e6d208c7f305fa8b5bbf765cdea67"
+  },
+  "unverified_mandatory_scope": [
+    "current local worktrees, branches, stashes, modified and untracked material",
+    "valuable local-only material and its digests",
+    "indispensable non-Git state and operational bindings",
+    "independent full-history artifacts outside affected repos and working copies",
+    "artifact integrity verification",
+    "isolated restore without original working copies or source remotes",
+    "real-state restoration where indispensable",
+    "negative restore checks and stopped-workflow non-resumption"
+  ]
+}
