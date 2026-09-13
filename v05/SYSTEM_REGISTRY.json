@@ -1,0 +1,93 @@
+{
+  "schema_version": "0.1",
+  "status": "PRE-CLOSEOUT PREPARATION / NON-AUTHORITATIVE UNTIL CLOSEOUT",
+  "system": "MOMO System",
+  "release": "v0.5",
+  "human_authority": "outside_actor_count",
+  "actor_count": 5,
+  "actors": [
+    {
+      "id": "MOMO",
+      "responsibility": "system meaning, reusable System knowledge, Human-facing views, constitutional provenance",
+      "repo": "asklessquill/MOMO",
+      "current_revision": "210618b32bd5d81dc3512c18086291889779d3e3"
+    },
+    {
+      "id": "KIBI",
+      "responsibility": "semantic connection Protocol between autonomous Applications; not orchestrator",
+      "repo": "asklessquill/KIBI",
+      "current_revision": "09b45a6aeaa4931ac95f629953a8fee0bdedb793"
+    },
+    {
+      "id": "KIJI",
+      "responsibility": "World observation, evidence and interpretation through implementable Requirements",
+      "repo": "asklessquill/Kiji",
+      "current_revision": "e2a54ef0e24635c6296a5deab66cff166248c1e4"
+    },
+    {
+      "id": "INNU",
+      "responsibility": "accepted Product/Capability realization plus model/tool mastery",
+      "repo": "asklessquill/Innu",
+      "current_revision": "732733d8954158bd72d5836ebe2d7b32bcc28c92"
+    },
+    {
+      "id": "SARU",
+      "responsibility": "Human World Activation, operation and bounded reality experimentation within Human authority",
+      "repo": "asklessquill/Saru",
+      "current_revision": "0db44526c12f75769a6e1999859747349f344876"
+    }
+  ],
+  "modules": [
+    {
+      "id": "MOMO-Observatory",
+      "owner": "MOMO",
+      "kind": "private evidence/recovery module",
+      "repo": "asklessquill/MOMO-Observatory",
+      "current_revision": "7599f49d574f8f51f7f0ec0057b7935e7e4cf3ab",
+      "actor": false
+    },
+    {
+      "id": "references",
+      "owner": "MOMO",
+      "kind": "public reusable knowledge/evidence module",
+      "repo": "asklessquill/references",
+      "current_revision": "8c97ecd959ed4dd5314e28b3e060dfd92606a42c",
+      "actor": false
+    },
+    {
+      "id": "Dango",
+      "owner": "INNU",
+      "kind": "model/routing/evidence module",
+      "repo": "asklessquill/Dango",
+      "current_revision": "0e071aa881b288da184b11060ef9a11b8b8b9bd7",
+      "actor": false
+    },
+    {
+      "id": "FROG",
+      "owner": "SARU",
+      "kind": "Reality Mentor module/archive",
+      "repo": "asklessquill/FROG",
+      "current_revision": "0fcdac683a478c74301f6e129265186347bd7ff6",
+      "actor": false
+    },
+    {
+      "id": "SandFrog",
+      "owner": "SARU",
+      "kind": "experimental substrate",
+      "repo": "asklessquill/SandFrog",
+      "current_revision": "ea7f25f5abf8886a2d9a9f7d5e6f5cd237ccf232",
+      "actor": false
+    }
+  ],
+  "rules": [
+    "Reference = evidence, not authority",
+    "technical repository separation does not create an Actor",
+    "Human remains final source of Purpose and constitutional authority",
+    "Task completion does not commission a new Task",
+    "runtime or credentials do not create authority"
+  ],
+  "phase0": {
+    "mechanical_pass_asserted": false,
+    "residual_risk": "Human accepted; must remain explicit"
+  }
+}
