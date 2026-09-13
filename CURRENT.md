@@ -1,8 +1,8 @@
 # MOMO System v0.5 — Current
 
-Status: **v0.5 CURRENT / ACTIVATED / STOP AT PHASE 7 BOUNDARY**
+Status: **MOMO SYSTEM v0.5 CLOSED / CURRENT / RECOVERABLE / STOP**
 
-Date: 2026-09-13
+Date: 2026-09-14
 
 MOMO System v0.5 is the current responsibility model.
 
@@ -45,14 +45,20 @@ Technical repository separation does not create a constitutional Actor.
 - INNU model/routing evidence creates no Task authority.
 - KIBI remains topology-neutral at Protocol level even though this deployed MOMO System has exactly five responsibility-bearing Actors.
 
-## Recovery / risk record
+## Recovery / closeout record
 
-The independent Phase 6 pre-acceptance review returned **PASS / 0 findings** against the exact frozen candidate. Material semantic drift immediately before activation was **0**; Dango contained only retained capability/evidence drift.
+- Phase 6 independent pre-acceptance review: **PASS / 0 findings**.
+- Pre-activation material semantic drift: **0**; retained Dango drift was capability/evidence only.
+- Phase 7 activation: **ACTIVATED / REMOTE VERIFIED**.
+- Phase 8 Fresh Actor recovery: **PASS — FRESH ACTOR RECOVERY PROVEN**.
+- Final independent closeout review: **PASS / 0 findings / READY FOR CLOSEOUT**.
+- Phase 9 module dispositions: recorded and non-destructive.
+- Phase 0 mechanical recovery insurance is **not asserted as PASS**. Human explicitly accepted the residual procedural recovery risk; that requirement remains separate and is not erased by v0.5 closeout.
 
-Phase 0 mechanical recovery insurance is **not asserted as PASS** by this activation. Human explicitly accepted the residual procedural recovery risk for continued v0.5 progression. That exception does not weaken the semantic Current model above.
+`RECOVERABLE` here means the activated v0.5 semantic responsibility model was successfully recovered by a Fresh Actor from fixed durable sources. It does not claim that Phase 0 mechanical disaster recovery, runtime adoption, deployment, interoperability, physical repository retirement or real-environment restoration has been proven.
 
-## Stopping boundary
+## Closeout boundary
 
-Phase 7 changes Current semantic responsibility only. It does not by itself certify runtime adoption, repository retirement, Fresh Actor recovery, or any new Product/experiment Task.
+**MOMO SYSTEM v0.5 CLOSED / CURRENT / RECOVERABLE / STOP**
 
-**STOP.** Next work requires its own bounded authority; Phase 8 is limited to the separately prepared Fresh Actor recovery test.
+This closeout commissions no v1, next milestone, Product Task, experiment, autonomous cycle, runtime action, repository deletion or external mutation. Any future work requires separate bounded Human authority.
