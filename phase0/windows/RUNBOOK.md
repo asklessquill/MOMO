@@ -2,7 +2,7 @@
 
 Status: **Phase 0 only / recovery insurance / no Phase 1 authority**
 
-This runbook closes the local-only and non-Git evidence gap identified by `phase0/PHASE0_STATUS.md`. It performs preservation and isolated recovery checks only. It does not merge local work, repair a capability, start a service, run a SandFrog experiment, activate SARU, change current semantic selection, or begin Phase 1.
+This runbook closes the local-only and non-Git evidence gap identified by `phase0/PHASE0_STATUS.md`. It performs preservation and isolated recovery checks only. It does not merge local work, repair a capability, start a service, run a SandFrog experiment, activate SARU, change current semantic selection, clean old worktrees, or begin Phase 1.
 
 ## Preconditions
 
@@ -44,19 +44,21 @@ $IndependentRoot = '<UNC path or external-drive path>\WorldSE-Phase0-Recovery'
 
 Do not substitute a normal internal directory merely to make the check pass.
 
-## What the run captures
+## What the run captures and proves
 
-The worker performs all of the following without adopting the recovered material:
+The bounded package performs all of the following without adopting the recovered material:
 
 1. Re-reads all ten remote `main` refs against the fixed Phase 0 baseline.
 2. Creates full remote mirrors and `--all` Git bundles, verifies them with `fsck`/bundle verification, restores them into empty bare repositories and verifies the restored repositories.
-3. Checks that the fixed accepted MOMO/KIBI/MOMO-Observatory targets are present in the restored history rather than assuming repository HEAD is accepted state.
+3. Checks that fixed accepted MOMO/KIBI/MOMO-Observatory targets are present in restored history rather than assuming repository HEAD is accepted state.
 4. Inventories discovered local repositories, worktrees, refs and stashes; creates verified `--all` bundles for local refs and separately restores those bundles.
 5. Captures dirty tracked changes as binary patches and preserves untracked files byte-for-byte with SHA-256 manifests. These remain **unaccepted evidence**.
-6. Copies and hash-verifies the known indispensable non-Git state candidates identified by the existing portability evidence: `MSPO/workspace-data`, `MSPO-codex-lab/workspace-data`, and `Saru/.saru-state`.
+6. Copies and hash-verifies the known indispensable non-Git state candidates identified by existing portability evidence: `MSPO/workspace-data`, `MSPO-codex-lab/workspace-data`, and `Saru/.saru-state`.
 7. Records only presence metadata for Codex authentication/configuration paths; it does not copy secret values.
 8. Corrupts a copy of one recovery bundle and verifies that the corrupted artifact is rejected.
 9. Hashes the recovery package, copies it to the independently evidenced destination, and verifies the copied files.
+10. From that **independent copy itself**, reconstructs all ten repositories again into fresh temporary bare repositories, runs `fsck`, and checks the expected remote and accepted target commits. This second restoration does not use the source remotes or original working copies.
+11. Re-observes historically identified local-only locators. If required preservation candidates such as the KIBI archives/dirty remediation worktree, KIJI Lab source, KIJI raw source or SARU state can no longer be found, the gate is withheld until their disposition is resolved with evidence.
 
 No recovered repository or Product is executed.
 
@@ -75,13 +77,20 @@ Their existence does not make them accepted. Their absence in the fresh run must
 
 ## Result and STOP
 
-The worker writes `PHASE0_LOCAL_RESULT.json` to both the local recovery package and the independent copy.
+The validated entrypoint writes or augments:
 
-- exit `0` means the **local mechanical recovery checks** passed;
-- exit `2` means Phase 0 remains **FAIL / STOP**.
+- `PHASE0_LOCAL_RESULT.json` — combined mechanical result, including independent-storage and historical-locator findings;
+- `PHASE0_INDEPENDENT_RESTORE.json` — direct restore from the independently stored bundles;
+- `historical-local-locators.csv` — fresh presence check for previously observed preservation candidates;
+- supporting manifests, hashes, patches, bundles and logs.
 
-Even exit `0` does **not** authorize Phase 1. Return the resulting `PHASE0_LOCAL_RESULT.json` (and, if any array is non-empty, the relevant manifests/logs) for independent evidence review and the durable G0 receipt.
+Validated entrypoint exit codes:
 
-Until that receipt is reviewed and records `RECOVERY INSURANCE VERIFIED / STOP`, the current state remains:
+- exit `0` — local + independent recovery mechanics pass;
+- exit `2` — Phase 0 remains **FAIL / STOP**.
 
-> **PHASE 0 NOT PASSED / PHASE 1 NOT AUTHORIZED / STOP**
+Even exit `0` does **not** authorize Phase 1. Return `PHASE0_LOCAL_RESULT.json` for evidence review and the durable G0 receipt. If any failure array is non-empty, also return the named supporting manifest/log needed to resolve it.
+
+Until that review records **RECOVERY INSURANCE VERIFIED / STOP**, the current state remains:
+
+> **PHASE 0 IN PROGRESS / G0 NOT PASSED / PHASE 1 NOT AUTHORIZED / STOP**
