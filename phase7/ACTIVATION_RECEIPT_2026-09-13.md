@@ -40,7 +40,7 @@ Technical repository separation does not create additional Actors.
 
 ## Remote main verification
 
-| Repository | Pre-activation SHA | Activated/current SHA | Phase 7 change |
+| Repository | Pre-activation SHA | Activation semantic SHA | Phase 7 change |
 |---|---|---|---|
 | MOMO | `4d2f0c0861a4ce676918f1cf87f1dd425cde3ef8` | `0ff020d66f426b644e73d21108629bbc5491434f` | `CURRENT.md` activated for v0.5 |
 | KIBI | `0cb56e9bca4bc8f4f962c601595fa0f5bb9307b6` | `09b45a6aeaa4931ac95f629953a8fee0bdedb793` | `V05_CURRENT.md` added |
@@ -53,7 +53,9 @@ Technical repository separation does not create additional Actors.
 | FROG | `121f25d4a700f17b9e6c9a160517f3a6c90d5b42` | `0fcdac683a478c74301f6e129265186347bd7ff6` | `CURRENT_MODULE_STATUS.md` added |
 | SandFrog | `ea7f25f5abf8886a2d9a9f7d5e6f5cd237ccf232` | same | no write required; owner/substrate status governed by MOMO/SARU Current surfaces |
 
-All changed `main` refs were re-read from remote after activation and matched the intended SHA. Unchanged repositories were re-compared to their captured pre-activation SHA and remained identical.
+All changed `main` refs were re-read from remote after activation and matched the intended semantic SHA. Unchanged repositories were re-compared to their captured pre-activation SHA and remained identical.
+
+MOMO `main` subsequently advances only through publication/update of this activation receipt; that receipt publication is evidence about activation, not an additional semantic change to the v0.5 responsibility model.
 
 ## Rollback anchors
 
