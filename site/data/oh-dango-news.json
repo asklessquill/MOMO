@@ -1,10 +1,27 @@
 {
   "title": "Oh Dango News",
   "subtitle": "Dangoのmodel-routing knowledgeから、Humanが知る価値のある更新だけをMOMOが投影します。",
-  "updated_at": "2026-09-13T09:52:40+09:00",
+  "updated_at": "2026-09-13T19:20:03+09:00",
   "source": "asklessquill/Dango (private durable knowledge base)",
   "publication_rule": "Publish when a well-supported finding materially changes a practical Human choice about model, surface, tool, cost, runtime, recovery, capability or workflow. Scoped candidates may be published when their bounded consequence is clear; backend-only, weak or duplicate findings stay private.",
   "items": [
+    {
+      "date": "2026-09-13",
+      "human_kind": "サブスク/選択肢",
+      "human_title": "CursorとOpenAIは『1つのサブスク』としてではなく、別々の価値で選ぶ",
+      "human_change": "OpenAIはCursorへのOpenAIモデル供給契約を終了する意向を示し、提案停止日を2026年11月12日としています。またOpenAIは今後のモデルをCursorへ提供しない方針です。一方、ChatGPT PlusでもGPT-6 AstraはWork/Codexから限定利用できます。したがって『Cursorを契約すれば今後もOpenAIモデル込みで選択肢を持てる』という前提は長期の購入理由として使えなくなりました。",
+      "human_action": "CursorはProjects、Cloud Agents、Composer、Grok/Claude/Gemini等を含むCursor固有の作業環境として価値を測り、OpenAIモデルが必要な仕事はOpenAI側のdirect routeを別に残します。ChatGPT Plusをすでに持っている場合、Astraを試したいだけなら、まずWork/Codexのincluded usageでbounded taskを1件試し、足りないことを確認してから追加のsubscription spendを検討します。",
+      "human_example": "たとえばCursor Proを試すなら『将来のGPTもまとめて使えるから』ではなく、『ProjectsやCloud Agentsで実際の開発ループが良くなるか』を理由にします。同じDone条件の小さなtaskをCursor側の残るrouteとdirect Astra Work/Codexで比較し、成功、手戻り、Human介入、時間、実costを記録すれば、どちらへ予算を寄せるかを後から決められます。",
+      "human_limit": "11月12日はOpenAIが示したproposed shutoff dateで、最終的な停止日やCursor側のpost-shutoff model catalog、BYOK等の代替経路は今後の公式情報で再確認が必要です。PlusのAstra利用量は限定的でaccount rolloutにも依存し、PlusでGPT-6 Pro Chatが使えるという意味ではありません。Cursor自体が終了するという話でもありません。",
+      "kind": "Provider / Surface Optionality",
+      "signal": "Candidate decision-changing routing",
+      "title": "Separate Cursor surface value from OpenAI model continuity",
+      "summary": "OpenAI intends to wind down model supply to Cursor with a proposed 2026-11-12 shutoff and says future OpenAI models will not be provided there, while ChatGPT Plus already offers a bounded direct Astra Work/Codex route.",
+      "strength": "HIGH official vendor intent and current OpenAI plan semantics; MEDIUM until final November behavior is observed",
+      "astra_vs_sol": "モデル性能比較ではない。provider availability、application surface、plan、future model continuityを別routing axisとして扱う更新。",
+      "implication": "Value Cursor for Cursor-specific workflow capabilities rather than permanent OpenAI carriage; preserve direct OpenAI access separately when OpenAI models matter, and use existing Plus Astra Work/Codex allowance first when applicable before concentrating more spend.",
+      "source_url": "https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex/"
+    },
     {
       "date": "2026-09-13",
       "human_kind": "作業環境",
