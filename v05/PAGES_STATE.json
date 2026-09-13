@@ -1,0 +1,18 @@
+{
+  "status":"PRE-CLOSEOUT / NOT LIVE",
+  "release":"v0.5",
+  "current":true,
+  "closed":false,
+  "actors":["MOMO","KIBI","KIJI","INNU","SARU"],
+  "modules":{
+    "MOMO":["MOMO-Observatory","references"],
+    "INNU":["Dango"],
+    "SARU":["FROG","SandFrog"]
+  },
+  "phase6":"PASS / 0 findings",
+  "phase7":"ACTIVATED / REMOTE VERIFIED",
+  "phase8":"WAITING FOR FRESH INDEPENDENT EXECUTION",
+  "final_review":"WAITING",
+  "phase0_mechanical_pass":false,
+  "core_rule":"Reference = evidence, not authority"
+}
