@@ -8,22 +8,22 @@ Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 
 $ExpectedMain = [ordered]@{
-    MOMO             = 'db1d5f4d08b5cbc1757aeccd03967a91510906ba'
-    KIBI             = '19d36fa97a661e15a5cc97eb031134f66bd5311c'
-    Kiji             = 'bb66d24ff72c7ca3bed35a0f933c34a4ba55f19f'
-    Innu             = '732733d8954158bd72d5836ebe2d7b32bcc28c92'
-    Saru             = '57fc3a4105658d03b4d538d1db55b937e2a9a21a'
-    'MOMO-Observatory'= '7599f49d574f8f51f7f0ec0057b7935e7e4cf3ab'
-    references       = '88498df34eee902c72f9b0e8c53bf91996e49dab'
-    Dango            = 'b88e841b813e6d208c7f305fa8b5bbf765cdea67'
-    FROG             = '121f25d4a700f17b9e6c9a160517f3a6c90d5b42'
-    SandFrog         = 'ea7f25f5abf8886a2d9a9f7d5e6f5cd237ccf232'
+    MOMO              = 'db1d5f4d08b5cbc1757aeccd03967a91510906ba'
+    KIBI              = '19d36fa97a661e15a5cc97eb031134f66bd5311c'
+    Kiji              = 'bb66d24ff72c7ca3bed35a0f933c34a4ba55f19f'
+    Innu              = '732733d8954158bd72d5836ebe2d7b32bcc28c92'
+    Saru              = '57fc3a4105658d03b4d538d1db55b937e2a9a21a'
+    'MOMO-Observatory' = '7599f49d574f8f51f7f0ec0057b7935e7e4cf3ab'
+    references        = '88498df34eee902c72f9b0e8c53bf91996e49dab'
+    Dango             = 'b88e841b813e6d208c7f305fa8b5bbf765cdea67'
+    FROG              = '121f25d4a700f17b9e6c9a160517f3a6c90d5b42'
+    SandFrog          = 'ea7f25f5abf8886a2d9a9f7d5e6f5cd237ccf232'
 }
 
 $AcceptedTargets = [ordered]@{
-    MOMO              = @('66b065e55df6c54a6c21b46e2d66a5c6287d86e3')
-    KIBI              = @('03b0c7e908967e8c2724c6b5b7decb73f70bca93','233b5260226c41b4ae5fcb123543b39045004ef3')
-    'MOMO-Observatory'= @('8eab8ecfeb595b2d9764a666c41c67211ba8a747','70a69732065c71b9fd91c41cbe96048d0290b577')
+    MOMO               = @('66b065e55df6c54a6c21b46e2d66a5c6287d86e3')
+    KIBI               = @('03b0c7e908967e8c2724c6b5b7decb73f70bca93','233b5260226c41b4ae5fcb123543b39045004ef3')
+    'MOMO-Observatory' = @('8eab8ecfeb595b2d9764a666c41c67211ba8a747','70a69732065c71b9fd91c41cbe96048d0290b577')
 }
 
 $RepoUrls = [ordered]@{}
@@ -36,7 +36,8 @@ $dirs = @('manifests','mirrors','bundles','restore-test','local-only','non-git',
 foreach ($d in $dirs) { New-Item -ItemType Directory -Force -Path (Join-Path $runRoot $d) | Out-Null }
 
 function Invoke-Git([string]$wd, [string[]]$args) {
-    $old = $ErrorActionPreference; $ErrorActionPreference = 'Continue'
+    $old = $ErrorActionPreference
+    $ErrorActionPreference = 'Continue'
     $out = & git -C $wd @args 2>&1
     $code = $LASTEXITCODE
     $ErrorActionPreference = $old
@@ -69,45 +70,47 @@ foreach ($name in $RepoUrls.Keys) {
 }
 $remoteRows | Export-Csv (Join-Path $runRoot 'manifests\remote-main.csv') -NoTypeInformation -Encoding UTF8
 
-# 2. Independent full-history mirrors -> bundles -> isolated restores.
+# 2. Full remote history -> bundles -> isolated restore. No restored worktree is executed.
 foreach ($name in $RepoUrls.Keys) {
     $mirror = Join-Path $runRoot ("mirrors\$name.git")
     $bundle = Join-Path $runRoot ("bundles\$name.bundle")
     $restore = Join-Path $runRoot ("restore-test\$name.git")
 
-    $old = $ErrorActionPreference; $ErrorActionPreference='Continue'
+    $old = $ErrorActionPreference
+    $ErrorActionPreference = 'Continue'
     & git clone --mirror --quiet -- $RepoUrls[$name] $mirror 2>&1 | Out-File (Join-Path $runRoot "logs\$name-clone.txt")
     $cloneCode = $LASTEXITCODE
-    $ErrorActionPreference=$old
-    if ($cloneCode -ne 0) { $summary.repo_failures += "$name:mirror_clone"; continue }
+    $ErrorActionPreference = $old
+    if ($cloneCode -ne 0) { $summary.repo_failures += "${name}:mirror_clone"; continue }
 
     $fsck = Invoke-Git $mirror @('fsck','--full','--strict')
-    if ($fsck.Code -ne 0) { $summary.repo_failures += "$name:mirror_fsck"; continue }
+    if ($fsck.Code -ne 0) { $summary.repo_failures += "${name}:mirror_fsck"; continue }
 
     $b = Invoke-Git $mirror @('bundle','create',$bundle,'--all')
-    if ($b.Code -ne 0) { $summary.repo_failures += "$name:bundle_create"; continue }
+    if ($b.Code -ne 0) { $summary.repo_failures += "${name}:bundle_create"; continue }
 
-    $v = & git bundle verify $bundle 2>&1
-    if ($LASTEXITCODE -ne 0) { $summary.repo_failures += "$name:bundle_verify"; continue }
+    $v = Invoke-Git $mirror @('bundle','verify',$bundle)
+    if ($v.Code -ne 0) { $summary.repo_failures += "${name}:bundle_verify"; continue }
 
-    $old = $ErrorActionPreference; $ErrorActionPreference='Continue'
+    $old = $ErrorActionPreference
+    $ErrorActionPreference = 'Continue'
     & git clone --bare --quiet -- $bundle $restore 2>&1 | Out-File (Join-Path $runRoot "logs\$name-restore.txt")
     $restoreCode = $LASTEXITCODE
-    $ErrorActionPreference=$old
-    if ($restoreCode -ne 0) { $summary.repo_failures += "$name:isolated_restore"; continue }
+    $ErrorActionPreference = $old
+    if ($restoreCode -ne 0) { $summary.repo_failures += "${name}:isolated_restore"; continue }
 
     $rf = Invoke-Git $restore @('fsck','--full','--strict')
-    if ($rf.Code -ne 0) { $summary.repo_failures += "$name:restored_fsck"; continue }
+    if ($rf.Code -ne 0) { $summary.repo_failures += "${name}:restored_fsck"; continue }
 
     if ($AcceptedTargets.Contains($name)) {
         foreach ($sha in $AcceptedTargets[$name]) {
             $chk = Invoke-Git $restore @('cat-file','-e',"$sha^{commit}")
-            if ($chk.Code -ne 0) { $summary.accepted_target_failures += "$name:$sha" }
+            if ($chk.Code -ne 0) { $summary.accepted_target_failures += "${name}:$sha" }
         }
     }
 }
 
-# 3. Discover local repositories/worktrees and preserve dirty/untracked state without adopting it.
+# 3. Discover local repositories/worktrees and preserve refs, stashes, dirty tracked files and untracked files.
 $seenTop = @{}
 $localRows = @()
 foreach ($root in $SearchRoots) {
@@ -131,6 +134,32 @@ foreach ($root in $SearchRoots) {
         & git -C $top branch -avv | Out-File (Join-Path $repoOut 'branches.txt') -Encoding utf8
         & git -C $top stash list --format='%H %gd %s' | Out-File (Join-Path $repoOut 'stashes.txt') -Encoding utf8
         & git -C $top show-ref | Out-File (Join-Path $repoOut 'refs.txt') -Encoding utf8
+
+        # Local --all bundle preserves local branches/tags/refs (including stash where present) separately from remote truth.
+        $localBundle = Join-Path $repoOut 'local-all-refs.bundle'
+        $lb = Invoke-Git $top @('bundle','create',$localBundle,'--all')
+        if ($lb.Code -ne 0) {
+            $summary.local_preservation_failures += "${repoSlug}:bundle_create"
+        } else {
+            $lv = Invoke-Git $top @('bundle','verify',$localBundle)
+            if ($lv.Code -ne 0) {
+                $summary.local_preservation_failures += "${repoSlug}:bundle_verify"
+            } else {
+                $localRestore = Join-Path $runRoot ("restore-test\local\$repoSlug.git")
+                New-Item -ItemType Directory -Force -Path (Split-Path $localRestore -Parent) | Out-Null
+                $old = $ErrorActionPreference
+                $ErrorActionPreference = 'Continue'
+                & git clone --bare --quiet -- $localBundle $localRestore 2>&1 | Out-File (Join-Path $repoOut 'local-bundle-restore.txt')
+                $localRestoreCode = $LASTEXITCODE
+                $ErrorActionPreference = $old
+                if ($localRestoreCode -ne 0) {
+                    $summary.local_preservation_failures += "${repoSlug}:bundle_restore"
+                } else {
+                    $lf = Invoke-Git $localRestore @('fsck','--full','--strict')
+                    if ($lf.Code -ne 0) { $summary.local_preservation_failures += "${repoSlug}:restored_fsck" }
+                }
+            }
+        }
 
         $wts = @(& git -C $top worktree list --porcelain | Select-String '^worktree ' | ForEach-Object { $_.Line.Substring(9) })
         foreach ($wt in $wts) {
@@ -159,23 +188,25 @@ foreach ($root in $SearchRoots) {
 }
 $localRows | Export-Csv (Join-Path $runRoot 'manifests\local-repositories.csv') -NoTypeInformation -Encoding UTF8
 
-# 4. Preserve known indispensable/non-Git state candidates from prior portability evidence.
+# 4. Preserve indispensable/non-Git state known from the accepted portability evidence.
 $nonGitCandidates = [ordered]@{
-    'MSPO-workspace-data' = "$env:USERPROFILE\apps\MSPO\workspace-data"
-    'KIJI-lab-workspace-data' = "$env:USERPROFILE\apps\MSPO-codex-lab\workspace-data"
-    'SARU-state' = "$env:USERPROFILE\apps\Saru\.saru-state"
+    'MSPO-workspace-data'     = "$env:USERPROFILE\apps\MSPO\workspace-data"
+    'KIJI-lab-workspace-data'= "$env:USERPROFILE\apps\MSPO-codex-lab\workspace-data"
+    'SARU-state'             = "$env:USERPROFILE\apps\Saru\.saru-state"
 }
 $nonGitRows = @()
 foreach ($label in $nonGitCandidates.Keys) {
     $src = $nonGitCandidates[$label]
     if (-not (Test-Path $src)) {
         $nonGitRows += [pscustomobject]@{ Label=$label; Source=$src; Present=$false; Files=0; Bytes=0; Restored=$false }
+        $summary.non_git_failures += "${label}:missing_source"
         continue
     }
+
     $dst = Join-Path $runRoot ("non-git\$label")
     New-Item -ItemType Directory -Force -Path $dst | Out-Null
     & robocopy $src $dst /E /COPY:DAT /DCOPY:T /R:1 /W:1 /NFL /NDL /NJH /NJS /NP | Out-Null
-    if ($LASTEXITCODE -ge 8) { $summary.non_git_failures += "$label:copy"; continue }
+    if ($LASTEXITCODE -ge 8) { $summary.non_git_failures += "${label}:copy"; continue }
 
     $files = @(Get-ChildItem $dst -File -Recurse -Force)
     $manifest = foreach ($f in $files) {
@@ -184,44 +215,50 @@ foreach ($label in $nonGitCandidates.Keys) {
     }
     $manifest | Export-Csv (Join-Path $runRoot "manifests\$label.csv") -NoTypeInformation -Encoding UTF8
 
+    # Restore from protected copy into an isolated destination and compare every file hash.
     $restoreDst = Join-Path $runRoot ("restore-test\non-git\$label")
     New-Item -ItemType Directory -Force -Path $restoreDst | Out-Null
     & robocopy $dst $restoreDst /E /COPY:DAT /DCOPY:T /R:1 /W:1 /NFL /NDL /NJH /NJS /NP | Out-Null
-    if ($LASTEXITCODE -ge 8) { $summary.non_git_failures += "$label:restore"; continue }
+    if ($LASTEXITCODE -ge 8) { $summary.non_git_failures += "${label}:restore"; continue }
     $restored = @(Get-ChildItem $restoreDst -File -Recurse -Force)
     $ok = ($restored.Count -eq $files.Count)
     if ($ok) {
         foreach ($f in $restored) {
             $rel = $f.FullName.Substring($restoreDst.Length).TrimStart('\')
             $orig = Join-Path $dst $rel
-            if ((Get-FileHash $f.FullName -Algorithm SHA256).Hash -ne (Get-FileHash $orig -Algorithm SHA256).Hash) { $ok=$false; break }
+            if ((Get-FileHash -Algorithm SHA256 -LiteralPath $f.FullName).Hash -ne (Get-FileHash -Algorithm SHA256 -LiteralPath $orig).Hash) { $ok=$false; break }
         }
     }
-    if (-not $ok) { $summary.non_git_failures += "$label:hash_mismatch" }
-    $nonGitRows += [pscustomobject]@{ Label=$label; Source=$src; Present=$true; Files=$files.Count; Bytes=($files | Measure-Object Length -Sum).Sum; Restored=$ok }
+    if (-not $ok) { $summary.non_git_failures += "${label}:hash_mismatch" }
+    $bytes = if ($files.Count) { ($files | Measure-Object Length -Sum).Sum } else { 0 }
+    $nonGitRows += [pscustomobject]@{ Label=$label; Source=$src; Present=$true; Files=$files.Count; Bytes=$bytes; Restored=$ok }
 }
 $nonGitRows | Export-Csv (Join-Path $runRoot 'manifests\non-git-state.csv') -NoTypeInformation -Encoding UTF8
 
-# 5. Credential/binding metadata only. Never copy secret values.
+# 5. Access/binding metadata only. Never copy secret values.
 $bindingRows = @(
     [pscustomobject]@{ Item='Codex auth'; Path="$env:USERPROFILE\.codex\auth.json"; Present=(Test-Path "$env:USERPROFILE\.codex\auth.json"); ContentCopied=$false },
     [pscustomobject]@{ Item='Codex config'; Path="$env:USERPROFILE\.codex\config.toml"; Present=(Test-Path "$env:USERPROFILE\.codex\config.toml"); ContentCopied=$false }
 )
 $bindingRows | Export-Csv (Join-Path $runRoot 'manifests\binding-metadata.csv') -NoTypeInformation -Encoding UTF8
 
-# 6. Negative corruption test: a corrupted bundle must be rejected.
+# 6. Negative restore check: a corrupted artifact must be rejected.
 $probe = Join-Path $runRoot 'bundles\MOMO.bundle'
-if (Test-Path $probe) {
+$momoMirror = Join-Path $runRoot 'mirrors\MOMO.git'
+if ((Test-Path $probe) -and (Test-Path $momoMirror)) {
     $bad = Join-Path $runRoot 'restore-test\MOMO-corrupt.bundle'
     Copy-Item $probe $bad -Force
     $bytes = [System.IO.File]::ReadAllBytes($bad)
-    if ($bytes.Length -gt 128) { $bytes[128] = $bytes[128] -bxor 0xFF; [System.IO.File]::WriteAllBytes($bad,$bytes) }
-    & git bundle verify $bad *> $null
-    $summary.negative_test = if ($LASTEXITCODE -ne 0) { 'PASS_REJECTED_CORRUPT_ARTIFACT' } else { 'FAIL_CORRUPT_ARTIFACT_ACCEPTED' }
-    if ($LASTEXITCODE -eq 0) { $summary.repo_failures += 'negative_corruption_test' }
+    if ($bytes.Length -gt 128) {
+        $bytes[128] = $bytes[128] -bxor 0xFF
+        [System.IO.File]::WriteAllBytes($bad,$bytes)
+    }
+    $badVerify = Invoke-Git $momoMirror @('bundle','verify',$bad)
+    $summary.negative_test = if ($badVerify.Code -ne 0) { 'PASS_REJECTED_CORRUPT_ARTIFACT' } else { 'FAIL_CORRUPT_ARTIFACT_ACCEPTED' }
+    if ($badVerify.Code -eq 0) { $summary.repo_failures += 'negative_corruption_test' }
 }
 
-# 7. Hash protected package, copy to independent destination, then verify every copied file.
+# 7. Hash protected package, copy it outside the affected repos/working copies, and verify every copied file.
 $protectedFiles = @(Get-ChildItem $runRoot -File -Recurse -Force)
 $hashRows = foreach ($f in $protectedFiles) {
     $rel = $f.FullName.Substring($runRoot.Length).TrimStart('\')
@@ -238,7 +275,7 @@ foreach ($row in $hashRows) {
     if ((Get-FileHash -Algorithm SHA256 -LiteralPath $p).Hash -ne $row.SHA256) { $summary.independent_copy_failures += "hash:$($row.Path)" }
 }
 
-# 8. Gate. Historical/local material is preserved as evidence, never accepted by this script.
+# 8. Gate. Preservation never promotes local/candidate material into accepted state.
 $summary.phase0_pass = (
     $summary.main_drift.Count -eq 0 -and
     $summary.repo_failures.Count -eq 0 -and
