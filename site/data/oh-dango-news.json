@@ -1,10 +1,27 @@
 {
   "title": "Oh Dango News",
   "subtitle": "Dangoのmodel-routing knowledgeから、Humanが知る価値のある更新だけをMOMOが投影します。",
-  "updated_at": "2026-09-13T08:41:51+09:00",
+  "updated_at": "2026-09-13T09:52:40+09:00",
   "source": "asklessquill/Dango (private durable knowledge base)",
   "publication_rule": "Publish when a well-supported finding materially changes a practical Human choice about model, surface, tool, cost, runtime, recovery, capability or workflow. Scoped candidates may be published when their bounded consequence is clear; backend-only, weak or duplicate findings stay private.",
   "items": [
+    {
+      "date": "2026-09-13",
+      "human_kind": "作業環境",
+      "human_title": "長時間Agentは『放置できる時間』ではなく、『途中で見直せる時間』として設計する",
+      "human_change": "OpenAIの研究組織ではcoding agentの長時間・並列利用が大きく増えていますが、4〜8時間相当の成功タスクでも半数超に少なくとも1回のHuman介入がありました。長く動けることや4本以上を並列に動かせることは、そのまま完全自律で終わることを意味しません。",
+      "human_action": "INNUが数時間級の実装・調査をAgentへ渡す時は、最初から完全放置を前提にせず、中間成果をGitやreportへ残すcheckpoint、Humanが方向修正できる入口、失敗時の復旧点を持つrouteを優先します。Human介入があっても即失敗扱いせず、想定steering・権限確認・修正・復旧のどれだったかを分けて記録します。",
+      "human_example": "たとえば複数repoをまたぐ数時間の再構成なら、Agentを走らせっぱなしにするのではなく『調査結果を保存→変更候補を確認可能にする→実装→test/review』のように途中状態を残します。並列Agentを増やす場合も、速くなるかだけでなくHuman介入回数・手戻り・最終成功まで測ります。",
+      "human_limit": "これはOpenAI内部研究組織の観測で、桃多郎Projectや全モデルに同じ介入率が当てはまるというEvidenceではありません。対象model・tier・harnessは混在しており、Codex採用増加と同時に利用可能computeも増えています。短く低リスクで検証しやすい仕事まで過剰にcheckpoint化する必要はありません。",
+      "kind": "Long-horizon Agent Workflow",
+      "signal": "Candidate scoped routing",
+      "title": "Treat runtime and concurrency as capacity, not proof of fire-and-forget autonomy",
+      "summary": "OpenAI reports rising concurrent coding-agent use and 3.1 agent-workdays per researcher workday, while over half of successful 4–8 hour tasks still involved at least one Human intervention.",
+      "strength": "HIGH for reported OpenAI internal measurements; MEDIUM for World SE workflow generalization",
+      "astra_vs_sol": "特定modelの性能比較ではない。model/tierより上位のworkflow shape、checkpoint visibility、Human intervention budgetを分離する更新。",
+      "implication": "For multi-hour/high-complexity agent work, prefer observable checkpoints and bounded steering/recovery paths; do not infer autonomy from runtime or parallel agent count alone.",
+      "source_url": "https://openai.com/index/research-acceleration-view-inside-openai/"
+    },
     {
       "date": "2026-09-13",
       "human_kind": "作業環境",
